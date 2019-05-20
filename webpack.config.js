@@ -22,7 +22,20 @@ module.exports={
 				"css-loader",
 				"sass-loader"
 				]
-		}]
+		},
+		{
+         test: /\.(woff|svg|ttf)$/,
+         exclude: '/node_modules/',
+         use: [
+           'file-loader'
+         ]
+       },
+        {
+          test: /\.(png|svg|jpg|gif)$/,
+          use: [
+            'file-loader'
+          ]
+        }]
 	},
 	plugins:[
 		new HWP({
