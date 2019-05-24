@@ -1,2 +1,10 @@
-mixin textInput(placeholderText,classname)
-	input(class="text_field "+classname, placeholder=""+placeholderText)
+mixin text_input(placeholderText,classname,MaterialIcons)
+	div(class="text_field")
+		if classname!= "dropdown"
+			input(class="text_field__"+classname, placeholder=""+placeholderText)
+			if MaterialIcons
+				i.material-icons= MaterialIcons
+		else
+			input(class="text_field__"+classname, placeholder=""+placeholderText disabled)
+			if MaterialIcons
+				i.material-icons= MaterialIcons
