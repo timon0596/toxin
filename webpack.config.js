@@ -1,5 +1,6 @@
 const path = require('path');
 const HWP=require('html-webpack-plugin');
+const webpack = require('webpack');
 module.exports={
 	entry: './src/index.js',
 	output: {
@@ -40,6 +41,11 @@ module.exports={
 	plugins:[
 		new HWP({
 			template: './src/index.pug'
+		}),
+		new webpack.ProvidePlugin({
+			$: 'jquery',
+			jQuery: 'jquery',
+			'window.jQuery': 'jquery'
 		})
 	]
 }

@@ -2,6 +2,12 @@
 	width: 320px
 	height: 44px
 	position: relative
+	input.active
+		border-bottom-left-radius: 0px
+		border-bottom-right-radius: 0px
+		border: 1px solid $DS50
+		+ i
+			color: $DS75
 	input	
 		width: 100%
 		height: 100%
@@ -38,12 +44,30 @@
 			position: absolute
 			top: 0
 			right: 0
-	&__dropdown
-		&::placeholder
-			line-height: 24px
-			color: $DS75
+			cursor: pointer
 	&__email
 		&::placeholder		
 			line-height: 18px
 			color: $DS25
+	&__dropdown
+		&::placeholder
+			line-height: 24px
+			color: $DS75
+			
+	.dropdown__guests
+		position: absolute
+		width: 320px
+		height: 159px
+		display: none
+		background-color: #fff
+		border: 1px solid $DS50
+		box-sizing: border-box
+		box-shadow: 0px 10px 20px $DS05
+		border-bottom-left-radius: 4px
+		border-bottom-right-radius: 4px
+		bottom: -158px
+	
+		
+	
+
 		
