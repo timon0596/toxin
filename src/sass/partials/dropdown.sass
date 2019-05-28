@@ -1,0 +1,140 @@
+.dropdown
+	width: 320px
+	min-height: 44px
+	position: relative
+	border: 1px solid $DS25
+	box-sizing: border-box
+	border-radius: 4px
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	align-items: center
+	flex-wrap: wrap
+	overflow: hidden
+	.text
+		width: 320px
+		height: 42px
+		font-family: montserrat
+		font-style: normal
+		font-weight: normal
+		font-size: 14px
+		line-height: 24px
+		color: $DS75
+		text-transform: none		
+		padding-left: 15px
+		box-sizing: border-box		
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		align-items: center
+	i
+		position: absolute
+		width: 44px
+		height: 44px
+		top: -1
+		right: -1
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		justify-content: center
+		align-items: center
+		color: $DS50
+		cursor: pointer
+	&_guests
+		width: 320px
+		height: 159px
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		flex-wrap: wrap
+		padding-left: 15px
+		padding-right: 7px
+		font-size: 12px
+		text-transform: uppercase
+		color: $DS
+		font-style: normal
+		font-weight: bold
+		box-sizing: border-box				
+		.names,.controls
+			width: 50%
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			flex-direction: column
+			justify-content: space-between
+			padding-top: 7px
+		.controls
+			align-items: flex-end
+			.control
+				display: -webkit-flex
+				display: -moz-flex
+				display: -ms-flex
+				display: -o-flex
+				display: flex
+				flex-wrap: nowrap
+				.val
+					width: 30px
+					height: 30px
+					border: 1px solid $DS25
+					border-radius: 50%
+					display: -webkit-flex
+					display: -moz-flex
+					display: -ms-flex
+					display: -o-flex
+					display: flex
+					justify-content: center
+					align-items: center
+					box-sizing: border-box
+					&:nth-child(2)
+						border: none
+				.minus,.plus
+					font-size: 18
+					font-style: normal
+					font-weight: normal
+					color: $DS50
+					cursor: pointer
+				.inactive
+					opacity: 0.5				
+		.names
+			.name
+				height: 30px		
+		.submit
+			width: 100%
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			justify-content: space-between
+			align-items: flex-end
+			box-sizing: border-box			
+			.apply
+				color: $purple
+				padding-bottom: 13px
+				height: 15px
+				cursor: pointer
+			.clean
+				color: $DS50
+				padding-bottom: 13px
+				height: 15px
+				cursor: pointer
+			.inactive
+				opacity: 0
+				cursor: default
+	.wrapper__dropdown
+		width: 320px
+		height: 159px
+		display: none
+		border-top: 1px solid $DS50
+.active
+	border: 1px solid $DS50		

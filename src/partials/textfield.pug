@@ -8,4 +8,6 @@ mixin text_input(placeholderText,MaterialIcons,classname,dropdownClass)
 			input(class="text_field__"+classname, placeholder=""+placeholderText disabled)
 			if MaterialIcons
 				i.material-icons= MaterialIcons
-			div(class=""+classname+"__"+dropdownClass)
+			div(class=""+classname+"_"+dropdownClass+"__wrapper")
+				div(class=""+classname+"_"+dropdownClass)
+
