@@ -4,23 +4,29 @@ mixin dropdown(text,classname,materialicon,serialNumber)
 		i.material-icons= materialicon
 		div(class="wrapper__dropdown")
 			div(class="dropdown_"+classname)
-				.names
-					.name взрослые
-					.name дети
-					.name младенцы
+				
+					
+					
+					
 				.controls
-					.control.n1
-						.val.minus.inactive -
-						.val.number 0
-						.val.plus +
-					.control.n2
-						.val.minus.inactive -
-						.val.number 0
-						.val.plus +
-					.control.n3
-						.val.minus.inactive -
-						.val.number 0
-						.val.plus +				
+					.row
+						.name взрослые
+						.control
+							.val.minus.inactive -
+							.val.number 0
+							.val.plus +
+					.row
+						.name дети
+						.control
+							.val.minus.inactive -
+							.val.number 0
+							.val.plus +
+					.row
+						.name младенцы
+						.control
+							.val.minus.inactive -
+							.val.number 0
+							.val.plus +			
 				.submit
 					.clean.inactive очистить
 					.apply применить

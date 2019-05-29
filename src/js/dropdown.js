@@ -3,6 +3,7 @@ $(".dropdown").each(function(i,elem){
 	elem.sum=0;
 	$(elem).find("i").click(function(){
 		$(elem).find(".wrapper__dropdown").slideToggle(250)
+		$(elem).toggleClass("active")
 	})
 	$(elem).find(".control").each(function(i,el){
 		el.counter=+$(el).find(".number").html()

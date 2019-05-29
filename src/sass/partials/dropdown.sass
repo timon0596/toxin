@@ -63,8 +63,8 @@
 		font-style: normal
 		font-weight: bold
 		box-sizing: border-box				
-		.names,.controls
-			width: 50%
+		.controls
+			width: 100%
 			display: -webkit-flex
 			display: -moz-flex
 			display: -ms-flex
@@ -105,9 +105,17 @@
 					cursor: pointer
 				.inactive
 					opacity: 0.5				
-		.names
-			.name
-				height: 30px		
+			.row
+				width: 100%
+				display: -webkit-flex
+				display: -moz-flex
+				display: -ms-flex
+				display: -o-flex
+				display: flex
+				justify-content: space-between
+				flex-wrap: nowrap
+				.name
+					height: 30px		
 		.submit
 			width: 100%
 			display: -webkit-flex
