@@ -1,5 +1,5 @@
-mixin dropdown(text,classname,materialicon)
-	div(class="dropdown")
+mixin dropdown(text,classname,materialicon,serialNumber)
+	div(class="dropdown "+serialNumber)
 		.text= text
 		i.material-icons= materialicon
 		div(class="wrapper__dropdown")
@@ -9,15 +9,15 @@ mixin dropdown(text,classname,materialicon)
 					.name дети
 					.name младенцы
 				.controls
-					.control
+					.control.n1
 						.val.minus.inactive -
 						.val.number 0
 						.val.plus +
-					.control
+					.control.n2
 						.val.minus.inactive -
 						.val.number 0
 						.val.plus +
-					.control
+					.control.n3
 						.val.minus.inactive -
 						.val.number 0
 						.val.plus +				
