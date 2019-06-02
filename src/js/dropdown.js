@@ -1,5 +1,5 @@
 
-$(".dropdown").each(function(i,elem){
+function dropdown_guests(){let elem=$(".dropdown_guests");
 	elem.sum=0;
 	$(elem).find("i").click(function(){
 		$(elem).find(".wrapper__dropdown").slideToggle(250)
@@ -123,4 +123,5 @@ $(".dropdown").each(function(i,elem){
 		$(elem).find(".text").html("Сколько гостей")
 		$(elem).find(".clean").addClass("inactive")
 	})
-});
+};
+dropdown_guests();
