@@ -36,6 +36,7 @@ function dropdown_guests(){let elem=$(".dropdown_guests");
 					else if(elem.third%10>4||elem.third%10==0)
 						elem.text=", "+String(elem.third)+" младенцев";
 				}
+
 			})
 			if(elem.guest==0){
 				elem.text="Сколько гостей";
@@ -53,6 +54,7 @@ function dropdown_guests(){let elem=$(".dropdown_guests");
 			else if(elem.guest%10>4||elem.guest%10==0)
 				elem.text=""+elem.guest+" гостей"+elem.text;
 			$(elem).find(".text").html(elem.text)
+			$(this).siblings(".minus").removeClass("inactive")
 
 				
 		})
@@ -87,6 +89,11 @@ function dropdown_guests(){let elem=$(".dropdown_guests");
 					else if(elem.third%10>4||elem.third%10==0)
 						elem.text=", "+String(elem.third)+" младенцев";
 				}
+				if(el.counter==0)
+					$(el).find(".minus").addClass("inactive")
+				
+
+				
 			})
 			if(elem.guest==0){
 				elem.text="Сколько гостей";
@@ -108,7 +115,8 @@ function dropdown_guests(){let elem=$(".dropdown_guests");
 			if(elem.sum==0)
 				{
 					$(elem).find(".clean").addClass("inactive")
-				}				
+				}
+
 		})
 	})
 

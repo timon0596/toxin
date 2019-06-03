@@ -11,8 +11,10 @@ function dropdown_bedroom(){let elem=$(".dropdown_bedroom");
 	})
 	$(elem).find(".row").each(function(i,el){
 		el.counter=+$(el).find(".number").html()
-		if(!$(el).hasClass("third"))
+		if(!$(el).hasClass("third")){
 			$(el).find(".number").html(2)
+			$(el).find(".minus").removeClass("inactive")
+		}
 
 
 
@@ -43,6 +45,7 @@ function dropdown_bedroom(){let elem=$(".dropdown_bedroom");
 			}
 			elem.text=elem.first+elem.second
 			$(elem).find(".text").html(elem.text)
+			$(this).siblings(".minus").removeClass("inactive")
 			
 
 
@@ -81,6 +84,8 @@ function dropdown_bedroom(){let elem=$(".dropdown_bedroom");
 			}
 			elem.text=elem.first+elem.second
 			$(elem).find(".text").html(elem.text)
+			if($(this).siblings(".number").html()==0)
+				$(this).addClass("inactive")
 										
 		})
 	})
