@@ -1,0 +1,98 @@
+.checkboxlist
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	width: 266px
+	min-height: 44px
+	flex-wrap: wrap
+	justify-content: space-between
+	.text
+		height: 44px
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		justify-content: center
+		align-items: center
+		font-family: montserrat
+		font-style: normal
+		font-weight: bold
+		font-size: 12px
+		line-height: 15px
+		text-transform: uppercase
+		color: $DS
+		cursor: pointer
+	i
+		width: 44px
+		height: 44px
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		justify-content: center
+		align-items: center
+		font-size: 24px
+		line-height: 24px
+		color: $DS50
+		cursor: pointer
+	i.ckblist.active
+		transform: rotate(-180deg)
+		border: none
+	ul
+		color: $DS50
+		font-family: montserrat
+		font-style: normal
+		font-weight: normal
+		font-size: 14px
+		line-height: 18px
+		margin: 0
+		padding: 0
+		display: none
+		li
+			position: relative
+			height: 20px
+			margin-bottom: 10px
+			list-style-type: none
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			justify-content: flex-start
+			cursor: pointer
+			&:before
+				content: ""
+				display: block
+				width: 20px
+				height: 20px
+				border: 1px solid $DS25
+				box-sizing: border-box
+				border-radius: 4px
+				margin-right: 10px
+		li.checked
+			&:before
+				border: 1px solid $purple
+			.check
+				display: none
+				position: absolute
+				width: 6px
+				height: 8px				
+				border: 2px solid transparent
+				border-image: $grad
+				border-image-slice: 1
+				box-sizing: border-box
+				transform-origin: 100% 50%
+						
+				transform: rotate(45deg)
+				border-top: none
+				border-left: none				
+				top: 7 
+				left: 6
+				
+
+		
+

@@ -1,5 +1,6 @@
-include partials/textfield
-include partials/dropdown
+include pug/textfield
+include pug/dropdown
+include pug/expandableChekboxList
 html(lang="en")
 head
 	meta(charset="UTF-8")
@@ -19,6 +20,5 @@ body hello world
 	span dropdown
 	br
 	+dropdown("Сколько гостей","bedroom","expand_more","спальни","кровати","ванные комнаты") 
-	
-
-	
+	br
+	+checkboxlist("expandable chekbox list","expand_more")

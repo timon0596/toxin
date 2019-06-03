@@ -1,0 +1,10 @@
+mixin checkboxlist(text,materialicon)
+	.checkboxlist
+		.text= text
+		i.material-icons.ckblist= materialicon
+		ul
+			each i in ['завтрак', 'письменный стол', 'стул для кормления','кроватка','телевизор','шампунь']
+				li= i
+					.check
+					
+
