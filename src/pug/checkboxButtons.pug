@@ -1,0 +1,11 @@
+mixin ckboxbuttons(text)
+	.ckbox_buttons
+		.text= text
+		ul
+			each i in ["можно курить","можно с питомцами","можно пригласить гостей<br>(до 10 человек)"]
+				li
+					.ckbox_wrapper
+						.ckbox
+						.check
+					.inner_text!= i
+
