@@ -9,3 +9,11 @@ mixin ckboxbuttons(text)
 						.check
 					.inner_text!= i
 
+mixin radiobuttons()
+	.radio
+		input(type="radio" id="male" name="radiobuttons")
+		label(for="male") мужчина
+		input(type="radio" id="female" name="radiobuttons")
+		label(for="female") женщина
+
+
