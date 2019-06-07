@@ -29,7 +29,9 @@
 			border-radius: 10px
 			margin-right: 10px
 			
+
 			&:before
+				transition: all .25s ease
 				content: ""
 				display: block
 				margin: 3px
@@ -41,7 +43,8 @@
 	input:checked + label
 		.toggleButton
 			border: 1px solid $purple
-			justify-content: flex-end
+			
 			&:before
 				background: $grad
+				transform: translateX(20px)
 		
