@@ -28,14 +28,14 @@ module.exports={
          test: /\.(woff|svg|ttf)$/,
          exclude: '/node_modules/',
          use: [
-           'file-loader'
-         ]
+         	'file-loader'
+         ]         
        },
         {
           test: /\.(png|svg|jpg|gif)$/,
-          use: [
-            'file-loader'
-          ]
+          exclude: '/node_modules/',
+          loader: 'file-loader',
+          include: path.join(__dirname,'src')
         }]
 	},
 	plugins:[
