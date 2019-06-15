@@ -5,5 +5,6 @@ import "./js/dropdown.js"
 import "./js/dropdown_bedroom.js"
 import "./js/ckbox.js"
 import "./js/ckboxButtons.js"
+import "./js/like.js"
 
 console.log('hello world');
