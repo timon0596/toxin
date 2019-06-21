@@ -1,5 +1,6 @@
 import "jquery"
 import "./index.pug"
+import "./cards/cards.pug"
 import "./style.sass"
 import "./js/dropdown.js"
 import "./js/dropdown_bedroom.js"

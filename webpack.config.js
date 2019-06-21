@@ -1,6 +1,7 @@
 const path = require('path');
 const HWP=require('html-webpack-plugin');
 const webpack = require('webpack');
+const HtmlWebpackPugPlugin = require('html-webpack-pug-plugin');
 module.exports={
 	entry: './src/index.js',
 	output: {
@@ -40,12 +41,18 @@ module.exports={
 	},
 	plugins:[
 		new HWP({
-			template: './src/index.pug'
+			template: './src/index.pug',
+			filename: 'index.html'
+		}),
+		new HWP({
+			template: './src/cards/cards.pug',
+			filename: 'cards.html'
 		}),
 		new webpack.ProvidePlugin({
 			$: 'jquery',
 			jQuery: 'jquery',
 			'window.jQuery': 'jquery'
-		})
+		}),
+		new HtmlWebpackPugPlugin()
 	]
 }
