@@ -1,0 +1,175 @@
+//search
+.search-block
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	flex-wrap: wrap
+	width: 380px
+	height: 374px
+	padding: 40px 30px 30px
+	box-sizing: border-box
+	background: #FFFFFF
+	border: 1px solid rgba(0, 0, 0, 0.12)
+	box-sizing: border-box
+	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2)
+	border-radius: 4px
+	.date-wrapper
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		justify-content: space-between
+		width: 100%
+		.date
+			width: 150px
+			height: 44px
+			display: block
+			position: relative
+			i
+				position: absolute
+				top: 0px
+				right: 0px
+				width: 44px
+				height: 44px
+				display: -webkit-flex
+				display: -moz-flex
+				display: -ms-flex
+				display: -o-flex
+				display: flex
+				justify-content: center
+				align-items: center
+				color: $DS50
+				cursor: pointer
+			input
+				width: 100%
+				height: 100%
+				box-sizing: border-box
+				border: 1px solid $DS25
+				border-radius: 4px
+				font-family: montserrat
+				font-style: normal
+				font-weight: normal
+				font-size: 14px
+				line-height: 18px
+				color: $DS75
+				padding-left: 15px
+//guest
+.dropdown-guests
+	width: 320px
+	min-height: 44px
+	position: relative	
+	.guests
+		width: 320px
+		min-height: 44px
+		position: relative
+		border: 1px solid $DS25
+		box-sizing: border-box
+		border-radius: 4px
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		align-items: center
+
+		&:hover
+			border: 1px solid $DS50
+		&.active
+			border: 1px solid $DS50
+			border-radius: 2px
+		.how-much
+			margin-left: 15px
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			
+			align-items: center
+		i
+			position: absolute
+			top: 0px
+			right: 0px
+			width: 44px
+			height: 44px
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			justify-content: center
+			align-items: center
+			color: $DS50
+			cursor: pointer
+	.controls
+		width: 320px
+		display: none
+		border-bottom-left-radius: 2px
+		border-bottom-right-radius: 2px
+		border: 1px solid $DS50
+		box-sizing: border-box
+		overflow: hidden
+		position: absolute
+		top: 42px
+		background: #fff
+		padding-left: 15px
+		font-size: 12px
+		text-transform: uppercase
+		color: $DS
+		font-style: normal
+		font-weight: bold
+		.row
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			flex-wrap: nowrap
+			justify-content: space-between
+			align-items: center
+			.name
+								
+			.control
+				display: -webkit-flex
+				display: -moz-flex
+				display: -ms-flex
+				display: -o-flex
+				display: flex
+				flex-wrap: nowrap
+				padding: 7px
+				.val
+					width: 30px
+					height: 30px
+					border: 1px solid $DS25
+					border-radius: 50%
+					display: -webkit-flex
+					display: -moz-flex
+					display: -ms-flex
+					display: -o-flex
+					display: flex
+					justify-content: center
+					align-items: center
+					box-sizing: border-box
+					&:nth-child(2)
+						border: none
+				.minus,.plus
+					font-size: 18
+					font-style: normal
+					font-weight: normal
+					color: $DS50
+					cursor: pointer
+				.inactive
+					opacity: 0.5
+				.number	
+		.row.submit
+			padding: 8px 7px 8px 0px 
+			.clean
+				color: $DS50
+				cursor: pointer
+			.apply
+				color: $purple
+				cursor: pointer
+				
