@@ -1,19 +1,21 @@
 .search-block
 	h1 Найдем номера под ваши пожелания
-	
-	.date-wrapper
-		.date-arrival
-			h3 прибытие
-			.date
-				input( type='date')
-				i.material-icons expand_more
-			
-		.date-depart
-			h3 выезд
-			.date
-				input( type='date')
-				i.material-icons expand_more
+	.datepicker-wrapper
+		.datepicker
+			.date-arrival
+				h3 прибытие
+				.date
+					input( type='date')
+					i.material-icons expand_more
+				
+			.date-depart
+				h3 выезд
+				.date
+					input( type='date')
+					i.material-icons expand_more
 	.dropdown-wrapper
 		h3 гости
-		+guest() 
+		+guest()
+	.button-wrapper
+		+arrowbutton("подобрать номер")
 
