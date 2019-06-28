@@ -1,18 +1,34 @@
 .search-block
 	h1 Найдем номера под ваши пожелания
 	.datepicker-wrapper
-		.datepicker
+		.datepicker-inner
 			.date-arrival
 				h3 прибытие
 				.date
 					input( type='date')
 					i.material-icons expand_more
-				
 			.date-depart
 				h3 выезд
 				.date
 					input( type='date')
 					i.material-icons expand_more
+			.datepicker
+				.nav
+					i.material-icons arrow_back
+					.month
+					i.material-icons arrow_forward
+				.week
+					each day in ['Пн','Вт','Ср','Чт','Пт','Сб','Вс']
+						.day= day
+				-var n=0
+				.calendar
+					while n<35
+						.number= n++
+				.submit
+					.clean очистить
+					.apply применить
+					
+
 	.dropdown-wrapper
 		h3 гости
 		+guest()

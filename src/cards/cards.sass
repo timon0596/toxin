@@ -18,7 +18,7 @@
 	flex-direction: column
 	justify-content: space-between
 
-	.datepicker
+	.datepicker-inner
 		display: -webkit-flex
 		display: -moz-flex
 		display: -ms-flex
@@ -26,6 +26,7 @@
 		display: flex
 		justify-content: space-between
 		width: 320px
+		position: relative
 		.date
 			width: 150px
 			height: 44px
@@ -59,6 +60,58 @@
 				line-height: 18px
 				color: $DS75
 				padding-left: 15px
+		.datepicker
+			position: absolute
+			left: 0
+			top: 65px
+			width: 320px
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			flex-wrap: wrap
+			flex-direction: column
+			justify-content: center
+			background: #FFFFFF
+			border: 1px solid rgba(31, 32, 65, 0.25)
+			box-sizing: border-box
+			box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05)
+			border-radius: 4px
+			z-index: 2
+			.nav
+				display: -webkit-flex
+				display: -moz-flex
+				display: -ms-flex
+				display: -o-flex
+				display: flex
+				justify-content: space-between
+			.week
+				display: -webkit-flex
+				display: -moz-flex
+				display: -ms-flex
+				display: -o-flex
+				display: flex
+				justify-content: space-between
+			.calendar
+				display: -webkit-flex
+				display: -moz-flex
+				display: -ms-flex
+				display: -o-flex
+				display: flex
+				flex-wrap: wrap
+				justify-content: center
+				.number
+					display: -webkit-flex
+					display: -moz-flex
+					display: -ms-flex
+					display: -o-flex
+					display: flex
+					width: 40px
+					height: 40px
+					justify-content: center
+					align-items: center
+
 //guest
 .dropdown-wrapper
 	z-index: 1
@@ -170,22 +223,22 @@
 				.inactive
 					opacity: 0.5
 				.number	
-		.submit
-			padding: 8px 7px 8px 0px 
-			display: -webkit-flex
-			display: -moz-flex
-			display: -ms-flex
-			display: -o-flex
-			display: flex
-			flex-wrap: nowrap
-			justify-content: space-between
-			align-items: center
-			.clean
-				color: $DS50
-				cursor: pointer
-			.apply
-				color: $purple
-				cursor: pointer
+.submit
+	padding: 8px 7px 8px 0px 
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	flex-wrap: nowrap
+	justify-content: space-between
+	align-items: center
+	.clean
+		color: $DS50
+		cursor: pointer
+	.apply
+		color: $purple
+		cursor: pointer
 //buttons
 .button
 	display: -webkit-flex
@@ -206,6 +259,7 @@
 	text-transform: uppercase
 	color: #fff
 	box-sizing: border-box
+	cursor: pointer
 	&:active
 		opacity: 0.5
 .arrowbutton
