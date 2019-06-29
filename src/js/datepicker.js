@@ -3,32 +3,43 @@ let months=["Январь","Февраль","Март","Апрель","Май","
 
 
 
-let calendar=$(".calendar .number")
+
 
 function buildCalendar(year,month){
-	date=new Date(year,month)
-	let firstday=new Date(year,month).getDay()
-	let dinm=32-new Date(year,month,32).getDate()
-		console.log(dinm)
-if(firstday==0)firstday=6
-for(let i=firstday-2,j=32-new Date(year,month-1,32).getDate();i>=0;i--){
-	calendar[i].innerHTML=j;j--
-	}	
-for(let i=firstday-1,j=1;j<=dinm;i++){
-	calendar[i].innerHTML=j;j++
+		date=new Date(year,month)
+		let firstday=new Date(year,month).getDay()
+		let dinm=32-new Date(year,month,32).getDate()
+		if(firstday==0){firstday=7}
+		for(let i=1;i<=dinm;i++){
+		$(".calendar").append("<div class='number'></div>")			
+		$(".calendar .number")[i-1].innerHTML=i			
+		}
+		for(let i=0;i<firstday-1;i++){
+			$(".calendar").prepend("<div class='number prevMonth'></div>")
 
-	}
-for(let i=dinm+firstday-1,j=1;i<calendar.length;i++){
-	calendar[i].innerHTML=j;j++
+		}
+		if(month==0)month=12
+		let j=32-new Date(year,month-1,32).getDate()
+		for(let i=firstday-2;i>=0;i--){
+			$(".calendar .prevMonth")[i].innerHTML=j
+			j--
+			
+		}
 
+
+
+
+
+		$(".month").html(months[month] + " " + year)
 	
 }
-$(".month").html(months[month])
 
-}
+
+
 buildCalendar(date.getFullYear(),date.getMonth())
+
 $(".datepicker .next").click(function(){
+	$(".calendar").empty()
 	buildCalendar(date.getFullYear(),date.getMonth()+1)
 })
-console.log($(".datepicker .next"))
 
