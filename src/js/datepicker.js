@@ -6,6 +6,10 @@ let months=["Январь","Февраль","Март","Апрель","Май","
 
 
 function buildCalendar(year,month){
+		if(month==12){
+			month=0
+			year++
+		}
 		date=new Date(year,month)
 		let firstday=new Date(year,month).getDay()
 		let dinm=32-new Date(year,month,32).getDate()
@@ -22,13 +26,13 @@ function buildCalendar(year,month){
 		let j=32-new Date(year,month-1,32).getDate()
 		for(let i=firstday-2;i>=0;i--){
 			$(".calendar .prevMonth")[i].innerHTML=j
-			j--
-			
+			j--			
 		}
+		if(month==12)month=0
 
 
 
-
+		console.log(month)
 
 		$(".month").html(months[month] + " " + year)
 	
