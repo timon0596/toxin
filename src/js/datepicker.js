@@ -10,6 +10,10 @@ function buildCalendar(year,month){
 			month=0
 			year++
 		}
+		if(month==-1){
+			month=11
+			year--
+		}
 		date=new Date(year,month)
 		let firstday=new Date(year,month).getDay()
 		let dinm=32-new Date(year,month,32).getDate()
@@ -58,5 +62,9 @@ buildCalendar(date.getFullYear(),date.getMonth())
 $(".datepicker .next").click(function(){
 	$(".calendar").empty()
 	buildCalendar(date.getFullYear(),date.getMonth()+1)
+})
+$(".datepicker .prev").click(function(){
+	$(".calendar").empty()
+	buildCalendar(date.getFullYear(),date.getMonth()-1)
 })
 
