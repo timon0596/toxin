@@ -20,7 +20,6 @@ function buildCalendar(year,month){
 		}
 		for(let i=0;i<firstday-1;i++){
 			$(".calendar").prepend("<div class='number prevMonth'></div>")
-
 		}
 		if(month==0)month=12
 		let j=32-new Date(year,month-1,32).getDate()
@@ -29,10 +28,24 @@ function buildCalendar(year,month){
 			j--			
 		}
 		if(month==12)month=0
+		let lngt=$(".calendar .number").length
+		for(let i=0;i<35-lngt;i++){
+			$(".calendar").append("<div class='number nextMonth'></div>")
+		}
+		$(".calendar .nextMonth").each(function(i){
+			$(this).html(i+1)
+		})
+		if($(".calendar .number").length>35){
+			lngt=$(".calendar .number").length
+			for(let i=0;i<42-lngt;i++){
+				$(".calendar").append("<div class='number nextMonth'></div>")		
+			}
+			$(".calendar .nextMonth").each(function(i){
+				$(this).html(i+1)
+			})
+		}
 
-
-
-		console.log(month)
+		
 
 		$(".month").html(months[month] + " " + year)
 	
