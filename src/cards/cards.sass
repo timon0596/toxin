@@ -79,6 +79,7 @@
 			box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05)
 			border-radius: 4px
 			z-index: 2
+			padding: 20px
 			.nav
 				display: -webkit-flex
 				display: -moz-flex
@@ -86,6 +87,18 @@
 				display: -o-flex
 				display: flex
 				justify-content: space-between
+				height: 24px
+				margin-bottom: 30px
+				.prev,.next
+					font-size: 24px
+					color: $purple	
+				.month
+					font-family: quicksand,montserrat
+					font-style: normal
+					font-weight: bold
+					font-size: 19px
+					line-height: 24px
+					color: $DS
 			.week
 				display: -webkit-flex
 				display: -moz-flex
@@ -103,6 +116,12 @@
 					display: flex
 					justify-content: center
 					align-items: center
+					font-family: montserrat
+					font-style: normal
+					font-weight: bold
+					font-size: 12px
+					line-height: 15px
+					color: $purple				
 			.calendar
 				display: -webkit-flex
 				display: -moz-flex
@@ -111,6 +130,8 @@
 				display: flex
 				flex-wrap: wrap
 				justify-content: center
+				height: 200px
+				margin-bottom: 20px
 				.number
 					display: -webkit-flex
 					display: -moz-flex
@@ -121,6 +142,20 @@
 					height: 40px
 					justify-content: center
 					align-items: center
+					font-family: montserrat
+					font-style: normal
+					font-weight: normal
+					font-size: 12px
+					line-height: 15px
+					color: $DS50
+				.prevMonth,.nextMonth
+					color: $DS25
+				.currentDate
+					font-weight: bold
+					color: #fff
+				.currentDate
+					border-radius: 50%
+					background: $GREEN_GRAD
 
 //guest
 .dropdown-wrapper
@@ -249,6 +284,8 @@
 	.apply
 		color: $purple
 		cursor: pointer
+.datepicker-submit
+	padding: 0px
 //buttons
 .button
 	display: -webkit-flex

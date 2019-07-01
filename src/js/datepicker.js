@@ -19,7 +19,7 @@ function buildCalendar(year,month){
 		let dinm=32-new Date(year,month,32).getDate()
 		if(firstday==0){firstday=7}
 		for(let i=1;i<=dinm;i++){
-		$(".calendar").append("<div class='number'></div>")			
+		$(".calendar").append(`<div class='number ${months[month]}'></div>`)			
 		$(".calendar .number")[i-1].innerHTML=i			
 		}
 		for(let i=0;i<firstday-1;i++){
@@ -52,6 +52,13 @@ function buildCalendar(year,month){
 		
 
 		$(".month").html(months[month] + " " + year)
+		$(".calendar .number").each(function(){
+	if($(this).hasClass(months[new Date().getMonth()])){
+		if($(this).html()==new Date().getDate()){
+			$(this).addClass("currentDate")
+		}
+	}
+})
 	
 }
 
@@ -67,4 +74,6 @@ $(".datepicker .prev").click(function(){
 	$(".calendar").empty()
 	buildCalendar(date.getFullYear(),date.getMonth()-1)
 })
+console.log()
+
 
