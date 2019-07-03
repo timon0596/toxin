@@ -60,102 +60,110 @@
 				line-height: 18px
 				color: $DS75
 				padding-left: 15px
-		.datepicker
+		.calendar-wrapper
+			display: none
+			padding: 0
+			margin: 0
 			position: absolute
 			left: 0
 			top: 65px
-			width: 320px
-			display: -webkit-flex
-			display: -moz-flex
-			display: -ms-flex
-			display: -o-flex
-			display: flex
-			flex-wrap: wrap
-			flex-direction: column
-			justify-content: center
-			background: #FFFFFF
-			border: 1px solid rgba(31, 32, 65, 0.25)
-			box-sizing: border-box
-			box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05)
-			border-radius: 4px
 			z-index: 2
-			padding: 20px
-			.nav
-				display: -webkit-flex
-				display: -moz-flex
-				display: -ms-flex
-				display: -o-flex
-				display: flex
-				justify-content: space-between
-				height: 24px
-				margin-bottom: 30px
-				.prev,.next
-					font-size: 24px
-					color: $purple	
-				.month
-					font-family: quicksand,montserrat
-					font-style: normal
-					font-weight: bold
-					font-size: 19px
-					line-height: 24px
-					color: $DS
-			.week
-				display: -webkit-flex
-				display: -moz-flex
-				display: -ms-flex
-				display: -o-flex
-				display: flex
-				justify-content: center
-				.day
-					width: 40px
-					height: 40px
-					display: -webkit-flex
-					display: -moz-flex
-					display: -ms-flex
-					display: -o-flex
-					display: flex
-					justify-content: center
-					align-items: center
-					font-family: montserrat
-					font-style: normal
-					font-weight: bold
-					font-size: 12px
-					line-height: 15px
-					color: $purple				
 			.calendar
+				
+				width: 320px
 				display: -webkit-flex
 				display: -moz-flex
 				display: -ms-flex
 				display: -o-flex
 				display: flex
 				flex-wrap: wrap
+				flex-direction: column
 				justify-content: center
-				height: 200px
-				margin-bottom: 20px
-				.number
+				background: #FFFFFF
+				border: 1px solid rgba(31, 32, 65, 0.25)
+				box-sizing: border-box
+				box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05)
+				border-radius: 4px
+				
+				padding: 20px
+				.nav
 					display: -webkit-flex
 					display: -moz-flex
 					display: -ms-flex
 					display: -o-flex
 					display: flex
-					width: 40px
-					height: 40px
+					justify-content: space-between
+					height: 24px
+					margin-bottom: 30px
+					.prev,.next
+						font-size: 24px
+						color: $purple
+						cursor: pointer
+	
+					.month
+						font-family: quicksand,montserrat
+						font-style: normal
+						font-weight: bold
+						font-size: 19px
+						line-height: 24px
+						color: $DS
+				.week
+					display: -webkit-flex
+					display: -moz-flex
+					display: -ms-flex
+					display: -o-flex
+					display: flex
 					justify-content: center
-					align-items: center
-					font-family: montserrat
-					font-style: normal
-					font-weight: normal
-					font-size: 12px
-					line-height: 15px
-					color: $DS50
-				.prevMonth,.nextMonth
-					color: $DS25
-				.currentDate
-					font-weight: bold
-					color: #fff
-				.currentDate
-					border-radius: 50%
-					background: $GREEN_GRAD
+					.day
+						width: 40px
+						height: 40px
+						display: -webkit-flex
+						display: -moz-flex
+						display: -ms-flex
+						display: -o-flex
+						display: flex
+						justify-content: center
+						align-items: center
+						font-family: montserrat
+						font-style: normal
+						font-weight: bold
+						font-size: 12px
+						line-height: 15px
+						color: $purple				
+				.calendar-inner
+					display: grid
+					grid-template-columns: repeat(7, 1fr)				
+					margin-bottom: 20px
+					
+					.number
+						display: -webkit-flex
+						display: -moz-flex
+						display: -ms-flex
+						display: -o-flex
+						display: flex
+						width: 40px
+						height: 40px
+						justify-content: center
+						align-items: center
+						font-family: montserrat
+						font-style: normal
+						font-weight: normal
+						font-size: 12px
+						line-height: 15px
+						color: $DS50
+						cursor: pointer
+					.arrival,.depart
+						font-weight: bold
+						color: #fff
+						border-radius: 50%
+						background: $grad
+					.prevMonth,.nextMonth
+						color: $DS25
+					.currentDate
+						font-weight: bold
+						color: #fff
+						border-radius: 50%
+						background: $GREEN_GRAD
 
 //guest
 .dropdown-wrapper

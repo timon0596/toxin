@@ -12,18 +12,19 @@
 				.date
 					input( type='date')
 					i.material-icons expand_more
-			.datepicker
-				.nav
-					i.material-icons.prev arrow_back
-					.month
-					i.material-icons.next arrow_forward
-				.week
-					each day in ['Пн','Вт','Ср','Чт','Пт','Сб','Вс']
-						.day= day
+			.calendar-wrapper
 				.calendar
-				.submit.datepicker-submit
-					.clean очистить
-					.apply применить
+					.nav
+						i.material-icons.prev arrow_back
+						.month
+						i.material-icons.next arrow_forward
+					.week
+						each day in ['Пн','Вт','Ср','Чт','Пт','Сб','Вс']
+							.day= day
+					.calendar-inner
+					.submit.datepicker-submit
+						.clean очистить
+						.apply применить
 					
 
 	.dropdown-wrapper
