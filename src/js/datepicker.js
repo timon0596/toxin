@@ -94,9 +94,28 @@ function buildcalendar(year,month){
 			})
 		}
 	}
+	$(".date-arrival input").change(function(){
+		
+		
+		if($(".month").html().split(" ")[1]==$(".date-arrival input").val().split("-")[0]&&Number(months.indexOf($(".month").html().split(" ")[0])+1)==Number($(".date-arrival input").val().split("-")[1])){	
+
+			$(".calendar .number").each(function(){
+				$(this).removeClass("arrival")
+				if(!$(this).hasClass("nextMonth")&&!$(this).hasClass("prevMonth")){
+					if($(this).html()==$(".date-arrival input").val().split("-")[2]){
+						$(this).addClass("arrival")
+					}
+				}
+			})
+		}
+
+		
+	
+})
 
 	
 }
+
 
 try {
 	buildcalendar(date.getFullYear(),date.getMonth())
