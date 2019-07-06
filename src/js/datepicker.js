@@ -57,46 +57,55 @@ function buildcalendar(year,month){
 
 		$(".month").html(months[month] + " " + year)
 		$(".calendar-inner .number").each(function(){
-	if($(this).hasClass(months[new Date().getMonth()])){
-		if($(this).html()==new Date().getDate()){
-			$(this).addClass("currentDate")
-		}
-	}
+			if($(this).hasClass(months[new Date().getMonth()])){
+				if($(this).html()==new Date().getDate()){
+					$(this).addClass("currentDate")
+				}
+			}
 
-})
+		})
 		
 		$(".calendar .number").each(function(){
 			$(this).click(function(){
-				if($(this).hasClass("nextMonth")||$(this).hasClass("prevMonth")){
+				if($(this).hasClass("nextMonth")||$(this).hasClass("prevMonth")||($(this).hasClass(months[new Date().getMonth()])&&(Number($(this).html())<Number($(".currentDate").html())))){
+					console.log(1)
 					return false
 				}else{
-					
-
-
 					if(CW["arrival"]==true){
 						$(this).parent().find(".arrival").removeClass("arrival")
 						$(this).toggleClass("arrival")
 						CW["arrival-date"]=new Date($(".month").html().split(" ")[1],months.indexOf($(".month").html().split(" ")[0]),$(this).html())
 						CW["arrival-date"]=CW["arrival-date"].toLocaleDateString().split(".")[2]+"-"+CW["arrival-date"].toLocaleDateString().split(".")[1]+"-"+CW["arrival-date"].toLocaleDateString().split(".")[0]
 						$(".date-arrival input").val(CW["arrival-date"])
-						console.log(CW["arrival-date"])
 
-					}
-
-
-
-
-					
+					}				
 					
 				}
-	})
-})
+			})
+		})
+	if($(".date-arrival input").val()){
+		if($(".month").html().split(" ")[1]==$(".date-arrival input").val().split("-")[0]&&months.indexOf($(".month").html().split(" ")[0])+1==$(".date-arrival input").val().split("-")[1]){
+			$(".calendar .number").each(function(){
+				if(!$(this).hasClass("nextMonth")&&!$(this).hasClass("prevMonth")){
+					if($(this).html()==$(".date-arrival input").val().split("-")[2]){
+						$(this).addClass("arrival")
+					}
+				}
+			})
+		}
+	}
+
 	
 }
 
+try {
+	buildcalendar(date.getFullYear(),date.getMonth())
 
+} catch(e) {
+	// statements
+	console.warn("calendar don't exist on this page");
+}
 
-buildcalendar(date.getFullYear(),date.getMonth())
 
 $(".calendar .next").click(function(){
 	$(".calendar-inner").empty()
@@ -133,6 +142,6 @@ $(".date-depart i").click(function(e){
 	}	
 })
 
-console.log(CW["arrival"])
+console.log(CW)
 
 
