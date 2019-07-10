@@ -23,9 +23,18 @@ function buildcalendar(year,month){
 		let dinm=32-new Date(year,month,32).getDate()
 		if(firstday==0){firstday=7}
 		for(let i=1;i<=dinm;i++){
-		$(".calendar-inner").append(`<div class='number ${months[month]}'></div>`)			
-		$(".calendar-inner .number")[i-1].innerHTML=i			
+			$(".calendar-inner").append(`<div class='number'></div>`)			
+			$(".calendar-inner .number")[i-1].innerHTML=i			
 		}
+
+
+
+		$(".calendar .number").each(function(i,el){			
+			el.fullDate= new Date(year,month,i+1).toLocaleDateString()
+		})
+
+
+//previous month + next month dates rendering		
 		for(let i=0;i<firstday-1;i++){
 			$(".calendar-inner").prepend("<div class='number prevMonth'></div>")
 		}
@@ -54,10 +63,10 @@ function buildcalendar(year,month){
 		}
 
 		
-
+//current date
 		$(".month").html(months[month] + " " + year)
-		$(".calendar-inner .number").each(function(){
-			if($(this).hasClass(months[new Date().getMonth()])){
+		$(".calendar-inner .number").each(function(i,el){
+			if(el.fullDate==new Date().toLocaleDateString()){
 				if($(this).html()==new Date().getDate()){
 					$(this).addClass("currentDate")
 				}
@@ -65,53 +74,7 @@ function buildcalendar(year,month){
 
 		})
 		
-		$(".calendar .number").each(function(){
-			$(this).click(function(){
-				if($(this).hasClass("nextMonth")||$(this).hasClass("prevMonth")||($(this).hasClass(months[new Date().getMonth()])&&(Number($(this).html())<Number($(".currentDate").html())))){
-					console.log(1)
-					return false
-				}else{
-					if(CW["arrival"]==true){
-						$(this).parent().find(".arrival").removeClass("arrival")
-						$(this).toggleClass("arrival")
-						CW["arrival-date"]=new Date($(".month").html().split(" ")[1],months.indexOf($(".month").html().split(" ")[0]),$(this).html())
-						CW["arrival-date"]=CW["arrival-date"].toLocaleDateString().split(".")[2]+"-"+CW["arrival-date"].toLocaleDateString().split(".")[1]+"-"+CW["arrival-date"].toLocaleDateString().split(".")[0]
-						$(".date-arrival input").val(CW["arrival-date"])
-
-					}				
-					
-				}
-			})
-		})
-	if($(".date-arrival input").val()){
-		if($(".month").html().split(" ")[1]==$(".date-arrival input").val().split("-")[0]&&months.indexOf($(".month").html().split(" ")[0])+1==$(".date-arrival input").val().split("-")[1]){
-			$(".calendar .number").each(function(){
-				if(!$(this).hasClass("nextMonth")&&!$(this).hasClass("prevMonth")){
-					if($(this).html()==$(".date-arrival input").val().split("-")[2]){
-						$(this).addClass("arrival")
-					}
-				}
-			})
-		}
-	}
-	$(".date-arrival input").change(function(){
 		
-		
-		if($(".month").html().split(" ")[1]==$(".date-arrival input").val().split("-")[0]&&Number(months.indexOf($(".month").html().split(" ")[0])+1)==Number($(".date-arrival input").val().split("-")[1])){	
-
-			$(".calendar .number").each(function(){
-				$(this).removeClass("arrival")
-				if(!$(this).hasClass("nextMonth")&&!$(this).hasClass("prevMonth")){
-					if($(this).html()==$(".date-arrival input").val().split("-")[2]){
-						$(this).addClass("arrival")
-					}
-				}
-			})
-		}
-
-		
-	
-})
 
 	
 }
@@ -161,6 +124,7 @@ $(".date-depart i").click(function(e){
 	}	
 })
 
-console.log(CW)
 
 
+
+console.log(new Date().toLocaleDateString())
