@@ -1,10 +1,63 @@
 let date=new Date()
 let months=["Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"]
-const CW=$(".calendar-wrapper")
-CW["arrival"]=false
-CW["depart"]=false
-CW["arrival-date"]
-CW["depart-date"]
+const CW=$(".calendar")
+
+CW["dates"]={
+	firstDate:{
+		date:undefined,
+		arrival:false
+	},
+	secondDate:{
+		date:undefined,
+		arrival:false
+	}
+}
+//-----------------------------------------------------------------
+function numberSelection(){
+	$(".calendar .number").each(function(i,el){
+		$(this).click(function(){
+			if($(this).hasClass("selected-number")){
+				$(this).removeClass("selected-number")
+				if(el.fullDate==CW.dates.firstDate.date){
+					CW.dates.firstDate.date=undefined
+					CW.dates.firstDate.arrival=false
+				}
+				if(el.fullDate==CW.dates.secondDate.date){
+					CW.dates.secondDate.date=undefined
+					CW.dates.secondDate.arrival=false	
+				}
+
+			}else{
+				if($(".selected-number").length==2)
+					return false
+				if($(".selected-number").length==0)
+					CW.dates.firstDate.date=el.fullDate
+				else if(CW.dates.firstDate.date)
+					CW.dates.secondDate.date=el.fullDate
+				else{
+					CW.dates.firstDate.date=el.fullDate
+				} 
+				$(this).addClass("selected-number")
+				if($(".selected-number").length==2){
+					if(new Date(CW.dates.firstDate.date.split(".")[2],
+						CW.dates.firstDate.date.split(".")[1],
+						CW.dates.firstDate.date.split(".")[0])<
+						new Date(CW.dates.secondDate.date.split(".")[2],
+						CW.dates.secondDate.date.split(".")[1],
+						CW.dates.secondDate.date.split(".")[0])){
+						CW.dates.firstDate.arrival=true
+						CW.dates.secondDate.arrival=false
+					}else{
+						CW.dates.firstDate.arrival=false
+						CW.dates.secondDate.arrival=true
+					}
+				}
+			}
+			console.log(CW["dates"])						
+		})
+	})
+}
+//-----------------------------------------------------------------
 
 
 
@@ -28,7 +81,7 @@ function buildcalendar(year,month){
 		}
 
 
-
+//adding dates to number cells
 		$(".calendar .number").each(function(i,el){			
 			el.fullDate= new Date(year,month,i+1).toLocaleDateString()
 		})
@@ -73,11 +126,17 @@ function buildcalendar(year,month){
 			}
 
 		})
-		
-		
-
-	
+		numberSelection()
 }
+//-----------------------------------------------------------------
+
+
+
+
+
+
+
+
 
 
 try {
@@ -101,27 +160,13 @@ $(".calendar .prev").click(function(){
 
 
 $(".date-arrival i").click(function(e){
-	if(CW["depart"]==false){
-		$(".calendar-wrapper").slideToggle(250)
-	if(CW["arrival"]==false){
-		CW["arrival"]=true
-	}else{
-			CW["arrival"]=false
-		}
-	}
+	$(".calendar-wrapper").slideToggle(250)	
 })
 
 
 
 $(".date-depart i").click(function(e){
-	if(CW["arrival"]==false){
-		$(".calendar-wrapper").slideToggle(250)
-	if(CW["depart"]==false){
-		CW["depart"]=true
-	}else{
-			CW["depart"]=false
-		}
-	}	
+	$(".calendar-wrapper").slideToggle(250)		
 })
 
 
