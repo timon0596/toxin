@@ -17,7 +17,6 @@
 	border-radius: 4px
 	flex-direction: column
 	justify-content: space-between
-
 	.datepicker-inner
 		display: -webkit-flex
 		display: -moz-flex
@@ -68,8 +67,7 @@
 			left: 0
 			top: 65px
 			z-index: 2
-			.calendar
-				
+			.calendar				
 				width: 320px
 				display: -webkit-flex
 				display: -moz-flex
@@ -83,8 +81,7 @@
 				border: 1px solid rgba(31, 32, 65, 0.25)
 				box-sizing: border-box
 				box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05)
-				border-radius: 4px
-				
+				border-radius: 4px				
 				padding: 20px
 				.nav
 					display: -webkit-flex
@@ -98,8 +95,7 @@
 					.prev,.next
 						font-size: 24px
 						color: $purple
-						cursor: pointer
-	
+						cursor: pointer	
 					.month
 						font-family: quicksand,montserrat
 						font-style: normal
@@ -134,37 +130,52 @@
 					display: grid
 					grid-template-columns: repeat(7, 1fr)				
 					margin-bottom: 20px
-					
-					.number
-						display: -webkit-flex
-						display: -moz-flex
-						display: -ms-flex
-						display: -o-flex
-						display: flex
-						width: 40px
-						height: 40px
-						justify-content: center
-						align-items: center
-						font-family: montserrat
-						font-style: normal
-						font-weight: normal
-						font-size: 12px
-						line-height: 15px
-						color: $DS50
-						cursor: pointer
-					
-					.prevMonth,.nextMonth
-						color: $DS25
-					.currentDate
-						font-weight: bold
-						color: #fff
-						border-radius: 50%
-						background: $GREEN_GRAD
-					.selected-number
-						font-weight: bold
-						color: #fff
-						border-radius: 50%
-						background: $grad
+					.date-range-bgr--left-last
+						background: $grad25
+						border-bottom-left-radius: 50%
+						border-top-left-radius: 50%
+							
+					.date-range-bgr--right-last
+						background: $grad25	
+						border-bottom-right-radius: 50%
+						border-top-right-radius: 50%
+							
+					.date-range-bgr						
+						background: $grad25													
+					.number-wrapper
+						.number
+							display: -webkit-flex
+							display: -moz-flex
+							display: -ms-flex
+							display: -o-flex
+							display: flex
+							width: 40px
+							height: 40px
+							justify-content: center
+							align-items: center
+							font-family: montserrat
+							font-style: normal
+							font-weight: normal
+							font-size: 12px
+							line-height: 15px
+							color: $DS50
+							cursor: pointer
+							z-index: 10
+											
+						.prevMonth,.nextMonth
+							color: $DS25
+						.currentDate
+							font-weight: bold
+							color: #fff
+							border-radius: 50%
+							background: $GREEN_GRAD
+						.selected-number
+							
+							font-weight: bold
+							color: #fff
+							border-radius: 50%
+							background: $grad
+						
 
 //guest
 .dropdown-wrapper
@@ -186,7 +197,6 @@
 		display: -o-flex
 		display: flex
 		align-items: center
-
 		&:hover
 			border: 1px solid $DS50
 		&.active
@@ -198,8 +208,7 @@
 			display: -moz-flex
 			display: -ms-flex
 			display: -o-flex
-			display: flex
-			
+			display: flex			
 			align-items: center
 		i
 			position: absolute
@@ -243,8 +252,7 @@
 			flex-wrap: nowrap
 			justify-content: space-between
 			align-items: center
-			.name
-								
+			.name								
 			.control
 				display: -webkit-flex
 				display: -moz-flex
