@@ -10,6 +10,13 @@ CW["dates"]={
 	secondDate:{
 		date:undefined,
 		arrival:false
+	},
+	arrivalDate: function(){
+		for(let i=0;i<Object.keys(CW.dates).length;i++){
+			if(CW.dates[Object.keys(CW.dates)[i]].arrival==true){
+				return CW.dates[Object.keys(CW.dates)[i]].date
+			}
+		}
 	}
 }
 $(".calendar .clean").click(function(){
@@ -26,7 +33,17 @@ function dateRangeBackground(){
 	$(".calendar .number").each(function(i,el){
 		$(this).mouseover(function(){
 			if((CW.dates.firstDate.date==undefined&&CW.dates.secondDate.date)||(CW.dates.firstDate.date&&CW.dates.secondDate.date==undefined)){
+				if(el.fullDate>CW.dates.arrivalDate()){
+					$(".calendar .number").each(function(i,elem){
+						if(elem.fullDate<el.fullDate&&elem.fullDate>CW.dates.arrivalDate()){
+							$(this).parent().addClass("date-range-bgr")
+						}
+						if(elem.fullDate>el.fullDate){
+							$(this).parent().removeClass("date-range-bgr")
+						}
 
+					})
+				}
 			}
 		})
 	})	
@@ -190,6 +207,7 @@ function buildcalendar(year,month){
 		}
 		}
 	})
+	dateRangeBackground()
 
 		
 }
