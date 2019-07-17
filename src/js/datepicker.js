@@ -38,23 +38,52 @@ $(".calendar .clean").click(function(){
 //-----------------------------------------------------------------
 function dateRangeBackground(){
 	$(".calendar .number").each(function(i,el){
-		$(this).mouseover(function(){
-			if((CW.dates.firstDate.date==undefined&&CW.dates.secondDate.date)||(CW.dates.firstDate.date&&CW.dates.secondDate.date==undefined)){
-				if(el.objFullDate>CW.dates.objArrivalDate()||el.fullDate==CW.dates.arrivalDate()){
-					$(".calendar .number").each(function(i,elem){
-						if(elem.objFullDate<=el.objFullDate&&elem.objFullDate>CW.dates.objArrivalDate()){
-							$(this).parent().addClass("date-range-bgr")
-							$(".selected-number").parent().addClass("date-range-bgr--left-last")
-						}
-						if(elem.objFullDate>el.objFullDate||elem.fullDate==CW.dates.arrivalDate()){
-							$(this).parent().removeClass("date-range-bgr date-range-bgr--left-last")							
-						}
-
-					})
-				}
+		$(this).mouseover(function(event){
+			rightDateRange(i,el,event)
+			leftDateRange(i,el,event)
+			if(el.fullDate==CW.dates.arrivalDate()){
+				$(".calendar .number").each(function(i,elem){
+				$(this).parent().removeClass("date-range-bgr--right-last date-range-bgr--left-last date-range-bgr")
+			})
+				
 			}
 		})
 	})	
+}
+//-----------------------------------------------------------------
+function rightDateRange(i,el,event){
+	if((CW.dates.firstDate.date==undefined&&CW.dates.secondDate.date)||(CW.dates.firstDate.date&&CW.dates.secondDate.date==undefined)){
+		if(el.objFullDate>CW.dates.objArrivalDate()){
+			$(".selected-number").parent().removeClass("date-range-bgr--right-last").addClass("date-range-bgr--left-last")
+			$(".calendar .number").each(function(i,elem){
+				if(elem.objFullDate>CW.dates.objArrivalDate()&&(elem.objFullDate<el.objFullDate||elem.fullDate==el.fullDate)){
+					$(this).parent().addClass("date-range-bgr")
+				}
+				else{
+					$(this).parent().removeClass("date-range-bgr")
+				}
+
+			})
+				}
+				
+			}
+}
+//-----------------------------------------------------------------
+function leftDateRange(i,el,event){
+	if((CW.dates.firstDate.date==undefined&&CW.dates.secondDate.date)||(CW.dates.firstDate.date&&CW.dates.secondDate.date==undefined)){
+		if(el.objFullDate<CW.dates.objArrivalDate()){
+			$(".selected-number").parent().removeClass("date-range-bgr--left-last").addClass("date-range-bgr--right-last")
+			$(".calendar .number").each(function(i,elem){
+				if(elem.objFullDate<CW.dates.objArrivalDate()&&(elem.objFullDate>el.objFullDate||elem.fullDate==el.fullDate)){
+					$(this).parent().addClass("date-range-bgr")
+				}
+				else{
+					$(this).parent().removeClass("date-range-bgr")
+				}
+
+			})
+				}
+			}
 }
 //-----------------------------------------------------------------
 function numberSelection(){
