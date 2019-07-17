@@ -362,7 +362,21 @@ $(".date-depart i").click(function(e){
 	$(".calendar-wrapper").slideToggle(250)		
 })
 
-$(".calendar .apply").click(function(){
+$(".calendar .apply").click(function(){	
+	if(CW.dates.arrivalDate()){
+		$(".date-arrival input").val(CW.dates.arrivalDate().split(".")[2]+"-"
+									+CW.dates.arrivalDate().split(".")[1]+"-"
+									+CW.dates.arrivalDate().split(".")[0])
+	}else{
+		$(".date-arrival input").val("")
+	}
+	if(CW.dates.departDate()){
+		$(".date-depart input").val(CW.dates.departDate().split(".")[2]+"-"
+									+CW.dates.departDate().split(".")[1]+"-"
+									+CW.dates.departDate().split(".")[0])
+	}else{
+		$(".date-depart input").val("")
+	}	
 	$(".calendar-wrapper").slideToggle(250)
 })
 
