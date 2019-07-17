@@ -14,10 +14,22 @@ CW["dates"]={
 	objArrivalDate: function(){
 		try {
 			for(let i=0;i<Object.keys(CW.dates).length;i++){
-			if(CW.dates[Object.keys(CW.dates)[i]].arrival==true){
-				return new Date(CW.dates[Object.keys(CW.dates)[i]].date.split(".")[2],CW.dates[Object.keys(CW.dates)[i]].date.split(".")[1]-1,CW.dates[Object.keys(CW.dates)[i]].date.split(".")[0])
+				if(CW.dates[Object.keys(CW.dates)[i]].arrival==true){
+					return new Date(CW.dates[Object.keys(CW.dates)[i]].date.split(".")[2],CW.dates[Object.keys(CW.dates)[i]].date.split(".")[1]-1,CW.dates[Object.keys(CW.dates)[i]].date.split(".")[0])
+				}
 			}
+		} catch(e) {
+			// statements
+			console.warn(e);
 		}
+	},
+	objDepartDate: function(){
+		try {
+			for(let i=0;i<Object.keys(CW.dates).length;i++){
+				if(CW.dates[Object.keys(CW.dates)[i]].arrival==false&&CW.dates[Object.keys(CW.dates)[i]].date){
+					return new Date(CW.dates[Object.keys(CW.dates)[i]].date.split(".")[2],CW.dates[Object.keys(CW.dates)[i]].date.split(".")[1]-1,CW.dates[Object.keys(CW.dates)[i]].date.split(".")[0])
+				}
+			}
 		} catch(e) {
 			// statements
 			console.warn(e);
@@ -26,10 +38,22 @@ CW["dates"]={
 	arrivalDate: function(){
 		try {
 			for(let i=0;i<Object.keys(CW.dates).length;i++){
-			if(CW.dates[Object.keys(CW.dates)[i]].arrival==true){
-				return CW.dates[Object.keys(CW.dates)[i]].date
+				if(CW.dates[Object.keys(CW.dates)[i]].arrival==true){
+					return CW.dates[Object.keys(CW.dates)[i]].date
+				}
 			}
+		} catch(e) {
+			// statements
+			console.warn(e);
 		}
+	},
+	departDate: function(){
+		try {
+			for(let i=0;i<Object.keys(CW.dates).length;i++){
+				if(CW.dates[Object.keys(CW.dates)[i]].arrival==false&&CW.dates[Object.keys(CW.dates)[i]].date){
+					return CW.dates[Object.keys(CW.dates)[i]].date
+				}
+			}
 		} catch(e) {
 			// statements
 			console.warn(e);
@@ -64,6 +88,19 @@ function dateRangeBackground(){
 					$(this).parent().removeClass("date-range-bgr--right-last date-range-bgr--left-last date-range-bgr")
 				})
 			}
+			if(CW.dates.firstDate.date&&CW.dates.secondDate.date){
+				$(".calendar .number").each(function(i,elem){
+					if(elem.fullDate==CW.dates.arrivalDate()){
+						$(this).parent().addClass("date-range-bgr--left-last")
+					}
+					if(elem.fullDate==CW.dates.departDate()){
+						$(this).parent().addClass("date-range-bgr--right-last")
+					}
+					if(elem.objFullDate>CW.dates.objArrivalDate()&&elem.objFullDate<CW.dates.objDepartDate()){
+						$(this).parent().addClass("date-range-bgr")
+					}
+				})
+			}
 		})
 	})	
 }
@@ -74,10 +111,10 @@ function rightDateRange(i,el,event){
 			$(".selected-number").parent().removeClass("date-range-bgr--right-last").addClass("date-range-bgr--left-last")
 			$(".calendar .number").each(function(i,elem){
 				if(elem.objFullDate>CW.dates.objArrivalDate()&&(elem.objFullDate<el.objFullDate||elem.fullDate==el.fullDate)){
-					$(this).parent().addClass("date-range-bgr")
+					$(this).parent().removeClass("date-range-bgr--right-last").addClass("date-range-bgr")
 				}
 				else{
-					$(this).parent().removeClass("date-range-bgr")
+					$(this).parent().removeClass("date-range-bgr date-range-bgr--right-last")
 				}
 
 			})
@@ -92,10 +129,10 @@ function leftDateRange(i,el,event){
 			$(".selected-number").parent().removeClass("date-range-bgr--left-last").addClass("date-range-bgr--right-last")
 			$(".calendar .number").each(function(i,elem){
 				if(elem.objFullDate<CW.dates.objArrivalDate()&&(elem.objFullDate>el.objFullDate||elem.fullDate==el.fullDate)){
-					$(this).parent().addClass("date-range-bgr")
+					$(this).parent().removeClass("date-range-bgr--left-last").addClass("date-range-bgr")
 				}
 				else{
-					$(this).parent().removeClass("date-range-bgr")
+					$(this).parent().removeClass("date-range-bgr date-range-bgr--left-last")
 				}
 
 			})
