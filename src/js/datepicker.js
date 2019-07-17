@@ -17,6 +17,15 @@ CW["dates"]={
 				return CW.dates[Object.keys(CW.dates)[i]].date
 			}
 		}
+	},
+	objArrivalDate: function(){
+		for(let i=0;i<Object.keys(CW.dates).length;i++){
+			if(CW.dates[Object.keys(CW.dates)[i]].arrival==true){
+				return new Date(CW.dates[Object.keys(CW.dates)[i]].date.split(".")[2],
+								CW.dates[Object.keys(CW.dates)[i]].date.split(".")[1],
+								CW.dates[Object.keys(CW.dates)[i]].date.split(".")[0])
+			}
+		}
 	}
 }
 $(".calendar .clean").click(function(){
@@ -33,13 +42,14 @@ function dateRangeBackground(){
 	$(".calendar .number").each(function(i,el){
 		$(this).mouseover(function(){
 			if((CW.dates.firstDate.date==undefined&&CW.dates.secondDate.date)||(CW.dates.firstDate.date&&CW.dates.secondDate.date==undefined)){
-				if(el.fullDate>CW.dates.arrivalDate()){
+				if(el.fullDate>=CW.dates.arrivalDate()){
 					$(".calendar .number").each(function(i,elem){
-						if(elem.fullDate<el.fullDate&&elem.fullDate>CW.dates.arrivalDate()){
+						if(elem.fullDate<=el.fullDate&&elem.fullDate>CW.dates.arrivalDate()){
 							$(this).parent().addClass("date-range-bgr")
+							$(".selected-number").parent().addClass("date-range-bgr--left-last")
 						}
-						if(elem.fullDate>el.fullDate){
-							$(this).parent().removeClass("date-range-bgr")
+						if(elem.fullDate>el.fullDate||elem.fullDate==CW.dates.arrivalDate()){
+							$(this).parent().removeClass("date-range-bgr date-range-bgr--left-last")							
 						}
 
 					})
@@ -157,6 +167,7 @@ function buildcalendar(year,month){
 //adding dates to number cells
 		$(".calendar .number").each(function(i,el){			
 			el.fullDate= new Date(year,month,i+1).toLocaleDateString()
+			el.objFullDate=new Date(year,month,i+1)
 		})
 
 
@@ -259,4 +270,4 @@ $(".calendar .apply").click(function(){
 
 
 
-console.log(new Date().toLocaleDateString())
+console.log(new Date(1111,1,1)<new Date(1111,1,2))
