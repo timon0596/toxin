@@ -11,19 +11,32 @@ CW["dates"]={
 		date:undefined,
 		arrival:false
 	},
-	arrivalDate: function(){
-		for(let i=0;i<Object.keys(CW.dates).length;i++){
-			if(CW.dates[Object.keys(CW.dates)[i]].arrival==true){
-				return CW.dates[Object.keys(CW.dates)[i]].date
-			}
-		}
-	},
 	objArrivalDate: function(){
-		for(let i=0;i<Object.keys(CW.dates).length;i++){
+		try {
+			for(let i=0;i<Object.keys(CW.dates).length;i++){
 			if(CW.dates[Object.keys(CW.dates)[i]].arrival==true){
 				return new Date(CW.dates[Object.keys(CW.dates)[i]].date.split(".")[2],CW.dates[Object.keys(CW.dates)[i]].date.split(".")[1]-1,CW.dates[Object.keys(CW.dates)[i]].date.split(".")[0])
 			}
 		}
+		} catch(e) {
+			// statements
+			console.warn(e);
+		}
+	},
+	arrivalDate: function(){
+		try {
+			for(let i=0;i<Object.keys(CW.dates).length;i++){
+			if(CW.dates[Object.keys(CW.dates)[i]].arrival==true){
+				return CW.dates[Object.keys(CW.dates)[i]].date
+			}
+		}
+		} catch(e) {
+			// statements
+			console.warn(e);
+		}
+	},
+	currentDate: function(){
+		return new Date()
 	}
 }
 $(".calendar .clean").click(function(){
@@ -43,9 +56,13 @@ function dateRangeBackground(){
 			leftDateRange(i,el,event)
 			if(el.fullDate==CW.dates.arrivalDate()){
 				$(".calendar .number").each(function(i,elem){
-				$(this).parent().removeClass("date-range-bgr--right-last date-range-bgr--left-last date-range-bgr")
-			})
-				
+					$(this).parent().removeClass("date-range-bgr--right-last date-range-bgr--left-last date-range-bgr")
+				})				
+			}
+			if(CW.dates.firstDate.date==undefined&&CW.dates.secondDate.date==undefined){
+				$(".calendar .number").each(function(i,elem){
+					$(this).parent().removeClass("date-range-bgr--right-last date-range-bgr--left-last date-range-bgr")
+				})
 			}
 		})
 	})	
@@ -118,10 +135,17 @@ function numberSelection(){
 
 			}else{
 				let flag=false
+				
+				if(CW.dates.currentDate()>el.objFullDate){
+						flag=true
+					}
 				$(".currentDate").each(function(i,elem){
-					if(elem.objFullDate>el.objFullDate)
-					flag=true
+					if(elem.fullDate==el.fullDate){
+						flag=false
+					}
 				})
+
+				
 				if((CW.dates.firstDate.date&&CW.dates.secondDate.date)||flag)
 					return false
 				if(CW.dates.firstDate.date==undefined&&CW.dates.secondDate.date==undefined)
