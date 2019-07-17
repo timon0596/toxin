@@ -21,9 +21,7 @@ CW["dates"]={
 	objArrivalDate: function(){
 		for(let i=0;i<Object.keys(CW.dates).length;i++){
 			if(CW.dates[Object.keys(CW.dates)[i]].arrival==true){
-				return new Date(CW.dates[Object.keys(CW.dates)[i]].date.split(".")[2],
-								CW.dates[Object.keys(CW.dates)[i]].date.split(".")[1],
-								CW.dates[Object.keys(CW.dates)[i]].date.split(".")[0])
+				return new Date(CW.dates[Object.keys(CW.dates)[i]].date.split(".")[2],CW.dates[Object.keys(CW.dates)[i]].date.split(".")[1]-1,CW.dates[Object.keys(CW.dates)[i]].date.split(".")[0])
 			}
 		}
 	}
@@ -42,13 +40,13 @@ function dateRangeBackground(){
 	$(".calendar .number").each(function(i,el){
 		$(this).mouseover(function(){
 			if((CW.dates.firstDate.date==undefined&&CW.dates.secondDate.date)||(CW.dates.firstDate.date&&CW.dates.secondDate.date==undefined)){
-				if(el.fullDate>=CW.dates.arrivalDate()){
+				if(el.objFullDate>CW.dates.objArrivalDate()||el.fullDate==CW.dates.arrivalDate()){
 					$(".calendar .number").each(function(i,elem){
-						if(elem.fullDate<=el.fullDate&&elem.fullDate>CW.dates.arrivalDate()){
+						if(elem.objFullDate<=el.objFullDate&&elem.objFullDate>CW.dates.objArrivalDate()){
 							$(this).parent().addClass("date-range-bgr")
 							$(".selected-number").parent().addClass("date-range-bgr--left-last")
 						}
-						if(elem.fullDate>el.fullDate||elem.fullDate==CW.dates.arrivalDate()){
+						if(elem.objFullDate>el.objFullDate||elem.fullDate==CW.dates.arrivalDate()){
 							$(this).parent().removeClass("date-range-bgr date-range-bgr--left-last")							
 						}
 
@@ -62,6 +60,8 @@ function dateRangeBackground(){
 function numberSelection(){
 	$(".calendar .number").each(function(i,el){
 		$(this).click(function(){
+		try {
+								
 			if($(this).hasClass("selected-number")){
 				$(this).removeClass("selected-number")
 				if(el.fullDate==CW.dates.firstDate.date){
@@ -88,7 +88,12 @@ function numberSelection(){
 				}
 
 			}else{
-				if(CW.dates.firstDate.date&&CW.dates.secondDate.date)
+				let flag=false
+				$(".currentDate").each(function(i,elem){
+					if(elem.objFullDate>el.objFullDate)
+					flag=true
+				})
+				if((CW.dates.firstDate.date&&CW.dates.secondDate.date)||flag)
 					return false
 				if(CW.dates.firstDate.date==undefined&&CW.dates.secondDate.date==undefined)
 					CW.dates.firstDate.date=el.fullDate
@@ -136,7 +141,11 @@ function numberSelection(){
 						+CW.dates.secondDate.date.split(".")[1]+"-"
 						+CW.dates.secondDate.date.split(".")[0])
 				}
-			}					
+			}
+							} catch(e) {
+								// statements
+								console.log(e);
+							}					
 		})
 	})
 }
