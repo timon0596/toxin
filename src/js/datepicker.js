@@ -209,7 +209,7 @@ function numberSelection(){
 					}
 				}
 			}
-			console.log(CW["dates"])
+			
 			if(CW.dates.firstDate.date){
 				if(CW.dates.firstDate.arrival==true)
 					$(".date-arrival input").val(CW.dates.firstDate.date.split(".")[2]+"-"
@@ -383,4 +383,4 @@ $(".calendar .apply").click(function(){
 
 
 
-console.log(new Date(1111,1,1)<new Date(1111,1,2))
+

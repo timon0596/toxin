@@ -8,5 +8,7 @@ import "./js/ckbox.js"
 import "./js/ckboxButtons.js"
 import "./js/like.js"
 import "./js/datepicker.js"
+import "./js/air-datepicker.js"
+import "./air-datepicker.css"
 
 console.log('hello world');

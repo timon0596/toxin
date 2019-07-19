@@ -1,0 +1,34 @@
+.block.lux-block
+	.room-info
+		.number № 888
+			span люкс
+		.day-cost 9 900₽
+			span в сутки
+	.arrival-depart
+		h3 прибытие
+		h3 выезд
+		input(type="text" class="arrival")
+		input(type="text" class="depart")
+	.guest
+		.dropdown-wrapper
+			h3 гости
+			+guest()
+	.cost-info
+		.row.price
+			.cost-mult-days x
+			.sum ₽
+		.row.services
+			.fee Сбор за услуги: скидка 2 179₽
+				.ellipse i
+			.sum 0₽
+		.row.additional-services
+			.fee Сбор за дополнительные услуги
+				.ellipse i
+			.sum 300₽
+	.total-sum 
+		h2 Итого
+		.underline
+		.sum ₽
+	.reserv
+		.button-wrapper
+			+arrowbutton("забронировать")
