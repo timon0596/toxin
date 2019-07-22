@@ -353,13 +353,13 @@ $(".calendar .prev").click(function(){
 
 
 $(".date-arrival i").click(function(e){
-	$(".calendar-wrapper").slideToggle(250)	
+	$(".datepicker-inner .calendar-wrapper").slideToggle(250)	
 })
 
 
 
 $(".date-depart i").click(function(e){
-	$(".calendar-wrapper").slideToggle(250)		
+	$(".datepicker-inner .calendar-wrapper").slideToggle(250)		
 })
 
 $(".calendar .apply").click(function(){	
@@ -377,7 +377,7 @@ $(".calendar .apply").click(function(){
 	}else{
 		$(".date-depart input").val("")
 	}	
-	$(".calendar-wrapper").slideToggle(250)
+	$(".datepicker-inner .calendar-wrapper").slideToggle(250)
 })
 
 
