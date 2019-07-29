@@ -7,8 +7,12 @@
 	.arrival-depart
 		h3 прибытие
 		h3 выезд
-		input(type="text" class="arrival")
-		input(type="text" class="depart")
+		.input-wrapper
+			input(type="text" class="arrival date-dropdown")
+			i.material-icons expand_more
+		.input-wrapper
+			input(type="text" class="depart date-dropdown")
+			i.material-icons expand_more
 		.calendar-wrapper
 	.guest
 		.dropdown-wrapper

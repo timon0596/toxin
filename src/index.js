@@ -29,8 +29,11 @@ let air_dp=$(".arrival-depart .calendar-wrapper").datepicker({
 
 		}
 	}).data('datepicker')
-$(".arrival-depart input").each(function(){
+$(".arrival-depart .input-wrapper").each(function(){
 	$(this).click(function(){
+		
+		
 		$(".arrival-depart .calendar-wrapper").slideToggle(250)
 	})
 })
+
