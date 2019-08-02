@@ -371,26 +371,108 @@ i.material-icons
 		width: 44px
 		height: 44px
 //----------------------block-lux-------------------------
-.arrival-depart
+.lux-block
 	display: grid
-	grid-template-columns: 150px 150px
-	position: relative
-	grid-column-gap: 20px
-	.input-wrapper
+	grid-row-gap: 20px
+	.room-info
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		justify-content: space-between
+		*
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+		.day-cost
+			color: $DS50
+			p
+				font-weight: bold
+
+	.total-sum
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		justify-content: space-between
+		.underline
+			display: block
+			border-bottom: 1px dashed $DS25
+			width: 100%
+			margin: 5px
+	.cost-info
+		display: grid
+		grid-row-gap: 10px
+		.row
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			justify-content: space-between
+			font-family: montserrat
+			font-style: normal
+			font-weight: normal
+			font-size: 14px
+			line-height: 24px
+			.fee-wrapper
+				display: -webkit-flex
+				display: -moz-flex
+				display: -ms-flex
+				display: -o-flex
+				display: flex
+				.fee
+					width: 214px
+				.ellipse
+						display: -webkit-flex
+						display: -moz-flex
+						display: -ms-flex
+						display: -o-flex
+						display: flex
+						justify-content: center
+						align-items: center
+						width: 20px
+						height: 20px
+						border: 1px solid $DS25
+						border-radius: 50%
+						color: $DS25
+						margin-left: 5px
+			.additional-services
+				.fee-wrapper
+					.fee
+						line-height: 18px
+			.sum
+				display: -webkit-flex
+				display: -moz-flex
+				display: -ms-flex
+				display: -o-flex
+				display: flex
+				flex-direction: row-reverse
+					
+	.arrival-depart
+		display: grid
+		grid-template-columns: 150px 150px
 		position: relative
-		input
-			height: 44px
-		i
+		grid-column-gap: 20px
+		.input-wrapper
+			position: relative
+			input
+				height: 44px
+			i
+				position: absolute
+				top: 0px
+				right: 0px
+				
+		.calendar-wrapper
+			display: none
 			position: absolute
-			top: 0px
-			right: 0px
-			
-	.calendar-wrapper
-		display: none
-		position: absolute
-		background: #fff
-		z-index: 10
-		top: calc(100% + 6px)
+			background: #fff
+			z-index: 10
+			top: calc(100% + 6px)
 
 
 					

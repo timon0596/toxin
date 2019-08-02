@@ -1,9 +1,10 @@
 .block.lux-block
 	.room-info
 		.number № 888
-			span люкс
-		.day-cost 9 900₽
-			span в сутки
+			P люкс
+		.day-cost 
+			p 9 900₽
+			| в сутки
 	.arrival-depart
 		h3 прибытие
 		h3 выезд
@@ -23,13 +24,17 @@
 			.cost-mult-days x
 			.sum ₽
 		.row.services
-			.fee Сбор за услуги: скидка 2 179₽
+			.fee-wrapper
+				.fee Сбор за услуги: скидка 2 179₽
 				.ellipse i
 			.sum 0₽
+				
 		.row.additional-services
-			.fee Сбор за дополнительные услуги
+			.fee-wrapper
+				.fee Сбор за дополнительные услуги
 				.ellipse i
 			.sum 300₽
+				
 	.total-sum 
 		h2 Итого
 		.underline
