@@ -10,9 +10,12 @@ import "./js/like.js"
 import "./js/datepicker.js"
 import "./js/air-datepicker.js"
 import "./js/masked_input.min.js"
-import "./air-datepicker.css"
+
 let selectedDates={arrival:undefined,depart:undefined}
 let dayDiff=0
+let cost_mult_days_initial=$(".cost-mult-days").html()
+let cost_mult_days_summary_initial=$(".price .sum").html()
+let total_sum_initial=$(".total-sum .sum").html()
 let air_dp=$(".arrival-depart .calendar-wrapper").datepicker({
 		multipleDates: 2,
 		range: true,
@@ -29,15 +32,18 @@ let air_dp=$(".arrival-depart .calendar-wrapper").datepicker({
 			if(air_dp.selectedDates[1]){
 				$(".arrival-depart .depart").val(air_dp.selectedDates[1].toLocaleDateString())
 				selectedDates.depart=air_dp.selectedDates[1]
+				dayDiff=Math.ceil((selectedDates.depart-selectedDates.arrival)/1000/60/60/24)
+				costPerDay(dayDiff)
 			}else{
 				$(".arrival-depart .depart").val("")
 				selectedDates.depart=undefined
+				dayDiff=0
+				$(".cost-mult-days").html(cost_mult_days_initial)
+				$(".price .sum").html(cost_mult_days_summary_initial)
+				$(".total-sum .sum").html(total_sum_initial)
 			}
-			if(selectedDates.depart){
-				dayDiff=Math.ceil((selectedDates.depart-selectedDates.arrival)/1000/60/60/24)
-				
-			}else{dayDiff=0}
-			console.log(dayDiff)
+			
+			
 
 		}
 	}).data('datepicker')
@@ -52,5 +58,15 @@ $(".arrival-depart .input-wrapper").each(function(){
 $(".arrival-depart .arrival").mask('99.99.9999')
 $(".arrival-depart .depart").mask('99.99.9999')
 //-------------------masked-input--------------------
+function costPerDay(dayDiff){
+	$(".cost-mult-days").html(cost_mult_days_initial)
+	$(".price .sum").html(cost_mult_days_summary_initial)
+	$(".total-sum .sum").html(total_sum_initial)
+	let cost_mult_days_summary=dayDiff*9990
+	console.log($(".cost-mult-days").html())
+	$(".cost-mult-days").html($(".cost-mult-days").html()+dayDiff)
+	$(".price .sum").html(cost_mult_days_summary+$(".price .sum").html())
+	$(".total-sum .sum").html(cost_mult_days_summary+300-2179+$(".total-sum .sum").html())
+}
 
 

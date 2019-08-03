@@ -40,8 +40,7 @@ i.material-icons
 	flex-wrap: wrap
 	width: 380px
 	height: 374px
-	padding: 40px 30px 30px 
-	
+	padding: 40px 30px 30px	
 	flex-direction: column
 	justify-content: space-between
 	.datepicker-inner
@@ -208,7 +207,7 @@ i.material-icons
 .dropdown-wrapper
 	z-index: 1
 	display: grid
-	grid-gap: 3px
+	grid-gap: 5px
 .dropdown-guests
 	width: 320px
 	min-height: 44px
@@ -374,8 +373,14 @@ i.material-icons
 		height: 44px
 //----------------------block-lux-------------------------
 .lux-block
-	display: grid
-	grid-row-gap: 20px
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	height: 511px
 	.room-info
 		display: -webkit-flex
 		display: -moz-flex
@@ -403,28 +408,41 @@ i.material-icons
 					font-size: 24px
 					line-height: 17px
 		.day-cost
+			text-transform: uppercase
+			font-weight: bold
 			color: $DS50
-			
+			font-size: 14px
+			line-height: 18px			
 			span
-				font-weight: bold
 				color: $DS50
-				text-transform: uppercase
-				font-size: 18px
-
-	.total-sum
-		display: -webkit-flex
-		display: -moz-flex
-		display: -ms-flex
-		display: -o-flex
-		display: flex
-		justify-content: space-between
-		.underline
-			display: block
-			border-bottom: 1px dashed $DS25
-			width: 100%
-			margin: 5px
-	.cost-info
+				text-transform: lowercase
+				font-size: 14px
+				line-height: 18px
+				font-weight: normal
+	.arrival-depart
+		display: grid
+		grid-template-columns: 150px 150px
+		position: relative
+		grid-column-gap: 20px
+		grid-row-gap: 5px
 		
+		align-items: center
+		.input-wrapper
+			position: relative
+			input
+				height: 44px
+			i
+				position: absolute
+				top: 0px
+				right: 0px
+				
+		.calendar-wrapper
+			display: none
+			position: absolute
+			background: #fff
+			z-index: 10
+			top: calc(100% + 6px)
+	.cost-info		
 		.row
 			display: -webkit-flex
 			display: -moz-flex
@@ -461,10 +479,11 @@ i.material-icons
 						color: $DS25
 						margin-left: 5px
 						margin-top: 2px
-			.additional-services
-				.fee-wrapper
-					.fee
-						line-height: 18px
+		.additional-services
+			.fee-wrapper
+				.fee
+					display: block
+					line-height: 18px						
 			.sum
 				display: -webkit-flex
 				display: -moz-flex
@@ -472,28 +491,19 @@ i.material-icons
 				display: -o-flex
 				display: flex
 				flex-direction: row-reverse
-					
-	.arrival-depart
+
+	.total-sum
 		display: grid
-		grid-template-columns: 150px 150px
-		position: relative
-		grid-column-gap: 20px
-		grid-row-gap: 3px
-		.input-wrapper
-			position: relative
-			input
-				height: 44px
-			i
-				position: absolute
-				top: 0px
-				right: 0px
-				
-		.calendar-wrapper
-			display: none
-			position: absolute
-			background: #fff
-			z-index: 10
-			top: calc(100% + 6px)
+		grid-template-columns: auto 1fr auto
+		
+		.underline
+			
+			border-bottom: 1px dashed $DS25
+			
+			margin: 5px
+	
+					
+	
 
 
 					
