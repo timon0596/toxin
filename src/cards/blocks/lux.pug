@@ -1,18 +1,20 @@
 .block.lux-block
 	.room-info
-		.number № 888
-			P люкс
+		.number 
+			span.main-span  № 
+				span.inner-span 888 
+			| люкс
 		.day-cost 
-			p 9 900₽
+			span 9 900₽ 
 			| в сутки
 	.arrival-depart
 		h3 прибытие
 		h3 выезд
 		.input-wrapper
-			input(type="text" class="arrival date-dropdown")
+			input(type="text" class="arrival date-dropdown" placeholder="дд.мм.гггг")
 			i.material-icons expand_more
 		.input-wrapper
-			input(type="text" class="depart date-dropdown")
+			input(type="text" class="depart date-dropdown" placeholder="дд.мм.гггг")
 			i.material-icons expand_more
 		.calendar-wrapper
 	.guest
@@ -21,7 +23,7 @@
 			+guest()
 	.cost-info
 		.row.price
-			.cost-mult-days x
+			.cost-mult-days 9990₽ x
 			.sum ₽
 		.row.services
 			.fee-wrapper

@@ -207,6 +207,8 @@ i.material-icons
 //guest----------------------------------------
 .dropdown-wrapper
 	z-index: 1
+	display: grid
+	grid-gap: 3px
 .dropdown-guests
 	width: 320px
 	min-height: 44px
@@ -381,16 +383,33 @@ i.material-icons
 		display: -o-flex
 		display: flex
 		justify-content: space-between
-		*
-			display: -webkit-flex
-			display: -moz-flex
-			display: -ms-flex
-			display: -o-flex
-			display: flex
+		.number
+			font-family: montserrat
+			font-style: normal
+			font-weight: bold
+			font-size: 12px
+			line-height: 15px
+			text-transform: uppercase
+			color: $purple
+			.main-span
+				font-family: quicksand
+				font-style: normal
+				font-weight: bold
+				font-size: 14px
+				line-height: 17px
+				text-transform: none
+				.inner-span
+					font-family: quicksand
+					font-size: 24px
+					line-height: 17px
 		.day-cost
 			color: $DS50
-			p
+			
+			span
 				font-weight: bold
+				color: $DS50
+				text-transform: uppercase
+				font-size: 18px
 
 	.total-sum
 		display: -webkit-flex
@@ -405,8 +424,7 @@ i.material-icons
 			width: 100%
 			margin: 5px
 	.cost-info
-		display: grid
-		grid-row-gap: 10px
+		
 		.row
 			display: -webkit-flex
 			display: -moz-flex
@@ -419,6 +437,7 @@ i.material-icons
 			font-weight: normal
 			font-size: 14px
 			line-height: 24px
+			margin-bottom: 10px
 			.fee-wrapper
 				display: -webkit-flex
 				display: -moz-flex
@@ -441,6 +460,7 @@ i.material-icons
 						border-radius: 50%
 						color: $DS25
 						margin-left: 5px
+						margin-top: 2px
 			.additional-services
 				.fee-wrapper
 					.fee
@@ -458,6 +478,7 @@ i.material-icons
 		grid-template-columns: 150px 150px
 		position: relative
 		grid-column-gap: 20px
+		grid-row-gap: 3px
 		.input-wrapper
 			position: relative
 			input
