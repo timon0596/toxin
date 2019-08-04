@@ -598,6 +598,9 @@
                 this._triggerOnChange()
             }
         },
+        apply: function(){
+            $(this.el).slideUp(250)
+        },
 
         /**
          * Updates datepicker options
@@ -1827,6 +1830,7 @@
         init: function () {
             this._buildBaseHtml();
             this._bindEvents();
+
         },
 
         _bindEvents: function () {

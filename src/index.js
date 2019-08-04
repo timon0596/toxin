@@ -42,15 +42,14 @@ let air_dp=$(".arrival-depart .calendar-wrapper").datepicker({
 				$(".price .sum").html(cost_mult_days_summary_initial)
 				$(".total-sum .sum").html(total_sum_initial)
 			}
-			
-			
-
 		}
 	}).data('datepicker')
+datepickerApplyButton()
+
+
+
 $(".arrival-depart .input-wrapper").each(function(){
-	$(this).click(function(){
-		
-		
+	$(this).click(function(){		
 		$(".arrival-depart .calendar-wrapper").slideToggle(250)
 	})
 })
@@ -67,6 +66,16 @@ function costPerDay(dayDiff){
 	$(".cost-mult-days").html($(".cost-mult-days").html()+dayDiff)
 	$(".price .sum").html(cost_mult_days_summary+$(".price .sum").html())
 	$(".total-sum .sum").html(cost_mult_days_summary+300-2179+$(".total-sum .sum").html())
+}
+
+
+
+function datepickerApplyButton(){	
+    let button = '<span class="datepicker--button apply--button" data-action="apply">применить</span>'
+    $(".datepicker .datepicker--buttons").each(function(){
+    	$(this).append(button)
+    })
+
 }
 
 
