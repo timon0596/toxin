@@ -1,12 +1,11 @@
 .datepicker--cell-day.-other-month-, .datepicker--cell-year.-other-decade-
-  color: #dedede
-
+  color: $DS25
 .datepicker--cell-day.-other-month-:hover, .datepicker--cell-year.-other-decade-:hover
-  color: #c5c5c5
+  color: $DS25
 
 .-disabled-.-focus-
   &.datepicker--cell-day.-other-month-, &.datepicker--cell-year.-other-decade-
-    color: #dedede
+    color: $DS25
 
 .-selected-
   &.datepicker--cell-day.-other-month-, &.datepicker--cell-year.-other-decade-
@@ -51,7 +50,7 @@
   -ms-flex-pack: center
   justify-content: center
 
-  z-index: 1
+  z-index: 2
   &.-focus-
     background: #f0f0f0
   &.-current-
@@ -68,7 +67,7 @@
       background-color: rgba(92, 196, 239, 0.2)
   &.-disabled-
     cursor: default
-    color: #aeaeae
+    color: $DS50
     &.-focus-
       color: #aeaeae
     &.-in-range-
@@ -131,7 +130,7 @@
   margin: 0px
 
 .datepicker--day-name
-  color: #FF9A19
+  color: $purple
   display: -webkit-flex
   display: -ms-flexbox
   display: flex
@@ -146,13 +145,20 @@
   flex: 1
   text-align: center
   text-transform: uppercase
-  font-size: .8em
+  
+  font-family: montserrat
+  font-style: normal
+  font-weight: bold
+  font-size: 12px
+  line-height: 15px
   width: 40px
   height: 40px
 
 .datepicker--cell-day
   width: 40px
   height: 40px
+.datepicker--cell-day.datepicker--cell
+  color: $DS50
 
 .datepicker--cells-months
   height: 170px
@@ -169,14 +175,14 @@
   height: 33.33%
 
 .datepicker--cell-day.-other-month-, .datepicker--cell-year.-other-decade-
-  color: #dedede
+  color: $DS25
 
 .datepicker--cell-day.-other-month-:hover, .datepicker--cell-year.-other-decade-:hover
   color: #c5c5c5
 
 .-disabled-.-focus-
   &.datepicker--cell-day.-other-month-, &.datepicker--cell-year.-other-decade-
-    color: #dedede
+    color: $DS25
 
 .-selected-
   &.datepicker--cell-day.-other-month-, &.datepicker--cell-year.-other-decade-
@@ -435,28 +441,25 @@
   display: -webkit-flex
   display: -ms-flexbox
   display: flex
+  justify-content: space-between
   padding: 20px 0px 20px
     
 
 .datepicker--button
-  color: #4EB5E6
+  color: $DS50
+  font-family: montserrat
+  font-style: normal
+  font-weight: bold
+  font-size: 12px
+  line-height: 15px
   cursor: pointer
   border-radius: 4px
-  -webkit-flex: 1
-  -ms-flex: 1
-  flex: 1
-  display: -webkit-inline-flex
-  display: -ms-inline-flexbox
-  display: inline-flex
-  -webkit-justify-content: center
-  -ms-flex-pack: center
-  justify-content: center
-  -webkit-align-items: center
-  -ms-flex-align: center
-  align-items: center
+  
   &:hover
     color: #4a4a4a
     background: #f0f0f0
+.datepicker--button.apply--button
+  color: $purple
 
 .datepicker--cell-day.-other-month-, .datepicker--cell-year.-other-decade-
   color: #dedede
@@ -683,3 +686,31 @@
 .datepicker--cell-day.-other-month-:empty, .datepicker--cell-year.-other-decade-:empty
   background: none
   border: none
+.datepicker--cell-day.-other-month-
+  color: $DS25
+.datepicker--cell.datepicker--cell-day.-current-
+  border-radius: 50%
+  background: $GREEN_GRAD
+  font-weight: bold
+  color: white
+.datepicker--cell.datepicker--cell-day.-selected-
+  border-radius: 50%
+  background: $grad
+  font-weight: bold
+  color: white
+.datepicker--cell.-selected-.-range-from-.-current-
+  border-radius: 50%
+  background: $grad
+  font-weight: bold
+  
+.datepicker--cell.-selected-:before
+  z-index: -1
+.datepicker--cell.datepicker--cell-day.-other-month-.-in-range-
+  background: $grad25
+.datepicker .datepicker--nav .datepicker--nav-action
+  i
+    font-style: normal
+    font-weight: normal
+    font-size: 24px
+    line-height: 20px
+    color: $purple

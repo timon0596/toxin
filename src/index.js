@@ -62,8 +62,24 @@ function costPerDay(dayDiff){
 	$(".price .sum").html(cost_mult_days_summary_initial)
 	$(".total-sum .sum").html(total_sum_initial)
 	let cost_mult_days_summary=dayDiff*9990
+	let day_word_ending=(function(){
+		let temp
+		if(dayDiff%10==1){
+			temp= "сутки"
+		}
+		if(dayDiff%10>1&&dayDiff%10<5){
+			temp= "сутки"
+		}
+		if(dayDiff>1&&dayDiff<5){
+			temp= "суток"
+		}
+		if(dayDiff%10>=5){
+			temp= "суток"
+		}
+		return temp
+	})()
 	console.log($(".cost-mult-days").html())
-	$(".cost-mult-days").html($(".cost-mult-days").html()+dayDiff)
+	$(".cost-mult-days").html($(".cost-mult-days").html()+" "+dayDiff+" "+day_word_ending)
 	$(".price .sum").html(cost_mult_days_summary+$(".price .sum").html())
 	$(".total-sum .sum").html(cost_mult_days_summary+300-2179+$(".total-sum .sum").html())
 }
