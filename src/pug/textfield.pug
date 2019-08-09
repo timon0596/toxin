@@ -11,3 +11,8 @@ mixin text_input(placeholderText,MaterialIcons,classname,dropdownClass)
 			div(class=""+classname+"_"+dropdownClass+"__wrapper")
 				div(class=""+classname+"_"+dropdownClass)
 
+mixin masked_textfield()
+	.masked_textfield
+		.text_field
+			input(type="text" spellcheck="false" placeholder="дд.мм.гггг")
+

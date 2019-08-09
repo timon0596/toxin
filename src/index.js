@@ -93,5 +93,12 @@ function datepickerApplyButton(){
     })
 
 }
+//-------------------------------masked-textfield-------------------------------------
+$(document).ready(function(){
+	$(".masked_textfield .text_field input").each(function(i,el){
+		$(this).mask("99.99.9999",{placeholder:"дд.мм.гггг"})
+	})
+})
+//-------------------------------masked-textfield-------------------------------------
 
 

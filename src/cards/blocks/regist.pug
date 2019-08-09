@@ -1,0 +1,20 @@
+.block.registration-block
+	h1 Регистрация аккаунта
+	.name
+		+text_input("Имя",null,"name")
+	.surname
+		+text_input("Фамилия",null,"surname")
+	.gender
+		+radiobuttons
+	.birthday
+		h3 дата рождения
+		+masked_textfield
+	.sign-up
+		h3 данные для входа в сервис
+		.sign-up__email
+		.sign-up__password
+		.sign-up__special-offers
+	.payment
+	.sign-in
+		| Уже есть аккаунт на Toxin
+		.sign-in__button
