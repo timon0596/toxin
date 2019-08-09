@@ -1,11 +1,12 @@
 .block.registration-block
 	h1 Регистрация аккаунта
-	.name
-		+text_input("Имя",null,"name")
-	.surname
-		+text_input("Фамилия",null,"surname")
-	.gender
-		+radiobuttons
+	.person
+		.name
+			+text_input("Имя",null,"name")
+		.surname
+			+text_input("Фамилия",null,"surname")
+		.gender
+			+radiobuttons
 	.birthday
 		h3 дата рождения
 		+masked_textfield
