@@ -12,9 +12,14 @@
 	.sign-up
 		h3 данные для входа в сервис
 		.sign-up__email
+			+text_input("Email",null,"email")
 		.sign-up__password
+			+text_input("Пароль",null,"password")
 		.sign-up__special-offers
+			+toggle
 	.payment
+		+arrowbutton("перейти к оплате")
 	.sign-in
 		| Уже есть аккаунт на Toxin
 		.sign-in__button
+			+borderbutton("войти")
