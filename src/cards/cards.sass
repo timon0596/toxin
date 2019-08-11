@@ -5,7 +5,8 @@
 	margin-top: 30px
 	&_inner
 		display: grid
-		grid-gap: 20px
+		grid-gap: 40px
+		grid-auto-rows: min-content
 	
 .block
 	background: #FFFFFF
@@ -340,7 +341,7 @@ i.material-icons
 		cursor: pointer
 .datepicker-submit
 	padding: 0px
-//buttons
+//buttons-------------------------------------------
 .button
 	display: -webkit-flex
 	display: -moz-flex
@@ -390,6 +391,8 @@ i.material-icons
 	position: relative
 	margin: -1px
 	z-index: 0
+	&:active
+		opacity: 0.5
 	&:before
 		content: ""
 		position: absolute
@@ -412,14 +415,10 @@ i.material-icons
 
 //----------------------block-lux-------------------------
 .lux-block
-	display: -webkit-flex
-	display: -moz-flex
-	display: -ms-flex
-	display: -o-flex
-	display: flex
-	flex-direction: column
-	justify-content: space-between
+	display: grid
+	grid-gap: 20px
 	height: 511px
+
 	.room-info
 		display: -webkit-flex
 		display: -moz-flex
@@ -447,11 +446,16 @@ i.material-icons
 					font-size: 24px
 					line-height: 17px
 		.day-cost
-			text-transform: uppercase
+			font-family: montserrat
+			font-style: normal
 			font-weight: bold
-			color: $DS50
 			font-size: 14px
-			line-height: 18px			
+			line-height: 18px
+			// text-transform: uppercase
+			// font-weight: bold
+			color: $DS50
+			// font-size: 14px
+			// line-height: 18px			
 			span
 				color: $DS50
 				text-transform: lowercase
@@ -481,7 +485,10 @@ i.material-icons
 			background: #fff
 			z-index: 10
 			top: calc(100% + 6px)
-	.cost-info		
+	.cost-info
+		display: grid
+		grid-gap: 10px
+		margin-bottom: 10px
 		.row
 			display: -webkit-flex
 			display: -moz-flex
@@ -494,7 +501,6 @@ i.material-icons
 			font-weight: normal
 			font-size: 14px
 			line-height: 24px
-			margin-bottom: 10px
 			.fee-wrapper
 				display: -webkit-flex
 				display: -moz-flex
@@ -558,7 +564,21 @@ i.material-icons
 		justify-content: space-between
 		align-items: center
 		margin-top: 10px
-		.sign-in__button
+.sign-in--block
+	display: grid
+	grid-gap: 20px
+	.sign-in
+		display: grid
+		grid-gap: 10px
+	.create-account
+		margin-top: 10px
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		justify-content: space-between
+		align-items: center
 			
 
 
