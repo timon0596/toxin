@@ -1,5 +1,9 @@
 import "jquery"
-import "slick-carousel"
+import "popper.js"
+import "bootstrap/js/dist/carousel.js"
+// import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap/scss/bootstrap.scss"
+
 import "./index.pug"
 import "./cards/cards.pug"
 import "./style.sass"
@@ -11,7 +15,7 @@ import "./js/like.js"
 import "./js/datepicker.js"
 import "./js/air-datepicker.js"
 import "./js/masked_input.min.js"
-import "./slick.css"
+
 const png = require.context('./img', true, /\.png$/)
 
 
@@ -20,8 +24,15 @@ for(let i=1;i<5;i++){
 	let img=document.createElement("img")
 	let path="./img"+png.keys()[i-1].slice(1)
 	img.src=path
-	$(".room-preview--slider").append("<div class='room-preview--slide'>"+"</div>")
-	$(".room-preview--slider .room-preview--slide")[i-1].append(img)
+	img.class="d-block.w-100"
+	$("#carouselExampleIndicators ol.carousel-indicators").append(`<li data-target='#carouselExampleIndicators' data-slide-to=${i-1}></li>`)
+	$("#carouselExampleIndicators .carousel-inner").append("<div class='carousel-item'>"+"</div>")
+	if(i-1==0){
+		$($("#carouselExampleIndicators .carousel-inner .carousel-item")[i-1]).addClass("active")
+		$($("#carouselExampleIndicators ol.carousel-indicators li")[i-1]).addClass("active")
+	}
+	$("#carouselExampleIndicators .carousel-inner .carousel-item")[i-1].append(img)
+
 }
 let selectedDates={arrival:undefined,depart:undefined}
 let dayDiff=0
@@ -113,13 +124,13 @@ $(document).ready(function(){
 })
 //-------------------------------masked-textfield-------------------------------------
 //-------------------------------slick-slider-initialization-------------------------------------
-$(document).ready(function(){
-	$(".room-preview--slider").slick({
-		dots: true,
-		slidesToShow: 1,
-  		adaptiveHeight: true,
-  		infinite: true
-	})
-})
+// $(document).ready(function(){
+// 	$(".room-preview--slider").slick({
+// 		dots: true,
+// 		slidesToShow: 1,
+//   		adaptiveHeight: true,
+//   		infinite: true
+// 	})
+// })
 
 
