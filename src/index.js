@@ -34,6 +34,13 @@ for(let i=1;i<5;i++){
 	$("#carouselExampleIndicators .carousel-inner .carousel-item")[i-1].append(img)
 
 }
+$(".carousel-control-prev .carousel-control-prev-icon").append("<i class='material-icons'>expand_more</i>")
+$(".carousel-control-next .carousel-control-next-icon").append("<i class='material-icons'>expand_more</i>")
+
+
+
+
+
 let selectedDates={arrival:undefined,depart:undefined}
 let dayDiff=0
 let cost_mult_days_initial=$(".cost-mult-days").html()

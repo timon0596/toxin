@@ -1,4 +1,5 @@
 /node_modules/*
-!/node_modules/bootstrap/scss/bootstrap.scss
+!/node_modules/bootstrap/scss/_carousel.scss
 package-lock.json
 /dist/
+!.gitignore
