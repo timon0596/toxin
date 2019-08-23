@@ -19,7 +19,7 @@ import "./js/masked_input.min.js"
 const png = require.context('./img', true, /\.png$/)
 
 
-console.log(png.keys()[0].slice(1))
+console.log(png)
 for(let i=1;i<5;i++){
 	let img=document.createElement("img")
 	let path="./img"+png.keys()[i-1].slice(1)
