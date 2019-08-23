@@ -2,6 +2,7 @@ const path = require('path');
 const HWP=require('html-webpack-plugin');
 const webpack = require('webpack');
 const HtmlWebpackPugPlugin = require('html-webpack-pug-plugin');
+// const autoprefixer = require('autoprefixer');
 module.exports={
 	entry: './src/index.js',
 	output: {
@@ -16,19 +17,48 @@ module.exports={
 		},{
 			test:/\.js$/,
 			loader: 'babel-loader',
-			exclude:'/node_modules/'
-		},{
-			test:/\.sass$/,
-			use:[
-				"style-loader",
-				"css-loader",
-				"sass-loader"
-				]
-		},{
+			exclude:'/node_modules/'},
+			//{
+		// 	test:/\.(sass)$/,
+		// 	use:[
+		// 		"style-loader",
+		// 		"css-loader",
+		// 		{
+  //                   loader: 'postcss-loader',
+  //                   options: {
+  //                       plugins: [
+  //                           autoprefixer()
+  //                       ]
+  //                   }
+  //               },
+		// 		"sass-loader"
+		// 		]
+		// },
+{
+    test: /\.(scss|sass)$/,
+    use: [{
+      loader: 'style-loader', // inject CSS to page
+    }, {
+      loader: 'css-loader', // translates CSS into CommonJS modules
+    }, {
+      loader: 'postcss-loader', // Run post css actions
+      options: {
+        plugins: function () { // post css plugins, can be exported to postcss.config.js
+          return [
+            require('precss'),
+            require('autoprefixer')
+          ];
+        }
+      }
+    }, {
+      loader: 'sass-loader' // compiles SASS to CSS
+    }]
+  },
+  {
 			test:/\.css$/,
 			use:[
 				"style-loader",
-				"css-loader",
+				"css-loader"
 				]
 		},
 		{
@@ -37,13 +67,15 @@ module.exports={
          use: [
          	'file-loader'
          ]         
-       },
-        {
-          test: /\.(png|svg|jpg|gif)$/,
-          exclude: '/node_modules/',
-          loader: 'file-loader',
-          include: path.join(__dirname,'src')
-        }]
+       },{
+		  test: /\.(jpg|png)$/,
+		  use:[ {
+		    loader: "file-loader",
+		    options: {
+		      name: "[name].[ext]",
+		      outputPath: './img'
+		  }}],
+  }]
 	},
 	plugins:[
 		new HWP({
