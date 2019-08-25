@@ -3,7 +3,6 @@ import "popper.js"
 import "bootstrap/js/dist/carousel.js"
 // import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap/scss/bootstrap.scss"
-
 import "./index.pug"
 import "./cards/cards.pug"
 import "./style.sass"

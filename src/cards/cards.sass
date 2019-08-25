@@ -1,4 +1,3 @@
-@import './sass/room-preview'
 .cards-wrapper
 	display: grid
 	grid-template-columns: 1fr 1fr 1fr
@@ -18,7 +17,6 @@
 	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2)
 	border-radius: 4px
 	padding: 40px 30px 30px
-	width: 380px
 .date-dropdown
 	width: 150px
 	height: 44px
@@ -418,61 +416,59 @@ i.material-icons
 
 
 //----------------------block-lux-------------------------
+.room-info
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	justify-content: space-between
+	.number
+		font-family: montserrat
+		font-style: normal
+		font-weight: bold
+		font-size: 12px
+		line-height: 15px
+		text-transform: uppercase
+		color: $purple
+		.main-span
+			font-family: quicksand
+			font-style: normal
+			font-weight: bold
+			font-size: 14px
+			line-height: 17px
+			text-transform: none
+			.inner-span
+				font-family: quicksand
+				font-size: 24px
+				line-height: 17px
+	.day-cost
+		font-family: montserrat
+		font-style: normal
+		font-weight: bold
+		font-size: 14px
+		line-height: 18px
+		// text-transform: uppercase
+		// font-weight: bold
+		color: $DS50
+		// font-size: 14px
+		// line-height: 18px			
+		span
+			color: $DS50
+			text-transform: lowercase
+			font-size: 14px
+			line-height: 18px
+			font-weight: normal
 .lux-block
 	display: grid
 	grid-gap: 20px
 	height: 511px
-
-	.room-info
-		display: -webkit-flex
-		display: -moz-flex
-		display: -ms-flex
-		display: -o-flex
-		display: flex
-		justify-content: space-between
-		.number
-			font-family: montserrat
-			font-style: normal
-			font-weight: bold
-			font-size: 12px
-			line-height: 15px
-			text-transform: uppercase
-			color: $purple
-			.main-span
-				font-family: quicksand
-				font-style: normal
-				font-weight: bold
-				font-size: 14px
-				line-height: 17px
-				text-transform: none
-				.inner-span
-					font-family: quicksand
-					font-size: 24px
-					line-height: 17px
-		.day-cost
-			font-family: montserrat
-			font-style: normal
-			font-weight: bold
-			font-size: 14px
-			line-height: 18px
-			// text-transform: uppercase
-			// font-weight: bold
-			color: $DS50
-			// font-size: 14px
-			// line-height: 18px			
-			span
-				color: $DS50
-				text-transform: lowercase
-				font-size: 14px
-				line-height: 18px
-				font-weight: normal
 	.arrival-depart
 		display: grid
 		grid-template-columns: 150px 150px
 		position: relative
 		grid-column-gap: 20px
 		grid-row-gap: 5px
-		
 		align-items: center
 		.input-wrapper
 			position: relative
@@ -493,7 +489,7 @@ i.material-icons
 		display: grid
 		grid-gap: 10px
 		margin-bottom: 10px
-		.row
+		.cost-info__row
 			display: -webkit-flex
 			display: -moz-flex
 			display: -ms-flex
@@ -542,14 +538,15 @@ i.material-icons
 				flex-direction: row-reverse
 
 	.total-sum
+
 		display: grid
 		grid-template-columns: auto 1fr auto
-		
+		align-items: baseline
+		h2
+			margin: 0px
 		.underline
-			
 			border-bottom: 1px dashed $DS25
 			
-			margin: 5px
 //--------------------------------registration-block--------------------------------	
 .registration-block
 	display: grid
@@ -590,11 +587,11 @@ i.material-icons
 //----------------------------------bootstrap-carousel-------------------------------------------
 #carouselExampleIndicators.carousel.slide
 	width: 271px
-	.carousel-inner
 .carousel-control-prev-icon,.carousel-control-next-icon
 	i
 		color: white
 		opacity: 1
 		line-height: 24px
+@import './sass/room-preview'
 
 					
