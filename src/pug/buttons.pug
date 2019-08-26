@@ -28,19 +28,18 @@ mixin like()
 			i.material-icons favorite_border 
 			.number 99
 mixin rate(num)
-	.wrapper
-		.rate
-			- var n = 0;
-			- var m = 0;
-				ul
-					while n < num
-						li
-							.counter= n++
-							i.material-icons star	
-					while m < 5-n
-						li
-							.counter= m++
-							i.material-icons star_border
+	.rate
+		- var n = 0;
+		- var m = 0;
+			ul
+				while n < num
+					li
+						.counter= n++
+						i.material-icons star	
+				while m < 5-n
+					li
+						.counter= m++
+						i.material-icons star_border
 mixin arrowbutton(text)
 	.button.arrowbutton
 		.text= text
