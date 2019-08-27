@@ -1,24 +1,27 @@
 //- 
 //- 	
 .block.room-preview--block
-  .room-preview--slider
-    #carouselExampleIndicators.carousel.slide(data-ride='carousel')
-      ol.carousel-indicators
-      //- li.active(data-target='#carouselExampleIndicators' data-slide-to='0')
-      //- li(data-target='#carouselExampleIndicators' data-slide-to='1')
-      //- li(data-target='#carouselExampleIndicators' data-slide-to='2')
-      .carousel-inner
+	.room-preview--slider
+		#carouselExampleIndicators.carousel.slide(data-ride='carousel')
+			ol.carousel-indicators
+			.carousel-inner
+			a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
+				span.carousel-control-prev-icon(aria-hidden='true')
+				span.sr-only Previous
+			a.carousel-control-next(href='#carouselExampleIndicators' role='button' data-slide='next')
+				span.carousel-control-next-icon(aria-hidden='true')
+				span.sr-only Next
+	.room-preview--info
+		.room-preview--info__header
+			.room-info
+				.number 
+					span.main-span  № 
+						span.inner-span 888 
+					| люкс
+				.day-cost 9 900₽ 
+					span в сутки
+		.room-preview--info__footer
+			+rate(5)
+			.review 145 
+				span Отзывов
 
-      a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
-        span.carousel-control-prev-icon(aria-hidden='true')
-        span.sr-only Previous
-      a.carousel-control-next(href='#carouselExampleIndicators' role='button' data-slide='next')
-        span.carousel-control-next-icon(aria-hidden='true')
-        span.sr-only Next
-  .room-info
-    .number 
-      span.main-span  № 
-        span.inner-span 888 
-      | люкс
-    .day-cost 9 900₽ 
-      span в сутки		
