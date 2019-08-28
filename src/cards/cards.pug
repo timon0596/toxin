@@ -3,6 +3,7 @@ include ../pug/dropdown
 include ../pug/expandableChekboxList
 include ../pug/buttons
 include ../pug/guest
+include blocks/room-preview
 <!DOCTYPE html>
 html(lang="en")
 head
@@ -18,7 +19,8 @@ body
 			include blocks/lux
 			include blocks/sign-in
 		.cards-wrapper_inner
-			include blocks/room-preview
+			+roompreview("888 ","9 990₽ ",5,"145 ")
+			+roompreview("840 ","9 900₽ ",4,"65 ")
 
 
 		

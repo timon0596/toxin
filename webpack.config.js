@@ -2,6 +2,7 @@ const path = require('path');
 const HWP=require('html-webpack-plugin');
 const webpack = require('webpack');
 const HtmlWebpackPugPlugin = require('html-webpack-pug-plugin');
+
 // const autoprefixer = require('autoprefixer');
 module.exports={
 	entry: './src/index.js',
@@ -63,21 +64,39 @@ module.exports={
 		},
 		{
          test: /\.(woff|svg|ttf)$/,
-         exclude: '/node_modules/',
+         exclude:path.resolve(__dirname, "node_modules"),
          use: [
          	'file-loader'
          ]         
        },{
-		  test: /\.(jpg|png)$/,
+		  test: /\d{1,3}\.image\d{1}\.(jpg|png)$/,
 		  use:[ {
 		    loader: "file-loader",
 		    options: {
 		      name: "[name].[ext]",
+		      outputPath: './img/roompreview/',
+		      useRelativePath: true
+		  }}],
+  },
+
+
+
+       {
+		  test: /\.(jpg|png)$/,
+		  exclude:path.resolve(__dirname, "src/img/roompreview"),
+		  
+		  use:[ {
+
+		    loader: "file-loader",
+
+		    options: {
+		      name: "[name].[ext]",
 		      outputPath: './img'
 		  }}],
-  }]
+  },]
 	},
 	plugins:[
+		
 		new HWP({
 			template: './src/index.pug',
 			filename: 'index.html'
@@ -92,5 +111,7 @@ module.exports={
 			'window.jQuery': 'jquery'
 		}),
 		new HtmlWebpackPugPlugin()
+
+
 	]
 }

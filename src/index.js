@@ -14,31 +14,48 @@ import "./js/like.js"
 import "./js/datepicker.js"
 import "./js/air-datepicker.js"
 import "./js/masked_input.min.js"
+let png = require.context("./img/roompreview", true, /\.png$/)
 
-const png = require.context('./img', true, /\.png$/)
+$(".block.room-preview--block").each(function(i,el){
+	
 
 
-console.log(png)
-for(let i=1;i<5;i++){
+let room_number=el.classList[2]
+let path_context=`/${room_number}`
+
+
+let id=$(el).find(".room-preview--slider .carousel.slide").attr('id')+room_number
+$(el).find(".room-preview--slider .carousel.slide").attr('id',id)
+id=$(el).find(".room-preview--slider .carousel.slide").attr('id')
+$("#"+id+" a.carousel-control-prev").attr('href',"#"+id)
+$("#"+id+" a.carousel-control-next").attr('href',"#"+id)
+
+
+
+
+
+for(let i=0;i<4;i++){
+
 	let img=document.createElement("img")
-	let path="./img"+png.keys()[i-1].slice(1)
+	let path=`./img/roompreview`+path_context+png.keys()[i].slice(5)
+	console.log(path)
 	img.src=path
 	img.class="d-block.w-100"
-	$("#carouselExampleIndicators ol.carousel-indicators").append(`<li data-target='#carouselExampleIndicators' data-slide-to=${i-1}></li>`)
-	$("#carouselExampleIndicators .carousel-inner").append("<div class='carousel-item'>"+"</div>")
-	if(i-1==0){
-		$($("#carouselExampleIndicators .carousel-inner .carousel-item")[i-1]).addClass("active")
-		$($("#carouselExampleIndicators ol.carousel-indicators li")[i-1]).addClass("active")
+	console.log($(this).find("ol.carousel-indicators"))
+	// $(id+" ol.carousel-indicators").append(`<li data-target=`+`'#carouselExampleIndicators'`+room_number+` data-slide-to=${i-1}></li>`)
+	$(this).find("ol.carousel-indicators").append(`<li data-target='#${id}' data-slide-to=${i}></li>`)
+	$(this).find(".carousel-inner").append("<div class='carousel-item'>"+"</div>")
+	if(i==0){
+		$($(this).find(".carousel-inner .carousel-item")[i]).addClass("active")
+		$($(this).find("ol.carousel-indicators li")[i]).addClass("active")
 	}
-	$("#carouselExampleIndicators .carousel-inner .carousel-item")[i-1].append(img)
+	$($(this).find(".carousel-inner .carousel-item")[i]).append(img)
 
 }
-$(".carousel-control-prev .carousel-control-prev-icon").append("<i class='material-icons'>expand_more</i>")
-$(".carousel-control-next .carousel-control-next-icon").append("<i class='material-icons'>expand_more</i>")
-
-
-
-
+$(this).find(".carousel-control-prev .carousel-control-prev-icon").append("<i class='material-icons'>expand_more</i>")
+$(this).find(".carousel-control-next .carousel-control-next-icon").append("<i class='material-icons'>expand_more</i>")
+	
+})
 
 let selectedDates={arrival:undefined,depart:undefined}
 let dayDiff=0
