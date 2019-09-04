@@ -5,6 +5,7 @@ import "bootstrap/js/dist/carousel.js"
 import "bootstrap/scss/bootstrap.scss"
 import "./index.pug"
 import "./cards/cards.pug"
+import "./headers_and_footers/headers_and_footers.pug"
 import "./style.sass"
 import "./js/dropdown.js"
 import "./js/dropdown_bedroom.js"
@@ -14,6 +15,10 @@ import "./js/like.js"
 import "./js/datepicker.js"
 import "./js/air-datepicker.js"
 import "./js/masked_input.min.js"
+import toxin_logo from "./img/toxin_logo.svg"
+import toxin_logo_img_border from "./img/logo_img_border.svg"
+import toxin_logo_left from "./img/left_logo_arc.svg"
+import toxin_logo_right from "./img/right_logo_arc.svg"
 let png = require.context("./img/roompreview", true, /\.png$/)
 
 $(".block.room-preview--block").each(function(i,el){

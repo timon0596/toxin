@@ -64,7 +64,7 @@ module.exports={
 		},
 		{
          test: /\.(woff|svg|ttf)$/,
-         exclude:path.resolve(__dirname, "node_modules"),
+         exclude: [path.resolve(__dirname, "src/img"),path.resolve(__dirname, "node_modules")],
          use: [
          	'file-loader'
          ]         
@@ -82,16 +82,14 @@ module.exports={
 
 
        {
-		  test: /\.(jpg|png)$/,
-		  exclude:path.resolve(__dirname, "src/img/roompreview"),
-		  
+		  test: /\.(jpg|png|svg)$/,
+		  exclude: [path.resolve(__dirname, "src/img/roompreview"),path.resolve(__dirname, "src/fonts")],
 		  use:[ {
-
 		    loader: "file-loader",
-
 		    options: {
 		      name: "[name].[ext]",
-		      outputPath: './img'
+		      outputPath: './img/',
+		      useRelativePath: true
 		  }}],
   },]
 	},
@@ -104,6 +102,10 @@ module.exports={
 		new HWP({
 			template: './src/cards/cards.pug',
 			filename: 'cards.html'
+		}),
+		new HWP({
+			template: './src/headers_and_footers/headers_and_footers.pug',
+			filename: 'hf.html'
 		}),
 		new webpack.ProvidePlugin({
 			$: 'jquery',

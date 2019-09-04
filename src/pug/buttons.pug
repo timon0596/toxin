@@ -11,12 +11,14 @@ mixin ckboxbuttons(text)
 
 mixin radiobuttons()
 	.radio
-		input(type="radio" id="male" name="radiobuttons")
-		.radiobutton
-		label(for="male") Мужчина
-		input(type="radio" id="female" name="radiobuttons")
-		.radiobutton
-		label(for="female") Женщина
+		.male
+			input(type="radio" id="male" name="radiobuttons")
+			.radiobutton
+			label(for="male") Мужчина
+		.female
+			input(type="radio" id="female" name="radiobuttons")
+			.radiobutton
+			label(for="female") Женщина
 mixin toggle()
 	.toggle_wrapper
 		input(type="checkbox" id="offer" checked)
@@ -44,6 +46,9 @@ mixin arrowbutton(text)
 	.button.arrowbutton
 		.text= text
 		i.material-icons arrow_forward
+mixin purplebutton(text)
+	.button.arrowbutton
+		.text= text
 mixin borderbutton(text)
 	.borderbutton-wrapper
 		.button.borderbutton
