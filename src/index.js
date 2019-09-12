@@ -1,4 +1,9 @@
 import "jquery"
+import './all.css'
+// import '@fortawesome/fontawesome-free/js/solid'
+// import '@fortawesome/fontawesome-free/js/regular'
+// import '@fortawesome/fontawesome-free/js/brands'
+
 import "popper.js"
 import "bootstrap/js/dist/carousel.js"
 // import "bootstrap/dist/css/bootstrap.min.css"
@@ -7,6 +12,7 @@ import "./index.pug"
 import "./cards/cards.pug"
 import "./headers_and_footers/headers_and_footers.pug"
 import "./style.sass"
+
 import "./js/dropdown.js"
 import "./js/dropdown_bedroom.js"
 import "./js/ckbox.js"

@@ -63,10 +63,10 @@ module.exports={
 				]
 		},
 		{
-         test: /\.(woff|svg|ttf)$/,
+         test: /\.(woff|svg|ttf|eot|woff2)$/,
          exclude: [path.resolve(__dirname, "src/img"),path.resolve(__dirname, "node_modules")],
          use: [
-         	'file-loader'
+         	'file-loader',
          ]         
        },{
 		  test: /\d{1,3}\.image\d{1}\.(jpg|png)$/,

@@ -2,12 +2,39 @@
 	a
 		display: inline-block
 		margin-left: 30px
+.logo
+	display: -webkit-inline-flex
+	display: -moz-inline-flex
+	display: -ms-inline-flex
+	display: -o-inline-flex
+	display: inline-flex
+	align-items: center
+	.logo_img
+		display: block
+		position: relative
+		height: 40px
+		width: 40px
+		.left_arc
+			left: 9.1px
+			top: 15.29px
+			position: absolute
+			// width: 11.76px
+			// height: 11.76px
+		.right_arc
+			top: 15.29px
+			right: 9.1px
+			position: absolute
+			// width: 9.12px
+			// height: 5.91px
+	.logo_name
+		display: block
+		margin-left: 12.5px
 .header_footer_wrapper
 	display: grid
 	grid-gap: 40px
 	
 	.header
-		width: 100vw
+		width: 100%
 		padding: 15px 140px
 		display: -webkit-inline-flex
 		display: -moz-inline-flex
@@ -15,40 +42,23 @@
 		display: -o-inline-flex
 		display: inline-flex
 		justify-content: space-between
-		.logo
-			display: -webkit-inline-flex
-			display: -moz-inline-flex
-			display: -ms-inline-flex
-			display: -o-inline-flex
-			display: inline-flex
-			align-items: center
-			.logo_img
-				display: block
-				position: relative
-				height: 40px
-				width: 40px
-				.left_arc
-					left: 9.1px
-					top: 15.29px
-					position: absolute
-					// width: 11.76px
-					// height: 11.76px
-				.right_arc
-					top: 15.29px
-					right: 9.1px
-					position: absolute
-					// width: 9.12px
-					// height: 5.91px
-			.logo_name
-				display: block
-				margin-left: 12.5px
+		background: #FFFFFF
+		box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05)
+		
 		nav.header_menubar
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			align-items: center
 			ul
 				display: grid
 				grid-template-columns: repeat(7,max-content)
 				list-style-type: none
 				margin: 0px
 				grid-gap: 30px
+
 				li.menubar_item
 					display: -webkit-flex
 					display: -moz-flex
@@ -65,10 +75,80 @@
 						display: inline-flex
 						justify-content: center
 						align-items: center
+						text-decoration: none
+
+						&:hover
+							text-decoration: none
 				li.menubar_item:first-child
 					width: max-content
-
-						
+nav
+	ul
+		list-style-type: none
+		li
+			a
+				line-height: 17px
+				color: $DS50
+				&:active
+					font-weight: bold
+					color: $DS75
+.footer
+	padding: 100px 140px
+	background: #FFFFFF
+	box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1)
+	ul.footer_menu
+		display: grid
+		grid-template-columns: 260px repeat(3,160px) 260px
+		grid-gap: 40px
+		li:first-child
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			flex-direction: column
+			.logo
+				margin-bottom: 20px
+		li
+			h3
+				margin-bottom: 21px
+			nav
+				ul
+					display: grid
+					grid-template-columns: 1fr
+					grid-gap: 20px
+footer.copyright
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	justify-content: space-between
+	padding: 0px 140px
+	height: 70px
+	font-size: 14px
+	line-height: 17px
+	align-items: center
+	box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05)
+	.social_media
+		display: grid
+		grid-template-columns: 1fr 1fr 1fr
+		grid-gap: 20px
+		.social_media__icon
+			i
+				background: $grad
+				background-clip: text
+				-webkit-text-fill-color: transparent
+				width: 24px
+				height: 24px
+				font-size: 24px
+				line-height: 23px
+				display: -webkit-flex
+				display: -moz-flex
+				display: -ms-flex
+				display: -o-flex
+				display: flex
+				justify-content: center
+				align-items: center
 
 
 					
