@@ -1,30 +1,15 @@
 .search-block.block
 	h1 Найдем номера под ваши пожелания
-	.datepicker-wrapper
-		.datepicker-inner
-			.date-arrival
-				h3 прибытие
-				.date
-					input( type='date' class='date-dropdown')
-					i.material-icons expand_more
-			.date-depart
-				h3 выезд
-				.date
-					input( type='date' class='date-dropdown')
-					i.material-icons expand_more
-			.calendar-wrapper
-				.calendar
-					.nav
-						i.material-icons.prev arrow_back
-						.month
-						i.material-icons.next arrow_forward
-					.week
-						each day in ['Пн','Вт','Ср','Чт','Пт','Сб','Вс']
-							.day= day
-					.calendar-inner
-					.submit.datepicker-submit
-						.clean очистить
-						.apply применить
+	.arrival-depart
+		h3 прибытие
+		h3 выезд
+		.input-wrapper
+			input(type="text" class="arrival date-dropdown" placeholder="дд.мм.гггг")
+			i.material-icons expand_more
+		.input-wrapper
+			input(type="text" class="depart date-dropdown" placeholder="дд.мм.гггг")
+			i.material-icons expand_more
+		.calendar-wrapper
 					
 
 	.dropdown-wrapper

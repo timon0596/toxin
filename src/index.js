@@ -68,46 +68,79 @@ $(this).find(".carousel-control-next .carousel-control-next-icon").append("<i cl
 	
 })
 
-let selectedDates={arrival:undefined,depart:undefined}
+let arr=[];
 let dayDiff=0
 let cost_mult_days_initial=$(".cost-mult-days").html()
 let cost_mult_days_summary_initial=$(".price .sum").html()
 let total_sum_initial=$(".total-sum .sum").html()
-let air_dp=$(".arrival-depart .calendar-wrapper").datepicker({
+$(".arrival-depart .calendar-wrapper").each(function(i,el){
+	
+	// el.arrival_depart_dates={arrival:undefined,depart:undefined}
+	el.selectedDates={arrival:undefined,depart:undefined}
+	console.log($(el).parents()[1])
+	console.log($(".block.lux-block")[0])
+	arr[i]=$(el).datepicker({
 		multipleDates: 2,
 		range: true,
 		clearButton: true,
 		minDate: new Date(),
 		onSelect: function(){
-			if(air_dp.selectedDates[0]){
-				$(".arrival-depart .arrival").val(air_dp.selectedDates[0].toLocaleDateString())
-				selectedDates.arrival=air_dp.selectedDates[0]
+			if(arr[i].selectedDates[0]){
+				$(el).parent().find(".arrival").val(arr[i].selectedDates[0].toLocaleDateString())
+				el.selectedDates.arrival=arr[i].selectedDates[0]
 			}else{
-				$(".arrival-depart .arrival").val("")
-				selectedDates.arrival=undefined						
+				$(el).parent().find(".arrival").val("")
+				el.selectedDates.arrival=undefined						
 			}
-			if(air_dp.selectedDates[1]){
-				$(".arrival-depart .depart").val(air_dp.selectedDates[1].toLocaleDateString())
-				selectedDates.depart=air_dp.selectedDates[1]
-				dayDiff=Math.ceil((selectedDates.depart-selectedDates.arrival)/1000/60/60/24)
-				costPerDay(dayDiff)
+			if(arr[i].selectedDates[1]){
+				$(el).parent().find(".depart").val(arr[i].selectedDates[1].toLocaleDateString())
+				el.selectedDates.depart=arr[i].selectedDates[1]
+				if($(el).parents()[1]==$(".block.lux-block")[0]){
+					dayDiff=Math.ceil((el.selectedDates.depart-el.selectedDates.arrival)/1000/60/60/24)
+					costPerDay(dayDiff)	
+				}
 			}else{
-				$(".arrival-depart .depart").val("")
-				selectedDates.depart=undefined
-				dayDiff=0
-				$(".cost-mult-days").html(cost_mult_days_initial)
-				$(".price .sum").html(cost_mult_days_summary_initial)
-				$(".total-sum .sum").html(total_sum_initial)
+				$(el).parent().find(".depart").val("")
+				el.selectedDates.depart=undefined
+				if($(el).parents()[1]==$(".block.lux-block")[0]){
+					dayDiff=0
+					$(".cost-mult-days").html(cost_mult_days_initial)
+					$(".price .sum").html(cost_mult_days_summary_initial)
+					$(".total-sum .sum").html(total_sum_initial)	
+				}
+				
 			}
 		}
 	}).data('datepicker')
+})
 datepickerApplyButton()
 
+//---------------------------------------------------
+// if(air_dp.selectedDates[0]){
+// 	$(".arrival-depart .arrival").val(air_dp.selectedDates[0].toLocaleDateString())
+// 	selectedDates.arrival=air_dp.selectedDates[0]
+// }else{
+// 	$(".arrival-depart .arrival").val("")
+// 	selectedDates.arrival=undefined						
+// }
+// if(air_dp.selectedDates[1]){
+// 	$(".arrival-depart .depart").val(air_dp.selectedDates[1].toLocaleDateString())
+// 	selectedDates.depart=air_dp.selectedDates[1]
+// 	dayDiff=Math.ceil((selectedDates.depart-selectedDates.arrival)/1000/60/60/24)
+// 	costPerDay(dayDiff)
+// }else{
+// 	$(".arrival-depart .depart").val("")
+// 	selectedDates.depart=undefined
+// 	dayDiff=0
+// 	$(".cost-mult-days").html(cost_mult_days_initial)
+// 	$(".price .sum").html(cost_mult_days_summary_initial)
+// 	$(".total-sum .sum").html(total_sum_initial)
+// }
+//---------------------------------------------------
 
-
-$(".arrival-depart .input-wrapper").each(function(){
+$(".arrival-depart .input-wrapper").each(function(i,el){
 	$(this).click(function(){		
-		$(".arrival-depart .calendar-wrapper").slideToggle(250)
+		$(el).parent().find(".calendar-wrapper").slideToggle(250)
 	})
 })
 //-------------------masked-input--------------------

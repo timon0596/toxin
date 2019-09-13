@@ -174,8 +174,11 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   box-sizing: content-box;
-  font-family: Tahoma, sans-serif;
-  font-size: 14px;
+  font-family: montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
   color: #4a4a4a;
   width: 250px;
   position: absolute;

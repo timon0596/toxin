@@ -49,164 +49,164 @@
 	padding: 40px 30px 30px	
 	flex-direction: column
 	justify-content: space-between
-	.datepicker-inner
-		display: -webkit-flex
-		display: -moz-flex
-		display: -ms-flex
-		display: -o-flex
-		display: flex
-		justify-content: space-between
-		width: 320px
-		position: relative
-		.date
-			width: 150px
-			height: 44px
-			display: block
-			position: relative
-			i
-				position: absolute
-				top: 0px
-				right: 0px
-				width: 44px
-				height: 44px
-				display: -webkit-flex
-				display: -moz-flex
-				display: -ms-flex
-				display: -o-flex
-				display: flex
-				justify-content: center
-				align-items: center
-				color: $DS50
-				cursor: pointer
-			input.date-dropdown
-				width: 150px
-				height: 44px
-				box-sizing: border-box
-				border: 1px solid $DS25
-				border-radius: 4px
-				font-family: montserrat
-				font-style: normal
-				font-weight: normal
-				font-size: 14px
-				line-height: 18px
-				color: $DS75
-				padding-left: 15px
-		.calendar-wrapper
-			display: none
-			padding: 0
-			margin: 0
-			position: absolute
-			left: 0
-			top: 65px
-			z-index: 2
-			.calendar				
-				width: 320px
-				display: -webkit-flex
-				display: -moz-flex
-				display: -ms-flex
-				display: -o-flex
-				display: flex
-				flex-wrap: wrap
-				flex-direction: column
-				justify-content: center
-				background: #FFFFFF
-				border: 1px solid rgba(31, 32, 65, 0.25)
-				box-sizing: border-box
-				box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05)
-				border-radius: 4px				
-				padding: 20px
-				.nav
-					display: -webkit-flex
-					display: -moz-flex
-					display: -ms-flex
-					display: -o-flex
-					display: flex
-					justify-content: space-between
-					height: 24px
-					margin-bottom: 30px
-					.prev,.next
-						font-size: 24px
-						color: $purple
-						cursor: pointer	
-					.month
-						font-family: quicksand,montserrat
-						font-style: normal
-						font-weight: bold
-						font-size: 19px
-						line-height: 24px
-						color: $DS
-				.week
-					display: -webkit-flex
-					display: -moz-flex
-					display: -ms-flex
-					display: -o-flex
-					display: flex
-					justify-content: center
-					.day
-						width: 40px
-						height: 40px
-						display: -webkit-flex
-						display: -moz-flex
-						display: -ms-flex
-						display: -o-flex
-						display: flex
-						justify-content: center
-						align-items: center
-						font-family: montserrat
-						font-style: normal
-						font-weight: bold
-						font-size: 12px
-						line-height: 15px
-						color: $purple				
-				.calendar-inner
-					display: grid
-					grid-template-columns: repeat(7, 1fr)				
-					margin-bottom: 20px
-					.date-range-bgr--left-last
-						background: $grad25
-						border-bottom-left-radius: 50%
-						border-top-left-radius: 50%
+	// .datepicker-inner
+	// 	display: -webkit-flex
+	// 	display: -moz-flex
+	// 	display: -ms-flex
+	// 	display: -o-flex
+	// 	display: flex
+	// 	justify-content: space-between
+	// 	width: 320px
+	// 	position: relative
+	// 	.date
+	// 		width: 150px
+	// 		height: 44px
+	// 		display: block
+	// 		position: relative
+	// 		i
+	// 			position: absolute
+	// 			top: 0px
+	// 			right: 0px
+	// 			width: 44px
+	// 			height: 44px
+	// 			display: -webkit-flex
+	// 			display: -moz-flex
+	// 			display: -ms-flex
+	// 			display: -o-flex
+	// 			display: flex
+	// 			justify-content: center
+	// 			align-items: center
+	// 			color: $DS50
+	// 			cursor: pointer
+	// 		input.date-dropdown
+	// 			width: 150px
+	// 			height: 44px
+	// 			box-sizing: border-box
+	// 			border: 1px solid $DS25
+	// 			border-radius: 4px
+	// 			font-family: montserrat
+	// 			font-style: normal
+	// 			font-weight: normal
+	// 			font-size: 14px
+	// 			line-height: 18px
+	// 			color: $DS75
+	// 			padding-left: 15px
+	// 	.calendar-wrapper
+	// 		display: none
+	// 		padding: 0
+	// 		margin: 0
+	// 		position: absolute
+	// 		left: 0
+	// 		top: 65px
+	// 		z-index: 2
+	// 		.calendar				
+	// 			width: 320px
+	// 			display: -webkit-flex
+	// 			display: -moz-flex
+	// 			display: -ms-flex
+	// 			display: -o-flex
+	// 			display: flex
+	// 			flex-wrap: wrap
+	// 			flex-direction: column
+	// 			justify-content: center
+	// 			background: #FFFFFF
+	// 			border: 1px solid rgba(31, 32, 65, 0.25)
+	// 			box-sizing: border-box
+	// 			box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05)
+	// 			border-radius: 4px				
+	// 			padding: 20px
+	// 			.nav
+	// 				display: -webkit-flex
+	// 				display: -moz-flex
+	// 				display: -ms-flex
+	// 				display: -o-flex
+	// 				display: flex
+	// 				justify-content: space-between
+	// 				height: 24px
+	// 				margin-bottom: 30px
+	// 				.prev,.next
+	// 					font-size: 24px
+	// 					color: $purple
+	// 					cursor: pointer	
+	// 				.month
+	// 					font-family: quicksand,montserrat
+	// 					font-style: normal
+	// 					font-weight: bold
+	// 					font-size: 19px
+	// 					line-height: 24px
+	// 					color: $DS
+	// 			.week
+	// 				display: -webkit-flex
+	// 				display: -moz-flex
+	// 				display: -ms-flex
+	// 				display: -o-flex
+	// 				display: flex
+	// 				justify-content: center
+	// 				.day
+	// 					width: 40px
+	// 					height: 40px
+	// 					display: -webkit-flex
+	// 					display: -moz-flex
+	// 					display: -ms-flex
+	// 					display: -o-flex
+	// 					display: flex
+	// 					justify-content: center
+	// 					align-items: center
+	// 					font-family: montserrat
+	// 					font-style: normal
+	// 					font-weight: bold
+	// 					font-size: 12px
+	// 					line-height: 15px
+	// 					color: $purple				
+	// 			.calendar-inner
+	// 				display: grid
+	// 				grid-template-columns: repeat(7, 1fr)				
+	// 				margin-bottom: 20px
+	// 				.date-range-bgr--left-last
+	// 					background: $grad25
+	// 					border-bottom-left-radius: 50%
+	// 					border-top-left-radius: 50%
 							
-					.date-range-bgr--right-last
-						background: $grad25	
-						border-bottom-right-radius: 50%
-						border-top-right-radius: 50%
+	// 				.date-range-bgr--right-last
+	// 					background: $grad25	
+	// 					border-bottom-right-radius: 50%
+	// 					border-top-right-radius: 50%
 							
-					.date-range-bgr						
-						background: $grad25													
-					.number-wrapper
-						.number
-							display: -webkit-flex
-							display: -moz-flex
-							display: -ms-flex
-							display: -o-flex
-							display: flex
-							width: 40px
-							height: 40px
-							justify-content: center
-							align-items: center
-							font-family: montserrat
-							font-style: normal
-							font-weight: normal
-							font-size: 12px
-							line-height: 15px
-							color: $DS50
-							cursor: pointer
-							z-index: 10
+	// 				.date-range-bgr						
+	// 					background: $grad25													
+	// 				.number-wrapper
+	// 					.number
+	// 						display: -webkit-flex
+	// 						display: -moz-flex
+	// 						display: -ms-flex
+	// 						display: -o-flex
+	// 						display: flex
+	// 						width: 40px
+	// 						height: 40px
+	// 						justify-content: center
+	// 						align-items: center
+	// 						font-family: montserrat
+	// 						font-style: normal
+	// 						font-weight: normal
+	// 						font-size: 12px
+	// 						line-height: 15px
+	// 						color: $DS50
+	// 						cursor: pointer
+	// 						z-index: 10
 											
-						.prevMonth,.nextMonth
-							color: $DS25
-						.currentDate
-							font-weight: bold
-							color: #fff
-							border-radius: 50%
-							background: $GREEN_GRAD
-						.selected-number
+	// 					.prevMonth,.nextMonth
+	// 						color: $DS25
+	// 					.currentDate
+	// 						font-weight: bold
+	// 						color: #fff
+	// 						border-radius: 50%
+	// 						background: $GREEN_GRAD
+	// 					.selected-number
 							
-							font-weight: bold
-							color: #fff
-							border-radius: 50%
-							background: $grad
+	// 						font-weight: bold
+	// 						color: #fff
+	// 						border-radius: 50%
+	// 						background: $grad
 						
 
 //guest----------------------------------------
@@ -347,47 +347,47 @@
 //----------------------block-lux-------------------------
 //----------------------block-lux-------------------------
 //----------------------block-lux-------------------------
-
+.arrival-depart
+	display: grid
+	grid-template-columns: 150px 150px
+	position: relative
+	grid-column-gap: 20px
+	grid-row-gap: 5px
+	align-items: center
+	.input-wrapper
+		position: relative
+		input
+			height: 44px
+		i
+			position: absolute
+			top: 0px
+			right: 0px
+	.input-wrapper	
+		i.material-icons
+			width: 44px
+			height: 44px
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			justify-content: center
+			align-items: center
+			color: $DS50
+			cursor: pointer
+			
+	.calendar-wrapper
+		display: none
+		position: absolute
+		background: #fff
+		z-index: 10
+		top: calc(100% + 6px)
 .lux-block
 	display: grid
 	grid-gap: 20px
 	height: 511px
 	width: min-content
-	.arrival-depart
-		display: grid
-		grid-template-columns: 150px 150px
-		position: relative
-		grid-column-gap: 20px
-		grid-row-gap: 5px
-		align-items: center
-		.input-wrapper
-			position: relative
-			input
-				height: 44px
-			i
-				position: absolute
-				top: 0px
-				right: 0px
-		.input-wrapper	
-			i.material-icons
-				width: 44px
-				height: 44px
-				display: -webkit-flex
-				display: -moz-flex
-				display: -ms-flex
-				display: -o-flex
-				display: flex
-				justify-content: center
-				align-items: center
-				color: $DS50
-				cursor: pointer
-				
-		.calendar-wrapper
-			display: none
-			position: absolute
-			background: #fff
-			z-index: 10
-			top: calc(100% + 6px)
+	
 	.cost-info
 		display: grid
 		grid-gap: 10px
