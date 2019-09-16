@@ -1,0 +1,24 @@
+include pug/textfield
+include pug/dropdown
+include pug/expandableChekboxList
+include pug/buttons
+include pug/guest
+<!DOCTYPE html>
+html(lang="en")
+head
+	meta(charset="UTF-8")
+	title Document
+body
+	.wrapper
+		header
+			include headers_and_footers/_header
+		main
+			img(src="./../src/img/landingPageBackground.svg")
+			.search-block__wrapper
+				include cards/blocks/search
+			.tagline
+				| Лучшие номера для вашей работы, отдыха и просто вдохновения
+		include headers_and_footers/_footer
+
+
+	

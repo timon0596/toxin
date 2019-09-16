@@ -106,6 +106,9 @@ module.exports={
 		new HWP({
 			template: './src/headers_and_footers/headers_and_footers.pug',
 			filename: 'hf.html'
+		}),new HWP({
+			template: './src/landingPage.pug',
+			filename: 'landingPage.html'
 		}),
 		new webpack.ProvidePlugin({
 			$: 'jquery',
