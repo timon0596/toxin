@@ -2,6 +2,7 @@ include pug/textfield
 include pug/dropdown
 include pug/expandableChekboxList
 include pug/buttons
+include components/rangeSlider/rangeSlider
 <!DOCTYPE html>
 html(lang="en")
 head
@@ -46,6 +47,8 @@ body hello world
 		+masked_textfield
 		br
 		+subscription_textfield()
+		br
+		+rangeSlider()
 		br
 		a(href="cards.html") cards
 		br

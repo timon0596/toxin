@@ -1,4 +1,7 @@
 import "jquery"
+// import "jquery-ui/demos/bootstrap.js"
+import "webpack-jquery-ui/slider"
+import "webpack-jquery-ui/css"
 import './all.css'
 // import '@fortawesome/fontawesome-free/js/solid'
 // import '@fortawesome/fontawesome-free/js/regular'
@@ -21,6 +24,7 @@ import "./js/like.js"
 import "./js/datepicker.js"
 import "./js/air-datepicker.js"
 import "./js/masked_input.min.js"
+import "./components/rangeSlider/rangeSlider.js"
 import toxin_logo from "./img/toxin_logo.svg"
 import toxin_logo_img_border from "./img/logo_img_border.svg"
 import toxin_logo_left from "./img/left_logo_arc.svg"
