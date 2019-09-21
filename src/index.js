@@ -1,7 +1,11 @@
 import "jquery"
 // import "jquery-ui/demos/bootstrap.js"
-import "webpack-jquery-ui/slider"
-import "webpack-jquery-ui/css"
+import "jquery-ui/ui/widget"
+import "jquery-ui/ui/keycode"
+import "jquery-ui/ui/widgets/mouse"
+import "jquery-ui/ui/widgets/slider"
+import "jquery-ui/themes/base/base.css"
+// import "jquery-ui/themes/base/theme.css"
 import './all.css'
 // import '@fortawesome/fontawesome-free/js/solid'
 // import '@fortawesome/fontawesome-free/js/regular'
@@ -29,6 +33,7 @@ import toxin_logo from "./img/toxin_logo.svg"
 import toxin_logo_img_border from "./img/logo_img_border.svg"
 import toxin_logo_left from "./img/left_logo_arc.svg"
 import toxin_logo_right from "./img/right_logo_arc.svg"
+import lpbgr from "./img/landingPageBackground.svg"
 let png = require.context("./img/roompreview", true, /\.png$/)
 
 $(".block.room-preview--block").each(function(i,el){
