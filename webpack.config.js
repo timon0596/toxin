@@ -109,6 +109,9 @@ module.exports={
 		}),new HWP({
 			template: './src/landingPage.pug',
 			filename: 'landingPage.html'
+		}),new HWP({
+			template: './src/website_pages/search_room/search_room.pug',
+			filename: 'search_room.html'
 		}),
 		new webpack.ProvidePlugin({
 			$: 'jquery',
