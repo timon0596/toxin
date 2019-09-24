@@ -20,6 +20,7 @@ import "./cards/cards.pug"
 import "./headers_and_footers/headers_and_footers.pug"
 import "./landingPage.pug"
 import "./website_pages/search_room/search_room.pug"
+import "./website_pages/search_room/search_room.sass"
 import "./style.sass"
 import "./js/dropdown.js"
 import "./js/dropdown_bedroom.js"
@@ -29,7 +30,7 @@ import "./js/like.js"
 import "./js/datepicker.js"
 import "./js/air-datepicker.js"
 import "./js/masked_input.min.js"
-import "./components/rangeSlider/rangeSlider.js"
+import "./components/components.js"
 import toxin_logo from "./img/toxin_logo.svg"
 import toxin_logo_img_border from "./img/logo_img_border.svg"
 import toxin_logo_left from "./img/left_logo_arc.svg"
@@ -77,8 +78,14 @@ $(this).find(".carousel-control-prev .carousel-control-prev-icon").append("<i cl
 $(this).find(".carousel-control-next .carousel-control-next-icon").append("<i class='material-icons'>expand_more</i>")
 	
 })
-
+//--------------------------------------calendar--------------------------------------------
+//--------------------------------------calendar--------------------------------------------
+//--------------------------------------calendar--------------------------------------------
+//--------------------------------------calendar--------------------------------------------
+//--------------------------------------calendar--------------------------------------------
 let arr=[];
+
+const months=["янв","фев","марта","апр","мая","июня","июля","авг","сен","окт","нояб","дек"]
 let dayDiff=0
 let cost_mult_days_initial=$(".cost-mult-days").html()
 let cost_mult_days_summary_initial=$(".price .sum").html()
@@ -87,8 +94,6 @@ $(".arrival-depart .calendar-wrapper").each(function(i,el){
 	
 	// el.arrival_depart_dates={arrival:undefined,depart:undefined}
 	el.selectedDates={arrival:undefined,depart:undefined}
-	console.log($(el).parents()[1])
-	console.log($(".block.lux-block")[0])
 	arr[i]=$(el).datepicker({
 		multipleDates: 2,
 		range: true,
@@ -100,15 +105,29 @@ $(".arrival-depart .calendar-wrapper").each(function(i,el){
 				el.selectedDates.arrival=arr[i].selectedDates[0]
 			}else{
 				$(el).parent().find(".arrival").val("")
-				el.selectedDates.arrival=undefined						
+				el.selectedDates.arrival=undefined
+				localStorage.removeItem("arrival")
+				localStorage.removeItem("depart")
+				console.log(localStorage.getItem("arrival"))				
 			}
 			if(arr[i].selectedDates[1]){
+
+				localStorage.setItem("arrival",arr[i].selectedDates[0].toLocaleDateString())
+				localStorage.setItem("depart",arr[i].selectedDates[1].toLocaleDateString())
+				console.log(localStorage.getItem("arrival"))
+
+				let arrivalDate=Number(arr[i].selectedDates[0].toLocaleDateString().split(".")[0])+" "+months[Number(arr[i].selectedDates[0].toLocaleDateString().split(".")[1])-1]
+				let departDate=Number(arr[i].selectedDates[1].toLocaleDateString().split(".")[0])+" "+months[Number(arr[i].selectedDates[1].toLocaleDateString().split(".")[1])-1]
+				console.log(arrivalDate+" - "+departDate)
+
+				$(".dateDropdown .filterDateDropdown input").val(arrivalDate+" - "+departDate)
+
 				$(el).parent().find(".depart").val(arr[i].selectedDates[1].toLocaleDateString())
 				el.selectedDates.depart=arr[i].selectedDates[1]
-				if($(el).parents()[1]==$(".block.lux-block")[0]){
-					dayDiff=Math.ceil((el.selectedDates.depart-el.selectedDates.arrival)/1000/60/60/24)
-					costPerDay(dayDiff)	
-				}
+					if($(el).parents()[1]==$(".block.lux-block")[0]){
+						dayDiff=Math.ceil((el.selectedDates.depart-el.selectedDates.arrival)/1000/60/60/24)
+						costPerDay(dayDiff)	
+					}
 			}else{
 				$(el).parent().find(".depart").val("")
 				el.selectedDates.depart=undefined
@@ -125,6 +144,19 @@ $(".arrival-depart .calendar-wrapper").each(function(i,el){
 })
 datepickerApplyButton()
 
+
+
+$(".dateDropdown .filterDateDropdown").click(function(){
+	$(this).siblings(".calendar-wrapper").slideToggle(250)
+})
+console.log(localStorage.getItem("arrival")&&localStorage.getItem("depart"))
+if(localStorage.getItem("arrival")&&localStorage.getItem("depart")){
+	$(".arrival-depart .arrival").val(localStorage.getItem("arrival"))
+	$(".arrival-depart .depart").val(localStorage.getItem("depart"))
+	let arrivalDate=Number(localStorage.getItem("arrival").split(".")[0])+" "+months[Number(localStorage.getItem("arrival").split(".")[1])-1]
+	let departDate=Number(localStorage.getItem("depart").split(".")[0])+" "+months[Number(localStorage.getItem("depart").split(".")[1])-1]
+	$(".dateDropdown .filterDateDropdown input").val(arrivalDate+" - "+departDate)
+}
 //---------------------------------------------------
 // if(air_dp.selectedDates[0]){
 // 	$(".arrival-depart .arrival").val(air_dp.selectedDates[0].toLocaleDateString())
@@ -153,6 +185,11 @@ $(".arrival-depart .input-wrapper").each(function(i,el){
 		$(el).parent().find(".calendar-wrapper").slideToggle(250)
 	})
 })
+//--------------------------------------calendar--------------------------------------------
+//--------------------------------------calendar--------------------------------------------
+//--------------------------------------calendar--------------------------------------------
+//--------------------------------------calendar--------------------------------------------
+//--------------------------------------calendar--------------------------------------------
 //-------------------masked-input--------------------
 $(".arrival-depart .arrival").mask('99.99.9999')
 $(".arrival-depart .depart").mask('99.99.9999')

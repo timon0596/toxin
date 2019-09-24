@@ -26,6 +26,13 @@ mixin dropdown(text,classname,materialicon,name1,name2,name3)
 				if classname=="guests"			
 					.submit
 						.clean.inactive очистить
-						.apply применить
+						.apply применить;
+mixin dateDropdown()
+	.dateDropdown
+		.arrival-depart
+			.filterDateDropdown
+				input(type="text" readonly="readonly")
+				i.material-icons expand_more
+			.calendar-wrapper
 		
 		
