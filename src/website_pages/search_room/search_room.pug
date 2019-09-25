@@ -2,7 +2,6 @@ include ../../cards/blocks/room-preview
 include ../../pug/textfield
 include ../../pug/expandableChekboxList
 include ../../pug/buttons
-include ../../pug/guest
 include ../../components/components
 <!DOCTYPE html>
 html(lang="en")
@@ -17,14 +16,13 @@ body
 				.room-options
 					h3 даты пребывания в отеле
 					+dateDropdown()
-					h3 гости
-					+guest()
+					+guest("гости")
 					+rangeSlider("диапазон цены")
 					.under_rangeSlider_text
 						| Стоимость за сутки пребывания в номере
 					+ckboxbuttons("checkbox buttons")
 					+rich_ckbox_btns("доступность")
-					+dropdown("Сколько гостей","bedroom","expand_more","спальни","кровати","ванные комнаты","удобства номера")
+					+dropdown("удобства номера")
 					+checkboxlist("дополнительные удобства","expand_more")
 				.room-preview__wrapper
 					h1 Номера, которые мы для вас подобрали

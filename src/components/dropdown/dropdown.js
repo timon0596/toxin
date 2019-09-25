@@ -1,4 +1,3 @@
-
 function dropdown_bedroom(){let elem=$(".dropdown_bedroom");
 	$(elem).find(".text").html("2 спальни, 2 кровати...")
 	elem.sum=0;

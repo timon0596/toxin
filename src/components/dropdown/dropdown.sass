@@ -1,0 +1,175 @@
+.dropdown-guests,.dropdown-bedroom
+	h3
+		margin-bottom: 5px !important
+.dropdown-guests
+	width: 320px
+	min-height: 44px
+	position: relative
+.dropdown-bedroom
+	width: 266px
+	min-height: 44px
+	position: relative	
+.guests,.bedroom
+	width: 100%
+	min-height: 44px
+	position: relative
+	border: 1px solid $DS25
+	box-sizing: border-box
+	border-radius: 4px
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	align-items: center
+	&:hover
+		border: 1px solid $DS50
+	&.active
+		border: 1px solid $DS50
+		border-radius: 2px
+	.how-much
+		margin-left: 15px
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex			
+		align-items: center
+	i
+		position: absolute
+		top: 0px
+		right: 0px
+		width: 44px
+		height: 44px
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		justify-content: center
+		align-items: center
+		color: $DS50
+		cursor: pointer
+.controls
+	width: 100%
+	display: none
+	border-bottom-left-radius: 2px
+	border-bottom-right-radius: 2px
+	border: 1px solid $DS50
+	box-sizing: border-box
+	overflow: hidden
+	position: absolute
+	top: 42px
+	padding-left: 15px
+	font-size: 12px
+	text-transform: uppercase
+	color: $DS
+	font-style: normal
+	font-weight: bold
+	opacity: 1
+	background: #fff
+	z-index: 10
+	.row
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		flex-wrap: nowrap
+		justify-content: space-between
+		align-items: center
+		.name								
+		.control
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			flex-wrap: nowrap
+			padding: 7px
+			.val
+				width: 30px
+				height: 30px
+				border: 1px solid $DS25
+				border-radius: 50%
+				display: -webkit-flex
+				display: -moz-flex
+				display: -ms-flex
+				display: -o-flex
+				display: flex
+				justify-content: center
+				align-items: center
+				box-sizing: border-box
+				&:nth-child(2)
+					border: none
+			.minus,.plus
+				font-size: 18
+				font-style: normal
+				font-weight: normal
+				color: $DS50
+				cursor: pointer
+			.inactive
+				opacity: 0.5
+.submit
+	padding: 8px 7px 8px 0px 
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	flex-wrap: nowrap
+	justify-content: space-between
+	align-items: center
+	.clean
+		color: $DS50
+		cursor: pointer
+	.apply
+		color: $purple
+		cursor: pointer	
+.dropdown.active
+	border: 1px solid $DS50
+//---------------------------------------------------------
+//---------------------------------------------------------
+//---------------------------------------------------------
+//---------------------------------------------------------
+//---------------------------------------------------------
+.dateDropdown
+	width: 266px
+	.arrival-depart
+		display: block
+		.filterDateDropdown
+			position: relative
+			input
+				width: 100%
+				background: #FFFFFF
+				border: 1px solid $DS25
+				box-sizing: border-box
+				border-radius: 4px
+				box-sizing: border-box
+				height: 44px
+				cursor: pointer
+				padding-left: 15px
+				font-family: montserrat
+				font-style: normal
+				font-weight: normal
+				font-size: 14px
+				line-height: 24px
+				color: $DS75
+			i
+				position: absolute
+				top: 0px
+				right: 0px
+				width: 44px
+				height: 44px
+				display: -webkit-flex
+				display: -moz-flex
+				display: -ms-flex
+				display: -o-flex
+				display: flex
+				justify-content: center
+				align-items: center
+				color: $DS50
+				cursor: pointer
+input:hover,input:focus
+	outline: none
+
