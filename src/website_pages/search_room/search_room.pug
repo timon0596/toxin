@@ -14,16 +14,21 @@ body
 		main
 			.search-room__wrapper
 				.room-options
-					h3 даты пребывания в отеле
-					+dateDropdown()
-					+guest("гости")
-					+rangeSlider("диапазон цены")
-					.under_rangeSlider_text
-						| Стоимость за сутки пребывания в номере
-					+ckboxbuttons("checkbox buttons")
-					+rich_ckbox_btns("доступность")
-					+dropdown("удобства номера")
-					+checkboxlist("дополнительные удобства","expand_more")
+					.room-options_row
+						+dateDropdown("даты пребывания в отеле")
+						+guest("гости")
+					.room-options_row
+						+rangeSlider("диапазон цены")
+						.under_rangeSlider_text
+							| Стоимость за сутки пребывания в номере
+					.room-options_row
+						+ckboxbuttons("checkbox buttons")
+					.room-options_row
+						+rich_ckbox_btns("доступность")
+					.room-options_row
+						+dropdown("удобства номера")
+					.room-options_row
+						+checkboxlist("дополнительные удобства","expand_more")
 				.room-preview__wrapper
 					h1 Номера, которые мы для вас подобрали
 					.room-preview__grid
