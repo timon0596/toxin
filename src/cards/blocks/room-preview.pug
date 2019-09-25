@@ -1,7 +1,7 @@
 mixin roompreview(number,cost,rate,review)
 	.block.room-preview--block(class=number)
 		.room-preview--slider
-			.carousel.slide(data-ride='carousel' id="carouselExampleIndicators")
+			.carousel.slide(data-ride='false' data-interval="10000" id="carouselExampleIndicators")
 				ol.carousel-indicators
 				.carousel-inner
 				a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')

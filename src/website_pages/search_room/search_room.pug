@@ -11,30 +11,35 @@ head
 	meta(charset="UTF-8")
 	title Document
 body
-	.search_room__wrapper
+	.wrapper
 		include ../../headers_and_footers/_header
 		main
-			.room-options
-				h3 даты пребывания в отеле
-				+dateDropdown()
-				h3 гости
-				+guest()
-				+rangeSlider("диапазон цены")
-				.under_rangeSlider_text
-					| Стоимость за сутки пребывания в номере
-				+ckboxbuttons("checkbox buttons")
-				h3 доступность
-			.room-preview__grid
-				+roompreview("888 ","9 990₽ ",5,"145 ")
-				+roompreview("840 ","9 990₽ ",5,"145 ")
-				+roompreview("980 ","9 990₽ ",5,"145 ")
-				+roompreview("856 ","9 990₽ ",5,"145 ")
-				+roompreview("740 ","9 990₽ ",5,"145 ")
-				+roompreview("982 ","9 990₽ ",5,"145 ")
-				+roompreview("678 ","9 990₽ ",5,"145 ")
-				+roompreview("450 ","9 990₽ ",5,"145 ")
-				+roompreview("350 ","9 990₽ ",5,"145 ")
-				+roompreview("666 ","9 990₽ ",5,"145 ")
-				+roompreview("444 ","9 990₽ ",5,"145 ")
-				+roompreview("352 ","9 990₽ ",5,"145 ")
+			.search-room__wrapper
+				.room-options
+					h3 даты пребывания в отеле
+					+dateDropdown()
+					h3 гости
+					+guest()
+					+rangeSlider("диапазон цены")
+					.under_rangeSlider_text
+						| Стоимость за сутки пребывания в номере
+					+ckboxbuttons("checkbox buttons")
+					+rich_ckbox_btns("доступность")
+				.room-preview__wrapper
+					h1 Номера, которые мы для вас подобрали
+					.room-preview__grid
+						+roompreview("888 ","9 990₽ ",5,"145 ")
+						+roompreview("840 ","9 990₽ ",5,"145 ")
+						+roompreview("980 ","9 990₽ ",5,"145 ")
+						+roompreview("856 ","9 990₽ ",5,"145 ")
+						+roompreview("740 ","9 990₽ ",5,"145 ")
+						+roompreview("982 ","9 990₽ ",5,"145 ")
+						+roompreview("678 ","9 990₽ ",5,"145 ")
+						+roompreview("450 ","9 990₽ ",5,"145 ")
+						+roompreview("350 ","9 990₽ ",5,"145 ")
+						+roompreview("666 ","9 990₽ ",5,"145 ")
+						+roompreview("444 ","9 990₽ ",5,"145 ")
+						+roompreview("352 ","9 990₽ ",5,"145 ")
+					.pagination_wrapper
+						+pagination()
 		include ../../headers_and_footers/_footer

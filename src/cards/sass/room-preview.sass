@@ -4,6 +4,17 @@
 	width: min-content
 	overflow: hidden
 	.room-preview--slider
+		.carousel-control
+			&-prev,&-next
+				display: none
+		&:hover
+			.carousel-control
+				&-prev,&-next
+					display: -webkit-flex
+					display: -moz-flex
+					display: -ms-flex
+					display: -o-flex
+					display: flex
 	.room-preview--info
 		padding: 20px
 		.room-preview--info__header,.room-preview--info__footer
