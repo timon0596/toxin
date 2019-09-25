@@ -112,6 +112,9 @@ module.exports={
 		}),new HWP({
 			template: './src/website_pages/search_room/search_room.pug',
 			filename: 'search_room.html'
+		}),new HWP({
+			template: './src/website_pages/room_details/room_details.pug',
+			filename: 'room_details.html'
 		}),
 		new webpack.ProvidePlugin({
 			$: 'jquery',
