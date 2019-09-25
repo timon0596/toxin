@@ -1,13 +1,17 @@
-function dropdown_bedroom(){let elem=$(".dropdown_bedroom");
-	$(elem).find(".text").html("2 спальни, 2 кровати...")
+function dropdown_bedroom(){
+	$(".dropdown-bedroom").each(function(){
+		let elem=$(this);
+	$(elem).find("i").click(function(){
+		$(elem).find(".controls").slideToggle(250)
+		$(elem).find(".bedroom").toggleClass("active")
+	})
+	
+	$(elem).find(".how-much").html("2 спальни, 2 кровати...")
 	elem.sum=0;
 	elem.text="";
 	elem.first="2 спальни"
 	elem.second=", 2 кровати..."
-	$(elem).find("i").click(function(){
-		$(elem).find(".wrapper__dropdown").slideToggle(250)
-		$(elem).toggleClass("active")
-	})
+	
 	$(elem).find(".row").each(function(i,el){
 		el.counter=+$(el).find(".number").html()
 		if(!$(el).hasClass("third")){
@@ -43,7 +47,7 @@ function dropdown_bedroom(){let elem=$(".dropdown_bedroom");
 					elem.second=", кровати..."
 			}
 			elem.text=elem.first+elem.second
-			$(elem).find(".text").html(elem.text)
+			$(elem).find(".how-much").html(elem.text)
 			$(this).siblings(".minus").removeClass("inactive")
 			
 
@@ -82,7 +86,7 @@ function dropdown_bedroom(){let elem=$(".dropdown_bedroom");
 					elem.second=", кровати..."
 			}
 			elem.text=elem.first+elem.second
-			$(elem).find(".text").html(elem.text)
+			$(elem).find(".how-much").html(elem.text)
 			if($(this).siblings(".number").html()==0)
 				$(this).addClass("inactive")
 										
@@ -94,5 +98,5 @@ function dropdown_bedroom(){let elem=$(".dropdown_bedroom");
 
 
 	
-};
+});}
 dropdown_bedroom();
