@@ -1,6 +1,5 @@
 include ../../cards/blocks/room-preview
 include ../../pug/textfield
-include ../../pug/dropdown
 include ../../pug/expandableChekboxList
 include ../../pug/buttons
 include ../../pug/guest
@@ -25,6 +24,8 @@ body
 						| Стоимость за сутки пребывания в номере
 					+ckboxbuttons("checkbox buttons")
 					+rich_ckbox_btns("доступность")
+					+dropdown("Сколько гостей","bedroom","expand_more","спальни","кровати","ванные комнаты","удобства номера")
+					+checkboxlist("дополнительные удобства","expand_more")
 				.room-preview__wrapper
 					h1 Номера, которые мы для вас подобрали
 					.room-preview__grid

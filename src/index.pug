@@ -1,5 +1,5 @@
 include pug/textfield
-include pug/dropdown
+
 include pug/expandableChekboxList
 include pug/buttons
 include components/components
@@ -17,9 +17,7 @@ body hello world
 		br
 		+text_input("Email",null,"email")
 		br
-		span dropdown
-		br
-		+dropdown("Сколько гостей","bedroom","expand_more","спальни","кровати","ванные комнаты") 
+		+dropdown("Сколько гостей","bedroom","expand_more","спальни","кровати","ванные комнаты","dropdown") 
 		br
 		+checkboxlist("expandable chekbox list","expand_more")
 		br
