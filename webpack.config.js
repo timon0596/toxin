@@ -70,11 +70,22 @@ module.exports={
          ]         
        },{
 		  test: /\d{1,3}\.image\d{1}\.(jpg|png)$/,
+		  exclude: [path.resolve(__dirname, "src/img/roomdetails")],
 		  use:[ {
 		    loader: "file-loader",
 		    options: {
 		      name: "[name].[ext]",
-		      outputPath: './img/roompreview/',
+		      outputPath: './img/roompreviewPics/',
+		      useRelativePath: true
+		  }}],
+  },{
+		  test: /[123]\.(jpg|png)/,
+		  exclude: [path.resolve(__dirname, "src/img/roompreview")],
+		  use:[ {
+		    loader: "file-loader",
+		    options: {
+		      name: "[name].[ext]",
+		      outputPath: './img/roomDetailsPics/',
 		      useRelativePath: true
 		  }}],
   },
@@ -83,7 +94,7 @@ module.exports={
 
        {
 		  test: /\.(jpg|png|svg)$/,
-		  exclude: [path.resolve(__dirname, "src/img/roompreview"),path.resolve(__dirname, "src/fonts")],
+		  exclude: [path.resolve(__dirname, "src/img/roompreview"),path.resolve(__dirname, "src/fonts"),path.resolve(__dirname, "src/img/roomdetails")],
 		  use:[ {
 		    loader: "file-loader",
 		    options: {

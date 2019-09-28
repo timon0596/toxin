@@ -33,8 +33,36 @@ import toxin_logo_img_border from "./img/logo_img_border.svg"
 import toxin_logo_left from "./img/left_logo_arc.svg"
 import toxin_logo_right from "./img/right_logo_arc.svg"
 import lpbgr from "./img/landingPageBackground.svg"
-let png = require.context("./img/roompreview", true, /\.png$/)
+//---------------------room_details_picture-section-----------------------------------------
+//---------------------room_details_picture-section-----------------------------------------
+//---------------------room_details_picture-section-----------------------------------------
+let roomdetailsPNG = require.context("./img/roomdetails", true, /\.png$/)
+let roomdetailsImgPath="./img/roomDetailsPics"
+if(window.location.pathname=="/room_details.html"){
 
+	$("main .pics .img").each(function(i,el){
+		let path=roomdetailsImgPath+roomdetailsPNG.keys()[i].slice(1)
+		$(el).css('background-image', 'url(' + path + ')')
+		// el.src=path
+		console.log(el)
+	})
+	
+	let picsHGT=485/1440*window.innerWidth	
+	$("main .pics").css("height",picsHGT + "px")
+	window.onresize=function(){
+		let picsHGT=485/1440*window.innerWidth	
+		$("main .pics").css("height",picsHGT + "px")
+	}
+
+
+}
+
+//---------------------room_details_picture-section-----------------------------------------
+//---------------------room_details_picture-section-----------------------------------------
+//---------------------room_details_picture-section-----------------------------------------
+
+
+let png = require.context("./img/roompreview", true, /\.png$/)
 $(".block.room-preview--block").each(function(i,el){
 	
 
@@ -56,11 +84,11 @@ $("#"+id+" a.carousel-control-next").attr('href',"#"+id)
 for(let i=0;i<4;i++){
 
 	let img=document.createElement("img")
-	let path=`./img/roompreview`+path_context+png.keys()[i].slice(5)
-	console.log(path)
+	let path=`./img/roompreviewPics`+path_context+png.keys()[i].slice(5)
+	
 	img.src=path
 	img.class="d-block.w-100"
-	console.log($(this).find("ol.carousel-indicators"))
+	
 	// $(id+" ol.carousel-indicators").append(`<li data-target=`+`'#carouselExampleIndicators'`+room_number+` data-slide-to=${i-1}></li>`)
 	$(this).find("ol.carousel-indicators").append(`<li data-target='#${id}' data-slide-to=${i}></li>`)
 	$(this).find(".carousel-inner").append("<div class='carousel-item'>"+"</div>")
