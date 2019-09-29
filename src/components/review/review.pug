@@ -1,0 +1,11 @@
+mixin review(args)
+	include ../like_button/like_button
+	.review
+		.icon
+			img
+		.intials
+			.name= args.name
+			.time= args.time
+		.like_button
+			+like(args.num)
+		.comment= args.text

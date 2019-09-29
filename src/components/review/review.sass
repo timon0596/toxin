@@ -1,0 +1,14 @@
+.review
+	display: grid
+	grid-template-columns: min-content auto-fit
+	grid-template-areas: "icon ini" "like com"
+	grid-column-gap: 10px
+	.icon
+		img
+		grid-area: icon
+	.initials
+		grid-area: ini
+	.like_button
+		grid-area: like
+	.comment
+		grid-area: com

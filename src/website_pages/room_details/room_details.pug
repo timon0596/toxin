@@ -3,6 +3,9 @@ include ../../pug/textfield
 include ../../pug/expandableChekboxList
 include ../../pug/buttons
 include ../../components/components
+
+- var text1 = "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей." 
+- var review1 = {num: 11, name: "Мурад Сарафанов", time: "5 дней назад", text: text1}
 <!DOCTYPE html>
 html(lang="en")
 head
@@ -16,4 +19,21 @@ body
 				.img.img1
 				.img.img2
 				.img.img3
+			section.info
+				.room_info
+					h2 Сведения о номере
+				.impressions
+					h2 Впечатления от номера
+				.reviews
+					.headline
+						h2 Отзывы посетителей номера
+						.number 2 отзыва
+					+review(review1)
+				.rules
+					h2 Правила
+				.cancel
+					h2 Отмена
+				.lux-card
+					include ../../cards/blocks/lux
+
 		include ../../headers_and_footers/_footer

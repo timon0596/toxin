@@ -33,6 +33,14 @@ import toxin_logo_img_border from "./img/logo_img_border.svg"
 import toxin_logo_left from "./img/left_logo_arc.svg"
 import toxin_logo_right from "./img/right_logo_arc.svg"
 import lpbgr from "./img/landingPageBackground.svg"
+// import pngusericon from "./img/reviewIcons/murad.userIcon.png"
+// console.log(typeof pngusericon)
+
+
+
+
+
+
 //---------------------room_details_picture-section-----------------------------------------
 //---------------------room_details_picture-section-----------------------------------------
 //---------------------room_details_picture-section-----------------------------------------
@@ -40,11 +48,24 @@ let roomdetailsPNG = require.context("./img/roomdetails", true, /\.png$/)
 let roomdetailsImgPath="./img/roomDetailsPics"
 if(window.location.pathname=="/room_details.html"){
 
+	//---------------------user-icons---------------------
+	//---------------------user-icons---------------------
+	//---------------------user-icons---------------------
+	let usericonsSVG = require.context("./img/reviewIcons", true, /\.png$/)
+	// console.log(usericonsSVG)
+	console.log(usericonsSVG)
+	$(".review .icon img")[0].src="./img/reviewusericons"+usericonsSVG.keys()[0].slice(1)
+	//---------------------user-icons---------------------
+	//---------------------user-icons---------------------
+	//---------------------user-icons---------------------
+
+
+
 	$("main .pics .img").each(function(i,el){
 		let path=roomdetailsImgPath+roomdetailsPNG.keys()[i].slice(1)
 		$(el).css('background-image', 'url(' + path + ')')
 		// el.src=path
-		console.log(el)
+		console.log(path)
 	})
 	
 	let picsHGT=485/1440*window.innerWidth	

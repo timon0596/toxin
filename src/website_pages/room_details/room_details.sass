@@ -11,3 +11,29 @@ main
 			grid-area: img3
 		.img
 			background-size: cover
+	section.info
+		width: 100%
+		padding: 70px 140px
+		display: grid
+		grid-template-areas: "info impr lux" "rev rev lux" "rul can lux"
+		.room_info
+			grid-area: info 
+		.impressions
+			grid-area: impr
+		.reviews	
+			grid-area: rev
+			.headline
+				display: -webkit-flex
+				display: -moz-flex
+				display: -ms-flex
+				display: -o-flex
+				display: flex
+				justify-content: space-between
+				flex-wrap: nowrap
+		.rules
+			grid-area: rul
+		.cancel
+			grid-area: can
+		.lux-card
+			grid-area: lux
+			margin-left: 70px

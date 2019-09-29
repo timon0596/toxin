@@ -88,13 +88,20 @@ module.exports={
 		      outputPath: './img/roomDetailsPics/',
 		      useRelativePath: true
 		  }}],
+  },{
+		  test: /usericon\.(jpg|png|svg)$/,
+		  exclude: [path.resolve(__dirname, "src/img/roompreview"),path.resolve(__dirname, "src/img/roomdetails")],
+		  use:[ {
+		    loader: "file-loader",
+		    options: {
+		      name: "[name].[ext]",
+		      outputPath: './img/reviewusericons/',
+		      useRelativePath: true
+		  }}],
   },
-
-
-
        {
 		  test: /\.(jpg|png|svg)$/,
-		  exclude: [path.resolve(__dirname, "src/img/roompreview"),path.resolve(__dirname, "src/fonts"),path.resolve(__dirname, "src/img/roomdetails")],
+		  exclude: [path.resolve(__dirname, "src/img/roompreview"),path.resolve(__dirname, "src/fonts"),path.resolve(__dirname, "src/img/roomdetails"),path.resolve(__dirname, "src/img/reviewIcons")],
 		  use:[ {
 		    loader: "file-loader",
 		    options: {
