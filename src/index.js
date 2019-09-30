@@ -1,3 +1,6 @@
+let usericonsSVG = require.context("./img/reviewIcons", true, /\.(png|jpg)$/)
+console.log(usericonsSVG)
+console.log(window.innerWidth)
 import "jquery"
 // import "jquery-ui/demos/bootstrap.js"
 import "jquery-ui/ui/widget"
@@ -51,10 +54,10 @@ if(window.location.pathname=="/room_details.html"){
 	//---------------------user-icons---------------------
 	//---------------------user-icons---------------------
 	//---------------------user-icons---------------------
-	let usericonsSVG = require.context("./img/reviewIcons", true, /\.png$/)
+	
 	// console.log(usericonsSVG)
-	console.log(usericonsSVG)
-	$(".review .icon img")[0].src="./img/reviewusericons"+usericonsSVG.keys()[0].slice(1)
+	// console.log(usericonsSVG)
+	// $(".review .icon img")[0].src="./img/reviewusericons"+usericonsSVG.keys()[0].slice(1)
 	//---------------------user-icons---------------------
 	//---------------------user-icons---------------------
 	//---------------------user-icons---------------------

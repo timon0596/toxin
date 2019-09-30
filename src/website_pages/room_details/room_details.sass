@@ -16,11 +16,16 @@ main
 		padding: 70px 140px
 		display: grid
 		grid-template-areas: "info impr lux" "rev rev lux" "rul can lux"
+		section
+			width: 100%
+			h2
+				margin-bottom: 20px
 		.room_info
 			grid-area: info 
 		.impressions
 			grid-area: impr
-		.reviews	
+		.reviews
+			
 			grid-area: rev
 			.headline
 				display: -webkit-flex
@@ -29,7 +34,15 @@ main
 				display: -o-flex
 				display: flex
 				justify-content: space-between
-				flex-wrap: nowrap
+				align-items: baseline
+				.num
+					font-size: 14px
+					line-height: 14px
+					color: $DS50
+					min-width: 62px
+			.reviews_grid
+				display: grid
+				grid-gap: 20px
 		.rules
 			grid-area: rul
 		.cancel
