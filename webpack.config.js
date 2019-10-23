@@ -133,6 +133,9 @@ module.exports={
 		}),new HWP({
 			template: './src/website_pages/room_details/room_details.pug',
 			filename: 'room_details.html'
+		}),new HWP({
+			template: './src/website_pages/signup/signup.pug',
+			filename: 'signup.html'
 		}),
 		new webpack.ProvidePlugin({
 			$: 'jquery',

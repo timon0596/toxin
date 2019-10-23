@@ -16,11 +16,11 @@ head
 body
 	.wrapper
 		include ../../headers_and_footers/_header
-		main
+		main.room_details
 			section.pics
-				.img.img1
-				.img.img2
-				.img.img3
+				img(src="./img/roomDetailsPics/1.png").img.img1
+				img(src="./img/roomDetailsPics/2.png").img.img2
+				img(src="./img/roomDetailsPics/3.png").img.img3
 			section.info
 				section.room_info
 					h2 Сведения о номере
@@ -40,8 +40,10 @@ body
 						+review(review2)
 				.rules
 					h2 Правила
+					+bulletlist()
 				.cancel
 					h2 Отмена
+					.text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
 				.lux-card
 					include ../../cards/blocks/lux
 

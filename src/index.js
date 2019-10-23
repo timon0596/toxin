@@ -2,20 +2,14 @@ let usericonsSVG = require.context("./img/reviewIcons", true, /\.(png|jpg)$/)
 console.log(usericonsSVG)
 console.log(window.innerWidth)
 import "jquery"
-// import "jquery-ui/demos/bootstrap.js"
 import "jquery-ui/ui/widget"
 import "jquery-ui/ui/keycode"
 import "jquery-ui/ui/widgets/mouse"
 import "jquery-ui/ui/widgets/slider"
 import "jquery-ui/themes/base/base.css"
-// import "jquery-ui/themes/base/theme.css"
 import './all.css'
-// import '@fortawesome/fontawesome-free/js/solid'
-// import '@fortawesome/fontawesome-free/js/regular'
-// import '@fortawesome/fontawesome-free/js/brands'
 import "popper.js"
 import "bootstrap/js/dist/carousel.js"
-// import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap/scss/bootstrap.scss"
 import "./index.pug"
 import "./cards/cards.pug"
@@ -23,6 +17,8 @@ import "./headers_and_footers/headers_and_footers.pug"
 import "./landingPage.pug"
 import "./website_pages/search_room/search_room.pug"
 import "./website_pages/room_details/room_details.pug"
+import "./website_pages/signup/signup.pug"
+import "./website_pages/signup/signup"
 import "./style.sass"
 import "./js/ckbox.js"
 import "./js/ckboxButtons.js"
@@ -36,8 +32,7 @@ import toxin_logo_img_border from "./img/logo_img_border.svg"
 import toxin_logo_left from "./img/left_logo_arc.svg"
 import toxin_logo_right from "./img/right_logo_arc.svg"
 import lpbgr from "./img/landingPageBackground.svg"
-// import pngusericon from "./img/reviewIcons/murad.userIcon.png"
-// console.log(typeof pngusericon)
+import spbgr from "./img/signupPageBackground.svg"
 
 
 
@@ -48,38 +43,6 @@ import lpbgr from "./img/landingPageBackground.svg"
 //---------------------room_details_picture-section-----------------------------------------
 //---------------------room_details_picture-section-----------------------------------------
 let roomdetailsPNG = require.context("./img/roomdetails", true, /\.png$/)
-let roomdetailsImgPath="./img/roomDetailsPics"
-if(window.location.pathname=="/room_details.html"){
-
-	//---------------------user-icons---------------------
-	//---------------------user-icons---------------------
-	//---------------------user-icons---------------------
-	
-	// console.log(usericonsSVG)
-	// console.log(usericonsSVG)
-	// $(".review .icon img")[0].src="./img/reviewusericons"+usericonsSVG.keys()[0].slice(1)
-	//---------------------user-icons---------------------
-	//---------------------user-icons---------------------
-	//---------------------user-icons---------------------
-
-
-
-	$("main .pics .img").each(function(i,el){
-		let path=roomdetailsImgPath+roomdetailsPNG.keys()[i].slice(1)
-		$(el).css('background-image', 'url(' + path + ')')
-		// el.src=path
-		console.log(path)
-	})
-	
-	let picsHGT=485/1440*window.innerWidth	
-	$("main .pics").css("height",picsHGT + "px")
-	window.onresize=function(){
-		let picsHGT=485/1440*window.innerWidth	
-		$("main .pics").css("height",picsHGT + "px")
-	}
-
-
-}
 
 //---------------------room_details_picture-section-----------------------------------------
 //---------------------room_details_picture-section-----------------------------------------
@@ -206,28 +169,8 @@ if(localStorage.getItem("arrival")&&localStorage.getItem("depart")){
 	let departDate=Number(localStorage.getItem("depart").split(".")[0])+" "+months[Number(localStorage.getItem("depart").split(".")[1])-1]
 	$(".dateDropdown .filterDateDropdown input").val(arrivalDate+" - "+departDate)
 }
-//---------------------------------------------------
-// if(air_dp.selectedDates[0]){
-// 	$(".arrival-depart .arrival").val(air_dp.selectedDates[0].toLocaleDateString())
-// 	selectedDates.arrival=air_dp.selectedDates[0]
-// }else{
-// 	$(".arrival-depart .arrival").val("")
-// 	selectedDates.arrival=undefined						
-// }
-// if(air_dp.selectedDates[1]){
-// 	$(".arrival-depart .depart").val(air_dp.selectedDates[1].toLocaleDateString())
-// 	selectedDates.depart=air_dp.selectedDates[1]
-// 	dayDiff=Math.ceil((selectedDates.depart-selectedDates.arrival)/1000/60/60/24)
-// 	costPerDay(dayDiff)
-// }else{
-// 	$(".arrival-depart .depart").val("")
-// 	selectedDates.depart=undefined
-// 	dayDiff=0
-// 	$(".cost-mult-days").html(cost_mult_days_initial)
-// 	$(".price .sum").html(cost_mult_days_summary_initial)
-// 	$(".total-sum .sum").html(total_sum_initial)
-// }
-//---------------------------------------------------
+
+
 
 $(".arrival-depart .input-wrapper").each(function(i,el){
 	$(this).click(function(){		
@@ -239,6 +182,9 @@ $(".arrival-depart .input-wrapper").each(function(i,el){
 //--------------------------------------calendar--------------------------------------------
 //--------------------------------------calendar--------------------------------------------
 //--------------------------------------calendar--------------------------------------------
+
+
+
 //-------------------masked-input--------------------
 $(".arrival-depart .arrival").mask('99.99.9999')
 $(".arrival-depart .depart").mask('99.99.9999')
@@ -277,7 +223,6 @@ function datepickerApplyButton(){
     $(".datepicker .datepicker--buttons").each(function(){
     	$(this).append(button)
     })
-
 }
 //-------------------------------masked-textfield-------------------------------------
 $(document).ready(function(){
@@ -286,14 +231,5 @@ $(document).ready(function(){
 	})
 })
 //-------------------------------masked-textfield-------------------------------------
-//-------------------------------slick-slider-initialization-------------------------------------
-// $(document).ready(function(){
-// 	$(".room-preview--slider").slick({
-// 		dots: true,
-// 		slidesToShow: 1,
-//   		adaptiveHeight: true,
-//   		infinite: true
-// 	})
-// })
 
 

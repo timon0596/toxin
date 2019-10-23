@@ -1,0 +1,20 @@
+.bulletlist
+	ul
+		display: grid
+		grid-gap: 10px
+		li
+			list-style-type: none
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			align-items: baseline
+			&:before
+				content: ""
+				display: block
+				min-width: 10px
+				height: 10px
+				border-radius: 50%
+				background: $DS25
+				margin-right: 10px
