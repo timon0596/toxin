@@ -2,20 +2,51 @@ const path = require('path');
 const HWP=require('html-webpack-plugin');
 const webpack = require('webpack');
 const HtmlWebpackPugPlugin = require('html-webpack-pug-plugin');
-
+const MiniCssExtractPlugin=require('mini-css-extract-plugin')
+const autoprefixer = require('autoprefixer')
+const fs = require('fs')
 // const autoprefixer = require('autoprefixer');
+function generateHtmlPlugins (templateDir) {
+  const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir))
+  return templateFiles.map(item => {
+    // Split names and extension
+    const parts = item.split('.')
+    const name = parts[0]
+    const extension = parts[1]
+    return new HWP({
+      filename: `${name}.html`,
+      template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`)
+    })
+  })
+}
+
+// We will call the function like this:
+const htmlPlugins = generateHtmlPlugins('./src/pages')
 module.exports={
 	entry: './src/index.js',
 	output: {
 		filename: 'main.js',
 		path: path.resolve(__dirname,'dist')
 	},
+	optimization: {
+		splitChunks: {
+			cacheGroups: {
+				commons: {
+					test: /[\\/]node_modules[\\/]/,
+					name: 'vendors',
+					chunks: 'all'
+				}
+			}
+		}
+	},
 	module:{
-		rules: [{
+		rules: [
+		{
 			test:/\.pug$/,
 			loader: 'pug-loader',
 			options: {pretty: true}
-		},{
+		},
+		{
 			test:/\.js$/,
 			loader: 'babel-loader',
 			exclude:'/node_modules/'},
@@ -35,26 +66,31 @@ module.exports={
 		// 		"sass-loader"
 		// 		]
 		// },
-{
-    test: /\.(scss|sass)$/,
-    use: [{
-      loader: 'style-loader', // inject CSS to page
-    }, {
-      loader: 'css-loader', // translates CSS into CommonJS modules
-    }, {
-      loader: 'postcss-loader', // Run post css actions
-      options: {
-        plugins: function () { // post css plugins, can be exported to postcss.config.js
-          return [
-            require('precss'),
-            require('autoprefixer')
-          ];
-        }
-      }
-    }, {
-      loader: 'sass-loader' // compiles SASS to CSS
-    }]
-  },
+		{
+		    test: /\.(scss|sass)$/,
+		        use: [
+		        	MiniCssExtractPlugin.loader, 
+		        	{
+		    			loader: 'css-loader',
+		    			options: {
+		    				sourceMap: true
+		    			}
+		    		},
+		    		{
+		    			loader: 'postcss-loader',
+		    			options: {
+		    				plugins: [
+		    				autoprefixer()
+		    				],
+		    				sourceMap: true
+		    			}
+		    		},
+		    		{
+		    			loader: 'sass-loader',
+		    			options: { sourceMap: true }
+		    		}
+		    	]
+  	},
   {
 			test:/\.css$/,
 			use:[
@@ -117,30 +153,14 @@ module.exports={
 			template: './src/index.pug',
 			filename: 'index.html'
 		}),
-		new HWP({
-			template: './src/cards/cards.pug',
-			filename: 'cards.html'
-		}),
-		new HWP({
-			template: './src/headers_and_footers/headers_and_footers.pug',
-			filename: 'hf.html'
-		}),new HWP({
-			template: './src/landingPage.pug',
-			filename: 'landingPage.html'
-		}),new HWP({
-			template: './src/website_pages/search_room/search_room.pug',
-			filename: 'search_room.html'
-		}),new HWP({
-			template: './src/website_pages/room_details/room_details.pug',
-			filename: 'room_details.html'
-		}),new HWP({
-			template: './src/website_pages/signup/signup.pug',
-			filename: 'signup.html'
-		}),
+		...htmlPlugins,
 		new webpack.ProvidePlugin({
 			$: 'jquery',
 			jQuery: 'jquery',
 			'window.jQuery': 'jquery'
+		}),
+		new MiniCssExtractPlugin({
+			filename: '[name].[hash].css',
 		}),
 		new HtmlWebpackPugPlugin()
 

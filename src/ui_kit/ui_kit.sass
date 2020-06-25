@@ -1,0 +1,45 @@
+.form--elements
+	display: grid
+	grid-gap: 10px
+	padding: 10px
+	.element
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		flex-wrap: wrap
+@mixin df
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	align-items: center
+.form--element
+	border: 1px solid $d25
+	border-radius: 4px
+	padding-left: 15px
+	height: 44px
+	width: 100%
+	color: $d75
+	&::placeholder
+		color: $d25
+	&:hover,
+	&:focus
+		border: 1px solid $d50
+		outline: 0
+	@include df
+.form--element__wrapper
+	position: relative	
+	i
+		color: $d50
+		position: absolute
+		right: 0
+		top: 0
+		@include df
+		justify-content: center
+		width: 44px
+		height: 44px
+		background: 0
+		cursor: pointer

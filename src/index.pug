@@ -1,56 +1,9 @@
-include pug/textfield
-include pug/expandableChekboxList
-include pug/buttons
-include components/components
 <!DOCTYPE html>
 html(lang="en")
 head
 	meta(charset="UTF-8")
-	title Document
-body hello world
-	section.left
-		br
-		i.material-icons &#xE87C;
-		br
-		span text field
-		br
-		+text_input("Email",null,"email")
-		br
-		+dropdown("Сколько гостей","bedroom","expand_more","спальни","кровати","ванные комнаты","dropdown") 
-		br
-		+checkboxlist("expandable chekbox list","expand_more")
-		br
-		+ckboxbuttons("checkbox buttons")
-		br
-		+dateDropdown()
-		br
-	section.right
-		span radio buttons
-		br
-		+radiobuttons
-		br
-		span toggle
-		br
-		+toggle
-		br
-		span like button
-		br
-		+like("9")
-		br
-		span rate button
-		br
-		+rate(4)
-		br
-		span masked text field
-		br
-		+masked_textfield
-		br
-		+subscription_textfield()
-		br
-		+rangeSlider("range slider")
-		br
-		a(href="cards.html") cards
-		br
-		a(href="landingPage.html") landing page
+	title toxin
+body
+	a(href="form_elements.html") form elements
 
-		
+	
