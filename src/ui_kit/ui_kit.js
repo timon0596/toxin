@@ -19,7 +19,7 @@ class Dropdown{
 		this.index=index
 		this.text=''
 		this.dd=dd
-
+		this.lcKey=this.getLcKey()
 		this.display = this.dd.find('.form--element:first-child')
 		this.guest = this.dd.hasClass('guest--dropdown')
 		this.clear = this.dd.find('.clear')
@@ -42,20 +42,27 @@ class Dropdown{
 		})
 
 	}
+	getLcKey(){
+		let str = this.dd.attr('class').split(' ')
+		let ind = str.indexOf('active')
+		ind!=-1?
+			str.splice(ind,1):0
+		return this.index+str.join('')
+	}
 	guestInit(){
 		this.clear.click(()=>{
 			this.values.fill(0)
 			this.render()
-			localStorage.removeItem(`${this.index} ${this.dd.attr('class')}`)
+			localStorage.removeItem(this.lcKey)
 		})
 		this.apply.click(()=>{
-			localStorage.setItem(`${this.index} ${this.dd.attr('class')}`,JSON.stringify(this.values))
+			localStorage.setItem(this.lcKey,JSON.stringify(this.values))
 			this.toggle()
 		})
 	}
 	init(){
 		this.dd.hasClass('active')?0:this.ddmenu.hide()
-		this.values=JSON.parse(localStorage?.getItem(`${this.index} ${this.dd.attr('class')}`))||this.values
+		this.values=JSON.parse(localStorage?.getItem(this.lcKey))||this.values
 		this.render()
 		this.guest?this.guestInit():0
 	}
