@@ -103,3 +103,41 @@
 //----------------------dropdown----------------------
 //----------------------dropdown----------------------
 //----------------------dropdown----------------------
+
+//----------------------chekboxes----------------------
+//----------------------chekboxes----------------------
+//----------------------chekboxes----------------------
+.ckb
+	width: 20px
+	height: 20px
+	border: 1px solid $d25
+	border-radius: 4px
+	cursor: pointer
+	position: relative
+	transition: border-color .250s ease
+.ckb:before
+	position: absolute
+	content: ""
+	display: block
+	transform: translate(-50%,-50%) rotate(0deg)
+	transition: transform .250s ease,opacity .250s ease
+	opacity: 0
+	width: 6px
+	height: 8px
+	border: 2px solid
+	border-image: $lgp
+	border-image-slice: 1
+	transform-origin: center
+	left: 50%
+	top: 50%
+	box-sizing: border-box
+	border-top: 0
+	border-left: 0
+.ckb.checked
+	border: 1px solid $p
+.ckb.checked:before
+	position: absolute
+	opacity: 1
+	transform: translate(-50%,-50%) rotate(45deg)
+
+

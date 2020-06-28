@@ -2,7 +2,7 @@ mixin dropdown()
 	.form--element__wrapper.dropdown
 		.form--element
 		i.material-icons expand_more
-		.dropdown--menu.form--element
+		.dropdown--menu.form--element(style="display: none")
 			.dropdown--menu__row
 				h3 спальни
 				.counter
@@ -25,7 +25,7 @@ mixin guestdropdown()
 	.form--element__wrapper.dropdown.guest--dropdown
 		.form--element
 		i.material-icons expand_more
-		.dropdown--menu.form--element
+		.dropdown--menu.form--element(style="display: none")
 			.dropdown--menu__row
 				h3 взрослые
 				.counter
