@@ -1,3 +1,10 @@
+@mixin df
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	align-items: center
 .form--elements
 	display: grid
 	grid-gap: 10px
@@ -9,13 +16,6 @@
 		display: -o-flex
 		display: flex
 		flex-wrap: wrap
-@mixin df
-	display: -webkit-flex
-	display: -moz-flex
-	display: -ms-flex
-	display: -o-flex
-	display: flex
-	align-items: center
 .form--element
 	border: 1px solid $d25
 	border-radius: 4px
@@ -31,15 +31,75 @@
 		outline: 0
 	@include df
 .form--element__wrapper
+	width: 100%
 	position: relative	
 	i
 		color: $d50
 		position: absolute
 		right: 0
 		top: 0
-		@include df
 		justify-content: center
 		width: 44px
 		height: 44px
 		background: 0
 		cursor: pointer
+		@include df
+.subscription
+	i
+		background: $lgp
+		-webkit-background-clip: text
+		-webkit-text-fill-color: transparent
+//----------------------dropdown----------------------
+//----------------------dropdown----------------------
+//----------------------dropdown----------------------
+.dropdown.active
+	.form--element:not(.dropdown--menu)
+		border-bottom-right-radius: 0
+		border-bottom-left-radius: 0
+		border-color: $d50
+	.dropdown--menu
+		border-top-right-radius: 0
+		border-top-left-radius: 0
+.dropdown
+	.form--element
+		transition: border-radius .250s
+	.dropdown--menu
+		border-color: $d50
+		border-top: 0
+		height: min-content
+		flex-wrap: wrap
+		@include df
+		.dropdown--menu__row
+			width: 100%
+			margin-top: 7px
+			margin-right: 7px
+			justify-content: space-between
+			&:last-child
+				margin-bottom: 7px
+			@include df
+			.counter
+				@include df
+				.counter--button
+					cursor: pointer
+					width: 30px
+					height: 30px
+					border: 1px solid $d25
+					border-radius: 50%
+					justify-content: center
+					&.value
+						border: 0
+					&.disabled
+						opacity: 50%
+					@include df
+.dropdown.guest--dropdown
+	.dropdown--menu__row:last-child
+		margin-bottom: 13px
+		margin-top: 20px
+		.apply
+			margin-left: auto
+			color: $p
+		.clear
+			color: $d50
+//----------------------dropdown----------------------
+//----------------------dropdown----------------------
+//----------------------dropdown----------------------
