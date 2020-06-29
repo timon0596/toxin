@@ -159,4 +159,48 @@
 .ckblist.expanded
 	i
 		transform: rotate(180deg)
+//----------------------ckbbtn----------------------
+//----------------------ckbbtn----------------------
+//----------------------ckbbtn----------------------
+.ckbbtn
+	display: grid
+	grid-template-columns: auto 1fr
+	grid-template-rows: auto auto
+	grid-column-gap: 10px
+	grid-row-gap: 5px
+	align-items: center
+	.ckbbtn__name
+		font-weight: bold
+		font-size: 14px
+		line-height: 18px
+	.ckbbtn__description
+		grid-row: 2/2
+		grid-column: 2/2
+		font-size: 12px
+		line-height: 14px
+		color: $d50
+.ckbbtns
+	margin-top: 15px
+	display: grid
+	grid-gap: 10px
+//----------------------bullet_list----------------------
+//----------------------bullet_list----------------------
+//----------------------bullet_list----------------------
+.bullet--list
+	margin-top: 15px
+	.bullet__wrapper
+		display: grid
+		grid-gap: 10px
+		.bullet
+			display: grid
+			grid-template-columns: auto 1fr
+			grid-gap: 10px
+			align-items: baseline
+		.bullet:before
+			display: block
+			content: ''
+			width: 10px
+			height: 10px
+			background: $d25
+			border-radius: 50%
 

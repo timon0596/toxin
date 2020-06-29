@@ -22,4 +22,18 @@ mixin ckblist(name)
 			li
 				.ckb
 				| Шампунь
-
+mixin ckbbtn(name, description)
+	.ckbbtn
+		.ckb
+		.ckbbtn__name= name
+		.ckbbtn__description= description
+mixin ckbbtns()
+	.ckbbtns
+		+ckbbtn('Широкий коридор','Ширина коридоров в номере не менее 91 см.')
+		+ckbbtn('Помощник для инвалидов','На 1 этаже вас встретит специалист и проводит до номера.')
+mixin bulletlist()
+	.bullet--list
+		.bullet__wrapper
+			.bullet Нельзя с питомцами
+			.bullet Без вечеринок и мероприятий
+			.bullet Время прибытия — после 13:00, а выезд до 12:00
