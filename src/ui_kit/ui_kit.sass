@@ -10,12 +10,7 @@
 	grid-gap: 10px
 	padding: 10px
 	.element
-		display: -webkit-flex
-		display: -moz-flex
-		display: -ms-flex
-		display: -o-flex
-		display: flex
-		flex-wrap: wrap
+		
 .form--element
 	border: 1px solid $d25
 	border-radius: 4px
@@ -179,10 +174,21 @@
 		font-size: 12px
 		line-height: 14px
 		color: $d50
+.rich_ckbbtns
+	margin-top: 15px
+	display: grid
+	grid-gap: 10px
 .ckbbtns
 	margin-top: 15px
 	display: grid
 	grid-gap: 10px
+	.ckbbtn
+		display: grid
+		align-items: stretch
+		grid-template-rows: 1fr
+		.ckbbtn__name
+			font-weight: normal
+			color: $d50
 //----------------------bullet_list----------------------
 //----------------------bullet_list----------------------
 //----------------------bullet_list----------------------
@@ -203,4 +209,91 @@
 			height: 10px
 			background: $d25
 			border-radius: 50%
-
+//---------------------radio
+.radio
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	margin-top: 15px
+	label
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		align-items: center
+		margin-right: 20px
+		
+		input
+			display: none
+		.radio--btn
+			border: 1px solid $d25
+			border-radius: 50%
+			width: 20px
+			height: 20px
+			position: relative
+			transition: border-color .250s ease
+			margin-right: 10px
+		.radio--btn:before
+			content: ''
+			display: block
+			width: 12px
+			height: 12px
+			background: $lgp
+			border-radius: 50%
+			left: 50%
+			top: 50%
+			transform: translate(-50%,-50%) scale(0)
+			transition: transform .15s ease
+			position: absolute
+		input:checked + .radio--btn
+			border: 1px solid $p
+			border-radius: 50%
+			width: 20px
+			height: 20px
+			position: relative
+		.label__text
+			color: $d50
+		input:checked ~ .label__text
+			color: $d75
+		input:checked + .radio--btn:before
+			transform: translate(-50%,-50%) scale(1)
+//--------------------------toggle
+label.toggle__wrapper
+	margin-top: 15px
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	align-items: center
+	input
+		display: none
+	.toggle
+		margin-right: 10px
+		display: block
+		width: 40px
+		height: 20px
+		border: 1px solid $d25
+		border-radius: 10px
+		position: relative
+		padding: 4px
+		&:before
+			display: block
+			content: ''
+			width: 12px
+			height: 12px
+			position: absolute
+			background: $d25
+			border-radius: 50%
+			top: 50%
+			transform: translate(0,-50%)
+			transition: transform .15s ease
+	input:checked ~ .toggle
+		border-color: $p
+	input:checked ~ .toggle:before
+		background: $lgp
+		transform: translate(calc(30px - 100%),-50%)
+		

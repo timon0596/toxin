@@ -27,13 +27,39 @@ mixin ckbbtn(name, description)
 		.ckb
 		.ckbbtn__name= name
 		.ckbbtn__description= description
-mixin ckbbtns()
-	.ckbbtns
+mixin rich_ckbbtns()
+	.rich_ckbbtns
 		+ckbbtn('Широкий коридор','Ширина коридоров в номере не менее 91 см.')
 		+ckbbtn('Помощник для инвалидов','На 1 этаже вас встретит специалист и проводит до номера.')
+mixin ckbbtns()
+	.ckbbtns
+		.ckbbtn
+			.ckb
+			.ckbbtn__name Можно курить
+		.ckbbtn
+			.ckb
+			.ckbbtn__name Можно с питомцами
+		.ckbbtn
+			.ckb
+			.ckbbtn__name Можно пригласить<br>гостей (до 10 человек)
 mixin bulletlist()
 	.bullet--list
 		.bullet__wrapper
 			.bullet Нельзя с питомцами
 			.bullet Без вечеринок и мероприятий
 			.bullet Время прибытия — после 13:00, а выезд до 12:00
+mixin radio()
+	.radio
+		label.male
+			input(type="radio" name="gender" checked)
+			.radio--btn
+			.label__text Мужчина
+		label.female
+			input(type="radio" name="gender")
+			.radio--btn
+			.label__text  Женщина
+mixin toggle()
+	label.toggle__wrapper
+		input(type="checkbox")
+		.toggle
+		| Получать спецпредложения
