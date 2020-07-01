@@ -59,7 +59,42 @@ mixin radio()
 			.radio--btn
 			.label__text  Женщина
 mixin toggle()
-	label.toggle__wrapper
+	label.toggle__wrapper.cup
 		input(type="checkbox")
 		.toggle
 		| Получать спецпредложения
+mixin like(likes)
+	label.like__wrapper.cup
+		input(type="checkbox")
+		.like
+			i.material-icons favorite_border
+			i.material-icons favorite
+			.like__number= likes
+mixin rate(num)
+	- var rest = 5
+	.rate
+		while num>0
+			i.material-icons star
+			.rate__num= num--
+			.rate__num= rest--
+		while rest>0
+			i.material-icons star_border
+			.rate__num= rest--
+mixin slider(h)
+	.range--slider__wrapper
+		.range--slider__header
+			h3= h
+			.range--slider__amount
+		.range--slider
+mixin btn(text)
+	.toxin--btn
+		h3= text
+mixin btn_bd(text)
+	.toxin--btn.toxin--btn_bd
+		h3= text
+mixin btn_wide(text,icon)
+	.toxin--btn.toxin--btn_wide
+		h3= text
+		if icon
+			i.material-icons arrow_forward
+

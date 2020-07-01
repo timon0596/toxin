@@ -1,0 +1,10 @@
+mixin advantage(name,descr,icon)
+	.advantage
+		i.material-icons= icon
+		.advantage__info
+			.advantage__name= name
+			.advantage__descr= descr
+mixin advantages()
+	.advantages
+		+advantage('Комфорт','Шумопоглощающие стены','insert_emoticon')
+		+advantage('Удобство','Окно в каждой из спален','location_city')

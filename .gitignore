@@ -1,7 +1,3 @@
-!node_modules/bootstrap/scss/_carousel.scss
-!node_modules/bootstrap/scss/bootstrap.scss
-!node_modules/jquery-ui/themes/base/base.css
-!node_modules/jquery-ui/themes/base/slider.css
 /node_modules/*
 package-lock.json
 /dist/

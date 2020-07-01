@@ -7,10 +7,12 @@
 	align-items: center
 .form--elements
 	display: grid
-	grid-gap: 10px
+	grid-gap: 30px
 	padding: 10px
 	.element
-		
+		display: grid
+		grid-gap: 15px
+		min-height: 44px
 .form--element
 	border: 1px solid $d25
 	border-radius: 4px
@@ -175,11 +177,9 @@
 		line-height: 14px
 		color: $d50
 .rich_ckbbtns
-	margin-top: 15px
 	display: grid
 	grid-gap: 10px
 .ckbbtns
-	margin-top: 15px
 	display: grid
 	grid-gap: 10px
 	.ckbbtn
@@ -193,7 +193,6 @@
 //----------------------bullet_list----------------------
 //----------------------bullet_list----------------------
 .bullet--list
-	margin-top: 15px
 	.bullet__wrapper
 		display: grid
 		grid-gap: 10px
@@ -216,7 +215,6 @@
 	display: -ms-flex
 	display: -o-flex
 	display: flex
-	margin-top: 15px
 	label
 		display: -webkit-flex
 		display: -moz-flex
@@ -262,7 +260,6 @@
 			transform: translate(-50%,-50%) scale(1)
 //--------------------------toggle
 label.toggle__wrapper
-	margin-top: 15px
 	display: -webkit-flex
 	display: -moz-flex
 	display: -ms-flex
@@ -296,4 +293,192 @@ label.toggle__wrapper
 	input:checked ~ .toggle:before
 		background: $lgp
 		transform: translate(calc(30px - 100%),-50%)
-		
+//--------------------------------------like
+.like
+	color: $d25
+	display: flex
+	align-items: center
+	width: 40px
+	height: 20px
+	position: relative
+	box-sizing: border-box
+	background: #fff
+	background-clip: padding-box
+	border: solid 1px transparent
+	border-radius: 10px
+	transition: color .25s ease
+	&:before
+		content: ''
+		position: absolute
+		top: 0px
+		right: 0px
+		bottom: 0px
+		left: 0px
+		z-index: -1
+		margin: -1px
+		border-radius: inherit
+		background: $d25
+	i.material-icons,
+	.like__number
+		font-size: 10px
+		line-height: 9px
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		align-items: center
+	i.material-icons
+		width: 20px
+		height: 20px
+		margin-left: -1px
+	i.material-icons:nth-child(2)
+		display: none
+	.like__number
+		width: 20px
+		height: 20px
+		margin-right: -1px
+		font-size: 10px
+		line-height: 12px
+.like__wrapper
+	width: 40px
+	height: 20px
+	display: block
+	input
+		display: none
+	input:checked ~ *
+		color: $p
+	input:checked ~ .like > i
+		display: none
+	input:checked ~ .like > i:nth-child(2)
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+	input:checked ~ .like:before
+		background: $lgp
+//-----------------------------rate
+.rate
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	background: $lgp
+	background-clip: text
+	color: transparent
+	.rate__num
+		display: none
+.range--slider
+	height: 6px
+	border: 1px solid $d25
+	box-sizing: border-box
+	border-radius: 3px
+	.ui-slider-handle.ui-corner-all.ui-state-default
+		width: 12px
+		height: 12px
+		border: 2px solid #fff
+		border-radius: 50%
+		background: $lgg
+		&.ui-state-focus,
+		&.ui-state-hover
+			outline: 0
+	.ui-slider-range.ui-corner-all.ui-widget-header
+		height: 6px
+		background: $lgg
+		margin-top: -1px
+.range--slider__header
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	align-items: center
+	justify-content: space-between
+	margin-bottom: 20px
+//------------------------------buttons
+.toxin--btn
+	max-height: 44px
+	max-width: 99px
+	background: $lgp
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	justify-content: center
+	align-items: center
+	border-radius: 22px
+	padding: 10px 19px
+	cursor: pointer
+	*
+		color: #fff
+	&:active
+		opacity: 0.5
+.toxin--btn.toxin--btn_bd
+	background: #fff
+	background-clip: padding-box
+	position: relative
+	border: solid 2px transparent
+	padding-left: 17px
+	padding-right: 17px
+	&:before
+		content: ''
+		position: absolute
+		top: 0px
+		right: 0px
+		bottom: 0px
+		left: 0px
+		z-index: -1
+		margin: -2px
+		border-radius: inherit
+		background: $lgp
+	*
+		color: $p
+	&:active:before
+		opacity: .5 
+	&:active
+		opacity: 1
+.toxin--btn.toxin--btn_wide
+	position: relative
+	max-width: 100%
+	i
+		position: absolute
+		right: 0
+		width: 44px
+		height: 44px
+//---------------------------------advantages
+.advantages
+	display: grid
+	justify-content: flex-start
+	grid-gap: 20px
+	.advantage
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		border-bottom: 1px solid $d1
+		padding-bottom: 20px
+		padding-right: 20px
+		i.material-icons
+			margin-right: 10px
+			font-size: 48px
+			line-height: 41px
+			width: 48px
+			height: 48px
+			background: $lgp
+			-webkit-background-clip: text
+			background-clip: text
+			color: transparent
+		.advantage__info
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			flex-direction: column
+			.advantage__name
+				font-weight: bold
+			.advantage__descr
