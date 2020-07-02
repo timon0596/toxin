@@ -49,6 +49,8 @@
 //----------------------dropdown----------------------
 //----------------------dropdown----------------------
 //----------------------dropdown----------------------
+.date--dropdown__wrapper.filter_date_dropdown
+	grid-template-columns: 1fr
 .date--dropdown__wrapper
 	display: grid
 	grid-template-columns: 1fr 1fr
@@ -405,6 +407,15 @@ label.toggle__wrapper
 	justify-content: space-between
 	margin-bottom: 20px
 //------------------------------buttons
+.toxin--text--btn
+	cursor: pointer
+	display: inline-block
+	h3
+		color: $p
+	&_grey
+		cursor: pointer
+		h3
+			color: $d50
 .toxin--btn
 	max-height: 44px
 	max-width: 99px

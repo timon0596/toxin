@@ -45,8 +45,9 @@ mixin guestdropdown()
 					h3.counter--button.value 0
 					.counter--button.plus +
 			.dropdown--menu__row
-				h3.clear.cup очистить
-				h3.apply.cup применить
-
+				.clear
+					+btn_text('очистить',true)
+				.apply
+					+btn_text('применить')
 
 			

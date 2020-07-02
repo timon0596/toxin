@@ -89,6 +89,13 @@ mixin slider(h)
 mixin btn(text)
 	.toxin--btn
 		h3= text
+mixin btn_text(text,grey)
+	if grey
+		.toxin--text--btn.toxin--text--btn_grey
+			h3= text
+	else
+		.toxin--text--btn
+			h3= text
 mixin btn_bd(text)
 	.toxin--btn.toxin--btn_bd
 		h3= text
