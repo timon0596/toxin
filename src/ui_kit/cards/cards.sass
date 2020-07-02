@@ -1,0 +1,104 @@
+.cards__wrapper
+	padding: 10px
+	display: grid
+	grid-template-columns: repeat(auto-fit,minmax(270px,380px))
+	grid-gap: 40px
+	.cards__column
+		display: grid
+		grid-gap: 40px
+.block
+	border: 1px solid rgba(0, 0, 0, 0.12)
+	box-sizing: border-box
+	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2)
+	border-radius: 4px
+	padding: 40px 30px 30px
+	width: 380px
+	.block__row:not(:first-child)
+		margin-top: 20px
+	.block__row
+		display: grid
+		grid-gap: 5px
+	.block__row:last-child
+		margin-top: 30px
+		.block__row_inner
+			color: $d100
+	.toxin--btn
+		height: 44px
+.block__row_inner
+	display: grid
+	grid-auto-flow: column
+	align-items: center
+	font-size: 14px
+	line-height: 18px
+	justify-content: space-between
+	.toxin--btn
+		width: 99px
+//-------------room_details-----------
+.block.block__room--details
+	.block__row
+		.taxes
+			display: grid
+			grid-gap: 10px
+			.tax
+				display: grid
+				grid-auto-flow: column
+				justify-content: space-between
+				align-items: start
+				.tax__text
+					width: 240px
+					display: grid
+					grid-auto-flow: column
+					justify-content: space-between
+					align-items: baseline
+					.tax__info
+						width: 20px
+						height: 20px
+						border: 1px solid $d25
+						display: -webkit-flex
+						display: -moz-flex
+						display: -ms-flex
+						display: -o-flex
+						display: flex
+						justify-content: center
+						align-items: center
+						border-radius: 50%
+						font-weight: bold
+						font-size: 12px
+						line-height: 14px
+						color: $d25
+		.total
+			display: grid
+			grid-template-columns: auto 1fr auto
+			align-items: baseline
+			grid-gap: 5px
+			margin-bottom: 20px
+			.total__border
+				display: block
+				height: 1px
+				border-bottom: 1px dashed $d25
+		.block__row_inner
+			align-items: baseline
+			*
+				display: inline-block
+			.block__room--details__number
+				font-family: quicksand
+				font-style: normal
+				font-weight: bold
+				font-size: 14px
+				line-height: 17px
+				color: $d100
+				h3
+					color: $p
+			.block__room--details__payment
+				color: $d50
+				.block__room--details__cost
+					font-weight: bold
+//---------------datepicker
+.date--dropdown__wrapper
+	position: relative
+	.date--dropdown__datepicker
+		position: absolute
+		
+		left: 0
+		top: calc(100% + 5px)
+		z-index: 10

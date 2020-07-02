@@ -1,0 +1,22 @@
+mixin registration()
+	.block.block__registration
+		.block__row
+			h1 Регистрация аккаунта
+		.block__row
+			+textfield('Имя')
+			+textfield('Фамилия')
+			+radio()
+		.block__row
+			h3 дата рождения
+			+masked_textfield()
+		.block__row
+			h3 данные для входа в сервис
+			+textfield('Email')
+			+textfield('Пароль')
+			+toggle()
+		.block__row
+			+btn_wide('перейти к оплате',true)
+		.block__row
+			.block__row_inner
+				|Уже есть аккаунт на Toxin
+				+btn_bd('войти')

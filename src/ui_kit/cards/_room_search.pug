@@ -1,0 +1,11 @@
+mixin room_search()
+	.block.block__room--search
+		.block__row
+			h1 Найдём номера под ваши пожелания
+		.block__row
+			+datedropdowns('прибытие','выезд')
+		.block__row
+			h3 гости
+			+guestdropdown()
+		.block__row
+			+btn_wide('подобрать номер',true)

@@ -1,21 +1,29 @@
 include ./../ui_kit/ui_kit
+- var user = {icon: 'img/users/user1.jpeg',name: 'Мурад Сарафанов',date: '5 дней назад',likes: 11,text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'}
 <!DOCTYPE html>
 html(lang="en")
 head
 	meta(charset="UTF-8")
 	title form elements
 body
+	a(href="index.html") home
 	.form--elements
 		.element
 			h3 text field
 			+textfield('Email')
 		.element
-			+datedropdown()
+			+datedropdowns('date dropdown','date dropdown')
 		.element
+			h3 masked text field
+			+masked_textfield()
+		.element
+			h3 subscription text field
 			+subscription()
 		.element
+			h3 dropdown
 			+dropdown()
 		.element
+			h3 dropdown
 			+guestdropdown()
 		.element
 			+ckblist('epandable checkboxlist')
@@ -56,3 +64,8 @@ body
 			+btn_wide('перейти к оплате',true)
 		.element
 			+advantages()
+		.element
+			+comment(user)
+		.element
+			h3  pagination
+			+pagination()
