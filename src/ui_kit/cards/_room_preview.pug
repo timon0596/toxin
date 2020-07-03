@@ -1,0 +1,38 @@
+mixin room_preview(room,id)
+	.block__room--preview
+		.block__row
+			.carousel.slide(data-ride='true' id="carouselExampleIndicators"+id)
+				ol.carousel-indicators
+					each v,i in room.imgs
+						if i==0
+							li(data-target='#carouselExampleIndicators'+id data-slide-to=i class="active")
+						else
+							li(data-target='#carouselExampleIndicators'+id data-slide-to=i)
+				.carousel-inner
+					each v,i in room.imgs
+						if i==0
+							.carousel-item.active
+								img.d-block.w-100(src='img/preview/'+v alt='First slide')
+						else
+							.carousel-item
+								img.d-block.w-100(src='img/preview/'+v alt='First slide')
+				a.carousel-control-prev(href='#carouselExampleIndicators'+id role='button' data-slide='prev')
+					i.material-icons(aria-hidden='true') expand_more
+				a.carousel-control-next(href='#carouselExampleIndicators'+id role='button' data-slide='next')
+					i.material-icons(aria-hidden='true') expand_more
+		.block__row
+			.block__row_inner
+				.block__room--details__number
+					!= "№ "
+					h1= room.number
+					if room.lux
+						h3 люкс
+				.block__room--details__payment
+					.block__room--details__cost= room.cost
+					=" в сутки"
+			.divider
+			.block__row_inner
+				+rate(room.rate)
+				.block__room--details__payment
+					.block__room--details__cost= room.reviews
+					=" отзывов"

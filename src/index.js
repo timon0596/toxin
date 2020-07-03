@@ -6,5 +6,10 @@ import './index.pug'
 import './main.sass'
 import './ui_kit/ui_kit'
 import 'air-datepicker/dist/css/datepicker.min.css'
+import 'bootstrap/scss/vendor/_rfs.scss'
+import 'bootstrap/scss/bootstrap.scss'
+import 'bootstrap/js/src/carousel.js'
 const img = require.context('./img/users', true, /\.(jpe?g|png)$/)
+const preview_img = require.context('./img/preview', true, /\.(jpe?g|png|svg)$/)
+console.log(preview_img)
 

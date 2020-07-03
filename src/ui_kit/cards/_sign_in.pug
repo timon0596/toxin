@@ -1,0 +1,13 @@
+mixin sign_in()
+	.block.block__sign--in
+		.block__row
+			h1 Войти
+		.block__row
+			+textfield('Email')
+			+textfield('Пароль')
+		.block__row
+			+btn_wide('войти',true)
+		.block__row
+			.block__row_inner
+				| Нет аккаунта на Toxin
+				+btn_bd('создать')

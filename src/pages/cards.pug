@@ -1,4 +1,6 @@
 include ./../ui_kit/ui_kit
+- var room = {imgs: ['image.svg','image.svg','image.svg','image.svg'],cost: "9 990₽", lux: true, number: 888, reviews: 145, rate: 5}
+- var room1 = {imgs: ['image1.svg','image1.svg','image1.svg','image1.svg'],cost: "9 900₽", lux: false, number: 840, reviews: 65, rate: 4}
 <!DOCTYPE html>
 html(lang="en")
 head
@@ -8,10 +10,17 @@ body
 	a(href="index.html") home
 	.cards__wrapper
 		.cards__column
-			.card
+			.-card-
 				+room_search()
-			.card
+			.-card-
 				+registration()
 		.cards__column
-			.card
+			.-card-
 				+room_details()
+			.-card-
+				+sign_in()
+		.cards__column
+			.-card-
+				+room_preview(room,0)
+			.-card-
+				+room_preview(room1,1)

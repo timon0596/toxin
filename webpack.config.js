@@ -6,6 +6,7 @@ const MiniCssExtractPlugin=require('mini-css-extract-plugin')
 const autoprefixer = require('autoprefixer')
 const fs = require('fs')
 // const autoprefixer = require('autoprefixer');
+let rp =''
 function generateHtmlPlugins (templateDir) {
 	const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir))
 	return templateFiles.map(item => {
@@ -90,24 +91,32 @@ module.exports={
 			'file-loader',
 			]         
 		},
-		{
-			test: /user[0-9]+\.(jpe?g|png|svg)$/,
-			use:[ {
-				loader: "file-loader",
-				options: {
-					name: "[name].[ext]",
-					outputPath: './img/users/',
-					useRelativePath: true
-				}}],
-			},
+		// {
+		// 	test: /user[0-9]+\.(jpe?g|png|svg)$/,
+		// 	use:[ {
+		// 		loader: "file-loader",
+		// 		options: {
+		// 			name: "[name].[ext]",
+		// 			outputPath: './img/users/',
+		// 			useRelativePath: true
+		// 		}}],
+		// 	},
 			{
-				test: /\.(jpg|png|svg)$/,
-				exclude: [path.resolve(__dirname,"src/img/users")],
+				test: /\.(jpe?g|png|svg)$/,
+				exclude: [path.resolve(__dirname,"src/fonts")],
 				use:[ {
 					loader: "file-loader",
 					options: {
 						name: "[name].[ext]",
-						outputPath: './img/',
+	          outputPath: (url, resourcePath, context) => {
+	          	if (/preview/.test(resourcePath)) {
+	              return `img/preview/${url}`;
+	            }
+	            if (/users/.test(resourcePath)) {
+	              return `img/users/${url}`;
+	            }
+	            return `img/${url}`;
+	          },
 						useRelativePath: true
 					}}],
 				},]
@@ -132,3 +141,4 @@ module.exports={
 
 				]
 			}
+			console.log(rp)
