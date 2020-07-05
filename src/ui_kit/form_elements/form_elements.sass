@@ -67,9 +67,16 @@
 		border-top-right-radius: 0
 		border-top-left-radius: 0
 .dropdown
+	background: white
+	position: relative
 	.form--element
 		transition: border-radius .250s
 	.dropdown--menu
+		position: absolute
+		top: 100%
+		background: #fff
+		z-index: 1
+		left: 0
 		border-color: $d50
 		border-top: 0
 		height: min-content

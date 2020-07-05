@@ -84,13 +84,15 @@ module.exports={
 			"css-loader"
 			]
 		},
-		{
-			test: /\.(woff|svg|ttf|eot|woff2)$/,
-			exclude: [path.resolve(__dirname, "src/img"),path.resolve(__dirname, "node_modules")],
-			use: [
-			'file-loader',
-			]         
-		},
+		{ test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&mimetype=application/font-woff" },
+		      { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader",exclude: [path.resolve(__dirname, "src/img")], },
+		// {
+		// 	test: /\.(woff|svg|ttf|eot|woff2)$/,
+		// 	exclude: [path.resolve(__dirname, "src/img"),path.resolve(__dirname, "node_modules")],
+		// 	use: [
+		// 	'file-loader',
+		// 	]         
+		// },
 		// {
 		// 	test: /user[0-9]+\.(jpe?g|png|svg)$/,
 		// 	use:[ {

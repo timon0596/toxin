@@ -1,0 +1,13 @@
+include ./../ui_kit/ui_kit
+<!DOCTYPE html>
+html(lang="en")
+head
+	meta(charset="UTF-8")
+	title landing page
+body
+	+header(false)
+	section.landing-page
+		.landing-page__content
+			+room_search()
+			p Лучшие номера для вашей работы,<br> отдыха и просто вдохновения
+	+footer()

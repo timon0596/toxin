@@ -1,4 +1,8 @@
-footer
+.hf__wrapper
+	display: grid
+	grid-gap: 40px
+.footer
+	margin-bottom: 1px
 	background: white
 	box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1)
 	padding: 140px
@@ -24,9 +28,23 @@ footer
 			color: $d50
 	.footer__column:not(:first-child)
 		margin-left: 40px
-.hf__wrapper
-	display: grid
-	grid-gap: 40px
+.sub--section.copyright
+	color: $d75
+	justify-content: space-between
+	.logo
+		display: none
+	.socials
+		display: grid
+		grid-auto-flow: column
+		grid-gap: 20px
+		font-size: 24px
+		line-height: 23px
+		width: min-content
+		i
+			background: $lgp
+			-webkit-background-clip: text
+			background-clip: text
+			color: transparent
 .sub--section,
 section
 	padding-left: 140px
@@ -75,25 +93,35 @@ header
 		.user__name
 			padding-left: 20px
 			border-left: 1px solid $d1
+
 @media (max-width: 1280px) 
 	header
 		.sub--section
 			flex-direction: column
-	footer
+	.footer
 		display: grid
 		grid-template-columns: repeat(auto-fit,260px)
 		grid-gap: 40px
 		padding-bottom: 100px
 		.footer__column:not(:first-child)
 			margin: 0
-@media (max-width: 768px) 
+@media (max-width: 768px)
+	.sub--section.copyright
+		justify-items: center
+		justify-content: center
+		padding-top: 120px
+		padding-bottom: 120px
+		display: grid
+		grid-gap: 20px
+		.logo
+			display: block
 	header
 		.nav__item
 			margin-top: 20px
 @media (max-width: 560px)
 	.sub--section,
 	section,
-	footer
+	.footer
 		padding-left: 40px
 		padding-right: 40px
 @media (max-width: 420px)
