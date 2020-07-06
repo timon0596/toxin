@@ -28,11 +28,9 @@ body
 		.element
 			+ckblist('expandable checkboxlist')
 		.element
-			h3 Rich Checkbox Buttons
-			+rich_ckbbtns()
+			+rich_ckbbtns('Rich Checkbox Buttons')
 		.element
-			h3 Checkbox Buttons
-			+ckbbtns()
+			+ckbbtns('Checkbox Buttons')
 		.element
 			h3 bullet list
 			+bulletlist()
@@ -63,7 +61,9 @@ body
 		.element
 			+btn_wide('перейти к оплате',true)
 		.element
-			+advantages()
+			.advantages
+				+advantage('Комфорт','Шумопоглощающие стены','insert_emoticon')
+				+advantage('Удобство','Окно в каждой из спален','location_city')
 		.element
 			+comment(user)
 		.element

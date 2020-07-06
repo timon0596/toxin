@@ -1,0 +1,28 @@
+.form--element
+	border: 1px solid $d25
+	border-radius: 4px
+	padding-left: 15px
+	height: 44px
+	width: 100%
+	color: $d75
+	&::placeholder
+		color: $d25
+	&:hover,
+	&:focus
+		border: 1px solid $d50
+		outline: 0
+	@include df
+.form--element__wrapper
+	width: 100%
+	position: relative	
+	i
+		color: $d50
+		position: absolute
+		right: 0
+		top: 0
+		justify-content: center
+		width: 44px
+		height: 44px
+		background: 0
+		cursor: pointer
+		@include df

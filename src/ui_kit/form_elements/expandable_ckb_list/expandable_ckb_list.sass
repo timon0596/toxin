@@ -1,0 +1,20 @@
+.ckblist
+	width: 100%
+	color: $d50
+	.ckblist__header
+		width: 100%
+		justify-content: space-between
+		@include df
+		i
+			transition: transform .250s ease
+			width: 44px
+			height: 44px
+	.ckblist__wrapper
+		li
+			margin-bottom: 5px
+			@include df
+			.ckb
+				margin-right: 10px
+.ckblist.expanded
+	i
+		transform: rotate(180deg)

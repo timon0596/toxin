@@ -1,0 +1,16 @@
+.bullet--list
+	.bullet__wrapper
+		display: grid
+		grid-gap: 10px
+		.bullet
+			display: grid
+			grid-template-columns: auto 1fr
+			grid-gap: 10px
+			align-items: baseline
+		.bullet:before
+			display: block
+			content: ''
+			width: 10px
+			height: 10px
+			background: $d25
+			border-radius: 50%

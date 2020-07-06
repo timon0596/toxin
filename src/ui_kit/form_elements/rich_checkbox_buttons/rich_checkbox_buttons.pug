@@ -1,0 +1,11 @@
+mixin ckbbtn(name, description)
+	.ckbbtn
+		.ckb
+		.ckbbtn__name= name
+		.ckbbtn__description= description
+mixin rich_ckbbtns(h3)
+	.ckbbtns__wrapper
+		h3= h3
+		.rich_ckbbtns
+			+ckbbtn('Широкий коридор','Ширина коридоров в номере не менее 91 см.')
+			+ckbbtn('Помощник для инвалидов','На 1 этаже вас встретит специалист и проводит до номера.')

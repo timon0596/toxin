@@ -1,0 +1,64 @@
+.like
+	color: $d25
+	display: flex
+	align-items: center
+	width: 40px
+	height: 20px
+	position: relative
+	box-sizing: border-box
+	background: #fff
+	background-clip: padding-box
+	border: solid 1px transparent
+	border-radius: 10px
+	transition: color .25s ease
+	&:before
+		content: ''
+		position: absolute
+		top: 0px
+		right: 0px
+		bottom: 0px
+		left: 0px
+		z-index: -1
+		margin: -1px
+		border-radius: inherit
+		background: $d25
+	i.material-icons,
+	.like__number
+		font-size: 10px
+		line-height: 9px
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		align-items: center
+	i.material-icons
+		width: 20px
+		height: 20px
+		margin-left: -1px
+	i.material-icons:nth-child(2)
+		display: none
+	.like__number
+		width: 20px
+		height: 20px
+		margin-right: -1px
+		font-size: 10px
+		line-height: 12px
+.like__wrapper
+	width: 40px
+	height: 20px
+	display: block
+	input
+		display: none
+	input:checked ~ *
+		color: $p
+	input:checked ~ .like > i
+		display: none
+	input:checked ~ .like > i:nth-child(2)
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+	input:checked ~ .like:before
+		background: $lgp
