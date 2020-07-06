@@ -1,0 +1,59 @@
+.block__room--preview
+	background: white
+	box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05)
+	border-radius: 4px
+	padding: 0
+	width: 270px
+	overflow: hidden
+	.block__row
+	.block__row:last-child
+		display: grid
+		grid-gap: 10px
+		padding: 20px
+		.divider
+			height: 1px
+			background: $d1
+	.block__row_inner
+		align-items: baseline
+		.block__room--details__number,
+		.block__room--details__payment
+			*
+				display: inline-block
+	.block__row_inner:last-child
+		align-items: center
+		.rate
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+.carousel.slide
+	li
+		box-sizing: border-box
+		width: 7.5px
+		height: 7.5px
+		border-radius: 50%
+		border: 1px solid #FFFFFF
+		box-shadow: 0px 5px 5px rgba(31, 32, 65, 0.3)
+		margin: 0
+		opacity: 1
+		background: 0
+	li.active
+		background: #fff
+	li:not(:first-child)
+		margin-left: 3.75px
+	.carousel-indicators
+		margin: 15px
+		justify-content: flex-end
+	a
+		opacity: 0
+		height: 44px
+		width: 44px
+		top: 50%
+	a.carousel-control-prev
+		transform: translate(0, -50%) rotate(90deg) 
+	a.carousel-control-next
+		transform: translate(0, -50%) rotate(-90deg) 
+.carousel.slide:hover
+	a
+		opacity: 1

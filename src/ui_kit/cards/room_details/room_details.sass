@@ -1,0 +1,149 @@
+.block.block__room--details
+	.block__row
+		.taxes
+			display: grid
+			grid-gap: 10px
+			.tax
+				display: grid
+				grid-auto-flow: column
+				justify-content: space-between
+				align-items: start
+				.tax__text
+					width: 240px
+					display: grid
+					grid-auto-flow: column
+					justify-content: space-between
+					align-items: baseline
+					.tax__info
+						width: 20px
+						height: 20px
+						border: 1px solid $d25
+						display: -webkit-flex
+						display: -moz-flex
+						display: -ms-flex
+						display: -o-flex
+						display: flex
+						justify-content: center
+						align-items: center
+						border-radius: 50%
+						font-weight: bold
+						font-size: 12px
+						line-height: 14px
+						color: $d25
+		.total
+			display: grid
+			grid-template-columns: auto 1fr auto
+			align-items: baseline
+			grid-gap: 5px
+			margin-bottom: 20px
+			.total__border
+				display: block
+				height: 1px
+				border-bottom: 1px dashed $d25
+		.block__row_inner
+			align-items: baseline
+			*
+				display: inline-block
+.block__room--details__number
+	font-family: quicksand
+	font-style: normal
+	font-weight: bold
+	font-size: 14px
+	line-height: 17px
+	color: $d100
+	h3
+		color: $p
+.block__room--details__payment
+	color: $d50
+	.block__room--details__cost
+		font-weight: bold
+//---------------datepicker
+.date--dropdown__wrapper
+	position: relative
+	.date--dropdown__datepicker
+		position: absolute
+		left: 0
+		top: calc(100% + 5px)
+		z-index: 10
+.datepicker--cell.datepicker--cell-day
+	width: 40px
+	height: 40px
+	color: $d50
+	font-size: 12px
+	line-height: 15px
+.datepicker--cell.datepicker--cell-day.-other-month-
+	color: $d25
+.datepicker--cell.datepicker--cell-day.-selected-,
+.datepicker--cell.datepicker--cell-day.-current-
+	color: #fff
+	font-weight: bold
+	border-radius: 50%
+.datepicker--cell.datepicker--cell-day.-current-
+	background: $lgg
+.datepicker--cell.datepicker--cell-day.-selected-
+	background: $lgp
+.datepicker--cell.datepicker--cell-day.-in-range-
+	background: $lgp25
+.datepicker--cell.datepicker--cell-day.-range-from-.-selected-,
+.datepicker--cell.datepicker--cell-day.-range-to-.-selected-
+	position: relative
+	&:before
+		z-index: -1
+		content: ''
+		display: block
+		width: 100%
+		height: 100%
+		border-top-left-radius: 50%
+		border-bottom-left-radius: 50%
+		background: $lgp25
+		left: 0
+		top: 0
+		position: absolute
+.datepicker--cell.datepicker--cell-day.-range-to-.-selected-:before
+	border-radius: 0
+	border-top-right-radius: 50%
+	border-bottom-right-radius: 50%
+.datepicker--days-names
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	justify-content: center
+.datepicker--day-name
+	max-width: 40px
+	height: 40px
+	font-family: montserrat
+	font-style: normal
+	font-weight: bold
+	font-size: 12px
+	line-height: 15px
+	display: flex
+	align-items: center
+	text-align: center
+	color: $p
+	text-transform: none
+.datepicker
+	width: 320px
+	border: 1px solid rgba(31, 32, 65, 0.25)
+	box-sizing: border-box
+	box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05)
+	border-radius: 4px
+	padding: 19px
+.datepicker--cells.datepicker--cells-days
+	justify-content: start
+.datepicker--content,
+.datepicker--nav
+	padding: 0
+.datepicker--nav
+	border: 0
+	min-height: 24px
+	margin-bottom: 30px
+.datepicker--nav-action
+	color: $p
+	font-size: 24px
+	line-height: 20px
+.datepicker--buttons
+	border: 0
+	justify-content: space-between
+	margin-top: 20px
