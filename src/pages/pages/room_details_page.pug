@@ -1,0 +1,42 @@
+include ./../../ui_kit/ui_kit
+include ./../svg/svg
+- var user = {icon: 'img/users/user1.jpeg',name: 'Мурад Сарафанов',date: '5 дней назад',likes: 11,text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'}
+<!DOCTYPE html>
+html(lang="en")
+head
+	meta(charset="UTF-8")
+	title room_details_page
+body
+	+header()
+	section.room--details--imgs
+		img.room--details--imgs__main--img(src="img/rd1.png")
+		img(src="img/rd2.png")
+		img(src="img/rd3.png")
+	section.room--details--section
+		.room--details
+			.room--details--advantges
+				h2 Сведения о номере
+				+advantages()
+			.room--details--impressions
+				h2 Впечатления от номера
+				.room--details--chart__wrapper
+					.room--details--chart
+						+impression_chart()
+						.room--details--chart__votes
+							h1 260
+							h3 голосов
+					+bulletlist(['Великолепно','Хорошо','Удовлетворительно','Разочарован'])
+			.room--details--comments__wrapper
+				h2 Отзывы посетителей номера
+				.room--details--comments
+					+comment(user)
+					+comment(user)
+			.room--details--rules
+				h2 Правила
+				+bulletlist(['Нельзя с питомцами','Без вечеринок и мероприятий','Время прибытия — после 13:00, а выезд до 12:00'])
+			.room--details--cancel
+				h2 Отмена
+				| Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+		+room_details()
+	+footer()
+

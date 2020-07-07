@@ -1,0 +1,111 @@
+section.room--details--imgs
+	padding: 0
+	position: relative
+	img
+		width: calc(100%/1440*461)
+		position: absolute
+		top: 0	
+		right: 0
+	img:last-child
+		top: 50%
+	.room--details--imgs__main--img
+		left: 0
+		width: calc(100%*981/1440)
+		position: static
+.room--details>*>h2
+	margin-bottom: 20px
+.room--details
+	display: grid
+	grid-template-areas: "adv chart""comm comm""rules cancel"
+	grid-gap: 30px 80px
+	.room--details--advantges
+		grid-area: adv
+	.room--details--impressions
+		display: grid
+		grid-area: chart
+		align-content: start
+		.room--details--chart__wrapper
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			.room--details--chart
+				width: min-content
+				position: relative
+				.room--details--chart__votes
+					transform: translate(-50%, -50%)
+					position: absolute
+					top: 50%
+					left: 50%
+					text-align: center
+					&>*
+						color: $p
+			.bullet--list
+				height: min-content
+				align-self: flex-end
+				margin-left: 30px
+				.bullet__wrapper
+					grid-gap: 0px
+					.bullet
+						grid-gap: 5px
+						&:before
+							background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%)
+					.bullet:nth-child(2):before
+						background: $lgg
+					.bullet:nth-child(3):before
+						background: $lgp
+					.bullet:nth-child(4):before
+						background: linear-gradient(180deg, #919191 0%, #3D4975 100%)
+	.room--details--comments__wrapper
+		grid-area: comm
+		.room--details--comments
+			display: grid
+			grid-gap: 20px
+	.room--details--rules
+		grid-area: rules
+	.room--details--cancel
+		grid-area: cancel
+.room--details--section
+	padding-bottom: 70px
+	padding-top: 70px
+	display: grid
+	grid-template-columns: auto auto
+	grid-gap: 70px
+	.block
+		align-self: flex-start
+@media (max-width: 1280px)
+	section.room--details--section
+		padding: 70px
+		grid-template-columns: 1fr
+		.block
+			order: -1
+			justify-self: center
+@media (max-width: 768px)
+	section.room--details--section
+		padding: 30px
+		.room--details
+			display: block
+		.room--details>*
+			margin-bottom: 50px
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			flex-direction: column
+			align-items: center
+			text-align: center
+	section.room--details--imgs
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		flex-direction: column
+		img,
+		.room--details--imgs__main--img
+			position: static
+			width: 100%
+		img:last-child
+			margin-top: -2px

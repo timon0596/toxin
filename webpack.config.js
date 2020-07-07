@@ -22,7 +22,7 @@ function generateHtmlPlugins (templateDir) {
 }
 
 // We will call the function like this:
-const htmlPlugins = generateHtmlPlugins('./src/pages')
+const htmlPlugins = generateHtmlPlugins('./src/pages/pages')
 module.exports={
 	entry: './src/index.js',
 	output: {

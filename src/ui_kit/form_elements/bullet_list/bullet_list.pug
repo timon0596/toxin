@@ -1,6 +1,5 @@
-mixin bulletlist()
+mixin bulletlist(list)
 	.bullet--list
 		.bullet__wrapper
-			.bullet Нельзя с питомцами
-			.bullet Без вечеринок и мероприятий
-			.bullet Время прибытия — после 13:00, а выезд до 12:00
+			each val in list
+				.bullet= val

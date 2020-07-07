@@ -1,4 +1,4 @@
-include ./../ui_kit/ui_kit
+include ./../../ui_kit/ui_kit
 - var user = {icon: 'img/users/user1.jpeg',name: 'Мурад Сарафанов',date: '5 дней назад',likes: 11,text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'}
 <!DOCTYPE html>
 html(lang="en")
@@ -33,7 +33,7 @@ body
 			+ckbbtns('Checkbox Buttons')
 		.element
 			h3 bullet list
-			+bulletlist()
+			+bulletlist(['Нельзя с питомцами','Без вечеринок и мероприятий','Время прибытия — после 13:00, а выезд до 12:00'])
 		.element
 			h3 radio buttons
 			+radio()
