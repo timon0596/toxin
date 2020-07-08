@@ -1,6 +1,0 @@
-import "./rangeSlider/rangeSlider.js"
-import "./dropdown/dropdown.js"
-import "./dropdown/dropdown_guests.js"
-import "./ckbox_btns/ckbox_btns.js"
-import "./like_button/like_button.js"
-import "./impressionchart/impressionchart.js"

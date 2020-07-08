@@ -27,6 +27,8 @@ $('.range--slider').each((i,el)=>{
 })
 //---------------------masked-textfield----------------------------
 $('.js-date.masked--textfield').mask('00.00.0000')
+//---------------------masked-textfield----------------------------
+
 
 //---------------------block__room--details------------------------
 //---------------------block__room--details------------------------
@@ -136,3 +138,6 @@ function roomDetails (el,payment){
 $('.block__room--details').each((i,el)=>{
 	roomDetails(el,{cost: 9990,discount: 2179,extraServices: 300})
 })
+//---------------------block__room--details------------------------
+//---------------------block__room--details------------------------
+//---------------------block__room--details------------------------
