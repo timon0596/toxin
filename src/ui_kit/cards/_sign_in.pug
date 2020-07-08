@@ -6,8 +6,10 @@ mixin sign_in()
 			+textfield('Email')
 			+textfield('Пароль')
 		.block__row
-			+btn_wide('войти',true)
+			.js-sign--in--btn
+				+btn_wide('войти',true)
 		.block__row
 			.block__row_inner
 				| Нет аккаунта на Toxin
-				+btn_bd('создать')
+				.js-create
+					+btn_bd('создать')

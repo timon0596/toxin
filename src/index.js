@@ -9,6 +9,7 @@ import 'bootstrap/scss/vendor/_rfs.scss'
 import 'bootstrap/scss/bootstrap.scss'
 import 'bootstrap/js/src/carousel.js'
 import './main.sass'
+import './pages/js/_sign_in'
 const userImg = require.context('./img/users', true, /\.(jpe?g|png)$/)
 const preview_img = require.context('./img/preview', true, /\.(jpe?g|png|svg)$/)
 const imgs = require.context('./img', false, /\.(jpe?g|png|svg)$/)
