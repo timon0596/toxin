@@ -5,6 +5,7 @@ const HtmlWebpackPugPlugin = require('html-webpack-pug-plugin');
 const MiniCssExtractPlugin=require('mini-css-extract-plugin')
 const autoprefixer = require('autoprefixer')
 const fs = require('fs')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 // const autoprefixer = require('autoprefixer');
 let rp =''
 function generateHtmlPlugins (templateDir) {
@@ -124,7 +125,7 @@ module.exports={
 				},]
 			},
 				plugins:[
-
+				new CleanWebpackPlugin(),
 				new HWP({
 					template: './src/index.pug',
 					filename: 'index.html'
