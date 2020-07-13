@@ -6,5 +6,5 @@ mixin comment(user)
 			.user__name= user.name
 			.user__date= user.date
 		.comment__like
-			+like(user.likes)
+			+like(user.likes,user.likeCheck)
 		.comment__text= user.text

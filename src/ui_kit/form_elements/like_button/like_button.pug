@@ -1,6 +1,6 @@
-mixin like(likes)
+mixin like(likes,checked=false)
 	label.like__wrapper.cup
-		input(type="checkbox")
+		input(type="checkbox" checked= checked)
 		.like
 			i.material-icons favorite_border
 			i.material-icons favorite
