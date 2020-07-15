@@ -1,10 +1,10 @@
 mixin comment(user)
 	.comment
-		.user__icon
+		.comment__icon
 			img(src= user.icon)
-		.user__info
-			.user__name= user.name
-			.user__date= user.date
+		.comment__info
+			.comment__username= user.name
+			.comment__date= user.date
 		.comment__like
 			+like(user.likes,user.likeCheck)
 		.comment__text= user.text

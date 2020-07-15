@@ -16,12 +16,12 @@ export class Dropdown{
 		this.text=''
 		this.dd=dd
 		this.lcKey=this.getLcKey()
-		this.display = this.dd.find('.form--element:first-child')
-		this.guest = this.dd.hasClass('guest--dropdown')
+		this.display = this.dd.find('.form-element:first-child')
+		this.guest = this.dd.hasClass('guest-dropdown')
 		this.clear = this.dd.find('.clear')
 		this.apply = this.dd.find('.apply')
 		this.dec = this.guest?declensions.guest:declensions.bed
-		this.ddmenu = this.dd.find('.dropdown--menu')
+		this.ddmenu = this.dd.find('.dropdown-menu')
 		this.minus = [...dd.find('.minus')].map(m=>$(m))
 		this.plus = [...dd.find('.plus')].map(m=>$(m))
 		this.value = [...dd.find('.value')].map(m=>$(m))
@@ -109,3 +109,6 @@ export class Dropdown{
 		this.minus[i].removeClass('disabled'):0
 	}
 }
+$('.dropdown').each((i,el)=>{
+	new Dropdown($(el),i)
+})

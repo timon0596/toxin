@@ -1,9 +1,10 @@
+@import './../../../sass/vars.sass'
 .comment
 	display: grid
 	grid-template-columns: auto 1fr
 	grid-gap: 10px
 	z-index: 2
-	.user__icon
+	.comment__icon
 		width: 48px
 		height: 48px
 		display: -webkit-flex
@@ -20,15 +21,15 @@
 		img
 			object-fit: cover
 			width: 100%
-	.user__info
-		.user__name
+	.comment__info
+		.comment__username
 			font-weight: bold
-		.user__date
+		.comment__date
 	.comment__like
 		justify-self: center
 		margin-top: 2px
 @media (max-width: 560px)
 	.comment
 		grid-template-columns: 1fr
-		.user__icon
+		.comment__icon
 			justify-self: center

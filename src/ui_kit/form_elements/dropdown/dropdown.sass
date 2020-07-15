@@ -1,20 +1,22 @@
+@import './../../../sass/vars.sass'
 .dropdown__wrapper
 	h3
 		margin-bottom: 5px
 .dropdown.active
-	.form--element:not(.dropdown--menu)
+	.form-element:not(.dropdown-menu)
 		border-bottom-right-radius: 0
 		border-bottom-left-radius: 0
 		border-color: $d50
-	.dropdown--menu
+	.dropdown-menu
 		border-top-right-radius: 0
 		border-top-left-radius: 0
+		border-top: 0
 .dropdown
 	background: white
 	position: relative
-	.form--element
+	.form-element
 		transition: border-radius .250s
-	.dropdown--menu
+	.dropdown-menu
 		position: absolute
 		top: 100%
 		background: #fff
@@ -24,18 +26,33 @@
 		border-top: 0
 		height: min-content
 		flex-wrap: wrap
-		@include df
-		.dropdown--menu__row
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		align-items: center
+		.dropdown-menu__row
 			width: 100%
 			margin-top: 7px
 			margin-right: 7px
 			justify-content: space-between
 			&:last-child
 				margin-bottom: 7px
-			@include df
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			align-items: center
 			.counter
-				@include df
-				.counter--button
+				display: -webkit-flex
+				display: -moz-flex
+				display: -ms-flex
+				display: -o-flex
+				display: flex
+				align-items: center
+				.counter-button
 					cursor: pointer
 					width: 30px
 					height: 30px
@@ -46,4 +63,9 @@
 						border: 0
 					&.disabled
 						opacity: 50%
-					@include df
+					display: -webkit-flex
+					display: -moz-flex
+					display: -ms-flex
+					display: -o-flex
+					display: flex
+					align-items: center

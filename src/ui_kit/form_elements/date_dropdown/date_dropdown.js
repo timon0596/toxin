@@ -1,48 +1,12 @@
-//------------------------dropdown------------------------
-//------------------------dropdown------------------------
-//------------------------dropdown------------------------
-
-import 'jquery-mask-plugin'
-import {Dropdown} from './js/dropdown'
 import 'air-datepicker'
-import './js/ckb'
-$('.dropdown').each((i,el)=>{
-	new Dropdown($(el),i)
-})
-//------------------------slider------------------------
-//------------------------slider------------------------
-//------------------------slider------------------------
-$('.range--slider').each((i,el)=>{
-	$(el).slider({
-      range: true,
-      min: 0,
-      max: 15000,
-      values: [ 5000, 10000 ],
-      slide: function( event, ui ) {
-        $(el).parent().find( ".range--slider__amount" ).text( ui.values[ 0 ] + "₽" + " - " + ui.values[ 1 ] + "₽" );
-      }
-    })
-	$(el).parent().find( ".range--slider__amount" ).text( $( ".range--slider" ).slider( "values", 0 ) + "₽" + " - " +
-	     $( ".range--slider" ).slider( "values", 1 ) + "₽" )
-})
-//---------------------masked-textfield----------------------------
-$('.js-date.masked--textfield').mask('00.00.0000')
-//---------------------masked-textfield----------------------------
 
-
-//---------------------block__room--details------------------------
-//---------------------block__room--details------------------------
-//---------------------block__room--details------------------------
-//---------------datepicker
-//---------------datepicker
-//---------------datepicker
 let datepicker = {
 	              		days: 0,
 	              		fromTo: '',
 	              		from: '',
 	              		to: ''
 	              	}
-$('.date--dropdown__wrapper .date--dropdown__datepicker').each((i,el)=>{
+$('.date-dropdown__wrapper .date-dropdown-datepicker').each((i,el)=>{
 		const $block = $(el).parents('.block__room--details')
 
 		const inp = $(el).parent().find('input')
@@ -98,7 +62,7 @@ $('.date--dropdown__wrapper .date--dropdown__datepicker').each((i,el)=>{
 			dpInline.slideToggle(250)
 		})
 		const clear = $('<div>',{
-			class: 'toxin--text--btn_grey',
+			class: 'toxin-text-btn_grey',
 			html: '<h3>очистить</h3>',
 			on: {
 				click:()=>{
@@ -108,7 +72,7 @@ $('.date--dropdown__wrapper .date--dropdown__datepicker').each((i,el)=>{
 			}
 		})
 		const apply = $('<div>',{
-			class: 'toxin--text--btn',
+			class: 'toxin-text-btn',
 			html: '<h3>применить</h3>',
 			on: {
 				click:()=>{
@@ -138,6 +102,3 @@ function roomDetails (el,payment){
 $('.block__room--details').each((i,el)=>{
 	roomDetails(el,{cost: 9990,discount: 2179,extraServices: 300})
 })
-//---------------------block__room--details------------------------
-//---------------------block__room--details------------------------
-//---------------------block__room--details------------------------

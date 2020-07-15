@@ -1,20 +1,31 @@
-.ckblist
+@import './../../../sass/vars.sass'
+.ckb-list
 	width: 100%
 	color: $d50
-	.ckblist__header
+	.ckb-list__header
 		width: 100%
 		justify-content: space-between
-		@include df
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		align-items: center
 		i
 			transition: transform .250s ease
 			width: 44px
 			height: 44px
-	.ckblist__wrapper
+	.ckb-list__inner
 		li
 			margin-bottom: 5px
-			@include df
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			align-items: center
 			.ckb
 				margin-right: 10px
-.ckblist.expanded
+.ckb-list.ckb-list_expanded
 	i
 		transform: rotate(180deg)

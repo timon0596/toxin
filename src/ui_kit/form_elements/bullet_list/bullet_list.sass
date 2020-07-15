@@ -1,13 +1,14 @@
-.bullet--list
-	.bullet__wrapper
+@import './../../../sass/vars.sass'
+.bullet-list__wrapper
+	.bullet-list
 		display: grid
 		grid-gap: 10px
-		.bullet
+		.bullet-list__item
 			display: grid
 			grid-template-columns: auto 1fr
 			grid-gap: 10px
 			align-items: baseline
-		.bullet:before
+		.bullet-list__item:before
 			display: block
 			content: ''
 			width: 10px
