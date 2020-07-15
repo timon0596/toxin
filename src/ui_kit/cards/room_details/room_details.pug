@@ -1,11 +1,11 @@
 mixin room_details()
-	.block.block__room--details
+	.block.block__room-details
 		.block__row
 			.block__row_inner
-				.block__room--details__number
+				.block__room-details.room-details__number
 					!= "№ <h1> 888</h1> <h3>люкс</h3>" 
-				.block__room--details__payment
-					.block__room--details__cost 9 990₽
+				.block__room-details.room-details__payment
+					.block__room-details.room-details__cost 9 990₽
 					=" в сутки"
 		.block__row
 			+datedropdowns('прибытие','выезд')
@@ -20,7 +20,7 @@ mixin room_details()
 					.tax__text Сбор за услуги: скидка 2 179₽
 						.tax__info i
 					| 0₽		
-				.tax.tax__extra--services
+				.tax.tax__extra-services
 					.tax__text Сбор за дополнительные услуги
 						.tax__info i
 					| 300₽

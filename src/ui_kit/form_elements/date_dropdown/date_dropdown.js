@@ -86,7 +86,7 @@ $('.date-dropdown__wrapper .date-dropdown-datepicker').each((i,el)=>{
 function roomDetails (el,payment){
 	const $hab = $(el).find('.tax__habitation')
 	const $srv = $(el).find('.tax__services')
-	const $exsrv = $(el).find('.tax__extra--services')
+	const $exsrv = $(el).find('.tax__extra-services')
 	const hab__total = payment.cost*datepicker.days
 	const hab__total_str = Math.floor(hab__total/1000)+' '+String(hab__total).substring(String(hab__total).length-3,String(hab__total).length)+'₽'
 	const hab__tax__text = payment.cost +'₽'+' x ' + datepicker.days + (datepicker.days==1?' сутки':' суток')
@@ -99,6 +99,6 @@ function roomDetails (el,payment){
 	$hab_tax_text.html(hab__tax__text)
 	$hab.append(hab__total_str)
 }
-$('.block__room--details').each((i,el)=>{
+$('.block__room-details').each((i,el)=>{
 	roomDetails(el,{cost: 9990,discount: 2179,extraServices: 300})
 })
