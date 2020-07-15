@@ -1,49 +1,50 @@
-section.search--room--page
+@import './../../sass/vars.sass'
+section.search-room-page
 	display: -webkit-flex
 	display: -moz-flex
 	display: -ms-flex
 	display: -o-flex
 	display: flex
 	justify-content: center
-	.search--room--page__results
+	.search-room-page__results
 		&>h1
 			margin-bottom: 20px
 		.pagination
 			margin-top: 40px
-		.room--preview--grid
+		.room-preview-grid
 			display: grid
 			grid-template-columns: 1fr 1fr 1fr
 			grid-gap: 20px 12px
-	.search--room--page__filters
+	.search-room-page__filters
 		margin-right: 60px
 		width: 266px
 		height: min-height
 		display: grid
 		grid-gap: 30px
 		align-content: start
-		.search--room--page__filter
-			.range--slider__wrapper
+		.search-room-page__filter
+			.range-slider__wrapper
 			p
 				font-size: 12px
 				line-height: 14px
 				color: $d50
 				margin-top: 13.5px
-			.search--room--page__filter__inner
+			.filter__inner
 				display: grid
 				grid-gap: 20px
 				.dropdown__wrapper
 					z-index: 3
 @media (max-width: 1440px)
-	section.search--room--page
-		.search--room--page__results
-			.room--preview--grid
+	section.search-room-page
+		.search-room-page__results
+			.room-preview-grid
 				grid-template-columns: 1fr 1fr
 @media (max-width: 1280px)
-	section.search--room--page
+	section.search-room-page
 		padding: 30px
 @media (max-width: 960px)
-	section.search--room--page
-		.search--room--page__results
+	section.search-room-page
+		.search-room-page__results
 			display: -webkit-flex
 			display: -moz-flex
 			display: -ms-flex
@@ -51,10 +52,10 @@ section.search--room--page
 			display: flex
 			flex-direction: column
 			align-items: center
-			.room--preview--grid
+			.room-preview-grid
 				grid-template-columns: 1fr
 @media (max-width: 768px)
-	section.search--room--page
+	section.search-room-page
 		display: -webkit-flex
 		display: -moz-flex
 		display: -ms-flex
@@ -62,7 +63,7 @@ section.search--room--page
 		display: flex
 		flex-direction: column
 		align-items: center
-		.search--room--page__results
+		.search-room-page__results
 			display: -webkit-flex
 			display: -moz-flex
 			display: -ms-flex
@@ -70,5 +71,5 @@ section.search--room--page
 			display: flex
 			flex-direction: column
 			align-items: center
-			.room--preview--grid
+			.room-preview-grid
 				grid-template-columns: 1fr

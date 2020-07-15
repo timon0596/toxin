@@ -7,26 +7,26 @@ head
 	title landing page
 body
 	+header(false)
-	section.search--room--page
-		.search--room--page__filters
-			.search--room--page__filter
-				.search--room--page__filter__inner
+	section.search-room-page
+		.search-room-page__filters
+			.search-room-page__filter
+				.filter__inner
 					+filter_date_dropdown('даты пребывания в отеле')
 					+guestdropdown('гости')
-			.search--room--page__filter
+			.search-room-page__filter
 				+slider('диапазон цены')
 				p Стоимость за сутки пребывания в номере
-			.search--room--page__filter
+			.search-room-page__filter
 				+ckbbtns('Checkbox Buttons')
-			.search--room--page__filter
+			.search-room-page__filter
 				+rich_ckbbtns('доступность')
-			.search--room--page__filter
+			.search-room-page__filter
 				+dropdown('удобства номера')
-			.search--room--page__filter
+			.search-room-page__filter
 				+ckblist('дополнительные удобства')
-		.search--room--page__results
+		.search-room-page__results
 			h1 Номера которые мы для вас подобрали
-			.room--preview--grid
+			.room-preview-grid
 				each val,ind in room_preview_array
 					+room_preview(val,ind)
 			+pagination()

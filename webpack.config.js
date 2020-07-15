@@ -7,23 +7,40 @@ const autoprefixer = require('autoprefixer')
 const fs = require('fs')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 // const autoprefixer = require('autoprefixer');
-let rp =''
-function generateHtmlPlugins (templateDir) {
-	const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir))
-	return templateFiles.map(item => {
-    // Split names and extension
-    const parts = item.split('.')
-    const name = parts[0]
-    const extension = parts[1]
-    return new HWP({
-    	filename: `${name}.html`,
-    	template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`)
-    })
-  })
-}
+// function generateHtmlPlugins (templateDir) {
+// 	const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir))
+// 	return templateFiles.map(item => {
+//     // Split names and extension
+//     const parts = item.split('.')
+//     const name = parts[0]
+//     const extension = parts[1]
+//     return new HWP({
+//     	filename: `${name}.html`,
+//     	template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`)
+//     })
+//   })
+// }
 
+function generateHtmlPlugins (templateDir) {
+	const tpldirpath = path.resolve(__dirname, templateDir)
+	const templateFiles = fs.readdirSync(tpldirpath)
+	return templateFiles.map(item => {
+    
+    if(item.match(/svg|js|sass/)==null){
+    	const page = fs.readdirSync(path.resolve(tpldirpath, item))[0]
+    	const parts = page.split('.')
+    	const name = parts[0]
+    	const extension = parts[1]
+    	// return `${templateDir}/${name}.${extension}`
+    	return new HWP({
+    		filename: `${name}.html`,
+    		template: path.resolve(__dirname, `${path.resolve(tpldirpath, item)}/${name}.${extension}`)
+    	})
+    }
+  }).filter(item=>!!item)
+}
 // We will call the function like this:
-const htmlPlugins = generateHtmlPlugins('./src/pages/pages')
+const htmlPlugins = generateHtmlPlugins('./src/pages')
 module.exports={
 	entry: './src/index.js',
 	output: {
@@ -144,4 +161,3 @@ module.exports={
 
 				]
 			}
-			console.log(rp)

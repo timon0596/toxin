@@ -1,4 +1,5 @@
-section.room--details--imgs
+@import './../../sass/vars.sass'
+section.room-details-imgs
 	padding: 0
 	position: relative
 	img
@@ -8,32 +9,32 @@ section.room--details--imgs
 		right: 0
 	img:last-child
 		top: 50%
-	.room--details--imgs__main--img
+	.room-details-imgs__main-img
 		left: 0
 		width: calc(100%*981/1440)
 		position: static
-.room--details>*>h2
+.room-details>*>h2
 	margin-bottom: 20px
-.room--details
+.room-details
 	display: grid
 	grid-template-areas: "adv chart""comm comm""rules cancel"
 	grid-gap: 30px 80px
-	.room--details--advantges
+	.room-details-advantges
 		grid-area: adv
-	.room--details--impressions
+	.room-details-impressions
 		display: grid
 		grid-area: chart
 		align-content: start
-		.room--details--chart__wrapper
+		.room-details-chart__wrapper
 			display: -webkit-flex
 			display: -moz-flex
 			display: -ms-flex
 			display: -o-flex
 			display: flex
-			.room--details--chart
+			.room-details-chart
 				width: min-content
 				position: relative
-				.room--details--chart__votes
+				.room-details-chart__votes
 					transform: translate(-50%, -50%)
 					position: absolute
 					top: 50%
@@ -41,7 +42,7 @@ section.room--details--imgs
 					text-align: center
 					&>*
 						color: $p
-			.bullet--list
+			.bullet-list
 				height: min-content
 				align-self: flex-end
 				margin-left: 30px
@@ -57,16 +58,16 @@ section.room--details--imgs
 						background: $lgp
 					.bullet:nth-child(4):before
 						background: linear-gradient(180deg, #919191 0%, #3D4975 100%)
-	.room--details--comments__wrapper
+	.room-details-comments__wrapper
 		grid-area: comm
-		.room--details--comments
+		.room-details-comments
 			display: grid
 			grid-gap: 20px
-	.room--details--rules
+	.room-details-rules
 		grid-area: rules
-	.room--details--cancel
+	.room-details-cancel
 		grid-area: cancel
-.room--details--section
+.room-details-section
 	padding-bottom: 70px
 	padding-top: 70px
 	display: grid
@@ -75,18 +76,18 @@ section.room--details--imgs
 	.block
 		align-self: flex-start
 @media (max-width: 1280px)
-	section.room--details--section
+	section.room-details-section
 		padding: 70px
 		grid-template-columns: 1fr
 		.block
 			order: -1
 			justify-self: center
 @media (max-width: 768px)
-	section.room--details--section
+	section.room-details-section
 		padding: 30px
-		.room--details
+		.room-details
 			display: block
-		.room--details>*
+		.room-details>*
 			margin-bottom: 50px
 			display: -webkit-flex
 			display: -moz-flex
@@ -96,7 +97,7 @@ section.room--details--imgs
 			flex-direction: column
 			align-items: center
 			text-align: center
-	section.room--details--imgs
+	section.room-details-imgs
 		display: -webkit-flex
 		display: -moz-flex
 		display: -ms-flex
@@ -104,11 +105,11 @@ section.room--details--imgs
 		display: flex
 		flex-direction: column
 		img,
-		.room--details--imgs__main--img
+		.room-details-imgs__main-img
 			position: static
 			width: 100%
 		img:last-child
 			margin-top: -2px
 @media (max-width: 560px)
-	section.room--details--section
+	section.room-details-section
 		padding: 10px

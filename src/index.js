@@ -12,9 +12,10 @@ import './main.sass'
 // import './ui_kit/form_elements/date_dropdown/date_dropdown'
 require.context('./ui_kit/cards', true, /\.scss$/)
 require.context('./ui_kit', true, /\.sass/)
+require.context('./pages', true, /\.sass/)
 importAll(require.context('./ui_kit', true, /\.js$/))
+importAll(require.context('./pages', true, /\.js$/))
 
-import './pages/js/_sign_in'
 const userImg = require.context('./img/users', true, /\.(jpe?g|png)$/)
 const preview_img = require.context('./img/preview', true, /\.(jpe?g|png|svg)$/)
 const imgs = require.context('./img', false, /\.(jpe?g|png|svg)$/)
