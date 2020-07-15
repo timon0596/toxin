@@ -42,21 +42,21 @@ section.room-details-imgs
 					text-align: center
 					&>*
 						color: $p
-			.bullet-list
+			.bullet-list__wrapper
 				height: min-content
 				align-self: flex-end
 				margin-left: 30px
-				.bullet__wrapper
+				.bullet-list
 					grid-gap: 0px
-					.bullet
+					.bullet-list__item
 						grid-gap: 5px
 						&:before
 							background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%)
-					.bullet:nth-child(2):before
+					.bullet-list__item:nth-child(2):before
 						background: $lgg
-					.bullet:nth-child(3):before
+					.bullet-list__item:nth-child(3):before
 						background: $lgp
-					.bullet:nth-child(4):before
+					.bullet-list__item:nth-child(4):before
 						background: linear-gradient(180deg, #919191 0%, #3D4975 100%)
 	.room-details-comments__wrapper
 		grid-area: comm
