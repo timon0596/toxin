@@ -1,5 +1,5 @@
 import 'air-datepicker'
-
+import 'jquery-mask-plugin'
 let datepicker = {
 	              		days: 0,
 	              		fromTo: '',
@@ -7,11 +7,11 @@ let datepicker = {
 	              		to: ''
 	              	}
 $('.date-dropdown__wrapper .date-dropdown-datepicker').each((i,el)=>{
-		const $block = $(el).parents('.block__room--details')
+		const $block = $(el).parents('.block__room-details')
 
 		const inp = $(el).parent().find('input')
-		datepicker = JSON.parse(localStorage?.getItem('datepicker'))??datepicker
 
+		datepicker = JSON.parse(localStorage?.getItem('datepicker'))??datepicker
 		if(inp[1]){
 			$(inp).on('change',function(){
 				DPinstance.selectDate([new Date($(inp[0]).val().split('.').reverse().join('-')),new Date($(inp[1]).val().split('.').reverse().join('-'))])
@@ -22,7 +22,7 @@ $('.date-dropdown__wrapper .date-dropdown-datepicker').each((i,el)=>{
 	    multipleDates: 2,
 	    range: true,
 	    multipleDatesSeparator: ' - ',
-	    dateFormat: 'dd.mm.yyyy',
+	    dateFormat: !inp[1]?'dd M':'dd.mm.yyyy',
 	    language: {
 	    	daysMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб']
 	    },
@@ -33,7 +33,6 @@ $('.date-dropdown__wrapper .date-dropdown-datepicker').each((i,el)=>{
 	    prevHtml:'<i class="material-icons">arrow_back</i>',
 	    nextHtml:'<i class="material-icons">arrow_forward</i>',
 	    onSelect: function(fd, d, picker) {
-	               
 	                const options = {year: 'numeric', month: 'numeric', day: 'numeric'}
 	              	
 	              	datepicker.fromTo= fd
@@ -45,15 +44,19 @@ $('.date-dropdown__wrapper .date-dropdown-datepicker').each((i,el)=>{
 	              		$(inp[0]).val(datepicker.from)
 	              		$(inp[1]).val(datepicker.to)
 	              	}
-	              	else{
-	              		$(inp[0]).val(datepicker.fromTo)
+	              	if(location.pathname=='/search_room_page.html'){
+	              		let q = fd
+	              		inp[0].value = q
 	              	}
+
 	              if(!!$block[0]&&datepicker.to){
 	              	roomDetails($block,{cost: 9990,discount: 2179,extraServices: 300})
 	              }
+
 	            }
 		}).data('datepicker')
 		datepicker.days?DPinstance.selectDate([new Date(datepicker.from.split('.').reverse().join('-')),new Date(datepicker.to.split('.').reverse().join('-'))]):0
+		
 		const dpClear = $('.datepicker--button[data-action="clear"]').hide()
 		const dpInline = $(el).find('.datepicker-inline').hide()
 		const dpBtns = $(el).find('.datepicker--buttons')
@@ -82,6 +85,7 @@ $('.date-dropdown__wrapper .date-dropdown-datepicker').each((i,el)=>{
 			}
 		})
 		dpBtns.append(clear).append(apply)
+
 })
 function roomDetails (el,payment){
 	const $hab = $(el).find('.tax__habitation')
