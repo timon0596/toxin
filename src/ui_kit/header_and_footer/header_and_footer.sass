@@ -1,3 +1,4 @@
+@import './../../sass/vars.sass'
 .hf__wrapper
 	display: grid
 	grid-gap: 40px
@@ -28,7 +29,7 @@
 			color: $d50
 	.footer__column:not(:first-child)
 		margin-left: 40px
-.sub--section.copyright
+.sub-section.copyright
 	color: $d75
 	justify-content: space-between
 	.logo
@@ -45,7 +46,7 @@
 			-webkit-background-clip: text
 			background-clip: text
 			color: transparent
-.sub--section,
+.sub-section,
 section
 	padding-left: 140px
 	padding-right: 140px
@@ -56,7 +57,7 @@ section
 	display: flex
 	justify-content: space-between
 	background: white
-.sub--section
+.sub-section
 	padding-top: 15px
 	padding-bottom: 15px	
 	align-items: center
@@ -89,7 +90,7 @@ header
 			align-items: center
 			margin-left: 20px
 			height: 30px
-			.toxin--btn
+			.toxin-btn
 				height: 34px
 		.user__name
 			padding-left: 20px
@@ -97,7 +98,7 @@ header
 
 @media (max-width: 1280px) 
 	header
-		.sub--section
+		.sub-section
 			flex-direction: column
 	.footer
 		display: grid
@@ -107,7 +108,7 @@ header
 		.footer__column:not(:first-child)
 			margin: 0
 @media (max-width: 768px)
-	.sub--section.copyright
+	.sub-section.copyright
 		justify-items: center
 		justify-content: center
 		padding-top: 120px
@@ -120,7 +121,7 @@ header
 		.nav__item
 			margin-top: 20px
 @media (max-width: 560px)
-	.sub--section,
+	.sub-section,
 	section,
 	.footer
 		padding-left: 40px

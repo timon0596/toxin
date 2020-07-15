@@ -1,6 +1,6 @@
 mixin header(signed)
 	header
-		.sub--section
+		.sub-section
 			img(src="img/Logo.svg").logo
 			nav
 				.nav
@@ -11,9 +11,9 @@ mixin header(signed)
 					.nav__item Новости
 					.nav__item Соглашения
 						i.material-icons expand_more
-					.nav__item.nav__btn--item.sign--in(style=signed?'display: none':'')
+					.nav__item.nav__btn-item.sign-in(style=signed?'display: none':'')
 						+btn_bd('войти')
-					.nav__item.nav__btn--item.sign--up(style=signed?'display: none':'')
+					.nav__item.nav__btn-item.sign-up(style=signed?'display: none':'')
 						+btn_wide('зарегистрироваться',false)
 					.nav__item.user__name(style=signed?'':'display: none') Юлий Цезарь
 mixin footer()
@@ -45,7 +45,7 @@ mixin footer()
 				+subscription()
 		+copyright()
 mixin copyright()
-	.sub--section.copyright
+	.sub-section.copyright
 		img(src="img/Logo.svg").logo
 		| Copyright © 2018 Toxin отель. Все права зачищены.
 		.socials

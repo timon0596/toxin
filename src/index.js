@@ -11,10 +11,8 @@ import 'bootstrap/js/src/carousel.js'
 import './main.sass'
 // import './ui_kit/form_elements/date_dropdown/date_dropdown'
 require.context('./ui_kit/cards', true, /\.scss$/)
-require.context('./ui_kit/cards', true, /\.sass/)
-require.context('./ui_kit/form_elements', true, /\.sass$/)
-
-importAll(require.context('./ui_kit/form_elements', true, /\.js$/))
+require.context('./ui_kit', true, /\.sass/)
+importAll(require.context('./ui_kit', true, /\.js$/))
 
 import './pages/js/_sign_in'
 const userImg = require.context('./img/users', true, /\.(jpe?g|png)$/)
