@@ -1,5 +1,5 @@
-mixin bulletlist(list)
+mixin bulletlist({list,bullets})
 	.bullet-list__wrapper
-		.bullet-list
+		.bullet-list(class=bullets?('bullet-list_'+bullets):'')
 			each val in list
 				.bullet-list__item= val

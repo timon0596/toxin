@@ -26,11 +26,9 @@ section.room-details-imgs
 		grid-area: chart
 		align-content: start
 		.room-details-chart__wrapper
-			display: -webkit-flex
-			display: -moz-flex
-			display: -ms-flex
-			display: -o-flex
-			display: flex
+			display: grid
+			grid-template-columns: min-content min-content
+			grid-gap: 30px
 			.room-details-chart
 				width: min-content
 				position: relative
@@ -42,22 +40,7 @@ section.room-details-imgs
 					text-align: center
 					&>*
 						color: $p
-			.bullet-list__wrapper
-				height: min-content
-				align-self: flex-end
-				margin-left: 30px
-				.bullet-list
-					grid-gap: 0px
-					.bullet-list__item
-						grid-gap: 5px
-						&:before
-							background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%)
-					.bullet-list__item:nth-child(2):before
-						background: $lgg
-					.bullet-list__item:nth-child(3):before
-						background: $lgp
-					.bullet-list__item:nth-child(4):before
-						background: linear-gradient(180deg, #919191 0%, #3D4975 100%)
+			
 	.room-details-comments__wrapper
 		grid-area: comm
 		.room-details-comments
@@ -65,6 +48,8 @@ section.room-details-imgs
 			grid-gap: 20px
 	.room-details-rules
 		grid-area: rules
+		h2
+			margin-left: 20px
 	.room-details-cancel
 		grid-area: cancel
 .room-details-section
