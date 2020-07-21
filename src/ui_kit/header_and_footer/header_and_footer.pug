@@ -12,9 +12,7 @@ mixin header(signed)
 					.nav__item Соглашения
 						i.material-icons expand_more
 					.nav__item.nav__btn-item.sign-in(style=signed?'display: none':'')
-						+btn_bd('войти')
 					.nav__item.nav__btn-item.sign-up(style=signed?'display: none':'')
-						+btn_wide('зарегистрироваться',false)
 					.nav__item.user__name(style=signed?'':'display: none') Юлий Цезарь
 mixin footer()
 	footer

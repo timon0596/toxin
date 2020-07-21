@@ -7,65 +7,64 @@ head
 	title form elements
 body
 	a(href="index.html") home
-	.form-elements
-		.element
+	.form-elements__list
+		.form-elements__item
 			h3 text field
 			+textfield('Email')
-		.element
+		.form-elements__item
 			+datedropdowns('date dropdown','date dropdown')
-		.element
+		.form-elements__item
 			+filter_date_dropdown('filter date dropdown')
-		.element
+		.form-elements__item
 			h3 masked text field
 			+masked_textfield()
-		.element
+		.form-elements__item
 			h3 subscription text field
 			+subscription()
-		.element
+		.form-elements__item
 			+dropdown('dropdown')
-		.element
+		.form-elements__item
 			+guestdropdown('dropdown')
-		.element
+		.form-elements__item
 			+ckblist('expandable checkboxlist')
-		.element
+		.form-elements__item
 			+rich_ckbbtns('Rich Checkbox Buttons')
-		.element
+		.form-elements__item
 			+ckbbtns('Checkbox Buttons')
-		.element
+		.form-elements__item
 			h3 bullet list
 			+bulletlist({list:['Нельзя с питомцами','Без вечеринок и мероприятий','Время прибытия — после 13:00, а выезд до 12:00']})
-		.element
+		.form-elements__item
 			h3 radio buttons
 			+radio()
-		.element
+		.form-elements__item
 			h3 toggle
 			+toggle()
-		.element
+		.form-elements__item
 			h3 like button
 			+like(12)
-		.element
+		.form-elements__item
 			h3 rate buttons
 			+rate(3)
-		.element
+		.form-elements__item
 			h3 rate buttons
 			+rate(4)
-		.element
+		.form-elements__item
 			+slider('range slider')
-		.element
+		.form-elements__item
 			h3 buttons
-			+btn('click me')
-		.element
-			+btn('click me')
-		.element
-			+btn_bd('click me')
-		.element
-			+btn_wide('перейти к оплате',true)
-		.element
+			.form-elements__group
+				+btn({text:'click me'})
+				+btn({text:'click me',modifier: 'border'})
+				+btn({text:'click me',modifier: 'no-bg'})
+				+btn({text:'click me',modifier: 'no-bg',textColor: 'grey'})
+				+btn({text:'перейти к оплате',modifier: 'arrow'})
+		.form-elements__item
 			.advantage__wrapper
 				+advantage('Комфорт','Шумопоглощающие стены','insert_emoticon')
 				+advantage('Удобство','Окно в каждой из спален','location_city')
-		.element
+		.form-elements__item
 			+comment(user)
-		.element
+		.form-elements__item
 			h3  pagination
 			+pagination()

@@ -1,16 +1,5 @@
 @import './../../../sass/vars.sass'
-.toxin-text-btn
-	cursor: pointer
-	display: inline-block
-	h3
-		color: $p
-	&_grey
-		cursor: pointer
-		h3
-			color: $d50
 .toxin-btn
-	max-height: 44px
-	max-width: 99px
 	background: $lgp
 	display: -webkit-flex
 	display: -moz-flex
@@ -22,37 +11,51 @@
 	border-radius: 22px
 	padding: 10px 19px
 	cursor: pointer
+	padding: 15px 20px
+	width: auto
+	margin: auto
+	height: 44px
 	*
 		color: #fff
 	&:active
 		opacity: 0.5
-.toxin-btn.toxin-btn_bd
-	background: #fff
-	background-clip: padding-box
+	&_with-no-bg
+		height: auto
+		background: 0
+		padding: 0
+		h3 
+			color: $p
+	&_grey
+		h3
+			color: $d50
+	&_wiht-border
+		background: #fff
+		background-clip: padding-box
+		position: relative
+		border: solid 2px transparent
+		padding-left: 17px
+		padding-right: 17px
+		height: 44px
+		&:before
+			content: ''
+			position: absolute
+			top: 0px
+			right: 0px
+			bottom: 0px
+			left: 0px
+			z-index: -1
+			margin: -2px
+			border-radius: inherit
+			background: $lgp
+		*
+			color: $p
+		&:active:before
+			opacity: .5 
+		&:active
+			opacity: 1
+.toxin-btn.toxin-btn_wiht-arrow
 	position: relative
-	border: solid 2px transparent
-	padding-left: 17px
-	padding-right: 17px
-	&:before
-		content: ''
-		position: absolute
-		top: 0px
-		right: 0px
-		bottom: 0px
-		left: 0px
-		z-index: -1
-		margin: -2px
-		border-radius: inherit
-		background: $lgp
-	*
-		color: $p
-	&:active:before
-		opacity: .5 
-	&:active
-		opacity: 1
-.toxin-btn.toxin-btn_wide
-	position: relative
-	max-width: 100%
+	margin: 0
 	i
 		position: absolute
 		right: 0
