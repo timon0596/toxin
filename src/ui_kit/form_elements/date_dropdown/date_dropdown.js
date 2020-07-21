@@ -62,7 +62,7 @@ export function dateDropdown(datepickerObj){
 				dpInline.slideToggle(250)
 			})
 			const clear = $('<div>',{
-				class: 'toxin-text-btn_grey',
+				class: 'toxin-btn toxin-btn_with-no-bg toxin-btn_grey',
 				html: '<h3>очистить</h3>',
 				on: {
 					click:()=>{
@@ -72,7 +72,7 @@ export function dateDropdown(datepickerObj){
 				}
 			})
 			const apply = $('<div>',{
-				class: 'toxin-text-btn',
+				class: 'toxin-btn toxin-btn_with-no-bg',
 				html: '<h3>применить</h3>',
 				on: {
 					click:()=>{

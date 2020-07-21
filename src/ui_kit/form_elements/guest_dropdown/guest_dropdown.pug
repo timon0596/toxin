@@ -24,5 +24,7 @@ mixin guestdropdown(h3)
 						h3.counter-button.value 0
 						.counter-button.plus +
 				.dropdown-menu__row
-					.clear
-					.apply
+					.dropdown-menu__clear.js-dropdown-menu__clear
+						+btn({text: 'очистить',modifier: 'no-bg',textColor: 'grey'})
+					.dropdown-menu__apply.js-dropdown-menu__apply
+						+btn({text: 'применить',modifier: 'no-bg'})

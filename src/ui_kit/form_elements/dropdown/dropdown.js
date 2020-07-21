@@ -18,8 +18,8 @@ export class Dropdown{
 		this.lcKey=this.getLcKey()
 		this.display = this.dd.find('.form-element:first-child')
 		this.guest = this.dd.hasClass('guest-dropdown')
-		this.clear = this.dd.find('.clear')
-		this.apply = this.dd.find('.apply')
+		this.clear = this.dd.find('.js-dropdown-menu__clear')
+		this.apply = this.dd.find('.js-dropdown-menu__apply')
 		this.dec = this.guest?declensions.guest:declensions.bed
 		this.ddmenu = this.dd.find('.dropdown-menu')
 		this.minus = [...dd.find('.minus')].map(m=>$(m))
@@ -88,6 +88,8 @@ export class Dropdown{
 		this.ddmenu.slideToggle(250)
 	}
 	render(){
+		let sum = this.values.reduce((accumulator, currentValue) => accumulator + currentValue)
+		sum == 0?this.clear.css('opacity',0):this.clear.css('opacity',1)
 		this.value.forEach((el,i)=>{
 			el.html(this.values[i])
 			this.disableButton(i)
