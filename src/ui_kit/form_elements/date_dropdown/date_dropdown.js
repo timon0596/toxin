@@ -3,6 +3,9 @@ import 'jquery-mask-plugin'
 import {roomDetails} from './../../cards/room_details/room_details.js'
 export function dateDropdown(datepickerObj){
 	let datepicker = datepickerObj
+	const $filterDateDropdown = $('.js-filter-date-dropdown')
+	const $filterDateDropdownInput = $('.js-filter-date-dropdown').find('input')
+	$filterDateDropdown.find('.js-date.masked-textfield').mask('00.00.0000')
 	$('.date-dropdown__wrapper .date-dropdown-datepicker').each((i,el)=>{
 			const $block = $(el).parents('.block__room-details')
 
@@ -19,7 +22,7 @@ export function dateDropdown(datepickerObj){
 		    multipleDates: 2,
 		    range: true,
 		    multipleDatesSeparator: ' - ',
-		    dateFormat: !inp[1]?'dd M':'dd.mm.yyyy',
+		    dateFormat: $filterDateDropdownInput[0]?'dd M':'dd.mm.yyyy',
 		    language: {
 		    	daysMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб']
 		    },
@@ -41,11 +44,9 @@ export function dateDropdown(datepickerObj){
 		              		$(inp[0]).val(datepicker.from)
 		              		$(inp[1]).val(datepicker.to)
 		              	}
-		              	if(location.pathname=='/search_room_page.html'){
-		              		let q = fd
-		              		inp[0].value = q
+		              	if($filterDateDropdownInput[0]){
+		              		$filterDateDropdownInput.val(fd)
 		              	}
-
 		              if(!!$block[0]&&datepicker.to){
 		              	roomDetails($block,{cost: 9990,discount: 2179,extraServices: 300},datepicker)
 		              }

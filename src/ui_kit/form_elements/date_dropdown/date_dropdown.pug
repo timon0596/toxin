@@ -1,15 +1,14 @@
+include ./../masked_textfield/masked_textfield
 mixin datedropdown(name)
 	.date-dropdown
 		h3= name
-		.form-element__wrapper
-			input(placeholder='дд.мм.гггг').form-element.js-date.masked-textfield
-			i.material-icons expand_more
+		+masked_textfield('expand_more') 
 mixin datedropdowns(name1,name2)
 	.date-dropdown__wrapper
 		.date-dropdown-datepicker
 		+datedropdown(name1)
 		+datedropdown(name2)
 mixin filter_date_dropdown(name)
-	.date-dropdown__wrapper.filter-date-dropdown
+	.date-dropdown__wrapper.filter-date-dropdown.js-filter-date-dropdown
 		.date-dropdown-datepicker
 		+datedropdown(name)
