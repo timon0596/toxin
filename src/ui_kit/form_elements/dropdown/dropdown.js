@@ -16,16 +16,16 @@ export class Dropdown{
 		this.text=''
 		this.dd=dd
 		this.lcKey=this.getLcKey()
-		this.display = this.dd.find('.form-element:first-child')
-		this.guest = this.dd.hasClass('guest-dropdown')
+		this.display = this.dd.find('.js-dropdown-display')
+		this.guest = this.dd.hasClass('js-guest-dropdown')
 		this.clear = this.dd.find('.js-dropdown-menu__clear')
 		this.apply = this.dd.find('.js-dropdown-menu__apply')
 		this.dec = this.guest?declensions.guest:declensions.bed
-		this.ddmenu = this.dd.find('.dropdown-menu')
-		this.minus = [...dd.find('.minus')].map(m=>$(m))
-		this.plus = [...dd.find('.plus')].map(m=>$(m))
-		this.value = [...dd.find('.value')].map(m=>$(m))
-		this.values = this.value.map(q=>+q.html())
+		this.ddmenu = this.dd.find('.js-dropdown-menu')
+		this.minus = [...dd.find('.js-minus')].map(m=>$(m))
+		this.plus = [...dd.find('.js-plus')].map(m=>$(m))
+		this.$values = [...dd.find('.js-value')].map(m=>$(m))
+		this.values = this.$values.map(q=>+q.html())
 		this.dd.find('i').click(this.toggle.bind(this))
 		this.init()
 
@@ -40,7 +40,7 @@ export class Dropdown{
 	}
 	getLcKey(){
 		let str = this.dd.attr('class').split(' ')
-		let ind = str.indexOf('active')
+		let ind = str.indexOf('dropdown_active')
 		ind!=-1?
 			str.splice(ind,1):0
 		return this.index+str.join('')
@@ -84,13 +84,13 @@ export class Dropdown{
 		this.text = text.substring(0,text.length-1)
 	}
 	toggle(){
-		this.dd.toggleClass('active')
+		this.dd.toggleClass('dropdown_active')
 		this.ddmenu.slideToggle(250)
 	}
 	render(){
 		let sum = this.values.reduce((accumulator, currentValue) => accumulator + currentValue)
 		sum == 0?this.clear.css('opacity',0):this.clear.css('opacity',1)
-		this.value.forEach((el,i)=>{
+		this.$values.forEach((el,i)=>{
 			el.html(this.values[i])
 			this.disableButton(i)
 		})
@@ -107,8 +107,8 @@ export class Dropdown{
 	}
 	disableButton(i){
 		this.values[i]==0?
-		this.minus[i].addClass('disabled'):this.minus[i].hasClass('disabled')?
-		this.minus[i].removeClass('disabled'):0
+		this.minus[i].addClass('counter-button_disabled'):this.minus[i].hasClass('counter-button_disabled')?
+		this.minus[i].removeClass('counter-button_disabled'):0
 	}
 }
 $('.dropdown').each((i,el)=>{

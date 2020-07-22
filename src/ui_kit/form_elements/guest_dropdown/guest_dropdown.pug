@@ -1,28 +1,28 @@
 mixin guestdropdown(h3)
 	.dropdown__wrapper
 		h3= h3
-		.form-element__wrapper.dropdown.guest-dropdown
-			.form-element
+		.dropdown.guest-dropdown.js-guest-dropdown
+			.dropdown-display.js-dropdown-display
 			i.material-icons expand_more
-			.dropdown-menu.form-element(style="display: none")
+			.dropdown-menu.js-dropdown-menu(style="display: none")
 				.dropdown-menu__row
 					h3 взрослые
 					.counter
-						.counter-button.minus -
-						h3.counter-button.value 0
-						.counter-button.plus +
+						.counter-button.minus.js-minus -
+						h3.counter-button.value.js-value 0
+						.counter-button.plus.js-plus +
 				.dropdown-menu__row
 					h3 дети
 					.counter
-						.counter-button.minus -
-						h3.counter-button.value 0
-						.counter-button.plus +
+						.counter-button.minus.js-minus -
+						h3.counter-button.value.js-value 0
+						.counter-button.plus.js-plus +
 				.dropdown-menu__row
 					h3 младенцы
 					.counter
-						.counter-button.minus -
-						h3.counter-button.value 0
-						.counter-button.plus +
+						.counter-button.minus.js-minus -
+						h3.counter-button.value.js-value 0
+						.counter-button.plus.js-plus +
 				.dropdown-menu__row
 					.dropdown-menu__clear.js-dropdown-menu__clear
 						+btn({text: 'очистить',modifier: 'no-bg',textColor: 'grey'})
