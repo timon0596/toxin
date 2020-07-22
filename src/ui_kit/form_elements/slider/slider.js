@@ -1,4 +1,4 @@
-$('.range-slider').each((i,el)=>{
+$('.js-range-slider .js-range-slider__scale').each((i,el)=>{
 	$(el).slider({
       range: true,
       min: 0,
@@ -8,6 +8,6 @@ $('.range-slider').each((i,el)=>{
         $(el).parent().find( ".range-slider__amount" ).text( ui.values[ 0 ] + "₽" + " - " + ui.values[ 1 ] + "₽" );
       }
     })
-	$(el).parent().find( ".range-slider__amount" ).text( $( ".range-slider" ).slider( "values", 0 ) + "₽" + " - " +
-	     $( ".range-slider" ).slider( "values", 1 ) + "₽" )
+	$(el).parent().find( ".range-slider__amount" ).text( $(el).slider( "values", 0 ) + "₽" + " - " +
+	     $(el).slider( "values", 1 ) + "₽" )
 })
