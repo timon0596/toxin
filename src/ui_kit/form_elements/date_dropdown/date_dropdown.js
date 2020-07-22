@@ -5,12 +5,11 @@ export function dateDropdown(datepickerObj){
 	let datepicker = datepickerObj
 	const $filterDateDropdown = $('.js-filter-date-dropdown')
 	const $filterDateDropdownInput = $('.js-filter-date-dropdown').find('input')
-	$filterDateDropdown.find('.js-date.masked-textfield').mask('00.00.0000')
+	
 	$('.date-dropdown__wrapper .date-dropdown-datepicker').each((i,el)=>{
 			const $block = $(el).parents('.block__room-details')
-
 			const inp = $(el).parent().find('input')
-
+			inp.mask('00.00.0000')
 			datepicker = JSON.parse(localStorage?.getItem('datepicker'))??datepicker
 			if(inp[1]){
 				$(inp).on('change',function(){
