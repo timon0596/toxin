@@ -1,13 +1,12 @@
-mixin ckbbtns(h3)
+mixin ckbbtn({name,description})
+	.ckbbtn
+		.ckb
+		.ckbbtn__name!= name
+		if description
+			.ckbbtn__description= description
+mixin checkbox_buttons({h3,content,modifier})
 	.ckbbtn-list__wrapper
 		h3= h3
-		.ckbbtn-list
-			.ckbbtn
-				.ckb
-				.ckbbtn__name Можно курить
-			.ckbbtn
-				.ckb
-				.ckbbtn__name Можно с питомцами
-			.ckbbtn
-				.ckb
-				.ckbbtn__name Можно пригласить<br>гостей (до 10 человек)
+		.ckbbtn-list(class=modifier?'ckbbtn-list_'+modifier:'')
+			each ckbbtn in content
+				+ckbbtn({name: ckbbtn.name, description: ckbbtn.description})
