@@ -1,7 +1,7 @@
 @import './../../../sass/vars.sass'
-.block.block__room-details
+.block.block-room-details
 	.block__row
-		.taxes
+		.tax-list
 			display: grid
 			grid-gap: 10px
 			.tax
@@ -31,31 +31,18 @@
 						font-size: 12px
 						line-height: 14px
 						color: $d25
-		.total
+		.block__total
 			display: grid
 			grid-template-columns: auto 1fr auto
 			align-items: baseline
 			grid-gap: 5px
 			margin-bottom: 20px
-			.total__border
+			.block__underline
 				display: block
 				height: 1px
 				border-bottom: 1px dashed $d25
-		.block__row_inner
+		.block__inner-row
 			align-items: baseline
 			*
 				display: inline-block
-.block__room-details.room-details__number
-	font-family: quicksand
-	font-style: normal
-	font-weight: bold
-	font-size: 14px
-	line-height: 17px
-	color: $d100
-	h3
-		color: $p
-.block__room-details.room-details__payment
-	color: $d50
-	.block__room-details.room-details__cost
-		font-weight: bold
-//---------------datepicker
+

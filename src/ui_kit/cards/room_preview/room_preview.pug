@@ -1,5 +1,5 @@
 mixin room_preview(room,id)
-	.block__room-preview
+	.block-room-preview
 		.block__row
 			.carousel.slide(data-ride='true' id="carouselExampleIndicators"+id)
 				ol.carousel-indicators
@@ -21,18 +21,18 @@ mixin room_preview(room,id)
 				a.carousel-control-next(href='#carouselExampleIndicators'+id role='button' data-slide='next')
 					i.material-icons(aria-hidden='true') expand_more
 		.block__row
-			.block__row_inner
-				.block__room-details.room-details__number
+			.block__inner-row
+				.block__number
 					!= "№ "
 					h1= room.number
 					if room.lux
 						h3 люкс
-				.block__room-details.room-details__payment
-					.block__room-details.room-details__cost= room.cost
+				.block__payment
+					.block__cost= room.cost
 					=" в сутки"
-			.divider
-			.block__row_inner
+			.block-room-preview__divider
+			.block__inner-row
 				+rate(room.rate)
-				.block__room-details.room-details__payment
-					.block__room-details.room-details__cost= room.reviews
+				.block__reviews
+					.block__reviews-amount= room.reviews
 					=" отзывов"

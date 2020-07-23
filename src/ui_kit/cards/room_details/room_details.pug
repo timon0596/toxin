@@ -1,18 +1,18 @@
 mixin room_details()
-	.block.block__room-details
+	.block.block-room-details
 		.block__row
-			.block__row_inner
-				.block__room-details.room-details__number
+			.block__inner-row
+				.block__number
 					!= "№ <h1> 888</h1> <h3>люкс</h3>" 
-				.block__room-details.room-details__payment
-					.block__room-details.room-details__cost 9 990₽
+				.block__payment
+					.block__cost 9 990₽
 					=" в сутки"
 		.block__row
 			+datedropdown({names: ['прибытие','выезд']})
 		.block__row
 			+guestdropdown('гости')
 		.block__row
-			.taxes
+			.tax-list
 				.tax.tax__habitation
 					.tax__text 9 990₽ х 4 суток
 					| 39 960₽
@@ -25,7 +25,8 @@ mixin room_details()
 						.tax__info i
 					| 300₽
 		.block__row
-			.total
+			.block__total
 				h2 Итого
-				.total__border
-				h2.total__sum 38 081₽
+				.block__underline
+				h2.block__sum 38 081₽
+			+btn({text: 'забронировать',modifier: 'arrow'})

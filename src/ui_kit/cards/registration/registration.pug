@@ -1,5 +1,5 @@
 mixin registration()
-	.block.block__registration
+	.block.block-registration
 		.block__row
 			h1 Регистрация аккаунта
 		.block__row
@@ -15,7 +15,9 @@ mixin registration()
 			+textfield({placeholder: 'Пароль'})
 			+toggle()
 		.block__row
+			+btn({text: 'перейти к оплате',modifier: 'arrow'})
 		.block__row
-			.block__row_inner
+			.block__inner-row
 				|Уже есть аккаунт на Toxin
 				.js-sign-in
+					+btn({text: 'войти',modifier: 'border'})
