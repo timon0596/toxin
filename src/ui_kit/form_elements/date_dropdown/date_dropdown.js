@@ -1,16 +1,21 @@
 import 'air-datepicker'
 import 'jquery-mask-plugin'
-import {roomDetails} from './../../cards/room_details/room_details.js'
-export function dateDropdown(){
-	$('.js-date-dropdown-datepicker').each((i,el)=>{
+function dateFromLocaleDateString(str){
+	return new Date(str.split('.').reverse().join('.'))
+}
+function dateDropdown(){
+	let selectedDates = {fromTo:'',from:'',to:'',days: 0}
+	selectedDates = JSON.parse(localStorage?.getItem('datepicker'))||selectedDates
+	$('.js-date-dropdown').each((i,el)=>{
 			const $dateInput = $(el).find('input')
-			console.log($dateInput[0])
-			const DPinstance = $(el).datepicker({
+			$dateInput.mask('00.00.0000')
+			const $datepicker = $(el).find('.date-dropdown-datepicker')
+			const DPinstance = $datepicker.datepicker({
 		    minDate: new Date(),
 		    multipleDates: 2,
 		    range: true,
 		    multipleDatesSeparator: ' - ',
-		    dateFormat: 1?'dd M':'dd.mm.yyyy',
+		    dateFormat: !$dateInput[1]?'dd M':'dd.mm.yyyy',
 		    language: {
 		    	daysMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб']
 		    },
@@ -22,33 +27,35 @@ export function dateDropdown(){
 		    nextHtml:'<i class="material-icons">arrow_forward</i>',
 		    onSelect: function(fd, d, picker) {
 		                const options = {year: 'numeric', month: 'numeric', day: 'numeric'}
-		              	
-		              	// datepicker.fromTo= fd
-		              	// datepicker.from= d[0]?.toLocaleDateString('ru-RU',options)??''
-		              	// datepicker.to = d[1]?.toLocaleDateString('ru-RU',options)??''
-		              	// datepicker.days = d[1]?Math.round((d[1]-d[0])/1000/60/60/24):0
-		              	
-		              // 	if(inp.length==2){
-		              // 		$(inp[0]).val(datepicker.from)
-		              // 		$(inp[1]).val(datepicker.to)
-		              // 	}
-		              // 	if($filterDateDropdownInput[0]){
-		              // 		$filterDateDropdownInput.val(fd)
-		              // 	}
-		              // if(!!$block[0]&&datepicker.to){
-		              // 	roomDetails($block,{cost: 9990,discount: 2179,extraServices: 300},datepicker)
-		              // }
-
+		              	selectedDates.fromTo= fd
+		              	selectedDates.from= d[0]?d[0].toLocaleDateString('ru-RU',options):''
+		              	selectedDates.to = d[1]?d[1].toLocaleDateString('ru-RU',options):''
+		              	selectedDates.days = d[1]?Math.round((d[1]-d[0])/1000/60/60/24):0
+		              	let inputCondition = selectedDates.from&&selectedDates.to
+		              	if($dateInput[1]){
+		              		$($dateInput[0]).val(selectedDates.from)
+		              		inputCondition?$($dateInput[1]).val(selectedDates.to):0
+		              	}
+		              	else{
+		              		$dateInput.val(fd)
+		              	}
+		              	$(el).trigger('new-date-selected')
 		            }
 			}).data('datepicker')
 			
+			if(selectedDates.days){
+
+				DPinstance.selectDate([dateFromLocaleDateString(selectedDates.from),dateFromLocaleDateString(selectedDates.to)])
+
+			}
+
 			const dpClear = $('.datepicker--button[data-action="clear"]').hide()
 			const dpInline = $(el).find('.datepicker-inline').hide()
 			const dpBtns = $(el).find('.datepicker--buttons')
-			// const dpExpand = inp.next('i')
-			// dpExpand.click(()=>{
-			// 	dpInline.slideToggle(250)
-			// })
+			const dpExpand = $dateInput.next('i')
+			dpExpand.click(()=>{
+				dpInline.slideToggle(250)
+			})
 			const clear = $('<div>',{
 				class: 'toxin-btn toxin-btn_with-no-bg toxin-btn_grey',
 				html: '<h3>очистить</h3>',
@@ -64,13 +71,12 @@ export function dateDropdown(){
 				html: '<h3>применить</h3>',
 				on: {
 					click:()=>{
-						localStorage.setItem('datepicker',JSON.stringify(datepicker))
+						localStorage.setItem('datepicker',JSON.stringify(selectedDates))
 						dpInline.slideUp(250)
 					}
 				}
 			})
 			dpBtns.append(clear).append(apply)
-
 	})
 }
 dateDropdown()
