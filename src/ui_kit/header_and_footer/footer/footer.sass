@@ -1,0 +1,81 @@
+@import './../../../sass/vars.sass'
+.footer__inner-wrapper
+	margin-bottom: 1px
+	background: white
+	box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1)
+	padding: 140px
+	padding-top: 100px
+	padding-bottom: 60px
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	flex-wrap: wrap
+	justify-content: center
+	.footer__column
+		max-width: 260px
+		min-width: 160px
+		display: grid
+		grid-gap: 20px
+		height: min-content
+		margin-bottom: 40px
+		p
+			font-size: 14px
+			line-height: 17px
+			color: $d50
+	.footer__column:not(:first-child)
+		margin-left: 40px
+.footer__copyright
+	padding-left: 140px
+	padding-right: 140px
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	justify-content: space-between
+	background: white
+	padding-top: 15px
+	padding-bottom: 15px	
+	align-items: center
+	font-size: 14px
+	line-height: 17px
+	color: $d75
+	.logo
+		display: none
+	.footer__socials
+		display: grid
+		grid-auto-flow: column
+		grid-gap: 20px
+		font-size: 24px
+		line-height: 23px
+		width: min-content
+		i
+			background: $lgp
+			-webkit-background-clip: text
+			background-clip: text
+			color: transparent
+@media (max-width: 1280px) 
+	.footer__inner-wrapper
+		display: grid
+		grid-template-columns: repeat(auto-fit,260px)
+		grid-gap: 40px
+		padding-bottom: 100px
+		.footer__column:not(:first-child)
+			margin: 0
+@media (max-width: 768px)
+	.footer__copyright
+		justify-items: center
+		justify-content: center
+		padding-top: 120px
+		padding-bottom: 120px
+		display: grid
+		grid-gap: 20px
+		.logo
+			display: block
+@media (max-width: 560px)
+	.footer__inner-wrapper
+		padding-left: 40px
+		padding-right: 40px
+

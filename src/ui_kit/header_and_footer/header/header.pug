@@ -1,0 +1,16 @@
+mixin header(signed)
+	header
+		.sub-section
+			img(src="img/Logo.svg").logo
+			nav
+				.nav
+					.nav__item О нас
+					.nav__item Услуги
+						i.material-icons expand_more
+					.nav__item Вакансии
+					.nav__item Новости
+					.nav__item Соглашения
+						i.material-icons expand_more
+					.nav__item.nav__btn-item.sign-in(style=signed?'display: none':'')
+					.nav__item.nav__btn-item.sign-up(style=signed?'display: none':'')
+					.nav__item.user__name(style=signed?'':'display: none') Юлий Цезарь
