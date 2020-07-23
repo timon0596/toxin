@@ -1,16 +1,16 @@
 mixin header(signed)
 	header
-		.sub-section
-			img(src="img/Logo.svg").logo
-			nav
-				.nav
-					.nav__item О нас
-					.nav__item Услуги
-						i.material-icons expand_more
-					.nav__item Вакансии
-					.nav__item Новости
-					.nav__item Соглашения
-						i.material-icons expand_more
-					.nav__item.nav__btn-item.sign-in(style=signed?'display: none':'')
-					.nav__item.nav__btn-item.sign-up(style=signed?'display: none':'')
-					.nav__item.user__name(style=signed?'':'display: none') Юлий Цезарь
+		img(src="img/Logo.svg").logo
+		nav.header-nav
+			.nav__item О нас
+			.nav__item Услуги
+				i.material-icons expand_more
+			.nav__item Вакансии
+			.nav__item Новости
+			.nav__item Соглашения
+				i.material-icons expand_more
+			.nav__item.nav__btn-item.js-nav__sign-in(style=signed?'display: none':'')
+				+btn({text:'войти',modifier: 'border'})
+			.nav__item.nav__btn-item.nav__sign-up.js-nav__sign-up(style=signed?'display: none':'')
+				+btn({text:'зарегистрироваться'})
+			.nav__item.nav__user-name(style=signed?'':'display: none') Юлий Цезарь
