@@ -8,7 +8,7 @@ mixin room_details()
 					.block__room-details.room-details__cost 9 990₽
 					=" в сутки"
 		.block__row
-			+datedropdowns('прибытие','выезд')
+			+datedropdown({names: ['прибытие','выезд']})
 		.block__row
 			+guestdropdown('гости')
 		.block__row

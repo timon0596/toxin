@@ -3,7 +3,7 @@ mixin room_search()
 		.block__row
 			h1 Найдём номера под ваши пожелания
 		.block__row
-			+datedropdowns('прибытие','выезд')
+			+datedropdown({names: ['прибытие','выезд']})
 		.block__row
 			+guestdropdown('гости')
 		.block__row

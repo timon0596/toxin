@@ -3,16 +3,16 @@ mixin registration()
 		.block__row
 			h1 Регистрация аккаунта
 		.block__row
-			+textfield('Имя')
-			+textfield('Фамилия')
+			+textfield({placeholder: 'Имя'})
+			+textfield({placeholder: 'Фамилия'})
 			+radio()
 		.block__row
 			h3 дата рождения
-			+masked_textfield()
+			+textfield({placeholder:'дд.мм.гггг',modifier: 'masked'})
 		.block__row
 			h3 данные для входа в сервис
-			+textfield('Email')
-			+textfield('Пароль')
+			+textfield({placeholder: 'Email'})
+			+textfield({placeholder: 'Пароль'})
 			+toggle()
 		.block__row
 		.block__row

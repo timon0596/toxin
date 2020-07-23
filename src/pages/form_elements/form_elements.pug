@@ -12,17 +12,17 @@ body
 	.form-elements__list
 		.form-elements__item
 			h3 text field
-			+textfield('Email')
+			+textfield({placeholder: 'Email'})
 		.form-elements__item
-			+datedropdowns('date dropdown','date dropdown')
+			+datedropdown({names: ['date dropdown','date dropdown']})
 		.form-elements__item
-			+filter_date_dropdown('filter date dropdown')
+			+datedropdown({names:['filter date dropdown'],modifier: 'filter'})
 		.form-elements__item
 			h3 masked text field
-			+masked_textfield()
+			+textfield({placeholder:'дд.мм.гггг',modifier: 'masked'})
 		.form-elements__item
 			h3 subscription text field
-			+subscription()
+			+textfield({placeholder:'Email', material_icons:'arrow_forward', modifier:'subscription'})
 		.form-elements__item
 			+dropdown('dropdown')
 		.form-elements__item

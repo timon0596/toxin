@@ -1,2 +1,5 @@
-mixin textfield(placeholder)
-	input(placeholder= placeholder).form-element
+mixin textfield({placeholder,material_icons,modifier})
+	.text-field(class={'subscription-text-field': modifier==='subscription','masked-text-field js-masked-text-field': modifier==='masked'})
+		input(placeholder= placeholder)
+		if material_icons
+			i.material-icons= material_icons

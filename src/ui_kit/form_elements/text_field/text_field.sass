@@ -1,26 +1,26 @@
 @import './../../../sass/vars.sass'
-.form-element
-	border: 1px solid $d25
-	border-radius: 4px
-	padding-left: 15px
-	height: 44px
+.text-field
 	width: 100%
-	color: $d75
-	&::placeholder
-		color: $d25
-	&:hover,
-	&:focus
-		border: 1px solid $d50
-		outline: 0
-	display: -webkit-flex
-	display: -moz-flex
-	display: -ms-flex
-	display: -o-flex
-	display: flex
-	align-items: center
-.form-element__wrapper
-	width: 100%
-	position: relative	
+	position: relative
+	input
+		border: 1px solid $d25
+		border-radius: 4px
+		padding-left: 15px
+		height: 44px
+		width: 100%
+		color: $d75
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		align-items: center
+		&::placeholder
+			color: $d25
+		&:hover,
+		&:focus
+			border: 1px solid $d50
+			outline: 0
 	i
 		color: $d50
 		position: absolute
@@ -37,3 +37,9 @@
 		display: -o-flex
 		display: flex
 		align-items: center
+.text-field.subscription-text-field
+	i
+		background: $lgp
+		-webkit-background-clip: text
+		color: transparent
+		

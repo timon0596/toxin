@@ -13,7 +13,7 @@ body
 		.search-room-page__filters
 			.search-room-page__filter
 				.filter__inner
-					+filter_date_dropdown('даты пребывания в отеле')
+					+datedropdown({names: ['даты пребывания в отеле'],modifier: 'filter'})
 					+guestdropdown('гости')
 			.search-room-page__filter
 				+slider('диапазон цены')

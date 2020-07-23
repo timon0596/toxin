@@ -1,14 +1,7 @@
-include ./../masked_textfield/masked_textfield
-mixin datedropdown(name)
-	.date-dropdown
-		h3= name
-		+masked_textfield('expand_more') 
-mixin datedropdowns(name1,name2)
-	.date-dropdown__wrapper
-		.date-dropdown-datepicker
-		+datedropdown(name1)
-		+datedropdown(name2)
-mixin filter_date_dropdown(name)
-	.date-dropdown__wrapper.filter-date-dropdown.js-filter-date-dropdown
-		.date-dropdown-datepicker
-		+datedropdown(name)
+include ./../text_field/text_field
+mixin datedropdown({names,modifier})
+	.date-dropdown.js-date-dropdown(class=modifier?modifier+'-date-dropdown':'')
+		each name in names
+			.date-dropdown__display
+				h3= name
+				+textfield({placeholder:'дд.мм.гггг', material_icons:'expand_more', modifier: 'masked'})

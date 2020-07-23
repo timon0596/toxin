@@ -40,7 +40,7 @@ mixin footer()
 			.footer__column
 				h3 подписка
 				| Получайте специальные предложения и новости сервиса
-				+subscription()
+				+textfield({placeholder:'Email', material_icons:'arrow_forward', modofier:'subscription'})
 		+copyright()
 mixin copyright()
 	.sub-section.copyright
