@@ -39,7 +39,9 @@ function dateDropdown(){
 		              	else{
 		              		$dateInput.val(fd)
 		              	}
-		              	$(el).trigger('new-date-selected')
+		              	const dateSelectEvent = $.Event('new-date-selected')
+		              	dateSelectEvent.selectedDates = {...selectedDates}
+		              	$(el).trigger(dateSelectEvent)
 		            }
 			}).data('datepicker')
 			
