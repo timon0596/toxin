@@ -1,9 +1,4 @@
-mixin advantage(name,descr,icon)
-	.advantage
-		i.material-icons= icon
-		.advantage__info
-			.advantage__name= name
-			.advantage__descr= descr
+include ./../advantage/advantage
 mixin advantages()
 	.advantage__wrapper
 		+advantage('Комфорт','Шумопоглощающие стены','insert_emoticon')
