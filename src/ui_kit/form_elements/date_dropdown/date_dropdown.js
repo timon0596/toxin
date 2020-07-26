@@ -3,10 +3,10 @@ import 'jquery-mask-plugin'
 function dateFromLocaleDateString(str){
 	return new Date(str.split('.').reverse().join('.'))
 }
-function dateDropdown(){
+function dateDropdown(selector){
 	let selectedDates = {fromTo:'',from:'',to:'',days: 0}
 	selectedDates = JSON.parse(localStorage?.getItem('datepicker'))||selectedDates
-	$('.js-date-dropdown').each((i,el)=>{
+	$(selector).each((i,el)=>{
 			const $dateInput = $(el).find('input')
 			$dateInput.mask('00.00.0000')
 			const $datepicker = $(el).find('.date-dropdown-datepicker')
@@ -81,4 +81,5 @@ function dateDropdown(){
 			dpBtns.append(clear).append(apply)
 	})
 }
-dateDropdown()
+dateDropdown('.js-date-dropdown')
+dateDropdown('.js-filter-date-dropdown')

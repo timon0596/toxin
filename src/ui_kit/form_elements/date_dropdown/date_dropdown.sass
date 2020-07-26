@@ -9,9 +9,23 @@
 	.date-dropdown__display
 		h3
 			margin-bottom: 5px
-.date-dropdown.filter-date-dropdown
-	grid-template-columns: 1fr
 .date-dropdown
+	.date-dropdown-datepicker
+		position: absolute
+		left: 0
+		top: calc(100% + 5px)
+		z-index: 10
+.filter-date-dropdown
+	display: grid
+	grid-template-columns: 1fr
+	grid-gap: 20px
+	position: relative
+	.date-dropdown-datepicker
+		position: absolute
+	.date-dropdown__display
+		h3
+			margin-bottom: 5px
+.filter-date-dropdown
 	.date-dropdown-datepicker
 		position: absolute
 		left: 0
