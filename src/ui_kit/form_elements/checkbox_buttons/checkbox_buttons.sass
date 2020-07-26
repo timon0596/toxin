@@ -14,11 +14,20 @@
 			line-height: 18px
 			font-weight: normal
 			color: $d50
-.ckbbtn-list.ckbbtn-list_rich
+.ckbbtn-list_rich
+	display: grid
+	grid-gap: 10px
 	.ckbbtn
+		display: grid
 		align-items: center
 		grid-template-rows: auto auto
+		align-items: stretch
+		grid-template-rows: 1fr
+		grid-column-gap: 10px
+		grid-row-gap: 5px
 		.ckbbtn__name
+			font-size: 14px
+			line-height: 18px
 			font-weight: bold
 			color: $d75
 		.ckbbtn__description

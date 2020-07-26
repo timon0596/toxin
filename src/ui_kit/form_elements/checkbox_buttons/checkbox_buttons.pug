@@ -1,12 +1,7 @@
-mixin ckbbtn({name,description})
-	.ckbbtn
-		.ckb
-		.ckbbtn__name!= name
-		if description
-			.ckbbtn__description= description
+include ./../checkbox_button/checkbox_button
 mixin checkbox_buttons({h3,content,modifier})
 	.ckbbtn-list__wrapper
 		h3= h3
-		.ckbbtn-list(class=modifier?'ckbbtn-list_'+modifier:'')
+		div(class=modifier?'ckbbtn-list_'+modifier:'ckbbtn-list')
 			each ckbbtn in content
 				+ckbbtn({name: ckbbtn.name, description: ckbbtn.description})
