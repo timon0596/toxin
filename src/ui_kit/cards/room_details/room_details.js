@@ -4,7 +4,7 @@ function dateSelectedHandler(e){
 		console.log(e.selectedDates.days)
 		const $block = $(this).parents('.block-room-details')
 		const $taxHabitation = $block.find('.tax-habitation')
-		const $blockSum = $block.find('.block__sum')
+		const $blockSum = $block.find('.block-room-details__sum')
 		const sum = 9990*e.selectedDates.days
 		const total = sum - 2179 + 300
 		const declension = e.selectedDates.days%10==1?'сутки':'суток'

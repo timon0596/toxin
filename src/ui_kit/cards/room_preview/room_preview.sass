@@ -6,20 +6,20 @@
 	padding: 0
 	width: 270px
 	overflow: hidden
-	.block__row
+	.block-room-preview__row
 		display: grid
 		grid-gap: 5px
-		.block__inner-row
+		.block-room-preview__inner-row
 			color: $d100
-	.block__row
-	.block__row:last-child
+	.block-room-preview__row
+	.block-room-preview__row:last-child
 		display: grid
 		grid-gap: 10px
 		padding: 20px
 		.block-room-preview__divider
 			height: 1px
 			background: $d1
-	.block__inner-row
+	.block-room-preview__inner-row
 		display: grid
 		grid-auto-flow: column
 		align-items: center
@@ -29,7 +29,7 @@
 		z-index: 1
 		.toxin-btn:not(.toxin-btn_with-no-bg)
 			width: 99px
-	.block__number
+	.block-room-preview__number
 		font-family: quicksand
 		font-style: normal
 		font-weight: bold
@@ -38,20 +38,20 @@
 		color: $d100
 		h3
 			color: $p
-	.block__payment,
-	.block__reviews
+	.block-room-preview__payment,
+	.block-room-preview__reviews
 		color: $d50
-		.block__cost,
-		.block__reviews-amount
+		.block-room-preview__cost,
+		.block-room-preview__reviews-amount
 			font-weight: bold
-	.block__inner-row
+	.block-room-preview__inner-row
 		align-items: baseline
-		.block__number,
-		.block__payment,
-		.block__reviews
+		.block-room-preview__number,
+		.block-room-preview__payment,
+		.block-room-preview__reviews
 			*
 				display: inline-block
-	.block__inner-row:last-child
+	.block-room-preview__inner-row:last-child
 		align-items: center
 		.rate
 			display: -webkit-flex
