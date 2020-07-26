@@ -111,6 +111,6 @@ export class Dropdown{
 		this.minus[i].removeClass('counter-button_disabled'):0
 	}
 }
-$('.dropdown').each((i,el)=>{
+$('.js-dropdown').each((i,el)=>{
 	new Dropdown($(el),i)
 })

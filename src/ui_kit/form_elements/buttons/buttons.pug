@@ -1,5 +1,5 @@
-mixin btn({text,modifier,textColor})
-	.toxin-btn(class={'toxin-btn_with-no-bg': modifier==='no-bg','toxin-btn_wiht-border': modifier==='border','toxin-btn_wiht-arrow': modifier==='arrow','toxin-btn_grey': textColor==='grey',})
+mixin btn({text,modifier})
+	div(class={'toxin-btn_with-no-bg': modifier==='no-bg','toxin-btn_wiht-border': modifier==='border','toxin-btn_wiht-arrow': modifier==='arrow','toxin-btn_grey': modifier==='grey','toxin-btn': modifier===undefined})
 		h3= text
 		if modifier=='arrow'
 			i.material-icons arrow_forward
