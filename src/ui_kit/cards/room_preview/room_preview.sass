@@ -7,6 +7,11 @@
 	width: 270px
 	overflow: hidden
 	.block__row
+		display: grid
+		grid-gap: 5px
+		.block__inner-row
+			color: $d100
+	.block__row
 	.block__row:last-child
 		display: grid
 		grid-gap: 10px
@@ -14,6 +19,31 @@
 		.block-room-preview__divider
 			height: 1px
 			background: $d1
+	.block__inner-row
+		display: grid
+		grid-auto-flow: column
+		align-items: center
+		font-size: 14px
+		line-height: 18px
+		justify-content: space-between
+		z-index: 1
+		.toxin-btn:not(.toxin-btn_with-no-bg)
+			width: 99px
+	.block__number
+		font-family: quicksand
+		font-style: normal
+		font-weight: bold
+		font-size: 14px
+		line-height: 17px
+		color: $d100
+		h3
+			color: $p
+	.block__payment,
+	.block__reviews
+		color: $d50
+		.block__cost,
+		.block__reviews-amount
+			font-weight: bold
 	.block__inner-row
 		align-items: baseline
 		.block__number,

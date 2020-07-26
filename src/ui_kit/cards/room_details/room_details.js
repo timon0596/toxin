@@ -20,7 +20,7 @@ function dateSelectedHandler(e){
 		$blockSum.text(blockSumText)
 	}
 }
-$('.block.block-room-details').each((i,el)=>{
+$('.block-room-details').each((i,el)=>{
 	const $dd = $(el).find('.js-date-dropdown')
 	$dd.on('new-date-selected',dateSelectedHandler)
 })
