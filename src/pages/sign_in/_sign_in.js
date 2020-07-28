@@ -18,8 +18,8 @@ $(document).ready(()=>{
 	}
 	
 	if('/sign_in.html'==location.pathname){
-		$('.js-block-registration__sign-in-button,.js-nav__sign-in').click(signInHandler)
-		$('.js-block-sign-in__button-create,.js-nav__sign-up').click(signUpHandler)
+		$('.js-block-registration__sign-in-button,.js-nav__sign-in-button').click(signInHandler)
+		$('.js-block-sign-in__button-create,.js-nav__sign-up-button').click(signUpHandler)
 		$('.js-block-sign-in__sign-in-button').click(enterHandler)
 		console.log($('.js-sign-in-btn'))
 	}
