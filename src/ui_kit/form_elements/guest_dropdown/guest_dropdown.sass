@@ -1,7 +1,14 @@
 @import './../../../sass/vars.sass'
-.dropdown__wrapper>h3
+.guest-dropdown__wrapper>h3
 	margin-bottom: 5px
-.guest-dropdown.dropdown_active
+	font-family: montserrat
+	font-style: normal
+	font-weight: bold
+	font-size: 12px
+	line-height: 15px
+	text-transform: uppercase
+	color: $d100
+.guest-dropdown.guest-dropdown_active
 	.dropdown-display
 		border-bottom-right-radius: 0
 		border-bottom-left-radius: 0
@@ -69,13 +76,20 @@
 		&:hover,
 		&:focus
 			border-top: 0
+		.dropdown-menu__row:not(:last-child)
+			h3
+				font-family: montserrat
+				font-style: normal
+				font-weight: bold
+				font-size: 12px
+				line-height: 15px
+				text-transform: uppercase
+				color: $d100
 		.dropdown-menu__row
 			width: 100%
 			margin-top: 7px
 			margin-right: 7px
 			justify-content: space-between
-			&:last-child
-				margin-bottom: 7px
 			display: -webkit-flex
 			display: -moz-flex
 			display: -ms-flex

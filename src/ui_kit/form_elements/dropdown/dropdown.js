@@ -40,7 +40,7 @@ export class Dropdown{
 	}
 	getLcKey(){
 		let str = this.dd.attr('class').split(' ')
-		let ind = str.indexOf('dropdown_active')
+		let ind = this.guest?str.indexOf('guest-ropdown_active'):str.indexOf('dropdown_active')
 		ind!=-1?
 			str.splice(ind,1):0
 		return this.index+str.join('')
@@ -84,7 +84,7 @@ export class Dropdown{
 		this.text = text.substring(0,text.length-1)
 	}
 	toggle(){
-		this.dd.toggleClass('dropdown_active')
+		this.guest?this.dd.toggleClass('guest-dropdown_active'):this.dd.toggleClass('dropdown_active')
 		this.ddmenu.slideToggle(250)
 	}
 	render(){
