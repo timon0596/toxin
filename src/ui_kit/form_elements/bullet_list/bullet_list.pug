@@ -1,4 +1,4 @@
-mixin bulletlist({list,bullets})
+mixin bullet-list({list,bullets})
 	div(class=bullets?('bullet-list_'+bullets):'bullet-list')
 		each val in list
 			.bullet-list__item= val

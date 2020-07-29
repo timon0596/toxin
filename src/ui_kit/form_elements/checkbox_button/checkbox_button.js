@@ -1,3 +1,3 @@
-$('.ckb').click(function(){
-	$(this).toggleClass('ckb_checked')
+$('.checkbox').click(function(){
+	$(this).toggleClass('checkbox_checked')
 })
