@@ -1,5 +1,5 @@
 @import './../../../sass/vars.sass'
-.guest-dropdown__wrapper>h3
+.guest-dropdown>h3
 	margin-bottom: 5px
 	font-family: montserrat
 	font-style: normal
@@ -8,7 +8,7 @@
 	line-height: 15px
 	text-transform: uppercase
 	color: $d100
-.guest-dropdown.guest-dropdown_active
+.guest-dropdown__body.guest-dropdown__body_active
 	.dropdown-display
 		border-bottom-right-radius: 0
 		border-bottom-left-radius: 0
@@ -17,7 +17,7 @@
 		border-top-right-radius: 0
 		border-top-left-radius: 0
 		border-top: 0
-.guest-dropdown
+.guest-dropdown__body
 	background: white
 	position: relative
 	i
@@ -120,7 +120,7 @@
 					display: -o-flex
 					display: flex
 					align-items: center
-.guest-dropdown
+.guest-dropdown__body
 	.dropdown-menu__row:last-child
 		margin-bottom: 13px
 		margin-top: 20px

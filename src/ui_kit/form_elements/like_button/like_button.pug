@@ -1,7 +1,8 @@
 mixin like(likes,checked=false)
-	label.like__wrapper
-		input(type="checkbox" checked= checked)
-		.like
-			i.material-icons favorite_border
-			i.material-icons favorite
-			.like__number= likes
+	.like
+		label
+			input(type="checkbox" checked= checked)
+			.like__button
+				i.material-icons favorite_border
+				i.material-icons favorite
+				.like__number= likes

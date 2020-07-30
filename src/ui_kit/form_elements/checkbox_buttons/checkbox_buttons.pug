@@ -1,7 +1,7 @@
 include ./../checkbox_button/checkbox_button
 mixin checkbox_buttons({h3,content,modifier})
-	.ckbbtn-list__wrapper
+	.checkbox-buttons-list__wrapper
 		h3= h3
-		div(class=modifier?'ckbbtn-list_'+modifier:'ckbbtn-list')
+		div(class=modifier?'checkbox-buttons-list_'+modifier:'checkbox-buttons-list')
 			each ckbbtn in content
-				+ckbbtn({name: ckbbtn.name, description: ckbbtn.description})
+				+checkbox-button({name: ckbbtn.name, description: ckbbtn.description})

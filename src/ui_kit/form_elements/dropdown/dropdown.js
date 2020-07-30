@@ -17,7 +17,7 @@ export class Dropdown{
 		this.dd=dd
 		this.lcKey=this.getLcKey()
 		this.display = this.dd.find('.js-dropdown-display')
-		this.guest = this.dd.hasClass('js-guest-dropdown')
+		this.guest = this.dd.hasClass('js-guest-dropdown__body')
 		this.clear = this.dd.find('.js-dropdown-menu__clear')
 		this.apply = this.dd.find('.js-dropdown-menu__apply')
 		this.dec = this.guest?declensions.guest:declensions.bed
@@ -40,7 +40,7 @@ export class Dropdown{
 	}
 	getLcKey(){
 		let str = this.dd.attr('class').split(' ')
-		let ind = this.guest?str.indexOf('guest-ropdown_active'):str.indexOf('dropdown_active')
+		let ind = this.guest?str.indexOf('guest-dropdown__body_active'):str.indexOf('dropdown__body_active')
 		ind!=-1?
 			str.splice(ind,1):0
 		return this.index+str.join('')
@@ -84,7 +84,7 @@ export class Dropdown{
 		this.text = text.substring(0,text.length-1)
 	}
 	toggle(){
-		this.guest?this.dd.toggleClass('guest-dropdown_active'):this.dd.toggleClass('dropdown_active')
+		this.guest?this.dd.toggleClass('guest-dropdown__body_active'):this.dd.toggleClass('dropdown__body_active')
 		this.ddmenu.slideToggle(250)
 	}
 	render(){
@@ -111,6 +111,6 @@ export class Dropdown{
 		this.minus[i].removeClass('counter-button_disabled'):0
 	}
 }
-$('.js-dropdown').each((i,el)=>{
+$('.js-dropdown__body').each((i,el)=>{
 	new Dropdown($(el),i)
 })

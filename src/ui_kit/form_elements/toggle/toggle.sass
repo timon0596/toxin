@@ -1,5 +1,5 @@
 @import './../../../sass/vars.sass'
-label.toggle__wrapper
+label
 	display: -webkit-flex
 	display: -moz-flex
 	display: -ms-flex
@@ -9,7 +9,7 @@ label.toggle__wrapper
 	cursor: pointer
 	input
 		display: none
-	.toggle
+	.toggle__button
 		margin-right: 10px
 		display: block
 		width: 40px
@@ -29,8 +29,8 @@ label.toggle__wrapper
 			top: 50%
 			transform: translate(0,-50%)
 			transition: transform .15s ease
-	input:checked ~ .toggle
+	input:checked ~ .toggle__button
 		border-color: $p
-	input:checked ~ .toggle:before
+	input:checked ~ .toggle__button:before
 		background: $lgp
 		transform: translate(calc(30px - 100%),-50%)

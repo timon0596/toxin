@@ -1,5 +1,5 @@
 @import './../../../sass/vars.sass'
-.ckb-list
+.checkbox-list
 	width: 100%
 	color: $d50
 	h3
@@ -10,7 +10,7 @@
 		line-height: 15px
 		text-transform: uppercase
 		color: $d100
-	.ckb-list__header
+	.checkbox-list__header
 		width: 100%
 		justify-content: space-between
 		display: -webkit-flex
@@ -23,7 +23,15 @@
 			transition: transform .250s ease
 			width: 44px
 			height: 44px
-	.ckb-list__inner
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			justify-content: center
+			align-items: center
+			cursor: pointer
+	.checkbox-list__inner
 		li
 			margin-bottom: 5px
 			display: -webkit-flex
@@ -32,8 +40,8 @@
 			display: -o-flex
 			display: flex
 			align-items: center
-			.ckb
+			.checkbox
 				margin-right: 10px
-.ckb-list.ckb-list_expanded
+.checkbox-list.checkbox-list_expanded
 	i
 		transform: rotate(180deg)

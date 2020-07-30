@@ -9,8 +9,8 @@ mixin header(signed)
 			.nav__item Новости
 			.nav__item Соглашения
 				i.material-icons expand_more
-			.nav__item.nav__btn-item.js-nav__sign-in-button(style=signed?'display: none':'')
+			.nav__item.js-nav__btn-item.js-nav__sign-in-button(style=signed?'display: none':'')
 				+btn({text:'войти',modifier: 'border'})
-			.nav__item.nav__btn-item.js-nav__sign-up-button(style=signed?'display: none':'')
+			.nav__item.js-nav__btn-item.js-nav__sign-up-button(style=signed?'display: none':'')
 				+btn({text:'зарегистрироваться'})
-			.nav__item.nav__user-name(style=signed?'':'display: none') Юлий Цезарь
+			.nav__item.nav__user-name.js-nav__user-name(style=signed?'':'display: none') Юлий Цезарь
