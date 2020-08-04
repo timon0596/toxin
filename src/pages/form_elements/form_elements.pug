@@ -62,9 +62,9 @@ body
 				+btn({text:'click me',modifier: 'grey'})
 				+btn({text:'перейти к оплате',modifier: 'arrow'})
 		.form-elements__item
-			.advantage__wrapper
-				+advantage('Комфорт','Шумопоглощающие стены','insert_emoticon')
-				+advantage('Удобство','Окно в каждой из спален','location_city')
+			.advantages
+				+advantage({name:'Комфорт',description:'Шумопоглощающие стены',icon:'insert_emoticon'})
+				+advantage({name:'Удобство',description:'Окно в каждой из спален',icon:'location_city'})
 		.form-elements__item
 			+comment(user)
 		.form-elements__item

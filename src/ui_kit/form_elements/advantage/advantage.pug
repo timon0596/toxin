@@ -1,6 +1,6 @@
-mixin advantage(name,descr,icon)
+mixin advantage(content={})
 	.advantage
-		i.material-icons= icon
+		i.material-icons= content.icon
 		.advantage__info
-			.advantage__name= name
-			.advantage__descr= descr
+			.advantage__name= content.name
+			.advantage__descr= content.description
