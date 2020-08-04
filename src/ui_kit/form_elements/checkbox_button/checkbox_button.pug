@@ -1,6 +1,7 @@
+include ./../checkbox/checkbox
 mixin checkbox-button({name,description})
 	.checkbox-button
-		.checkbox
+		+checkbox()
 		.checkbox-button__name!= name
 		if description
 			.checkbox-button__description= description

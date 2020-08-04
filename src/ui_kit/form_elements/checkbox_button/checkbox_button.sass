@@ -1,33 +1,19 @@
 @import './../../../sass/vars.sass'
-.checkbox
-	width: 20px
-	height: 20px
-	border: 1px solid $d25
-	border-radius: 4px
-	cursor: pointer
-	position: relative
-	transition: border-color .250s ease
-.checkbox:before
-	position: absolute
-	content: ""
-	display: block
-	transform: translate(-50%,-50%) rotate(0deg)
-	transition: transform .250s ease,opacity .250s ease
-	opacity: 0
-	width: 6px
-	height: 8px
-	border: 2px solid
-	border-image: $lgp
-	border-image-slice: 1
-	transform-origin: center
-	left: 50%
-	top: 50%
-	box-sizing: border-box
-	border-top: 0
-	border-left: 0
-.checkbox.checkbox_checked
-	border: 1px solid $p
-.checkbox.checkbox_checked:before
-	position: absolute
-	opacity: 1
-	transform: translate(-50%,-50%) rotate(45deg)
+.checkbox-button
+	display: grid
+	grid-template-columns: auto 1fr
+	align-items: stretch
+	grid-template-rows: 1fr
+	grid-column-gap: 10px
+	grid-row-gap: 5px
+	.checkbox-button__name
+		font-size: 14px
+		line-height: 18px
+		font-weight: normal
+		color: $d50
+	.checkbox-button__description
+		grid-row: 2/2
+		grid-column: 2/2
+		font-size: 12px
+		line-height: 14px
+		color: $d50
