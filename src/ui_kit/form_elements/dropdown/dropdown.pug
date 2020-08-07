@@ -1,26 +1,31 @@
-mixin dropdown(h3)
-	.dropdown
+mixin dropdown({h3,modifier})
+	.dropdown.js-dropdown(class=modifier?'dropdown_'+modifier:'')
 		h3= h3
-		.dropdown__body.js-dropdown__body
-			.dropdown-display.js-dropdown-display
+		.dropdown__body
+			.dropdown__display
 			i.material-icons expand_more
-			.dropdown-menu.js-dropdown-menu(style="display: none")
-				.dropdown-menu__row
-					h3 спальни
+			.dropdown__menu(style="display: none")
+				.dropdown__row
+					h3= modifier?'взрослые':'спальни'
 					.counter
-						.counter-button.minus.js-minus -
-						h3.counter-button.value.js-value 2
-						.counter-button.plus.js-plus +
-				.dropdown-menu__row
-					h3 кровати
+						.counter-button.minus -
+						h3.counter-button.value 2
+						.counter-button.plus +
+				.dropdown__row
+					h3= modifier?'дети':'кровати'
 					.counter
-						.counter-button.minus.js-minus -
-						h3.counter-button.value.js-value 2
-						.counter-button.plus.js-plus +
-				.dropdown-menu__row
-					h3 ванные комнаты
+						.counter-button.minus -
+						h3.counter-button.value 2
+						.counter-button.plus +
+				.dropdown__row
+					h3= modifier?'младенцы':'ванные комнаты'
 					.counter
-						.counter-button.minus.js-minus -
-						h3.counter-button.value.js-value 0
-						.counter-button.plus.js-plus +
-				
+						.counter-button.minus -
+						h3.counter-button.value 0
+						.counter-button.plus +
+				if modifier
+					.dropdown__row
+						.dropdown__clear
+							+btn({text: 'очистить',modifier: 'grey'})
+						.dropdown__apply
+							+btn({text: 'применить',modifier: 'no-bg'})

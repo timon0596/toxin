@@ -24,9 +24,9 @@ body
 			h3 subscription text field
 			+textfield({placeholder:'Email', material_icons:'arrow_forward', modifier:'subscription'})
 		.form-elements__item
-			+dropdown('dropdown')
+			+dropdown({h3:'dropdown'})
 		.form-elements__item
-			+guestdropdown('dropdown')
+			+dropdown({h3:'dropdown',modifier: 'guest'})
 		.form-elements__item
 			+checkbox-list('expandable checkboxlist')
 		.form-elements__item

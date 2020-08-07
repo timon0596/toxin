@@ -5,6 +5,6 @@ mixin room_search()
 		.block-room-search__row
 			+datedropdown({names: ['прибытие','выезд']})
 		.block-room-search__row
-			+guestdropdown('гости')
+			+dropdown({h3:'гости',modifier: 'guest'})
 		.block-room-search__row
 			+btn({text: 'подобрать номер',modifier: 'arrow'})

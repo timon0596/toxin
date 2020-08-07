@@ -10,7 +10,7 @@ mixin room_details()
 		.block-room-details__row
 			+datedropdown({names: ['прибытие','выезд']})
 		.block-room-details__row
-			+guestdropdown('гости')
+			+dropdown({h3:'гости',modifier: 'guest'})
 		.block-room-details__row
 			.tax-list
 				.tax.tax-habitation

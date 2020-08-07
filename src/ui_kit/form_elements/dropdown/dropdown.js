@@ -1,116 +1,105 @@
-const declensions = {
-	bed: [
-		['спальня','спальни','спален'],
-		['кровать','кровати','кроватей'],
-		['ванная','ванных','ванных']
-	],
-	guest: [
-		['гость','гостя','гостей'],
-		['младенец','младенца','младенцев']
-	]
-}
 export class Dropdown{
-	
-	constructor(dd,index){
+	static declensions = {
+		bed: [
+			['спальня','спальни','спален'],
+			['кровать','кровати','кроватей'],
+			['ванная','ванных','ванных']
+		],
+		guest: [
+			['гость','гостя','гостей'],
+			['младенец','младенца','младенцев']
+		]
+	}
+	constructor(mainDiv,index){
 		this.index=index
-		this.text=''
-		this.dd=dd
-		this.lcKey=this.getLcKey()
-		this.display = this.dd.find('.js-dropdown-display')
-		this.guest = this.dd.hasClass('js-guest-dropdown__body')
-		this.clear = this.dd.find('.js-dropdown-menu__clear')
-		this.apply = this.dd.find('.js-dropdown-menu__apply')
-		this.dec = this.guest?declensions.guest:declensions.bed
-		this.ddmenu = this.dd.find('.js-dropdown-menu')
-		this.minus = [...dd.find('.js-minus')].map(m=>$(m))
-		this.plus = [...dd.find('.js-plus')].map(m=>$(m))
-		this.$values = [...dd.find('.js-value')].map(m=>$(m))
-		this.values = this.$values.map(q=>+q.html())
-		this.dd.find('i').click(this.toggle.bind(this))
+		this.$mainDiv=mainDiv
+		this.$display=this.$mainDiv.find('.dropdown__display')
+		this.$expand=this.$mainDiv.find('.dropdown__body>i')
+		this.$body=this.$mainDiv.find('.dropdown__body')
+		this.$menu=this.$mainDiv.find('.dropdown__menu')
+		this.$clear=this.$mainDiv.find('.dropdown__clear')
+		this.$apply=this.$mainDiv.find('.dropdown__apply')
+		this.$counters=this.$mainDiv.find('.counter')
+		this.$minusButtons=this.$counters.find('.minus')
+		this.$plusButtons=this.$counters.find('.plus')
+		this.$values=this.$counters.find('.value')
+		this.values=this.$values.text().split('').map(n=>+n)
+		this.isGuest=this.$mainDiv.hasClass('dropdown_guest')
+		this.dec = Dropdown.declensions[this.isGuest?'guest':'bed']
 		this.init()
-
-		this.minus.forEach((el,i)=>{
-			el.click(this.minusFun.bind(this,i))
-		})
-
-		this.plus.forEach((el,i)=>{
-			el.click(this.plusFun.bind(this,i))
-		})
-
 	}
-	getLcKey(){
-		let str = this.dd.attr('class').split(' ')
-		let ind = this.guest?str.indexOf('guest-dropdown__body_active'):str.indexOf('dropdown__body_active')
-		ind!=-1?
-			str.splice(ind,1):0
-		return this.index+str.join('')
-	}
-	guestInit(){
-		this.clear.click(()=>{
-			this.values.fill(0)
-			this.render()
-			localStorage.removeItem(this.lcKey)
-		})
-		this.apply.click(()=>{
-			localStorage.setItem(this.lcKey,JSON.stringify(this.values))
-			this.toggle()
-		})
-	}
-	init(){
-		
-		this.values=JSON.parse(localStorage?.getItem(this.lcKey))||this.values
-		this.render()
-		this.guest?this.guestInit():0
-	}
-	summary(){
-		if(this.guest){
-			let sum=[0,0]
-			sum[0]=this.values[0]+this.values[1]
-			sum[1]=this.values[2]
-			this.computeText(sum)
-			this.text=this.text==''?'Сколько гостей':this.text
+	displayValuePart(i){
+		if(this.isGuest){
+			if(i==0){
+				return (this.values[0]+this.values[1])?`${this.values[0]+this.values[1]} ${this.dec[0][this.modulo((this.values[0]+this.values[1])%10)]}, `:''
+			}
+			else{
+				return (this.values[2])?`${this.values[2]} ${this.dec[1][this.modulo(this.values[2])%10]}, `:''	
+			}
 		}
 		else{
-			this.computeText(this.values)
+			return (this.values[i])?`${this.values[i]} ${this.dec[i][this.modulo(this.values[i])%10]}, `:''	
+		}		
+	}
+	displayValue(){
+		if(this.isGuest){
+			return `${this.displayValuePart(0)}`+
+			`${this.displayValuePart(2)}`
 		}
-		this.display.text(this.text)
+		else{
+			return `${this.displayValuePart(0)}`+
+			`${this.displayValuePart(1)}`+
+			`${this.displayValuePart(2)}`
+		}
 	}
-	computeText(sum){
-		let text=''
-		sum.forEach((el,i)=>{
-			text+=el==0?'':el==1?`${el} ${this.dec[i][0]},`:
-			el<5?`${el} ${this.dec[i][1]},`:`${el} ${this.dec[i][2]},`
-		})
-		this.text = text.substring(0,text.length-1)
+	expand(){
+		this.$menu.slideToggle(250)
+		this.$body.toggleClass('dropdown__body_active')
 	}
-	toggle(){
-		this.guest?this.dd.toggleClass('guest-dropdown__body_active'):this.dd.toggleClass('dropdown__body_active')
-		this.ddmenu.slideToggle(250)
-	}
-	render(){
-		let sum = this.values.reduce((accumulator, currentValue) => accumulator + currentValue)
-		sum == 0?this.clear.css('opacity',0):this.clear.css('opacity',1)
-		this.$values.forEach((el,i)=>{
-			el.html(this.values[i])
-			this.disableButton(i)
-		})
-		this.summary()
-	}
-	minusFun(i){
+	minus(e){
+		const i = [...this.$minusButtons].indexOf(e.target)
 		this.values[i]--
 		this.values[i]=this.values[i]<0?0:this.values[i]
 		this.render()
 	}
-	plusFun(i){
+	plus(e){
+		const i = [...this.$plusButtons].indexOf(e.target)
 		this.values[i]++
 		this.render()
 	}
-	disableButton(i){
+	disableOrEnableMinusButton(i){
 		this.values[i]==0?
-		this.minus[i].addClass('counter-button_disabled'):this.minus[i].hasClass('counter-button_disabled')?
-		this.minus[i].removeClass('counter-button_disabled'):0
+			$(this.$minusButtons[i]).addClass('counter-button_disabled'):
+			$(this.$minusButtons[i]).removeClass('counter-button_disabled')
+	}
+	clear(){
+		this.values.fill(0)
+		this.render()
+	}
+	modulo(number){
+		if(number==1)
+			return 0
+		if(number>1&&number<5)
+			return 1
+		else
+			return 2
+	}
+	render(){
+		this.$values.each((i,el)=>{
+			$(el).text(this.values[i])
+			this.disableOrEnableMinusButton(i)
+		})
+		this.$display.text(this.displayValue().trim().slice(0,-1))
+
+	}
+	init(){
+		this.$expand.on('click.dropdownExpand',this.expand.bind(this))
+		this.$plusButtons.on('click.plusButton',this.plus.bind(this))
+		this.$minusButtons.on('click.minusButton',this.minus.bind(this))
+		this.$clear.on('click.dropdownClear',this.clear.bind(this))
+		this.render()
 	}
 }
-$('.js-dropdown__body').each((i,el)=>{
+$('.js-dropdown').each((i,el)=>{
 	new Dropdown($(el),i)
 })

@@ -14,7 +14,7 @@ body
 			.search-room-page__filter
 				.filter__inner
 					+datedropdown({names: ['даты пребывания в отеле'],modifier: 'filter'})
-					+guestdropdown('гости')
+					+dropdown({h3:'гости',modifier: 'guest'})
 			.search-room-page__filter
 				+slider('диапазон цены')
 				p Стоимость за сутки пребывания в номере
@@ -23,7 +23,7 @@ body
 			.search-room-page__filter
 				+checkbox-buttons({h3:'доступность',content: richContent,modifier: 'rich'})
 			.search-room-page__filter
-				+dropdown('удобства номера')
+				+dropdown({h3:'удобства номера'})
 			.search-room-page__filter
 				+checkbox-list('дополнительные удобства')
 		.search-room-page__results
