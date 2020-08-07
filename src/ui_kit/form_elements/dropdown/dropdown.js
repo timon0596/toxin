@@ -23,10 +23,15 @@ export class Dropdown{
 		this.$minusButtons=this.$counters.find('.minus')
 		this.$plusButtons=this.$counters.find('.plus')
 		this.$values=this.$counters.find('.value')
-		this.values=this.$values.text().split('').map(n=>+n)
 		this.isGuest=this.$mainDiv.hasClass('dropdown_guest')
 		this.dec = Dropdown.declensions[this.isGuest?'guest':'bed']
+		this.localStorageName = this.$mainDiv.attr('class').replace(/\s/g,'')
+		this.values=this.localStorageValues()
 		this.init()
+	}
+	localStorageValues(){
+		const vals = localStorage.getItem(this.localStorageName)
+		return vals?JSON.parse(vals):this.$values.text().split('').map(n=>+n)
 	}
 	displayValuePart(i){
 		if(this.isGuest){
@@ -74,7 +79,11 @@ export class Dropdown{
 	}
 	clear(){
 		this.values.fill(0)
+		localStorage.removeItem(this.localStorageName)
 		this.render()
+	}
+	apply(){
+		localStorage.setItem(this.localStorageName,JSON.stringify(this.values))
 	}
 	modulo(number){
 		if(number==1)
@@ -90,13 +99,18 @@ export class Dropdown{
 			this.disableOrEnableMinusButton(i)
 		})
 		this.$display.text(this.displayValue().trim().slice(0,-1))
-
+			if(this.isGuest){
+				if(this.values.reduce((acc,val)=>acc+val)==0){
+					this.$display.text('Сколько гостей')
+			}
+		}
 	}
 	init(){
 		this.$expand.on('click.dropdownExpand',this.expand.bind(this))
 		this.$plusButtons.on('click.plusButton',this.plus.bind(this))
 		this.$minusButtons.on('click.minusButton',this.minus.bind(this))
 		this.$clear.on('click.dropdownClear',this.clear.bind(this))
+		this.$apply.on('click.dropdownApply',this.apply.bind(this))
 		this.render()
 	}
 }

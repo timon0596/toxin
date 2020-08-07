@@ -1,7 +1,6 @@
 function dateSelectedHandler(e){
 	
 	if(e.selectedDates.days){
-		console.log(e.selectedDates.days)
 		const $block = $(this).parents('.block-room-details')
 		const $taxHabitation = $block.find('.tax-habitation')
 		const $blockSum = $block.find('.block-room-details__sum')
