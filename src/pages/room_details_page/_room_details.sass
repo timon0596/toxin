@@ -1,70 +1,5 @@
 @import './../../sass/vars.sass'
-section.room-details-imgs
-	padding-top: calc(485/1440*100%)
-	position: relative
-	img
-		width: calc(100%/1440*461)
-		position: absolute
-		top: 0	
-		right: 0
-	img:last-child
-		top: 50%
-	.room-details-imgs__main-img
-		left: 0
-		width: calc(100%*981/1440)
-.room-details>*>h2
-	margin-bottom: 20px
 .room-details
-	display: grid
-	grid-template-areas: "adv chart""comm comm""rules cancel"
-	grid-gap: 30px 80px
-	.room-details-advantges
-		grid-area: adv
-	.room-details-impressions
-		display: grid
-		grid-area: chart
-		align-content: start
-		.room-details-chart__wrapper
-			display: grid
-			grid-template-columns: min-content min-content
-			grid-gap: 30px
-			.room-details-chart
-				width: min-content
-				position: relative
-				.room-details-chart__votes
-					transform: translate(-50%, -50%)
-					position: absolute
-					top: 50%
-					left: 50%
-					text-align: center
-					&>*
-						color: $p
-	.room-details-comments
-		grid-area: comm
-		.room-details-comments__wrapper
-			display: grid
-			grid-gap: 20px
-	.room-details-rules
-		grid-area: rules
-		h2
-			margin-left: 20px
-	.room-details-cancel
-		grid-area: cancel
-.room-details-section
-	background: white
-	display: grid
-	grid-template-columns: auto auto
-	grid-gap: 70px
-	padding: 70px 140px
-	.block-room-details
-		align-self: start
-	h1
-		font-family: quicksand, montserrat
-		font-style: normal
-		font-weight: bold
-		font-size: 24px
-		line-height: 30px
-		color: $d100
 	h2
 		font-family: quicksand, montserrat
 		font-style: normal
@@ -72,51 +7,116 @@ section.room-details-imgs
 		font-size: 19px
 		line-height: 24px
 		color: $d100
-	i.material-icons
-		cursor: pointer
-		display: -webkit-flex
-		display: -moz-flex
-		display: -ms-flex
-		display: -o-flex
-		display: flex
-		justify-content: center
-		align-items: center
-	a
-		text-decoration: none
-		underline: none
-@media (max-width: 1280px)
-	section.room-details-section
-		padding: 70px
-		grid-template-columns: 1fr
-@media (max-width: 768px)
-	section.room-details-section
-		padding: 30px
-		.room-details
-			display: block
-		.room-details>*
-			margin-bottom: 50px
-			display: -webkit-flex
-			display: -moz-flex
-			display: -ms-flex
-			display: -o-flex
-			display: flex
-			flex-direction: column
-			align-items: center
-			text-align: center
-	section.room-details-imgs
-		padding: 0
-		display: -webkit-flex
-		display: -moz-flex
-		display: -ms-flex
-		display: -o-flex
-		display: flex
-		flex-direction: column
-		img,
-		.room-details-imgs__main-img
-			position: static
-			width: 100%
+		margin-bottom: 20px
+	.room-details__images
+		overflow: hidden
+		padding-top: calc(485/1440*100%)
+		position: relative
+		img
+			width: calc(100%/1440*461)
+			position: absolute
+			top: 0	
+			right: 0
 		img:last-child
-			margin-top: -2px
-@media (max-width: 560px)
-	section.room-details-section
-		padding: 10px
+			top: 50%
+		img.room-details__main-image
+			left: 0
+			width: calc(100%*981/1440)
+	.room-details__content
+		background: white
+		padding: 70px	140px
+		display: grid
+		grid-template-columns: auto auto
+		grid-gap: 70px
+	.room-details__information
+		display: grid
+		grid-template-areas: 'advantages empressions''reviews reviews''rules cancel'
+		grid-gap: 30px 70px
+	.room-details__advantages
+		grid-area: advantages
+	.room-details__empressions
+		grid-area: empressions
+	.room-details__empression-chart
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		align-items: flex-end
+	.room-details__empression-diagramm
+		position: relative
+	.room-details__empression-votes
+		position: absolute
+		top: calc(50% - 5px)
+		left: 50%
+		transform: translate(-50%, -50%)
+		text-align: center
+		h1,
+		h3
+			color: $p
+		h1
+			font-family: quicksand,montserrat
+			font-style: normal
+			font-weight: bold
+			font-size: 24px
+			line-height: 30px
+		h3
+			font-family: montserrat
+			font-style: normal
+			font-weight: bold
+			font-size: 12px
+			line-height: 15px
+			text-transform: uppercase
+	.room-details__bullet-list-wrapper
+		margin-left: 30px
+	.room-details__reviews
+		grid-area: reviews
+	.room-details__reviews-header
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		justify-content: space-between
+		align-items: baseline
+		p
+			font-family: montserrat
+			font-style: normal
+			font-weight: normal
+			font-size: 14px
+			line-height: 14px
+			color: $d50
+	.room-details__comments
+		display: grid
+		grid-gap: 20px
+	.room-details__rules
+		grid-area: rules
+		h2
+			margin-left: 20px
+	.room-details__cancel
+		grid-area: cancel
+	.room-details__cancel-text
+	.room-details__card
+@media (max-width: 1280px)
+	.room-details
+		.room-details__content
+			grid-template-columns: auto
+			justify-items: center
+@media (max-width: 992px)
+	.room-details
+		.room-details__information
+			grid-template-areas: 'advantages''empressions''reviews''rules''cancel'
+		.room-details__images
+			padding: 0
+			display: grid
+			img,
+			img.room-details__main-image
+				position: static
+				width: 100%
+				margin-top: -1px
+			img:last-child
+				margin-top: -2px
+@media (max-width: 768px)
+	.room-details
+		.room-details__content
+			padding: 5%

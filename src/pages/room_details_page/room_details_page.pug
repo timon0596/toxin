@@ -4,6 +4,7 @@ include ./../svg/svg
 - var user2 = {icon: 'img/users/user2.png',name: 'Патрисия Стёклышкова',date: 'Неделю назад',likes: 2,text: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент'}
 - var list1 = ['Великолепно','Хорошо','Удовлетворительно','Разочарован']
 - var list2 = ['Нельзя с питомцами','Без вечеринок и мероприятий','Время прибытия — после 13:00, а выезд до 12:00']
+- var text = 'Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.'
 <!DOCTYPE html>
 html(lang="en")
 head
@@ -11,35 +12,40 @@ head
 	title room_details_page
 body
 	+header()
-	section.room-details-imgs
-		img.room-details-imgs__main-img(src="img/rd1.png")
-		img(src="img/rd2.png")
-		img(src="img/rd3.png")
-	section.room-details-section
-		.room-details
-			.room-details-advantges
-				h2 Сведения о номере
-				+advantages()
-			.room-details-impressions
-				h2 Впечатления от номера
-				.room-details-chart__wrapper
-					.room-details-chart
-						+impression_chart()
-						.room-details-chart__votes
-							h1 260
-							h3 голосов
-					+bullet-list({list:list1,modifier:'colored'})
-			.room-details-comments
-				h2 Отзывы посетителей номера
-				.room-details-comments__wrapper
-					+comment(user)
-					+comment(user2)
-			.room-details-rules
-				h2 Правила
-				+bullet-list({list:list2})
-			.room-details-cancel
-				h2 Отмена
-				| Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
-		+room_details()
+	main.room-details
+		.room-details__images
+			img(src='img/rd1.png').room-details__main-image
+			img(src='img/rd2.png')
+			img(src='img/rd3.png')
+		.room-details__content
+			.room-details__information
+				.room-details__advantages
+					h2 Сведения о номере
+					+advantages()
+				.room-details__empressions
+					h2 Впечатления от номера
+					.room-details__empression-chart
+						.room-details__empression-diagramm
+							+impression_chart()
+							.room-details__empression-votes
+								h1 260
+								h3 голосов
+						.room-details__bullet-list-wrapper
+							+bullet-list({list:list1,modifier:'colored'})
+				.room-details__reviews
+					.room-details__reviews-header
+						h2 Отзывы посетителей номера
+						p 2 отзыва
+					.room-details__comments
+						+comment(user)
+						+comment(user2)
+				.room-details__rules
+					h2 Правила
+					+bullet-list({list:list2})
+				.room-details__cancel
+					h2 Отмена
+					.room-details__cancel-text= text
+			.room-details__card
+				+room_details()
 	+footer()
 
