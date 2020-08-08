@@ -1,5 +1,5 @@
 mixin textfield({placeholder,material_icons,modifier})
-	div(class={'subscription-text-field': modifier==='subscription','masked-text-field js-masked-text-field': modifier==='masked','text-field': modifier===undefined})
+	.text-field(class=modifier?'text-field_'+modifier:'')
 		input(placeholder= placeholder)
 		if material_icons
 			i.material-icons= material_icons
