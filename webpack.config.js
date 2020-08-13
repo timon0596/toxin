@@ -11,16 +11,14 @@ function generateHtmlPlugins (templateDir) {
 	const templateFiles = fs.readdirSync(tpldirpath)
 	return templateFiles.map(item => {
     
-    if(item.match(/svg|js|sass/)==null){
-    	const page = fs.readdirSync(path.resolve(tpldirpath, item))[0]
-    	const parts = page.split('.')
+    	const pugFile = fs.readdirSync(path.resolve(tpldirpath, item)).filter(file=>file.match(/.pug$/))[0]
+    	const parts = pugFile.split('.')
     	const name = parts[0]
     	const extension = parts[1]
     	return new HWP({
     		filename: `${name}.html`,
     		template: path.resolve(__dirname, `${path.resolve(tpldirpath, item)}/${name}.${extension}`)
     	})
-    }
   }).filter(item=>!!item)
 }
 const htmlPlugins = generateHtmlPlugins('./src/pages')
