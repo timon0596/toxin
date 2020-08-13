@@ -6,21 +6,6 @@ const MiniCssExtractPlugin=require('mini-css-extract-plugin')
 const autoprefixer = require('autoprefixer')
 const fs = require('fs')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-// const autoprefixer = require('autoprefixer');
-// function generateHtmlPlugins (templateDir) {
-// 	const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir))
-// 	return templateFiles.map(item => {
-//     // Split names and extension
-//     const parts = item.split('.')
-//     const name = parts[0]
-//     const extension = parts[1]
-//     return new HWP({
-//     	filename: `${name}.html`,
-//     	template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`)
-//     })
-//   })
-// }
-
 function generateHtmlPlugins (templateDir) {
 	const tpldirpath = path.resolve(__dirname, templateDir)
 	const templateFiles = fs.readdirSync(tpldirpath)
@@ -31,7 +16,6 @@ function generateHtmlPlugins (templateDir) {
     	const parts = page.split('.')
     	const name = parts[0]
     	const extension = parts[1]
-    	// return `${templateDir}/${name}.${extension}`
     	return new HWP({
     		filename: `${name}.html`,
     		template: path.resolve(__dirname, `${path.resolve(tpldirpath, item)}/${name}.${extension}`)
@@ -39,7 +23,6 @@ function generateHtmlPlugins (templateDir) {
     }
   }).filter(item=>!!item)
 }
-// We will call the function like this:
 const htmlPlugins = generateHtmlPlugins('./src/pages')
 module.exports={
 	entry: './src/index.js',
@@ -104,23 +87,6 @@ module.exports={
 		},
 		{ test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&mimetype=application/font-woff" },
 		      { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader",exclude: [path.resolve(__dirname, "src/img")], },
-		// {
-		// 	test: /\.(woff|svg|ttf|eot|woff2)$/,
-		// 	exclude: [path.resolve(__dirname, "src/img"),path.resolve(__dirname, "node_modules")],
-		// 	use: [
-		// 	'file-loader',
-		// 	]         
-		// },
-		// {
-		// 	test: /user[0-9]+\.(jpe?g|png|svg)$/,
-		// 	use:[ {
-		// 		loader: "file-loader",
-		// 		options: {
-		// 			name: "[name].[ext]",
-		// 			outputPath: './img/users/',
-		// 			useRelativePath: true
-		// 		}}],
-		// 	},
 			{
 				test: /\.(jpe?g|png|svg)$/,
 				exclude: [path.resolve(__dirname,"src/fonts")],
@@ -157,7 +123,5 @@ module.exports={
 					filename: '[name].[hash].css',
 				}),
 				new HtmlWebpackPugPlugin()
-
-
 				]
 			}
