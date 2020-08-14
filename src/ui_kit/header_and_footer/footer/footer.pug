@@ -5,24 +5,24 @@ mixin footer()
 				img(src="img/Logo.svg").logo
 				| Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
 			.footer__column
-				h3 навигация
+				+h3('навигация')
 				p О нас
 				p Новости
 				p Служба поддержки
 				p Услуги
 			.footer__column
-				h3 о нас
+				+h3('о нас')
 				p О сервисе
 				p Наша команда
 				p Вакансии
 				p Инвесторы
 			.footer__column
-				h3 служба поддержки
+				+h3('служба поддержки')
 				p Соглашения
 				p Сообщества
 				p Связь с нами
 			.footer__column
-				h3 подписка
+				+h3('подписка')
 				| Получайте специальные предложения и новости сервиса
 				+text-field({placeholder:'Email', material_icons:'arrow_forward', modifier:'with-arrow'})
 		.footer__copyright

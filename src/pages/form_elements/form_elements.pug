@@ -11,17 +11,17 @@ body
 	a(href="index.html") home
 	.form-elements__list
 		.form-elements__item
-			h3 text field
+			+h3('text field')
 			+text-field({placeholder: 'Email'})
 		.form-elements__item
 			+date-dropdown({names: ['date dropdown','date dropdown']})
 		.form-elements__item
 			+date-dropdown({names:['filter date dropdown'],modifier: 'filter'})
 		.form-elements__item
-			h3 masked text field
+			+h3('masked text field')
 			+text-field({placeholder:'дд.мм.гггг',modifier: 'masked'})
 		.form-elements__item
-			h3 subscription text field
+			+h3('subscription text field')
 			+text-field({placeholder:'Email', material_icons:'arrow_forward', modifier:'with-arrow'})
 		.form-elements__item
 			+dropdown({h3:'dropdown'})
@@ -34,27 +34,27 @@ body
 		.form-elements__item
 			+checkbox-buttons({h3: 'Checkbox Buttons',content})
 		.form-elements__item
-			h3 bullet list
+			+h3('bullet list')
 			+bullet-list({list:['Нельзя с питомцами','Без вечеринок и мероприятий','Время прибытия — после 13:00, а выезд до 12:00']})
 		.form-elements__item
-			h3 radio buttons
+			+h3('radio buttons')
 			+radio()
 		.form-elements__item
-			h3 toggle
+			+h3('toggle')
 			+toggle()
 		.form-elements__item
-			h3 like button
+			+h3('like button')
 			+like(12)
 		.form-elements__item
-			h3 rate buttons
+			+h3('rate buttons')
 			+rate(3)
 		.form-elements__item
-			h3 rate buttons
+			+h3('rate buttons')
 			+rate(4)
 		.form-elements__item
 			+range-slider('range slider')
 		.form-elements__item
-			h3 buttons
+			+h3('buttons')
 			.form-elements__group
 				+button({text:'click me'})
 				+button({text:'click me',modifier: 'border'})
@@ -68,5 +68,5 @@ body
 		.form-elements__item
 			+comment(user)
 		.form-elements__item
-			h3  pagination
+			+h3('pagination')
 			+pagination()

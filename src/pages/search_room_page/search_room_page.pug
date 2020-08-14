@@ -27,7 +27,7 @@ body
 			.search-room-page__filter
 				+checkbox-list('дополнительные удобства')
 		.search-room-page__results
-			h1 Номера которые мы для вас подобрали
+			+h1('Номера которые мы для вас подобрали')
 			.room-preview-grid
 				each val,ind in room_preview_array
 					+room-preview(val,ind)

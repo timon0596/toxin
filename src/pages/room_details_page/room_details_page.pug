@@ -20,30 +20,30 @@ body
 		.room-details__content
 			.room-details__information
 				.room-details__advantages
-					h2 Сведения о номере
+					+h2('Сведения о номере')
 					+advantages()
 				.room-details__empressions
-					h2 Впечатления от номера
+					+h2('Впечатления от номера')
 					.room-details__empression-chart
 						.room-details__empression-diagramm
 							+impression-chart()
 							.room-details__empression-votes
-								h1 260
-								h3 голосов
+								+h1('260')
+								+h3('голосов')
 						.room-details__bullet-list-wrapper
 							+bullet-list({list:list1,modifier:'colored'})
 				.room-details__reviews
 					.room-details__reviews-header
-						h2 Отзывы посетителей номера
+						+h2('Отзывы посетителей номера')
 						p 2 отзыва
 					.room-details__comments
 						+comment(user)
 						+comment(user2)
 				.room-details__rules
-					h2 Правила
+					+h2('Правила')
 					+bullet-list({list:list2})
 				.room-details__cancel
-					h2 Отмена
+					+h2('Отмена')
 					.room-details__cancel-text= text
 			.room-details__card
 				+room-details()
