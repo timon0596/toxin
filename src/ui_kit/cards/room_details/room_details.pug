@@ -3,7 +3,7 @@ mixin room-details()
 		.block-room-details__row
 			.block-room-details__inner-row
 				.block-room-details__number
-					!= "№ <h1> 888</h1> <h3>люкс</h3>" 
+					!= "№ <div class='h1'><h1> 888</h1></div> <div class='h3'><h3>люкс</h3></div>" 
 				.block-room-details__payment
 					.block-room-details__cost 9 990₽
 					=" в сутки"
@@ -26,7 +26,8 @@ mixin room-details()
 					| 300₽
 		.block-room-details__row
 			.block-room-details__total
-				h2 Итого
+				+h2('Итого')
 				.block-room-details__underline
-				h2.block-room-details__sum 38 081₽
+				.block-room-details__sum
+					+h2('38 081₽') 
 			+button({text: 'забронировать',modifier: 'arrow'})

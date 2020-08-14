@@ -54,7 +54,8 @@ function dateDropdown(selector){
 			const dpClear = $('.datepicker--button[data-action="clear"]').hide()
 			const dpInline = $(el).find('.datepicker-inline').hide()
 			const dpBtns = $(el).find('.datepicker--buttons')
-			const dpExpand = $dateInput.next('i')
+			const dpExpand = $dateInput.next('.i').find('i')
+			console.log(dpExpand)
 			dpExpand.click(()=>{
 				dpInline.slideToggle(250)
 			})
