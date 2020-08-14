@@ -5,7 +5,7 @@ mixin dropdown({h3,modifier})
 		+h3(h3)
 		.dropdown__body
 			.dropdown__display
-			i.material-icons expand_more
+			+i()
 			.dropdown__menu(style="display: none")
 				.dropdown__row
 					+h3(modifier?'взрослые':'спальни')

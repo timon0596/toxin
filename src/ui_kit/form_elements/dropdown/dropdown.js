@@ -14,7 +14,7 @@ export class Dropdown{
 		this.index=index
 		this.$mainDiv=mainDiv
 		this.$display=this.$mainDiv.find('.dropdown__display')
-		this.$expand=this.$mainDiv.find('.dropdown__body>i')
+		this.$expand=this.$mainDiv.find('.dropdown__body>.i')
 		this.$body=this.$mainDiv.find('.dropdown__body')
 		this.$menu=this.$mainDiv.find('.dropdown__menu')
 		this.$clear=this.$mainDiv.find('.dropdown__clear')
