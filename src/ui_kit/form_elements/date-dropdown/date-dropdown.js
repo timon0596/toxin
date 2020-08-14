@@ -9,7 +9,7 @@ function dateDropdown(selector){
 	$(selector).each((i,el)=>{
 			const $dateInput = $(el).find('input')
 			$dateInput.mask('00.00.0000')
-			const $datepicker = $(el).find('.date-dropdown-datepicker')
+			const $datepicker = $(el).find('.date-dropdown__datepicker-wrapper')
 			const DPinstance = $datepicker.datepicker({
 		    minDate: new Date(),
 		    multipleDates: 2,

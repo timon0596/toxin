@@ -1,7 +1,7 @@
 include ./../text_field/text_field
 mixin date-dropdown({names,modifier})
 	.date-dropdown(class=modifier?`filter-date-dropdown js-filter-date-dropdown`:'js-date-dropdown')
-		.date-dropdown-datepicker
+		.date-dropdown__datepicker-wrapper
 		each name in names
 			.date-dropdown__display
 				h3= name

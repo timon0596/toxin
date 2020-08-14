@@ -20,9 +20,9 @@ export class Dropdown{
 		this.$clear=this.$mainDiv.find('.dropdown__clear')
 		this.$apply=this.$mainDiv.find('.dropdown__apply')
 		this.$counters=this.$mainDiv.find('.counter')
-		this.$minusButtons=this.$counters.find('.minus')
-		this.$plusButtons=this.$counters.find('.plus')
-		this.$values=this.$counters.find('.value')
+		this.$minusButtons=this.$counters.find('.counter__minus')
+		this.$plusButtons=this.$counters.find('.counter__plus')
+		this.$values=this.$counters.find('.counter__value')
 		this.isGuest=this.$mainDiv.hasClass('dropdown_guest')
 		this.dec = Dropdown.declensions[this.isGuest?'guest':'bed']
 		this.localStorageName = this.$mainDiv.attr('class').replace(/\s/g,'')
@@ -74,8 +74,8 @@ export class Dropdown{
 	}
 	disableOrEnableMinusButton(i){
 		this.values[i]==0?
-			$(this.$minusButtons[i]).addClass('counter-button_disabled'):
-			$(this.$minusButtons[i]).removeClass('counter-button_disabled')
+			$(this.$minusButtons[i]).addClass('counter__button_disabled'):
+			$(this.$minusButtons[i]).removeClass('counter__button_disabled')
 	}
 	clear(){
 		this.values.fill(0)

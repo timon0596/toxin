@@ -1,28 +1,21 @@
+include ./../counter/counter
+include ./../h3/h3
 mixin dropdown({h3,modifier})
 	.dropdown.js-dropdown(class=modifier?'dropdown_'+modifier:'')
-		h3= h3
+		+h3(h3)
 		.dropdown__body
 			.dropdown__display
 			i.material-icons expand_more
 			.dropdown__menu(style="display: none")
 				.dropdown__row
-					h3= modifier?'взрослые':'спальни'
-					.counter
-						.counter-button.minus -
-						h3.counter-button.value 2
-						.counter-button.plus +
+					+h3(modifier?'взрослые':'спальни')
+					+counter(2)
 				.dropdown__row
-					h3= modifier?'дети':'кровати'
-					.counter
-						.counter-button.minus -
-						h3.counter-button.value 2
-						.counter-button.plus +
+					+h3(modifier?'дети':'кровати')
+					+counter(2)
 				.dropdown__row
-					h3= modifier?'младенцы':'ванные комнаты'
-					.counter
-						.counter-button.minus -
-						h3.counter-button.value 0
-						.counter-button.plus +
+					+h3(modifier?'младенцы':'ванные комнаты')
+					+counter()
 				if modifier
 					.dropdown__row
 						.dropdown__clear
