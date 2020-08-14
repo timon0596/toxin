@@ -2,14 +2,6 @@
 .checkbox-list
 	width: 100%
 	color: $d50
-	h3
-		font-family: montserrat
-		font-style: normal
-		font-weight: bold
-		font-size: 12px
-		line-height: 15px
-		text-transform: uppercase
-		color: $d100
 	.checkbox-list__header
 		width: 100%
 		justify-content: space-between
@@ -21,16 +13,6 @@
 		align-items: center
 		i
 			transition: transform .250s ease
-			width: 44px
-			height: 44px
-			display: -webkit-flex
-			display: -moz-flex
-			display: -ms-flex
-			display: -o-flex
-			display: flex
-			justify-content: center
-			align-items: center
-			cursor: pointer
 	.checkbox-list__inner
 		li
 			margin-bottom: 5px
@@ -43,5 +25,6 @@
 			.checkbox
 				margin-right: 10px
 .checkbox-list.checkbox-list_expanded
-	i
-		transform: rotate(180deg)
+	.checkbox-list__header
+		i
+			transform: rotate(180deg)

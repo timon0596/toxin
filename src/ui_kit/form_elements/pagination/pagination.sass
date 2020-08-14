@@ -7,17 +7,17 @@
 	display: flex
 	flex-direction: column
 	align-items: center
-	.pagination-list
+	.pagination__list
 		display: -webkit-flex
 		display: -moz-flex
 		display: -ms-flex
 		display: -o-flex
 		display: flex
-		.pagination-list__item.pagination-list__item_current
+		.pagination__item.pagination__item_current
 			color: white
 			background: $lgp
 			border-radius: 50%
-		.pagination-list__item
+		.pagination__item
 			width: 40px
 			height: 40px
 			font-size: 12px
@@ -31,14 +31,7 @@
 			justify-content: center
 			color: $d50
 			cursor: pointer
-		i.material-icons
-			display: -webkit-flex
-			display: -moz-flex
-			display: -ms-flex
-			display: -o-flex
-			display: flex
-			justify-content: center
-			align-items: center
+		.i>i.material-icons
 			background: $lgg
 			color: #fff
 			width: 40px

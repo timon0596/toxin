@@ -1,5 +1,5 @@
-mixin textfield({placeholder,material_icons,modifier})
+mixin text-field({placeholder,material_icons,modifier})
 	.text-field(class=modifier?'text-field_'+modifier:'')
 		input(placeholder= placeholder)
 		if material_icons
-			i.material-icons= material_icons
+			+i(material_icons)

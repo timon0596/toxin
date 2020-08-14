@@ -4,54 +4,20 @@
 	grid-template-columns: 1fr 1fr
 	grid-gap: 20px
 	position: relative
-	h2
-		font-family: quicksand, montserrat
-		font-style: normal
-		font-weight: bold
-		font-size: 19px
-		line-height: 24px
-		color: $d100
-	.date-dropdown__datepicker-wrapper
-		position: absolute
-	.date-dropdown__display
-		h3
-			margin-bottom: 5px
-			font-family: montserrat
-			font-style: normal
-			font-weight: bold
-			font-size: 12px
-			line-height: 15px
-			text-transform: uppercase
-			color: $d100
-.date-dropdown
 	.date-dropdown__datepicker-wrapper
 		position: absolute
 		left: 0
 		top: calc(100% + 5px)
 		z-index: 10
-.filter-date-dropdown
+	.date-dropdown__display
+		h3
+			margin-bottom: 5px
+			color: $d100
+.filter-date-dropdown.date-dropdown
 	display: grid
 	grid-template-columns: 1fr
 	grid-gap: 20px
 	position: relative
-	.date-dropdown__datepicker-wrapper
-		position: absolute
-	.date-dropdown__display
-		h3
-			margin-bottom: 5px
-.filter-date-dropdown.date-dropdown
-	h2
-		font-family: quicksand, montserrat
-		font-style: normal
-		font-weight: bold
-		font-size: 19px
-		line-height: 24px
-		color: $d100
-	.date-dropdown__datepicker-wrapper
-		position: absolute
-		left: 0
-		top: calc(100% + 5px)
-		z-index: 10
 .datepicker--cell.datepicker--cell-day
 	width: 40px
 	height: 40px
@@ -127,9 +93,10 @@
 	min-height: 24px
 	margin-bottom: 30px
 .datepicker--nav-action
-	color: $p
-	font-size: 24px
-	line-height: 20px
+	.i>i.material-icons
+		color: $p
+		font-size: 24px
+		line-height: 20px
 .datepicker--buttons
 	border: 0
 	justify-content: space-between

@@ -33,7 +33,8 @@
 		display: -o-flex
 		display: flex
 		align-items: center
-	i.material-icons
+	.i>i.material-icons
+		color: $d25
 		display: -webkit-flex
 		display: -moz-flex
 		display: -ms-flex
@@ -44,7 +45,7 @@
 		width: 20px
 		height: 20px
 		margin-left: -1px
-	i.material-icons:nth-child(2)
+	.i:nth-child(2)
 		display: none
 	.like__number
 		width: 20px
@@ -61,13 +62,15 @@
 		display: none
 	input:checked ~ *
 		color: $p
-	input:checked ~ .like__button > i
+	input:checked ~ .like__button > .i
 		display: none
-	input:checked ~ .like__button > i:nth-child(2)
+	input:checked ~ .like__button > .i:nth-child(2)
 		display: -webkit-flex
 		display: -moz-flex
 		display: -ms-flex
 		display: -o-flex
 		display: flex
+		i
+			color: $p
 	input:checked ~ .like__button:before
 		background: $lgp

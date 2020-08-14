@@ -12,17 +12,17 @@ body
 	.form-elements__list
 		.form-elements__item
 			h3 text field
-			+textfield({placeholder: 'Email'})
+			+text-field({placeholder: 'Email'})
 		.form-elements__item
 			+date-dropdown({names: ['date dropdown','date dropdown']})
 		.form-elements__item
 			+date-dropdown({names:['filter date dropdown'],modifier: 'filter'})
 		.form-elements__item
 			h3 masked text field
-			+textfield({placeholder:'дд.мм.гггг',modifier: 'masked'})
+			+text-field({placeholder:'дд.мм.гггг',modifier: 'masked'})
 		.form-elements__item
 			h3 subscription text field
-			+textfield({placeholder:'Email', material_icons:'arrow_forward', modifier:'with-arrow'})
+			+text-field({placeholder:'Email', material_icons:'arrow_forward', modifier:'with-arrow'})
 		.form-elements__item
 			+dropdown({h3:'dropdown'})
 		.form-elements__item
@@ -52,7 +52,7 @@ body
 			h3 rate buttons
 			+rate(4)
 		.form-elements__item
-			+slider('range slider')
+			+range-slider('range slider')
 		.form-elements__item
 			h3 buttons
 			.form-elements__group

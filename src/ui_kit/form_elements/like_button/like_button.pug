@@ -3,6 +3,6 @@ mixin like(likes,checked=false)
 		label
 			input(type="checkbox" checked= checked)
 			.like__button
-				i.material-icons favorite_border
-				i.material-icons favorite
+				+i('favorite_border')
+				+i('favorite')
 				.like__number= likes

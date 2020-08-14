@@ -20,11 +20,11 @@ function dateDropdown(selector){
 		    	daysMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб']
 		    },
 		    navTitles: {
-		        days: '<h2>MM yyyy</h2>',
+		        days: '<div class="h2"><h2>MM yyyy</h2></div>',
 		    },
 		    clearButton: true,
-		    prevHtml:'<i class="material-icons">arrow_back</i>',
-		    nextHtml:'<i class="material-icons">arrow_forward</i>',
+		    prevHtml:'<div class="i"><i class="material-icons">arrow_back</i></div>',
+		    nextHtml:'<div class="i"><i class="material-icons">arrow_forward</i></div>',
 		    onSelect: function(fd, d, picker) {
 		                const options = {year: 'numeric', month: 'numeric', day: 'numeric'}
 		              	selectedDates.fromTo= fd
@@ -60,7 +60,7 @@ function dateDropdown(selector){
 			})
 			const clear = $('<div>',{
 				class: 'button button_grey',
-				html: '<h3>очистить</h3>',
+				html: '<div class="h3"><h3>очистить</h3></div>',
 				on: {
 					click:()=>{
 						dpClear.click()
@@ -70,7 +70,7 @@ function dateDropdown(selector){
 			})
 			const apply = $('<div>',{
 				class: 'button button_with-no-bg',
-				html: '<h3>применить</h3>',
+				html: '<div class="h3"><h3>применить</h3></div>',
 				on: {
 					click:()=>{
 						localStorage.setItem('datepicker',JSON.stringify(selectedDates))
