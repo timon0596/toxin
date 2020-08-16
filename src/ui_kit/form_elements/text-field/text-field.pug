@@ -2,4 +2,4 @@ mixin text-field({placeholder,material_icons,modifier})
 	.text-field(class=modifier?'text-field_'+modifier:'')
 		input(placeholder= placeholder)
 		if material_icons
-			+i(material_icons)
+			+icon(material_icons)

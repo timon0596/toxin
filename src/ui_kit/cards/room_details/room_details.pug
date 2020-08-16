@@ -26,8 +26,8 @@ mixin room-details()
 					| 300₽
 		.block-room-details__row
 			.block-room-details__total
-				+h2('Итого')
+				+heading({text:'Итого',level:'2'})
 				.block-room-details__underline
 				.block-room-details__sum
-					+h2('38 081₽') 
+					+heading({text:'38 081₽',level:'2'}) 
 			+button({text: 'забронировать',modifier: 'arrow'})

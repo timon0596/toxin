@@ -3,5 +3,5 @@ mixin date-dropdown({names,modifier})
 		.date-dropdown__datepicker-wrapper
 		each name in names
 			.date-dropdown__display
-				+h3(name)
+				+heading({text:name,level:'3'})
 				+text-field({placeholder:'дд.мм.гггг', material_icons:'expand_more', modifier: 'masked'})

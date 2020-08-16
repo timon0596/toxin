@@ -1,20 +1,19 @@
 include ./../counter/counter
-include ./../h3/h3
 mixin dropdown({h3,modifier})
 	.dropdown.js-dropdown(class=modifier?'dropdown_'+modifier:'')
-		+h3(h3)
+		+heading({text:name,level:'3'})
 		.dropdown__body
 			.dropdown__display
-			+i()
+			+icon()
 			.dropdown__menu(style="display: none")
 				.dropdown__row
-					+h3(modifier?'взрослые':'спальни')
+					+heading({level:'3',text:modifier?'взрослые':'спальни'})
 					+counter(2)
 				.dropdown__row
-					+h3(modifier?'дети':'кровати')
+					+heading({level:'3',text:modifier?'дети':'кровати'})
 					+counter(2)
 				.dropdown__row
-					+h3(modifier?'младенцы':'ванные комнаты')
+					+heading({level:'3',text:modifier?'младенцы':'ванные комнаты'})
 					+counter()
 				if modifier
 					.dropdown__row

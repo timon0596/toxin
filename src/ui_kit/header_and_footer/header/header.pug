@@ -4,11 +4,11 @@ mixin header(signed)
 		nav.nav
 			.nav__item О нас
 			.nav__item Услуги
-				+i()
+				+icon()
 			.nav__item Вакансии
 			.nav__item Новости
 			.nav__item Соглашения
-				+i()
+				+icon()
 			.nav__item.js-nav__btn-item.js-nav__sign-in-button(style=signed?'display: none':'')
 				+button({text:'войти',modifier: 'border'})
 			.nav__item.js-nav__btn-item.js-nav__sign-up-button(style=signed?'display: none':'')

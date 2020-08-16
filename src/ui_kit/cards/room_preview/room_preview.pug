@@ -24,9 +24,9 @@ mixin room-preview(room,id)
 			.block-room-preview__inner-row
 				.block-room-preview__number
 					!= "№ "
-					+h1(room.number)
+					+heading({text:room.number,level:'1'})
 					if room.lux
-						+h3('люкс')
+						+heading({text:'люкс',level:'1'})
 				.block-room-preview__payment
 					.block-room-preview__cost= room.cost
 					=" в сутки"

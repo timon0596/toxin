@@ -1,16 +1,16 @@
 mixin registration()
 	.block-registration.js-block-registration
 		.block-registration__row
-			+h1('Регистрация аккаунта')
+			+heading({level:'1',text:'Регистрация аккаунта'})
 		.block-registration__row
 			+text-field({placeholder: 'Имя'})
 			+text-field({placeholder: 'Фамилия'})
 			+radio()
 		.block-registration__row
-			+h3('дата рождения')
+			+heading({level:'1',text:'дата рождения'})
 			+text-field({placeholder:'дд.мм.гггг',modifier: 'masked'})
 		.block-registration__row
-			+h3('данные для входа в сервис')
+			+heading({level:'1',text:'данные для входа в сервис'})
 			+text-field({placeholder: 'Email'})
 			+text-field({placeholder: 'Пароль'})
 			+toggle()

@@ -2,8 +2,8 @@ include ./../checkbox/checkbox
 mixin checkbox-list(name)
 	.checkbox-list
 		.checkbox-list__header
-			+h3(name)
-			+i()
+			+heading({text:name,level:'3'})
+			+icon()
 		ul.checkbox-list__inner(style="display: none")
 			li
 				+checkbox()
