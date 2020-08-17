@@ -20,7 +20,7 @@ function dateDropdown(selector){
 		    	daysMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб']
 		    },
 		    navTitles: {
-		        days: '<div class="h2"><h2>MM yyyy</h2></div>',
+		        days: '<div class="heading"><h2>MM yyyy</h2></div>',
 		    },
 		    clearButton: true,
 		    prevHtml:'<div class="icon"><i class="material-icons">arrow_back</i></div>',
