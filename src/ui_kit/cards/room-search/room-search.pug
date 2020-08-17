@@ -1,10 +1,10 @@
 mixin room-search()
-	.block-room-search
-		.block-room-search__row
+	.room-search
+		.room-search__row
 			+heading({level:'1',text:'Найдём номера под ваши пожелания'})
-		.block-room-search__row
+		.room-search__row
 			+date-dropdown({names: ['прибытие','выезд']})
-		.block-room-search__row
+		.room-search__row
 			+dropdown({h3:'гости',modifier: 'guest'})
-		.block-room-search__row
+		.room-search__row
 			+button({text: 'подобрать номер',modifier: 'arrow'})

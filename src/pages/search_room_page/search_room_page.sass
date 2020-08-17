@@ -12,11 +12,11 @@ section.search-room-page
 		text-decoration: none
 		underline: none
 	.search-room-page__results
-		&>.h1
+		&>.heading>h1
 			margin-bottom: 20px
 		.search-room-page__pagination
 			margin-top: 40px
-		.room-preview-grid
+		.search-room-page__room-preview-grid
 			display: grid
 			grid-template-columns: 1fr 1fr 1fr
 			grid-gap: 20px 12px
@@ -42,7 +42,7 @@ section.search-room-page
 @media (max-width: 1440px)
 	section.search-room-page
 		.search-room-page__results
-			.room-preview-grid
+			.search-room-page__room-preview-grid
 				grid-template-columns: 1fr 1fr
 @media (max-width: 1280px)
 	section.search-room-page
@@ -57,7 +57,7 @@ section.search-room-page
 			display: flex
 			flex-direction: column
 			align-items: center
-			.room-preview-grid
+			.search-room-page__room-preview-grid
 				grid-template-columns: 1fr
 @media (max-width: 768px)
 	section.search-room-page
@@ -76,5 +76,5 @@ section.search-room-page
 			display: flex
 			flex-direction: column
 			align-items: center
-			.room-preview-grid
+			.search-room-page__room-preview-grid
 				grid-template-columns: 1fr

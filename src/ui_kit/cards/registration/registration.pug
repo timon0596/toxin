@@ -1,23 +1,23 @@
 mixin registration()
-	.block-registration.js-block-registration
-		.block-registration__row
+	.registration.js-registration
+		.registration__row
 			+heading({level:'1',text:'Регистрация аккаунта'})
-		.block-registration__row
+		.registration__row
 			+text-field({placeholder: 'Имя'})
 			+text-field({placeholder: 'Фамилия'})
 			+radio()
-		.block-registration__row
+		.registration__row
 			+heading({level:'1',text:'дата рождения'})
 			+text-field({placeholder:'дд.мм.гггг',modifier: 'masked'})
-		.block-registration__row
+		.registration__row
 			+heading({level:'1',text:'данные для входа в сервис'})
 			+text-field({placeholder: 'Email'})
 			+text-field({placeholder: 'Пароль'})
 			+toggle()
-		.block-registration__row
+		.registration__row
 			+button({text: 'перейти к оплате',modifier: 'arrow'})
-		.block-registration__row
-			.block-registration__inner-row
+		.registration__row
+			.registration__inner-row
 				|Уже есть аккаунт на Toxin
-				.block-registration__sign-in-button.js-block-registration__sign-in-button
+				.registration__sign-in-button.js-registration__sign-in-button
 					+button({text: 'войти',modifier: 'border'})

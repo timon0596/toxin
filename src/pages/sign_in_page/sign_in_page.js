@@ -1,6 +1,6 @@
 $(document).ready(()=>{
-	const $sign_up = $('.js-block-registration')
-	const $sign_in = $('.js-block-sign-in')
+	const $sign_up = $('.js-registration')
+	const $sign_in = $('.js-sign-in')
 
 	function signInHandler(){
 		$sign_up.hide()
@@ -18,8 +18,8 @@ $(document).ready(()=>{
 	}
 	
 	if('/sign_in_page.html'==location.pathname){
-		$('.js-block-registration__sign-in-button,.js-nav__sign-in-button').click(signInHandler)
-		$('.js-block-sign-in__button-create,.js-nav__sign-up-button').click(signUpHandler)
-		$('.js-block-sign-in__sign-in-button').click(enterHandler)
+		$('.js-registration__sign-in-button,.js-nav__sign-in-button').click(signInHandler)
+		$('.js-sign-in__button-create,.js-nav__sign-up-button').click(signUpHandler)
+		$('.js-sign-in__sign-in-button').click(enterHandler)
 	}
 })

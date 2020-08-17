@@ -1,5 +1,5 @@
 @import './../../../sass/vars.sass'
-.block-room-search
+.sign-in
 	background: white
 	border: 1px solid rgba(0, 0, 0, 0.12)
 	box-sizing: border-box
@@ -7,13 +7,13 @@
 	border-radius: 4px
 	padding: 40px 30px 30px
 	width: 380px
-	.block-room-search__row:not(:first-child)
+	.sign-in__row:not(:first-child)
 		margin-top: 20px
-	.block-room-search__row:last-child
+	.sign-in__row:last-child
 		margin-top: 30px
-		.block-room-search__inner-row
+		.sign-in__inner-row
 			color: $d100
-	.block-room-search__inner-row
+	.sign-in__inner-row
 		display: grid
 		grid-auto-flow: column
 		align-items: center
@@ -21,11 +21,10 @@
 		line-height: 18px
 		justify-content: space-between
 		z-index: 1
-.block-room-search__row
+	.button_with-border
+		width: 99px
+		height: 44px
+.sign-in__row
 	display: grid
 	grid-gap: 5px
-	a
-		text-decoration: none
-		underline: none
-
-
+	
