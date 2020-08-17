@@ -8,10 +8,10 @@ import './index.pug'
 import 'air-datepicker/dist/css/datepicker.min.css'
 import 'bootstrap/js/src/carousel.js'
 import './main.sass'
-require.context('./ui_kit/cards', true, /\.scss$/)
-require.context('./ui_kit', true, /\.sass/)
+require.context('./ui-kit/cards', true, /\.scss$/)
+require.context('./ui-kit', true, /\.sass/)
 require.context('./pages', true, /\.sass/)
-importAll(require.context('./ui_kit', true, /\.js$/))
+importAll(require.context('./ui-kit', true, /\.js$/))
 importAll(require.context('./pages', true, /\.js$/))
 
 const userImg = require.context('./img/users', true, /\.(jpe?g|png)$/)
