@@ -8,19 +8,19 @@ head
   title Document
 body
   a(href="index.html") home
-  .cards__wrapper
+  .cards
     .cards__column
-      .-card-
+      .cards__item
         +room-search()
-      .-card-
+      .cards__item
         +registration()
     .cards__column
-      .-card-
+      .cards__item
         +room-details()
-      .-card-
+      .cards__item
         +sign-in()
     .cards__column
-      .-card-
+      .cards__item
         +room-preview(room,0)
-      .-card-
+      .cards__item
         +room-preview(room1,1)
