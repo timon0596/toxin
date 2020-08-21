@@ -1,25 +1,25 @@
 include ./../checkbox/checkbox
-mixin checkbox-list(name)
+mixin checkbox-list({name})
 	.checkbox-list
 		.checkbox-list__header
 			+heading({text:name,level:'3'})
-			+icon()
-		ul.checkbox-list__inner(style="display: none")
-			li
+			+icon({})
+		.checkbox-list__wrapper(style="display: none")
+			.checkbox-list__item
 				+checkbox()
 				| Завтрак
-			li
+			.checkbox-list__item
 				+checkbox()
 				| Письменный стол
-			li
+			.checkbox-list__item
 				+checkbox()
 				| Стул для кормления
-			li
+			.checkbox-list__item
 				+checkbox()
 				| Кроватка
-			li
+			.checkbox-list__item
 				+checkbox()
 				| Телевизор
-			li
+			.checkbox-list__item
 				+checkbox()
 				| Шампунь

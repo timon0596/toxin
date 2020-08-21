@@ -17,9 +17,9 @@ mixin room-preview(room,id)
 							.carousel-item
 								img.d-block.w-100(src='img/preview/'+v alt='First slide')
 				a.carousel-control-prev(href='#carouselExampleIndicators'+id role='button' data-slide='prev')
-					i.material-icons(aria-hidden='true') expand_more
+					+icon({})
 				a.carousel-control-next(href='#carouselExampleIndicators'+id role='button' data-slide='next')
-					i.material-icons(aria-hidden='true') expand_more
+					+icon({})
 		.room-preview__row
 			.room-preview__inner-row
 				.room-preview__number
