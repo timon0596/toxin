@@ -2,9 +2,9 @@ mixin rate({num})
   - var rest = 5
   .rate
     while num>0
-      +icon({icon:'star'})
+      +icon({icon:'star',color: 'gradient'})
       .rate__num= num--
       .rate__num= rest--
     while rest>0
-      +icon({icon:'star_border'})
+      +icon({icon:'star_border',color: 'gradient'})
       .rate__num= rest--
