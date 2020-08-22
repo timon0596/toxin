@@ -1,4 +1,3 @@
-include ./../checkbox/checkbox
 mixin checkbox-list({name})
 	.checkbox-list
 		.checkbox-list__header
@@ -7,19 +6,19 @@ mixin checkbox-list({name})
 		.checkbox-list__wrapper(style="display: none")
 			.checkbox-list__item
 				+checkbox()
-				| Завтрак
+				.checkbox-list__article Завтрак
 			.checkbox-list__item
 				+checkbox()
-				| Письменный стол
+				.checkbox-list__article Письменный стол
 			.checkbox-list__item
 				+checkbox()
-				| Стул для кормления
+				.checkbox-list__article Стул для кормления
 			.checkbox-list__item
 				+checkbox()
-				| Кроватка
+				.checkbox-list__article Кроватка
 			.checkbox-list__item
 				+checkbox()
-				| Телевизор
+				.checkbox-list__article Телевизор
 			.checkbox-list__item
 				+checkbox()
-				| Шампунь
+				.checkbox-list__article Шампунь
