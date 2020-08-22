@@ -1,6 +1,5 @@
 @import './../../../sass/vars.sass'
-.dropdown h3
-	margin-bottom: 5px
+
 .dropdown__body.dropdown__body_active
 	.dropdown__display
 		border-bottom-right-radius: 0
@@ -10,14 +9,23 @@
 		border-top-right-radius: 0
 		border-top-left-radius: 0
 		border-top: 0
-.dropdown__body
-	background: white
-	position: relative
-	.icon
+.dropdown
+	.dropdown__icon-wrapper
 		position: absolute
-		right: 0
 		top: 0
-	.dropdown__display
+		right: 0
+		width: 44px
+		height: 44px
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		justify-content: center
+		align-items: center
+	.dropdown__body
+		background: white
+		position: relative
 	.dropdown__display,
 	.dropdown__menu
 		border: 1px solid $d25

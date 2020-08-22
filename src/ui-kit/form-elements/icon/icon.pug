@@ -1,2 +1,2 @@
-mixin icon({icon='expand_more'})
-	i.icon= icon
+mixin icon({icon='expand_more',color,font})
+	i.icon(class=`${color?'icon_color_'+color:''} ${font?'icon_font_'+font:''}`)= icon

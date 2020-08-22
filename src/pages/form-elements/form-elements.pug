@@ -23,7 +23,7 @@ body
         +text-field({placeholder:'дд.мм.гггг',modifier: 'masked'})
       .form-elements__item
         +heading({text:'subscription text field'})
-        +text-field({placeholder:'Email', material_icons:'arrow_forward', modifier:'with-arrow'})
+        +text-field({placeholder:'Email', material_icons:'arrow_forward', modifier:'with-arrow',iconColor: 'purple'})
       .form-elements__item
         +dropdown({h3:'dropdown'})
       .form-elements__item
@@ -45,13 +45,13 @@ body
         +toggle()
       .form-elements__item
         +heading({text:'like button'})
-        +like(12)
+        +like({likes:12})
       .form-elements__item
         +heading({text:'rate buttons'})
-        +rate(3)
+        +rate({num:3})
       .form-elements__item
         +heading({text:'rate buttons'})
-        +rate(4)
+        +rate({num:4})
       .form-elements__item
         +range-slider('range slider')
       .form-elements__item

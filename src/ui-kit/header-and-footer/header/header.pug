@@ -1,16 +1,16 @@
-mixin header(signed)
+mixin header({signed})
 	header
 		img(src="img/Logo.svg").logo
 		nav.nav
 			.nav__item О нас
 			.nav__item Услуги
-				+icon()
+				+icon({})
 			.nav__item Вакансии
 			.nav__item Новости
 			.nav__item Соглашения
-				+icon()
-			.nav__item.js-nav__btn-item.js-nav__sign-in-button(style=signed?'display: none':'')
+				+icon({})
+			.nav__item(style=signed?'display: none':'')
 				+button({text:'войти',modifier: 'border'})
-			.nav__item.js-nav__btn-item.js-nav__sign-up-button(style=signed?'display: none':'')
+			.nav__item(style=signed?'display: none':'')
 				+button({text:'зарегистрироваться'})
-			.nav__item.nav__user-name.js-nav__user-name(style=signed?'':'display: none') Юлий Цезарь
+			.nav__item(style=signed?'':'display: none') Юлий Цезарь

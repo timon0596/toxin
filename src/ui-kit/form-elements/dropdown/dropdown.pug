@@ -1,23 +1,23 @@
-include ./../counter/counter
 mixin dropdown({h3,modifier})
-	.dropdown.js-dropdown(class=modifier?'dropdown_'+modifier:'')
-		+heading({text:name,level:'3'})
-		.dropdown__body
-			.dropdown__display
-			+icon()
-			.dropdown__menu(style="display: none")
-				.dropdown__row
-					+heading({level:'3',text:modifier?'взрослые':'спальни'})
-					+counter(2)
-				.dropdown__row
-					+heading({level:'3',text:modifier?'дети':'кровати'})
-					+counter(2)
-				.dropdown__row
-					+heading({level:'3',text:modifier?'младенцы':'ванные комнаты'})
-					+counter()
-				if modifier
-					.dropdown__row
-						.dropdown__clear
-							+button({text: 'очистить',modifier: 'grey'})
-						.dropdown__apply
-							+button({text: 'применить',modifier: 'no-bg'})
+  .dropdown.js-dropdown(class=modifier?'dropdown_'+modifier:'')
+    +heading({text:name,level:'3'})
+    .dropdown__body
+      .dropdown__display
+      .dropdown__icon-wrapper
+        +icon({color: 'dark'})
+      .dropdown__menu(style="display: none")
+        .dropdown__row
+          +heading({level:'3',text:modifier?'взрослые':'спальни'})
+          +counter(2)
+        .dropdown__row
+          +heading({level:'3',text:modifier?'дети':'кровати'})
+          +counter(2)
+        .dropdown__row
+          +heading({level:'3',text:modifier?'младенцы':'ванные комнаты'})
+          +counter()
+        if modifier
+          .dropdown__row
+            .dropdown__clear
+              +button({text: 'очистить',modifier: 'grey'})
+            .dropdown__apply
+              +button({text: 'применить',modifier: 'no-bg'})

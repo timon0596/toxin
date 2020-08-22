@@ -1,10 +1,10 @@
-mixin comment(user)
+mixin comment({icon,name,date,likes,likeCheck,text})
   .comment
     .comment__icon
-      img(src= user.icon)
+      img(src= icon)
     .comment__info
-      .comment__username= user.name
-      .comment__date= user.date
+      .comment__username= name
+      .comment__date= date
     .comment__like
-      +like(user.likes,user.likeCheck)
-    .comment__text= user.text
+      +like(likes,likeCheck)
+    .comment__text= text

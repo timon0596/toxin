@@ -7,44 +7,44 @@ include ./../../ui-kit/ui-kit
 <!DOCTYPE html>
 html(lang="en")
 head
-	meta(charset="UTF-8")
-	title room_details_page
+  meta(charset="UTF-8")
+  title room_details_page
 body
-	+header()
-	main.room-details-page
-		.room-details-page__images
-			img(src='img/rd1.png').room-details-page__main-image
-			img(src='img/rd2.png')
-			img(src='img/rd3.png')
-		.room-details-page__content
-			.room-details-page__information
-				.room-details-page__advantages
-					+heading({text:'Сведения о номере',level:'2'})
-					+advantages()
-				.room-details-page__empressions
-					+heading({text:'Впечатления от номера',level:'2'})
-					.room-details-page__empression-chart
-						.room-details-page__empression-diagramm
-							+impression-chart()
-							.room-details-page__empression-votes
-								+heading({text:'260',level:'1'})
-								+heading({text:'голосов'})
-						.room-details-page__bullet-list-wrapper
-							+bullet-list({list:list1,modifier:'colored'})
-				.room-details-page__reviews
-					.room-details-page__reviews-header
-						+heading({text:'Отзывы посетителей номера',level:'2'})
-						p 2 отзыва
-					.room-details-page__comments
-						+comment(user)
-						+comment(user2)
-				.room-details-page__rules
-					+heading({text:'Правила',level:'2'})
-					+bullet-list({list:list2})
-				.room-details-page__cancel
-					+heading({text:'Отмена',level:'2'})
-					.room-details-page__cancel-text= text
-			.room-details-page__card
-				+room-details()
-	+footer()
+  +header({})
+  main.room-details-page
+    .room-details-page__images
+      img(src='img/rd1.png').room-details-page__main-image
+      img(src='img/rd2.png')
+      img(src='img/rd3.png')
+    .room-details-page__content
+      .room-details-page__information
+        .room-details-page__advantages
+          +heading({text:'Сведения о номере',level:'2'})
+          +advantages()
+        .room-details-page__empressions
+          +heading({text:'Впечатления от номера',level:'2'})
+          .room-details-page__empression-chart
+            .room-details-page__empression-diagramm
+              +impression-chart()
+              .room-details-page__empression-votes
+                +heading({text:'260',level:'1'})
+                +heading({text:'голосов'})
+            .room-details-page__bullet-list-wrapper
+              +bullet-list({list:list1,modifier:'colored'})
+        .room-details-page__reviews
+          .room-details-page__reviews-header
+            +heading({text:'Отзывы посетителей номера',level:'2'})
+            p 2 отзыва
+          .room-details-page__comments
+            +comment(user)
+            +comment(user2)
+        .room-details-page__rules
+          +heading({text:'Правила',level:'2'})
+          +bullet-list({list:list2})
+        .room-details-page__cancel
+          +heading({text:'Отмена',level:'2'})
+          .room-details-page__cancel-text= text
+      .room-details-page__card
+        +room-details()
+  +footer()
 

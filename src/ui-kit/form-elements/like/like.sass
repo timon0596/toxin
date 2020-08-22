@@ -23,7 +23,6 @@
 		margin: -1px
 		border-radius: inherit
 		background: $d25
-	i.material-icons,
 	.like__number
 		font-size: 10px
 		line-height: 9px
@@ -33,19 +32,7 @@
 		display: -o-flex
 		display: flex
 		align-items: center
-	.icon>i.material-icons
-		color: $d25
-		display: -webkit-flex
-		display: -moz-flex
-		display: -ms-flex
-		display: -o-flex
-		display: flex
-		justify-content: center
-		align-items: center
-		width: 20px
-		height: 20px
-		margin-left: -1px
-	.icon:nth-child(2)
+	.like__icon:nth-child(2)
 		display: none
 	.like__number
 		width: 20px
@@ -62,15 +49,13 @@
 		display: none
 	input:checked ~ *
 		color: $p
-	input:checked ~ .like__button > .icon
+	input:checked ~ .like__button > .like__icon
 		display: none
-	input:checked ~ .like__button > .icon:nth-child(2)
+	input:checked ~ .like__button > .like__icon:nth-child(2)
 		display: -webkit-flex
 		display: -moz-flex
 		display: -ms-flex
 		display: -o-flex
 		display: flex
-		i
-			color: $p
 	input:checked ~ .like__button:before
 		background: $lgp

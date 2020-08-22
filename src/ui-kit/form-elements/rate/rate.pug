@@ -1,10 +1,10 @@
-mixin rate(num)
-	- var rest = 5
-	.rate
-		while num>0
-			+icon('star')
-			.rate__num= num--
-			.rate__num= rest--
-		while rest>0
-			+icon('star_border')
-			.rate__num= rest--
+mixin rate({num})
+  - var rest = 5
+  .rate
+    while num>0
+      +icon({icon:'star'})
+      .rate__num= num--
+      .rate__num= rest--
+    while rest>0
+      +icon({icon:'star_border'})
+      .rate__num= rest--

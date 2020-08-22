@@ -1,8 +1,9 @@
-mixin like(likes,checked=false)
-	.like
-		label
-			input(type="checkbox" checked= checked)
-			.like__button
-				+icon('favorite_border')
-				+icon('favorite')
-				.like__number= likes
+mixin like({likes,checked=false})
+  .like
+    input(type="checkbox" checked= checked)
+    .like__button
+      .like__icon
+        +icon({icon:'favorite_border'})
+      .like__icon
+        +icon({icon:'favorite'})
+      .like__number= likes
