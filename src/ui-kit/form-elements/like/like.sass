@@ -45,9 +45,18 @@
 	height: 20px
 	display: block
 	cursor: pointer
+	.like__icon
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		justify-content: center
+		align-items: center
+		width: 20px
 	input
 		display: none
-	input:checked ~ *
+	input:checked ~ .like__number
 		color: $p
 	input:checked ~ .like__button > .like__icon
 		display: none
