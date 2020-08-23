@@ -2,7 +2,8 @@ mixin checkbox-list({name})
 	.checkbox-list
 		.checkbox-list__header
 			+heading({text:name,level:'3'})
-			+icon({})
+			.checkbox-list__expand
+				+icon({})
 		.checkbox-list__wrapper(style="display: none")
 			.checkbox-list__item
 				+checkbox()

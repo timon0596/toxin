@@ -2,13 +2,15 @@
 .checkbox-list
 	width: 100%
 	color: $d50
+	.checkbox-list__expand
+		width: 44px
+		height: 44px
+		display: flex
+		justify-content: center
+		align-items: center
 	.checkbox-list__header
 		width: 100%
 		justify-content: space-between
-		display: -webkit-flex
-		display: -moz-flex
-		display: -ms-flex
-		display: -o-flex
 		display: flex
 		align-items: center
 		i
@@ -18,10 +20,6 @@
 			margin-left: 10px
 		.checkbox-list__item
 			margin-bottom: 5px
-			display: -webkit-flex
-			display: -moz-flex
-			display: -ms-flex
-			display: -o-flex
 			display: flex
 			align-items: center
 .checkbox-list.checkbox-list_expanded

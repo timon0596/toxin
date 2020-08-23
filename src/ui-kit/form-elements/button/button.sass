@@ -15,11 +15,17 @@
 	width: auto
 	margin: auto
 	height: 44px
-	.heading>h3
-		color: #fff
-		margin: 0
 	&:active
 		opacity: 0.5
+	.button__arrow
+		width: 44px
+		height: 44px
+		display: flex
+		justify-content: center
+		align-items: center
+		position: absolute
+		right: 0
+		top: 0
 .button_with-no-bg.button
 	height: auto
 	background: 0
@@ -27,20 +33,7 @@
 	margin: 0
 	&:active
 		opacity: 0.5
-	.heading>h3
-		color: $p
-.button_grey.button
-	height: auto
-	background: 0
-	padding: 0
-	margin: 0
-	&:active
-		opacity: 0.5
-	.heading>h3
-		color: $d50
 .button_with-border.button
-	.heading>h3
-		color: #fff
 	&:active
 		opacity: 0.5
 	background: #fff
@@ -61,8 +54,6 @@
 		margin: -2px
 		border-radius: inherit
 		background: $lgp
-	.heading>h3
-		color: $p
 	&:active:before
 		opacity: .5 
 	&:active
@@ -70,15 +61,6 @@
 .button_with-arrow.button
 	position: relative
 	margin: 0
-	.heading>h3
-		color: #fff
-	.icon
-		position: absolute
-		right: 0
-		width: 44px
-		height: 44px
-		i
-			color: #fff
 	&:active
 		opacity: 0.5
 	

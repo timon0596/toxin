@@ -1,5 +1,6 @@
-mixin button({text,modifier})
-	.button(class={'button_with-no-bg': modifier==='no-bg','button_with-border': modifier==='border','button_with-arrow': modifier==='arrow','button_grey': modifier==='grey'})
-		+heading({text})
-		if modifier=='arrow'
-			+icon({icon:'arrow_forward',color: 'white'})
+mixin button({text,modifier,color})
+  .button(class={'button_with-no-bg': modifier==='no-bg','button_with-border': modifier==='border','button_with-arrow': modifier==='arrow'})
+    +heading({text,color})
+    if modifier=='arrow'
+      .button__arrow
+        +icon({icon:'arrow_forward',color: 'white'})

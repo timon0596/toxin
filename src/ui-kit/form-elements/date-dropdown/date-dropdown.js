@@ -69,8 +69,8 @@ function dateDropdown(selector) {
       dpInline.slideToggle(250);
     });
     const clear = $("<div>", {
-      class: "button button_grey",
-      html: '<div class="heading"><h3>очистить</h3></div>',
+      class: "button button_with-no-bg",
+      html: '<div class="heading heading_color_grey"><h3>очистить</h3></div>',
       on: {
         click: () => {
           dpClear.click();
@@ -80,7 +80,8 @@ function dateDropdown(selector) {
     });
     const apply = $("<div>", {
       class: "button button_with-no-bg",
-      html: '<div class="heading"><h3>применить</h3></div>',
+      html:
+        '<div class="heading heading_color_purple"><h3>применить</h3></div>',
       on: {
         click: () => {
           localStorage.setItem("datepicker", JSON.stringify(selectedDates));
