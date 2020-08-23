@@ -2,4 +2,4 @@ mixin button({text,modifier})
 	.button(class={'button_with-no-bg': modifier==='no-bg','button_with-border': modifier==='border','button_with-arrow': modifier==='arrow','button_grey': modifier==='grey'})
 		+heading({text})
 		if modifier=='arrow'
-			+icon({icon:'arrow_forward'})
+			+icon({icon:'arrow_forward',color: 'white'})

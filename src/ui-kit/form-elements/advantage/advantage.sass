@@ -1,27 +1,14 @@
 @import './../../../sass/vars.sass'
 .advantage
-  display: -webkit-flex
-  display: -moz-flex
-  display: -ms-flex
-  display: -o-flex
-  display: flex
+  display: grid
+  grid-auto-flow: column
+  grid-gap: 10px
   border-bottom: 1px solid $d1
   padding-bottom: 20px
   padding-right: 20px
-.advantage:last-child
-  border: 0
-  padding-bottom: 0
-.advantage
-  .icon__item
-    margin-right: 10px
-    font-size: 48px
-    line-height: 41px
-    width: 48px
-    height: 48px
-    background: $lgp
-    -webkit-background-clip: text
-    background-clip: text
-    color: transparent
+  &:last-child
+    border: 0
+    padding-bottom: 0
   .advantage__info
     display: -webkit-flex
     display: -moz-flex

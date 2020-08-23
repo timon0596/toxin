@@ -25,8 +25,8 @@ function dateDropdown(selector) {
           days: '<div class="heading"><h2>MM yyyy</h2></div>',
         },
         clearButton: true,
-        prevHtml: '<i class="icon">arrow_back</i>',
-        nextHtml: '<i class="icon">arrow_forward</i>',
+        prevHtml: '<i class="icon icon_color_purple">arrow_back</i>',
+        nextHtml: '<i class="icon icon_color_purple">arrow_forward</i>',
         onSelect: function (fd, d, picker) {
           const options = { year: "numeric", month: "numeric", day: "numeric" };
           selectedDates.fromTo = fd;
@@ -63,7 +63,7 @@ function dateDropdown(selector) {
     const dpClear = $('.datepicker--button[data-action="clear"]').hide();
     const dpInline = $(el).find(".datepicker-inline").hide();
     const dpBtns = $(el).find(".datepicker--buttons");
-    const dpExpand = $(el).find(".text-field__wrapper .icon");
+    const dpExpand = $(el).find(".text-field__icon-wrapper .icon");
     console.log(dpExpand);
     dpExpand.click(() => {
       dpInline.slideToggle(250);

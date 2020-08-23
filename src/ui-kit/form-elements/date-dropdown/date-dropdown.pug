@@ -1,7 +1,8 @@
 mixin date-dropdown({names,modifier})
-	.date-dropdown.js-date-dropdown(class=modifier?`date-dropdown_filter`:'')
-		.date-dropdown__datepicker-wrapper
-		each name in names
-			.date-dropdown__display
-				+heading({text:name,level:'3'})
-				+text-field({placeholder:'дд.мм.гггг', material_icons:'expand_more', modifier: 'masked'})
+  .date-dropdown.js-date-dropdown(class=modifier?`date-dropdown_filter`:'')
+    .date-dropdown__datepicker-wrapper
+    each name in names
+      .date-dropdown__display
+        .date-dropdown__heading
+          +heading({text:name,level:'3'})
+        +text-field({placeholder:'дд.мм.гггг', material_icons:'expand_more', modifier: 'masked'})

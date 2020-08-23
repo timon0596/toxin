@@ -6,5 +6,5 @@ mixin comment({icon,name,date,likes,likeCheck,text})
       .comment__username= name
       .comment__date= date
     .comment__like
-      +like(likes,likeCheck)
+      +like({likes,checked: likeCheck})
     .comment__text= text
