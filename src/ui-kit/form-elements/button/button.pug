@@ -1,4 +1,4 @@
-mixin button({text,modifier,color})
+mixin button({text,modifier,color='white'})
   .button(class={'button_with-no-bg': modifier==='no-bg','button_with-border': modifier==='border','button_with-arrow': modifier==='arrow'})
     +heading({text,color})
     if modifier=='arrow'
