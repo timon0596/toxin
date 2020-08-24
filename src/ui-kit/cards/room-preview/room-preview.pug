@@ -1,15 +1,15 @@
-mixin room-preview(room,id)
+mixin room-preview({room:{number,imgs,cost,lux,rate,reviews},id})
 	.room-preview
 		.room-preview__row
 			.carousel.slide(data-ride='true' id="carouselExampleIndicators"+id)
 				ol.carousel-indicators
-					each v,i in room.imgs
+					each v,i in imgs
 						if i==0
 							li(data-target='#carouselExampleIndicators'+id data-slide-to=i class="active")
 						else
 							li(data-target='#carouselExampleIndicators'+id data-slide-to=i)
 				.carousel-inner
-					each v,i in room.imgs
+					each v,i in imgs
 						if i==0
 							.carousel-item.active
 								img.d-block.w-100(src='img/preview/'+v alt='First slide')
@@ -17,22 +17,22 @@ mixin room-preview(room,id)
 							.carousel-item
 								img.d-block.w-100(src='img/preview/'+v alt='First slide')
 				a.carousel-control-prev(href='#carouselExampleIndicators'+id role='button' data-slide='prev')
-					+icon({})
+					+icon({color: 'white'})
 				a.carousel-control-next(href='#carouselExampleIndicators'+id role='button' data-slide='next')
-					+icon({})
+					+icon({color: 'white'})
 		.room-preview__row
 			.room-preview__inner-row
 				.room-preview__number
 					!= "№ "
-					+heading({text:room.number,level:'1'})
-					if room.lux
-						+heading({text:'люкс'})
+					+heading({text:number,level:'1'})
+					if lux
+						+heading({text:'люкс',color:'purple'})
 				.room-preview__payment
-					.room-preview__cost= room.cost
+					.room-preview__cost= cost
 					=" в сутки"
 			.room-preview__divider
 			.room-preview__inner-row
-				+rate(room.rate)
+				+rate({num:rate})
 				.room-preview__reviews
-					.room-preview__reviews-amount= room.reviews
+					.room-preview__reviews-amount= reviews
 					=" отзывов"

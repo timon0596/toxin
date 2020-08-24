@@ -30,7 +30,7 @@ body
       +heading({text:'Номера которые мы для вас подобрали',level:'1'})
       .search-room-page__room-preview-grid
         each val,ind in room_preview_array
-          +room-preview(val,ind)
+          +room-preview({room:val,id:ind})
       .search-room-page__pagination
         +pagination()
   +footer()

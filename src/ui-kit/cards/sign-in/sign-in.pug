@@ -1,16 +1,15 @@
 mixin sign-in()
-	.sign-in.js-sign-in
-		.sign-in__row
-			+heading({text:'Войти',level:'1'})
-		.sign-in__row
-			+text-field({placeholder:'Email'})
-			+text-field({placeholder:'Пароль'})
-		.sign-in__row
-			.sign-in__sign-in-button.js-sign-in__sign-in-button
-				+button({text: 'войти',modifier: 'arrow'})
-		.sign-in__row
-			.sign-in__inner-row
-				| Нет аккаунта на Toxin
-				.sign-in__button-create.js-sign-in__button-create
-					+button({text: 'создать',modifier: 'border', color: 'purple'})
-
+  .sign-in.js-sign-in
+    .sign-in__row
+      +heading({text:'Войти',level:'1'})
+    .sign-in__row
+      +text-field({placeholder:'Email'})
+      +text-field({placeholder:'Пароль'})
+    .sign-in__row
+      .sign-in__sign-in-button.js-sign-in__sign-in-button
+        +button({text: 'войти',modifier: 'arrow'})
+    .sign-in__row
+      .sign-in__inner-row
+        | Нет аккаунта на Toxin
+        .sign-in__button-create.js-sign-in__button-create
+          +button({text: 'создать',modifier: 'border', color: 'purple'})
