@@ -21,8 +21,6 @@
 		line-height: 18px
 		justify-content: space-between
 		z-index: 1
-		.toxin-btn:not(.toxin-btn_with-no-bg)
-			width: 99px
 	.room-details__number
 		font-family: quicksand
 		font-style: normal
@@ -40,7 +38,9 @@
 		.room-details__tax-list
 			display: grid
 			grid-gap: 10px
-			.room-details__tax
+			.room-details__tax-habitation,
+			.room-details__tax-services,
+			.room-details__tax-extra-services
 				display: grid
 				grid-auto-flow: column
 				justify-content: space-between
