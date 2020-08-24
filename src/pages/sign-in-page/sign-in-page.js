@@ -1,25 +1,28 @@
-$(document).ready(()=>{
-	const $sign_up = $('.js-registration')
-	const $sign_in = $('.js-sign-in')
+$(document).ready(() => {
+  const $sign_up = $(".js-registration");
+  const $sign_in = $(".js-sign-in");
+  console.log($(".nav__sign-in-button"));
+  function signInHandler() {
+    $sign_up.hide();
+    $sign_in.show();
+  }
+  function signUpHandler() {
+    $(".nav__item_unsigned").show();
+    $(".nav__item_signed").hide();
+    $sign_in.hide();
+    $sign_up.show();
+  }
+  function enterHandler() {
+    $(".nav__item_unsigned").hide();
+    $(".nav__item_signed").show();
+  }
 
-	function signInHandler(){
-		$sign_up.hide()
-		$sign_in.show()
-	}
-	function signUpHandler(){
-		$('.js-nav__btn-item').show()
-		$('.js-nav__user-name').hide()
-		$sign_in.hide()
-		$sign_up.show()
-	}
-	function enterHandler(){
-		$('.js-nav__btn-item').hide()
-		$('.js-nav__user-name').show()
-	}
-	
-	if('/sign_in_page.html'==location.pathname){
-		$('.js-registration__sign-in-button,.js-nav__sign-in-button').click(signInHandler)
-		$('.js-sign-in__button-create,.js-nav__sign-up-button').click(signUpHandler)
-		$('.js-sign-in__sign-in-button').click(enterHandler)
-	}
-})
+  if ("/sign-in-page.html" == location.pathname) {
+    $sign_in.hide();
+    $(".js-registration__sign-in-button,.nav__sign-in-button").click(
+      signInHandler
+    );
+    $(".js-sign-in__button-create,.nav__sign-up-button").click(signUpHandler);
+    $(".js-sign-in__sign-in-button").click(enterHandler);
+  }
+});

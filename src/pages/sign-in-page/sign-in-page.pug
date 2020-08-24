@@ -7,6 +7,8 @@ head
 body
   +header({signed:false})
   section.sign-in-page
-    +registration()
-    +sign-in()
+    .sign-in-page__wrapper
+      +registration()
+    .sign-in-page__wrapper
+      +sign-in()
   +footer()
