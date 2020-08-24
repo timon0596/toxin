@@ -1,86 +1,87 @@
 @import './../../../sass/vars.sass'
 
 .dropdown__body.dropdown__body_active
-	.dropdown__display
-		border-bottom-right-radius: 0
-		border-bottom-left-radius: 0
-		border-color: $d50
-	.dropdown__menu
-		border-top-right-radius: 0
-		border-top-left-radius: 0
-		border-top: 0
+  .dropdown__display
+    border-bottom-right-radius: 0
+    border-bottom-left-radius: 0
+    border-color: $d50
+  .dropdown__menu
+    border-top-right-radius: 0
+    border-top-left-radius: 0
+    border-top: 0
 .dropdown
-	.dropdown__icon-wrapper
-		position: absolute
-		top: 0
-		right: 0
-		width: 44px
-		height: 44px
-		display: -webkit-flex
-		display: -moz-flex
-		display: -ms-flex
-		display: -o-flex
-		display: flex
-		justify-content: center
-		align-items: center
-	.dropdown__body
-		background: white
-		position: relative
-	.dropdown__display,
-	.dropdown__menu
-		border: 1px solid $d25
-		border-radius: 4px
-		padding-left: 15px
-		height: 44px
-		width: 100%
-		color: $d75
-		display: -webkit-flex
-		display: -moz-flex
-		display: -ms-flex
-		display: -o-flex
-		display: flex
-		align-items: center
-		transition: border-radius .250s
-		&::placeholder
-			color: $d25
-		&:hover,
-		&:focus
-			border: 1px solid $d50
-			outline: 0
-	.dropdown__menu
-		position: absolute
-		top: 100%
-		background: #fff
-		z-index: 1
-		left: 0
-		border-color: $d50
-		border-top: 0
-		height: min-content
-		flex-wrap: wrap
-		display: -webkit-flex
-		display: -moz-flex
-		display: -ms-flex
-		display: -o-flex
-		display: flex
-		align-items: center
-		&:hover,
-		&:focus
-			border-top: 0
-	.dropdown__row
-		width: 100%
-		margin-top: 7px
-		margin-right: 7px
-		justify-content: space-between
-		display: -webkit-flex
-		display: -moz-flex
-		display: -ms-flex
-		display: -o-flex
-		display: flex
-		align-items: center
-		&:last-child
-			margin-bottom: 7px
+  .dropdown__icon-wrapper
+    position: absolute
+    top: 0
+    right: 0
+    width: 44px
+    height: 44px
+    display: -webkit-flex
+    display: -moz-flex
+    display: -ms-flex
+    display: -o-flex
+    display: flex
+    justify-content: center
+    align-items: center
+  .dropdown__body
+    background: white
+    position: relative
+    z-index: 3
+  .dropdown__display,
+  .dropdown__menu
+    border: 1px solid $d25
+    border-radius: 4px
+    padding-left: 15px
+    height: 44px
+    width: 100%
+    color: $d75
+    display: -webkit-flex
+    display: -moz-flex
+    display: -ms-flex
+    display: -o-flex
+    display: flex
+    align-items: center
+    transition: border-radius .250s
+    &::placeholder
+      color: $d25
+    &:hover,
+    &:focus
+      border: 1px solid $d50
+      outline: 0
+  .dropdown__menu
+    position: absolute
+    top: 100%
+    background: #fff
+    z-index: 1
+    left: 0
+    border-color: $d50
+    border-top: 0
+    height: min-content
+    flex-wrap: wrap
+    display: -webkit-flex
+    display: -moz-flex
+    display: -ms-flex
+    display: -o-flex
+    display: flex
+    align-items: center
+    &:hover,
+    &:focus
+      border-top: 0
+  .dropdown__row
+    width: 100%
+    margin-top: 7px
+    margin-right: 7px
+    justify-content: space-between
+    display: -webkit-flex
+    display: -moz-flex
+    display: -ms-flex
+    display: -o-flex
+    display: flex
+    align-items: center
+    &:last-child
+      margin-bottom: 7px
 .dropdown_guest
-	.dropdown__row:last-child
-		margin-bottom: 13px
-		margin-top: 20px
-	
+  .dropdown__row:last-child
+    margin-bottom: 13px
+    margin-top: 20px
+  

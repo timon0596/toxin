@@ -8,12 +8,9 @@ section.search-room-page
 	justify-content: center
 	padding-top: 30px
 	background: white
-	a
-		text-decoration: none
-		underline: none
+	.search-room-page__heading-wrapper
+		margin-bottom: 20px
 	.search-room-page__results
-		&>.heading>h1
-			margin-bottom: 20px
 		.search-room-page__pagination
 			margin-top: 40px
 		.search-room-page__room-preview-grid
@@ -28,17 +25,9 @@ section.search-room-page
 		grid-gap: 30px
 		align-content: start
 		.search-room-page__filter
-			.range-slider__wrapper
-			p
-				font-size: 12px
-				line-height: 14px
-				color: $d50
-				margin-top: 13.5px
-			.filter__inner
+			.search-room-page__filter-inner-wrapper
 				display: grid
 				grid-gap: 20px
-				.dropdown__wrapper
-					z-index: 3
 @media (max-width: 1440px)
 	section.search-room-page
 		.search-room-page__results

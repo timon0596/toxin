@@ -12,7 +12,7 @@ body
   section.search-room-page
     .search-room-page__filters
       .search-room-page__filter
-        .filter__inner
+        .search-room-page__filter-inner-wrapper
           +date-dropdown({names: ['даты пребывания в отеле'],modifier: 'filter'})
           +dropdown({h3:'гости',modifier: 'guest'})
       .search-room-page__filter
@@ -27,7 +27,8 @@ body
       .search-room-page__filter
         +checkbox-list({name:'дополнительные удобства'})
     .search-room-page__results
-      +heading({text:'Номера которые мы для вас подобрали',level:'1'})
+      .search-room-page__heading-wrapper
+        +heading({text:'Номера которые мы для вас подобрали',level:'1'})
       .search-room-page__room-preview-grid
         each val,ind in room_preview_array
           +room-preview({room:val,id:ind})
