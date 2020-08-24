@@ -17,6 +17,7 @@ export class Dropdown {
 		this.$expand = this.$mainDiv.find(
 			".dropdown__body .dropdown__icon-wrapper"
 		);
+		this.$expandIcon = this.$expand.find(".icon");
 		this.$body = this.$mainDiv.find(".dropdown__body");
 		this.$menu = this.$mainDiv.find(".dropdown__menu");
 		this.$clear = this.$mainDiv.find(".dropdown__clear");
@@ -75,6 +76,7 @@ export class Dropdown {
 	expand() {
 		this.$menu.slideToggle(250);
 		this.$body.toggleClass("dropdown__body_active");
+		this.$expandIcon.toggleClass("icon_color_dark");
 	}
 	minus(e) {
 		const i = [...this.$minusButtons].indexOf(e.target);
