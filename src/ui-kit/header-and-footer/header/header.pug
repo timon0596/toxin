@@ -10,7 +10,9 @@ mixin header({signed})
 			.nav__item Соглашения
 				+icon({})
 			.nav__item(style=signed?'display: none':'')
-				+button({text:'войти',modifier: 'border'})
+				.nav__button
+					+button({text:'войти',modifier: 'border'})
 			.nav__item(style=signed?'display: none':'')
-				+button({text:'зарегистрироваться'})
-			.nav__item(style=signed?'':'display: none') Юлий Цезарь
+				.nav__button
+					+button({text:'зарегистрироваться'})
+			.nav__item(style=signed?'':'display: none').nav__item_signed Юлий Цезарь
