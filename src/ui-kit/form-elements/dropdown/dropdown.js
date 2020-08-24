@@ -23,9 +23,9 @@ export class Dropdown {
 		this.$clear = this.$mainDiv.find(".dropdown__clear");
 		this.$apply = this.$mainDiv.find(".dropdown__apply");
 		this.$counters = this.$mainDiv.find(".counter");
-		this.$minusButtons = this.$counters.find(".counter__minus");
-		this.$plusButtons = this.$counters.find(".counter__plus");
-		this.$values = this.$counters.find(".counter__value");
+		this.$minusButtons = this.$counters.find(".counter__button:first-child");
+		this.$plusButtons = this.$counters.find(".counter__button:last-child");
+		this.$values = this.$counters.find(".counter__button:nth-child(2)");
 		this.isGuest = this.$mainDiv.hasClass("dropdown_guest");
 		this.dec = Dropdown.declensions[this.isGuest ? "guest" : "bed"];
 		this.localStorageName = this.$mainDiv.attr("class").replace(/\s/g, "");
