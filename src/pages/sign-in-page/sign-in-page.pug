@@ -1,14 +1,10 @@
+extends ./../../ui-kit/template/template
 include ./../../ui-kit/ui-kit
-<!DOCTYPE html>
-html(lang="en")
-head
-  meta(charset="UTF-8")
-  title landing page
-body
-  +header({signed:false})
+block title
+  title sign-in-page
+block main
   section.sign-in-page
     .sign-in-page__wrapper
       +registration()
     .sign-in-page__wrapper
       +sign-in()
-  +footer()
