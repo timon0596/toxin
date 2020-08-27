@@ -1,5 +1,5 @@
 mixin date-dropdown({names,modifier})
-  .date-dropdown.js-date-dropdown(class=modifier?`date-dropdown_filter`:'')
+  .date-dropdown.js-date-dropdown(class={'date-dropdown_filter': modifier==='filter'})
     .date-dropdown__datepicker-wrapper
     each name in names
       .date-dropdown__display
