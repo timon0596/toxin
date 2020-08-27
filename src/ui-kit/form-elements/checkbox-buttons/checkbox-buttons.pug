@@ -1,5 +1,5 @@
 mixin checkbox-buttons({h3,content,modifier})
-	.checkbox-buttons(class=modifier?'checkbox-buttons_'+modifier:'')
+	.checkbox-buttons(class={'checkbox-buttons_rich': modifier==='rich'})
 		+heading({level:'3',text:h3})
 		.checkbox-buttons__wrapper
 			each ckbbtn in content
