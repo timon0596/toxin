@@ -4,7 +4,6 @@ function importAll(r) {
 import "jquery";
 import "jquery-ui/ui/widgets/slider";
 import "jquery-ui/themes/base/all.css";
-import "./index.pug";
 import "air-datepicker/dist/css/datepicker.min.css";
 import "bootstrap/js/src/carousel.js";
 import "./main.sass";

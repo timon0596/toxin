@@ -119,10 +119,6 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new HWP({
-      template: "./src/index.pug",
-      filename: "index.html",
-    }),
     ...htmlPlugins,
     new webpack.ProvidePlugin({
       $: "jquery",
