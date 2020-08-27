@@ -1,4 +1,4 @@
 mixin bullet-list({list,modifier})
-	.bullet-list(class=modifier?'bullet-list_'+modifier:'')
+	.bullet-list(class={'bullet-list_colored':modifier==='colored'})
 		each val in list
 			.bullet-list__item= val
