@@ -1,5 +1,5 @@
 @import './../../../sass/vars.sass'
-.checkbox
+.checkbox__cell
 	width: 20px
 	height: 20px
 	border: 1px solid $d25
@@ -7,7 +7,7 @@
 	cursor: pointer
 	position: relative
 	transition: border-color .250s ease
-.checkbox:before
+.checkbox__cell:before
 	position: absolute
 	content: ""
 	display: block
@@ -25,9 +25,8 @@
 	box-sizing: border-box
 	border-top: 0
 	border-left: 0
-.checkbox.checkbox_checked
+input.checkbox__input:checked ~ .checkbox__cell
 	border: 1px solid $p
-.checkbox.checkbox_checked:before
-	position: absolute
+input.checkbox__input:checked ~ .checkbox__cell:before
 	opacity: 1
 	transform: translate(-50%,-50%) rotate(45deg)
