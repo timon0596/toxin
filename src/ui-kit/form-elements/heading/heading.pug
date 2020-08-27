@@ -1,3 +1,3 @@
 mixin heading({level='3',text,color})
-  .heading(class=`${color?'heading_color_'+color:''}`)
+  .heading(class={'heading_color_white':color==='white','heading_color_purple':color==='purple','heading_color_grey': color==='grey'})
     |<h#{level}>#{text}</h#{level}>
