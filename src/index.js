@@ -12,7 +12,7 @@ require.context("./ui-kit", true, /\.sass/);
 require.context("./pages", true, /\.sass/);
 importAll(require.context("./ui-kit", true, /\.js$/));
 importAll(require.context("./pages", true, /\.js$/));
-
+import "./init.js";
 const userImg = require.context("./img/users", true, /\.(jpe?g|png)$/);
 const preview_img = require.context(
   "./img/preview",

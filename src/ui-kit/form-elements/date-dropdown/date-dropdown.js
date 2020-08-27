@@ -64,7 +64,6 @@ function dateDropdown(selector) {
     const dpInline = $(el).find(".datepicker-inline").hide();
     const dpBtns = $(el).find(".datepicker--buttons");
     const dpExpand = $(el).find(".text-field__icon-wrapper .icon");
-    console.log(dpExpand);
     dpExpand.click(() => {
       dpInline.slideToggle(250);
     });

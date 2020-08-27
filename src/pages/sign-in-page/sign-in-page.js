@@ -1,7 +1,6 @@
 $(document).ready(() => {
   const $sign_up = $(".js-registration");
   const $sign_in = $(".js-sign-in");
-  console.log($(".nav__sign-in-button"));
   function signInHandler() {
     $sign_up.hide();
     $sign_in.show();
