@@ -55,17 +55,14 @@ export class DateDropdown {
       nextHtml: '<i class="icon icon_color_purple">arrow_forward</i>',
       onSelect: this.datepickerOnSelectHandler.bind(this),
     };
+    this.init();
   }
   init() {
     this.selectedDatesFromLocalStorage();
-    this.setMask();
     this.datepickerInit();
     this.$expandButton.click(() => {
       this.$datepickerInline.slideToggle(250);
     });
-  }
-  setMask() {
-    !this.isFilter ? this.$inputs.mask("00.00.0000") : 0;
   }
   dateFromLocaleDateString(str) {
     return new Date(str.split(".").reverse().join("."));
@@ -74,7 +71,7 @@ export class DateDropdown {
     this.selectedDates =
       JSON.parse(localStorage?.getItem("datepicker")) || this.selectedDates;
   }
-  fillInputsWithValues() {
+  fillInputsWithValues(fd) {
     const inputCondition = this.selectedDates.from && this.selectedDates.to;
     if (!this.isFilter) {
       $(this.$inputs[0]).val(this.selectedDates.from);
@@ -100,11 +97,11 @@ export class DateDropdown {
     this.selectedDates.days = d[1]
       ? Math.round((d[1] - d[0]) / 1000 / 60 / 60 / 24)
       : 0;
-    this.fillInputsWithValues();
+    this.fillInputsWithValues(fd);
     this.emitEvent();
   }
   datepickerInit() {
-    this.datepickerInstance = this.$datepickerontainer
+    this.datepickerInstance = this.$datepickerContainer
       .datepicker(this.datepickerConfig)
       .data("datepicker");
     if (this.selectedDates.days) {
