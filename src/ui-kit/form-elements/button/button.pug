@@ -1,5 +1,13 @@
 mixin button({text,modifier,color='white'})
-  .button(class={'button_with-no-bg': modifier==='no-bg','button_with-border': modifier==='border','button_with-arrow': modifier==='arrow'})
+  - let className
+  case modifier
+    when 'arrow'
+      - className = '_with-arrow'
+    when 'no-bg'
+      - className = '_with-no-bg'
+    when 'border'
+      - className = '_with-border'
+  .button(class=modifier?'button'+className:'')
     +heading({text,color: modifier==='border'?'purple':color})
     if modifier=='arrow'
       .button__arrow
