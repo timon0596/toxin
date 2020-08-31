@@ -1,12 +1,12 @@
 @import './../../sass/vars.sass'
-section.landing-page
+.landing-page
 	position: relative
 	padding: 0
 	width: 100%
 	padding-top: 57.6%
 	background: url('./../../img/image3.png')
 	background-size: cover
-	.landing-page__content
+	&__content
 		display: -webkit-flex
 		display: -moz-flex
 		display: -ms-flex
@@ -23,8 +23,8 @@ section.landing-page
 		p
 			text-align: right
 @media (max-width: 960px)
-	section.landing-page
+	.landing-page
 		padding: 10px
-		.landing-page__content
+		&__content
 			position: static
 			padding: 0

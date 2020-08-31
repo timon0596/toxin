@@ -8,37 +8,34 @@ section.search-room-page
 	justify-content: center
 	padding-top: 30px
 	background: white
-	.search-room-page__heading-wrapper
+	&__heading-wrapper
 		margin-bottom: 20px
-	.search-room-page__results
-		.search-room-page__pagination
-			margin-top: 40px
-		.search-room-page__room-preview-grid
-			display: grid
-			grid-template-columns: 1fr 1fr 1fr
-			grid-gap: 20px 12px
-	.search-room-page__filters
+	&__pagination
+		margin-top: 40px
+	&__room-preview-grid
+		display: grid
+		grid-template-columns: 1fr 1fr 1fr
+		grid-gap: 20px 12px
+	&__filters
 		margin-right: 60px
 		width: 266px
 		height: min-height
 		display: grid
 		grid-gap: 30px
 		align-content: start
-		.search-room-page__filter
-			.search-room-page__filter-inner-wrapper
-				display: grid
-				grid-gap: 20px
+	&__filter-inner-wrapper
+		display: grid
+		grid-gap: 20px
 @media (max-width: 1440px)
-	section.search-room-page
-		.search-room-page__results
-			.search-room-page__room-preview-grid
-				grid-template-columns: 1fr 1fr
+	.search-room-page
+		&__room-preview-grid
+			grid-template-columns: 1fr 1fr
 @media (max-width: 1280px)
 	section.search-room-page
 		padding: 30px
 @media (max-width: 960px)
-	section.search-room-page
-		.search-room-page__results
+	.search-room-page
+		&__results
 			display: -webkit-flex
 			display: -moz-flex
 			display: -ms-flex
@@ -46,10 +43,10 @@ section.search-room-page
 			display: flex
 			flex-direction: column
 			align-items: center
-			.search-room-page__room-preview-grid
-				grid-template-columns: 1fr
+		&__room-preview-grid
+			grid-template-columns: 1fr
 @media (max-width: 768px)
-	section.search-room-page
+	.search-room-page
 		display: -webkit-flex
 		display: -moz-flex
 		display: -ms-flex
@@ -57,7 +54,7 @@ section.search-room-page
 		display: flex
 		flex-direction: column
 		align-items: center
-		.search-room-page__results
+		&__results
 			display: -webkit-flex
 			display: -moz-flex
 			display: -ms-flex
@@ -65,5 +62,5 @@ section.search-room-page
 			display: flex
 			flex-direction: column
 			align-items: center
-			.search-room-page__room-preview-grid
-				grid-template-columns: 1fr
+		&__room-preview-grid
+			grid-template-columns: 1fr

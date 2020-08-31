@@ -1,8 +1,8 @@
 @import './../../sass/vars.sass'
 .room-details-page
-	.room-details-page__heading-wrapper
+	&__heading-wrapper
 		margin-bottom: 20px
-	.room-details-page__images
+	&__images
 		overflow: hidden
 		padding-top: calc(485/1440*100%)
 		position: relative
@@ -16,40 +16,40 @@
 		img.room-details-page__main-image
 			left: 0
 			width: calc(100%*981/1440)
-	.room-details-page__content
+	&__content
 		background: white
 		padding: 70px	140px
 		display: grid
 		grid-template-columns: auto auto
 		grid-gap: 70px
-	.room-details-page__information
+	&__information
 		display: grid
 		grid-template-areas: 'advantages empressions''reviews reviews''rules cancel'
 		grid-gap: 30px 70px
-	.room-details-page__advantages
+	&__advantages
 		grid-area: advantages
-	.room-details-page__empressions
+	&__empressions
 		grid-area: empressions
-	.room-details-page__empression-chart
+	&__empression-chart
 		display: -webkit-flex
 		display: -moz-flex
 		display: -ms-flex
 		display: -o-flex
 		display: flex
 		align-items: flex-end
-	.room-details-page__empression-diagramm
+	&__empression-diagramm
 		position: relative
-	.room-details-page__empression-votes
+	&__empression-votes
 		position: absolute
 		top: calc(50% - 5px)
 		left: 50%
 		transform: translate(-50%, -50%)
 		text-align: center
-	.room-details-page__bullet-list-wrapper
+	&__bullet-list-wrapper
 		margin-left: 30px
-	.room-details-page__reviews
+	&__reviews
 		grid-area: reviews
-	.room-details-page__reviews-header
+	&__reviews-header
 		display: -webkit-flex
 		display: -moz-flex
 		display: -ms-flex
@@ -64,27 +64,27 @@
 			font-size: 14px
 			line-height: 14px
 			color: $d50
-	.room-details-page__comments
+	&__comments
 		display: grid
 		grid-gap: 20px
-	.room-details-page__rules
+	&__rules
 		grid-area: rules
-		.room-details-page__heading-wrapper
-			margin-left: 20px
-	.room-details-page__cancel
+	&__heading-wrapper
+		margin-left: 20px
+	&__cancel
 		grid-area: cancel
-	.room-details-page__cancel-text
-	.room-details-page__card
+	&__cancel-text
+	&__card
 @media (max-width: 1280px)
 	.room-details-page
-		.room-details-page__content
+		&__content
 			grid-template-columns: auto
 			justify-items: center
 @media (max-width: 992px)
 	.room-details-page
-		.room-details-page__information
+		&__information
 			grid-template-areas: 'advantages''empressions''reviews''rules''cancel'
-		.room-details-page__images
+		&__images
 			padding: 0
 			display: grid
 			img,
@@ -96,5 +96,5 @@
 				margin-top: -2px
 @media (max-width: 768px)
 	.room-details-page
-		.room-details-page__content
+		&__content
 			padding: 5%
