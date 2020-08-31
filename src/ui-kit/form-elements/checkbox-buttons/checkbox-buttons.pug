@@ -1,6 +1,7 @@
 mixin checkbox-buttons({h3,content,modifier})
-	.checkbox-buttons(class={'checkbox-buttons_rich': modifier==='rich'})
-		+heading({level:'3',text:h3})
-		.checkbox-buttons__wrapper
-			each ckbbtn in content
-				+checkbox-button({name: ckbbtn.name, description: ckbbtn.description})
+  .checkbox-buttons(class={'checkbox-buttons_rich': modifier==='rich'})
+    .checkbox-buttons__heading-wrapper
+      +heading({level:'3',text:h3})
+    .checkbox-buttons__wrapper
+      each ckbbtn in content
+        +checkbox-button({name: ckbbtn.name, description: ckbbtn.description,nameWeight: modifier==='rich'?'bold':undefined})
