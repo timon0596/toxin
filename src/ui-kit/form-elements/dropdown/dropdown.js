@@ -13,6 +13,24 @@ export class Dropdown {
 	constructor(mainDiv, index) {
 		this.index = index;
 		this.$mainDiv = mainDiv;
+		this.$display;
+		this.$expand;
+		this.$expandIcon;
+		this.$body;
+		this.$menu;
+		this.$clear;
+		this.$apply;
+		this.$counters;
+		this.$minusButtons;
+		this.$plusButtons;
+		this.$values;
+		this.isGuest;
+		this.dec;
+		this.localStorageName;
+		this.values;
+		this.init();
+	}
+	findElements() {
 		this.$display = this.$mainDiv.find(".dropdown__display");
 		this.$expand = this.$mainDiv.find(
 			".dropdown__body .dropdown__icon-wrapper"
@@ -30,7 +48,6 @@ export class Dropdown {
 		this.dec = Dropdown.declensions[this.isGuest ? "guest" : "bed"];
 		this.localStorageName = this.$mainDiv.attr("class").replace(/\s/g, "");
 		this.values = this.localStorageValues();
-		this.init();
 	}
 	localStorageValues() {
 		const vals = localStorage.getItem(this.localStorageName);
@@ -120,6 +137,7 @@ export class Dropdown {
 		}
 	}
 	init() {
+		this.findElements();
 		this.$expand.on("click.dropdownExpand", this.expand.bind(this));
 		this.$plusButtons.on("click.plusButton", this.plus.bind(this));
 		this.$minusButtons.on("click.minusButton", this.minus.bind(this));
