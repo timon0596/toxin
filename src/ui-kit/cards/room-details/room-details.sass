@@ -7,13 +7,19 @@
 	border-radius: 4px
 	padding: 40px 30px 30px
 	width: 380px
-	.room-details__row:not(:first-child)
+	&__row
+		display: grid
+		grid-gap: 5px
+	&__row:not(:first-child)
 		margin-top: 20px
-	.room-details__row:last-child
+	&__row:last-child
 		margin-top: 30px
-		.room-details__inner-row
-			color: $d100
-	.room-details__inner-row
+	&__inner-row:first-child
+		*
+			display: inline-block
+	&__inner-row:last-child
+		color: $d100
+	&__inner-row
 		display: grid
 		grid-auto-flow: column
 		align-items: center
@@ -21,66 +27,58 @@
 		line-height: 18px
 		justify-content: space-between
 		z-index: 1
-	.room-details__number
+	&__number
 		font-family: quicksand
 		font-style: normal
 		font-weight: bold
 		font-size: 14px
 		line-height: 17px
 		color: $d100
-	.room-details__payment,
-	.room-details__reviews
+	&__payment,
+	&__reviews
 		color: $d50
-		.room-details__cost,
-		.room-details__reviews-amount
-			font-weight: bold
-	.room-details__row
-		.room-details__tax-list
-			display: grid
-			grid-gap: 10px
-			.room-details__tax-habitation,
-			.room-details__tax-services,
-			.room-details__tax-extra-services
-				display: grid
-				grid-auto-flow: column
-				justify-content: space-between
-				align-items: start
-				.room-details__tax-text
-					width: 240px
-					display: grid
-					grid-auto-flow: column
-					justify-content: space-between
-					align-items: baseline
-					.room-details__tax-info
-						width: 20px
-						height: 20px
-						border: 1px solid $d25
-						display: -webkit-flex
-						display: -moz-flex
-						display: -ms-flex
-						display: -o-flex
-						display: flex
-						justify-content: center
-						align-items: center
-						border-radius: 50%
-						font-weight: bold
-						font-size: 12px
-						line-height: 14px
-						color: $d25
-		.room-details__total
-			display: grid
-			grid-template-columns: auto 1fr auto
-			align-items: baseline
-			grid-gap: 5px
-			margin-bottom: 20px
-			.room-details__underline
-				display: block
-				height: 1px
-				border-bottom: 1px dashed $d25
-		.room-details__inner-row
-			align-items: baseline
-			*
-				display: inline-block
-.room-details__row
-	display: grid
-	grid-gap: 5px
+	&__cost,
+	&__reviews-amount
+		font-weight: bold
+	&__tax-list
+		display: grid
+		grid-gap: 10px
+	&__tax-habitation,
+	&__tax-services,
+	&__tax-extra-services
+		display: grid
+		grid-auto-flow: column
+		justify-content: space-between
+		align-items: start
+	&__tax-text
+		width: 240px
+		display: grid
+		grid-auto-flow: column
+		justify-content: space-between
+		align-items: baseline
+	&__tax-info
+		width: 20px
+		height: 20px
+		border: 1px solid $d25
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		justify-content: center
+		align-items: center
+		border-radius: 50%
+		font-weight: bold
+		font-size: 12px
+		line-height: 14px
+		color: $d25
+	&__total
+		display: grid
+		grid-template-columns: auto 1fr auto
+		align-items: baseline
+		grid-gap: 5px
+		margin-bottom: 20px
+	&__underline
+		display: block
+		height: 1px
+		border-bottom: 1px dashed $d25
