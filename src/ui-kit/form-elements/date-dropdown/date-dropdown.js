@@ -5,15 +5,25 @@ export class DateDropdown {
     this.datepickerInstance;
     this.$el = el;
     this.selectedDates = { fromTo: "", from: "", to: "", days: 0 };
+    this.isFilter;
+    this.$inputs;
+    this.$datepickerContainer;
+    this.$expandButton;
+    this.$datepickerClearButton;
+    this.$datepickerInline;
+    this.$datepickerButtons;
+    this.$clearButton;
+    this.$applyButton;
+    this.datepickerConfig;
+    this.init();
+  }
+  defineElements() {
     this.isFilter = this.$el.hasClass("date-dropdown_filter");
     this.$inputs = this.$el.find("input");
     this.$datepickerContainer = this.$el.find(
       ".date-dropdown__datepicker-container"
     );
     this.$expandButton = this.$el.find(".text-field__icon-wrapper .icon");
-    this.$datepickerClearButton;
-    this.$datepickerInline;
-    this.$datepickerButtons;
     this.$clearButton = $("<div>", {
       class: "button button_with-no-bg",
       html: '<div class="heading heading_color_grey"><h3>очистить</h3></div>',
@@ -55,9 +65,9 @@ export class DateDropdown {
       nextHtml: '<i class="icon icon_color_purple">arrow_forward</i>',
       onSelect: this.datepickerOnSelectHandler.bind(this),
     };
-    this.init();
   }
   init() {
+    this.defineElements();
     this.selectedDatesFromLocalStorage();
     this.datepickerInit();
     this.$expandButton.click(() => {
