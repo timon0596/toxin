@@ -1,8 +1,20 @@
-$(".checkbox-list").each(function () {
-  const i = $(this).find("i");
-  const w = $(this).find(".checkbox-list__wrapper");
-  i.click(() => {
-    $(this).toggleClass("checkbox-list_expanded");
-    w.slideToggle(250);
-  });
-});
+export class CheckBoxList {
+  constructor(el) {
+    this.$el = el;
+    this.$expand;
+    this.$wrapper;
+    this.init();
+  }
+  findElements() {
+    this.$expand = this.$el.find("i");
+    this.$wrapper = this.$el.find(".checkbox-list__wrapper");
+  }
+  onClickHandler() {
+    this.$el.toggleClass("checkbox-list_expanded");
+    this.$wrapper.slideToggle(250);
+  }
+  init() {
+    this.findElements();
+    this.$expand.click(this.onClickHandler.bind(this));
+  }
+}
