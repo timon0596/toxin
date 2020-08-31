@@ -6,19 +6,19 @@
 	padding: 0
 	width: 270px
 	overflow: hidden
-	.room-preview__row
+	&__row
 		display: grid
 		grid-gap: 5px
-		.room-preview__inner-row
-			color: $d100
-	.room-preview__row:last-child
+	&__inner-row
+		color: $d100
+	&__row:last-child
 		display: grid
 		grid-gap: 10px
 		padding: 20px
-		.room-preview__divider
-			height: 1px
-			background: $d1
-	.room-preview__inner-row
+	&__divider
+		height: 1px
+		background: $d1
+	&__inner-row
 		display: grid
 		grid-auto-flow: column
 		align-items: center
@@ -26,38 +26,28 @@
 		line-height: 18px
 		justify-content: space-between
 		z-index: 1
-	.room-preview__number
+	&__number
 		font-family: quicksand
 		font-style: normal
 		font-weight: bold
 		font-size: 14px
 		line-height: 17px
 		color: $d100
-	.room-preview__payment,
-	.room-preview__reviews
+	&__payment,
+	&__reviews
 		color: $d50
-		.room-preview__cost,
-		.room-preview__reviews-amount
-			font-weight: bold
-	.room-preview__inner-row
+	&__cost,
+	&__reviews-amount
+		font-weight: bold
+	&__inner-row
 		align-items: baseline
-		.room-preview__number,
-		.room-preview__payment,
-		.room-preview__reviews
-			*
-				display: inline-block
-	.room-preview__inner-row:last-child
+	&__number,
+	&__payment,
+	&__reviews
+		*
+			display: inline-block
+	&__inner-row:last-child
 		align-items: center
-		.rate
-			display: -webkit-flex
-			display: -moz-flex
-			display: -ms-flex
-			display: -o-flex
-			display: flex
-.room-preview__row
-	a
-		text-decoration: none
-		underline: none
 .carousel.slide
 	li
 		box-sizing: border-box
@@ -77,6 +67,7 @@
 		margin: 15px
 		justify-content: flex-end
 	a
+		text-decoration: none
 		opacity: 0
 		height: 44px
 		width: 44px
