@@ -1,39 +1,29 @@
 @import './../../../sass/vars.sass'
 .bullet-list
-	display: grid
-	grid-gap: 10px
-	.bullet-list__item
-		display: grid
-		grid-template-columns: auto 1fr
-		grid-gap: 10px
-		align-items: baseline
-	.bullet-list__item:before
-		display: block
-		content: ''
-		width: 10px
-		height: 10px
-		background: $d25
-		border-radius: 50%
-.bullet-list.bullet-list_colored
-	align-self: end
-	grid-gap: 0px
-	.bullet-list__item
-		display: grid
-		grid-template-columns: auto 1fr
-		align-items: baseline
-		grid-gap: 5px
-		&:before
-			display: block
-			content: ''
-			width: 10px
-			height: 10px
-			background: $d25
-			border-radius: 50%
-			background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%)
-	.bullet-list__item:nth-child(2):before
-		background: $lgg
-	.bullet-list__item:nth-child(3):before
-		background: $lgp
-	.bullet-list__item:nth-child(4):before
-		background: linear-gradient(180deg, #919191 0%, #3D4975 100%)
-			
+  display: grid
+  grid-gap: 10px
+  &__item
+    display: grid
+    grid-template-columns: auto 1fr
+    grid-gap: 10px
+    align-items: baseline
+  &__item:before
+    display: block
+    content: ''
+    width: 10px
+    height: 10px
+    background: $d25
+    border-radius: 50%
+.bullet-list_colored.bullet-list
+  align-self: end
+  grid-gap: 0px
+  .bullet-list__item
+    grid-gap: 5px
+    &:before
+      background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%)
+  .bullet-list__item:nth-child(2):before
+    background: $lgg
+  .bullet-list__item:nth-child(3):before
+    background: $lgp
+  .bullet-list__item:nth-child(4):before
+    background: linear-gradient(180deg, #919191 0%, #3D4975 100%)
