@@ -1,6 +1,14 @@
 export class RoomDetails {
   constructor(element) {
     this.$block = element;
+    this.$dropdown;
+    this.$taxHabitation;
+    this.$blockSum;
+    this.$taxHabitationTextBlock;
+    this.$taxHabitationSumBlock;
+    this.init();
+  }
+  findElements() {
     this.$dropdown = this.$block.find(".js-date-dropdown");
     this.$taxHabitation = this.$block.find(".room-details__tax-habitation");
     this.$blockSum = this.$block.find(".room-details__sum h2");
@@ -10,7 +18,6 @@ export class RoomDetails {
     this.$taxHabitationSumBlock = this.$taxHabitation.find(
       ".room-details__tax-sum"
     );
-    this.init();
   }
   onNewDateSelectedHandler(e) {
     if (e.selectedDates.days) {
@@ -30,6 +37,7 @@ export class RoomDetails {
     }
   }
   init() {
+    this.findElements();
     this.$block.on(
       "new-date-selected",
       this.onNewDateSelectedHandler.bind(this)
