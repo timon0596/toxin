@@ -18,7 +18,7 @@
 	max-height: 44px
 	&:active
 		opacity: 0.5
-	.button__arrow
+	&__arrow
 		width: 44px
 		height: 44px
 		display: flex
@@ -27,41 +27,41 @@
 		position: absolute
 		right: 0
 		top: 0
-.button_with-no-bg.button
-	height: auto
-	background: 0
-	padding: 0
-	margin: 0
-	&:active
-		opacity: 0.5
-.button_with-border.button
-	&:active
-		opacity: 0.5
-	background: #fff
-	background-clip: padding-box
-	position: relative
-	border: solid 2px transparent
-	padding-left: 17px
-	padding-right: 17px
-	&:before
-		content: ''
-		position: absolute
-		top: 0px
-		right: 0px
-		bottom: 0px
-		left: 0px
-		z-index: -1
-		margin: -2px
-		border-radius: inherit
-		background: $lgp
-	&:active:before
-		opacity: .5 
-	&:active
-		opacity: 1
-.button_with-arrow.button
-	position: relative
-	margin: 0
-	&:active
-		opacity: 0.5
+	&_with-no-bg.button
+		height: auto
+		background: 0
+		padding: 0
+		margin: 0
+		&:active
+			opacity: 0.5
+	&_with-border.button
+		&:active
+			opacity: 0.5
+		background: #fff
+		background-clip: padding-box
+		position: relative
+		border: solid 2px transparent
+		padding-left: 17px
+		padding-right: 17px
+		&:before
+			content: ''
+			position: absolute
+			top: 0px
+			right: 0px
+			bottom: 0px
+			left: 0px
+			z-index: -1
+			margin: -2px
+			border-radius: inherit
+			background: $lgp
+		&:active:before
+			opacity: .5 
+		&:active
+			opacity: 1
+	&_with-arrow.button
+		position: relative
+		margin: 0
+		&:active
+			opacity: 0.5
 	
 	
