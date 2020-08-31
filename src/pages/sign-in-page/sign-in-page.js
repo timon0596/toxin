@@ -2,6 +2,16 @@ export class SignInPage {
   constructor({ signIn, signUp }) {
     this.$signUpBlock = signUp;
     this.$signInBlock = signIn;
+    this.$signUpBlockButton;
+    this.$signInButtonCreate;
+    this.$signInEnterButton;
+    this.$navButtons;
+    this.$userName;
+    this.$navSignUpButton;
+    this.$navSignInButton;
+    this.init();
+  }
+  findElements() {
     this.$signUpBlockButton = this.$signUpBlock.find(
       ".js-registration__sign-in-button"
     );
@@ -15,7 +25,6 @@ export class SignInPage {
     this.$userName = $(".nav__item_signed");
     this.$navSignUpButton = $(".nav__sign-up-button .button");
     this.$navSignInButton = $(".nav__sign-in-button .button");
-    this.init();
   }
   signInHandler() {
     this.$signUpBlock.hide();
@@ -32,6 +41,7 @@ export class SignInPage {
     this.$userName.show();
   }
   init() {
+    this.findElements();
     if ("/sign-in-page.html" == location.pathname) {
       this.$signInBlock.hide();
       this.$signUpBlockButton.click(this.signInHandler.bind(this));
