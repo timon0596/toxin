@@ -128,6 +128,3 @@ export class Dropdown {
 		this.render();
 	}
 }
-$(".js-dropdown").each((i, el) => {
-	new Dropdown($(el), i);
-});
