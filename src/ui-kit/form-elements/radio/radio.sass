@@ -1,49 +1,49 @@
 @import './../../../sass/vars.sass'
 .radio
-	display: -webkit-flex
-	display: -moz-flex
-	display: -ms-flex
-	display: -o-flex
-	display: flex
-	label
-		display: -webkit-flex
-		display: -moz-flex
-		display: -ms-flex
-		display: -o-flex
-		display: flex
-		align-items: center
-		margin-right: 20px
-		input
-			display: none
-		.radio__btn
-			border: 1px solid $d25
-			border-radius: 50%
-			width: 20px
-			height: 20px
-			position: relative
-			transition: border-color .250s ease
-			margin-right: 10px
-		.radio__btn:before
-			content: ''
-			display: block
-			width: 12px
-			height: 12px
-			background: $lgp
-			border-radius: 50%
-			left: 50%
-			top: 50%
-			transform: translate(-50%,-50%) scale(0)
-			transition: transform .15s ease
-			position: absolute
-		input:checked + .radio__btn
-			border: 1px solid $p
-			border-radius: 50%
-			width: 20px
-			height: 20px
-			position: relative
-		.radio__text
-			color: $d50
-		input:checked ~ .radio__text
-			color: $d75
-		input:checked + .radio__btn:before
-			transform: translate(-50%,-50%) scale(1)
+  display: -webkit-flex
+  display: -moz-flex
+  display: -ms-flex
+  display: -o-flex
+  display: flex
+  &__btn
+    border: 1px solid $d25
+    border-radius: 50%
+    width: 20px
+    height: 20px
+    position: relative
+    transition: border-color .250s ease
+    margin-right: 10px
+  &__btn:before
+    content: ''
+    display: block
+    width: 12px
+    height: 12px
+    background: $lgp
+    border-radius: 50%
+    left: 50%
+    top: 50%
+    transform: translate(-50%,-50%) scale(0)
+    transition: transform .15s ease
+    position: absolute
+  &__text
+    color: $d50
+  label
+    display: -webkit-flex
+    display: -moz-flex
+    display: -ms-flex
+    display: -o-flex
+    display: flex
+    align-items: center
+    margin-right: 20px
+    input
+      display: none
+    input:checked + .radio__btn
+      border: 1px solid $p
+      border-radius: 50%
+      width: 20px
+      height: 20px
+      position: relative
+    input:checked ~ .radio__text
+      color: $d75
+    input:checked + .radio__btn:before
+      transform: translate(-50%,-50%) scale(1)
