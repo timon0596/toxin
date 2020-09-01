@@ -1,39 +1,39 @@
 @import './../../../sass/vars.sass'
 .pagination
-	display: -webkit-flex
-	display: -moz-flex
-	display: -ms-flex
-	display: -o-flex
-	display: flex
-	flex-direction: column
-	align-items: center
-	.pagination__list
-		display: -webkit-flex
-		display: -moz-flex
-		display: -ms-flex
-		display: -o-flex
-		display: flex
-		.pagination__item.pagination__item_current
-			background: $lgp
-		.pagination__item.pagination__item_next
-			background: $lgg
-		.pagination__item.pagination__item_next,
-		.pagination__item.pagination__item_current
-			border-radius: 50%
-			color: #fff
-		.pagination__item
-			width: 40px
-			height: 40px
-			font-size: 12px
-			line-height: 15px
-			display: -webkit-flex
-			display: -moz-flex
-			display: -ms-flex
-			display: -o-flex
-			display: flex
-			align-items: center
-			justify-content: center
-			color: $d50
-			cursor: pointer
-	.pagination__info
-		margin-top: 10px
+  display: -webkit-flex
+  display: -moz-flex
+  display: -ms-flex
+  display: -o-flex
+  display: flex
+  flex-direction: column
+  align-items: center
+  &__list
+    display: -webkit-flex
+    display: -moz-flex
+    display: -ms-flex
+    display: -o-flex
+    display: flex
+  &__item
+    width: 40px
+    height: 40px
+    font-size: 12px
+    line-height: 15px
+    display: -webkit-flex
+    display: -moz-flex
+    display: -ms-flex
+    display: -o-flex
+    display: flex
+    align-items: center
+    justify-content: center
+    color: $d50
+    cursor: pointer
+    &_current
+      background: $lgp
+    &_next
+      background: $lgg
+    &_next,
+    &_current
+      border-radius: 50%
+      color: #fff
+  &__info
+    margin-top: 10px
