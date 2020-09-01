@@ -1,16 +1,16 @@
 @import './../../../sass/vars.sass'
-
-.dropdown__body.dropdown__body_active
-  .dropdown__display
+$dd: dropdown
+.#{$dd}__body.#{$dd}__body_active
+  .#{$dd}__display
     border-bottom-right-radius: 0
     border-bottom-left-radius: 0
     border-color: $d50
-  .dropdown__menu
+  .#{$dd}__menu
     border-top-right-radius: 0
     border-top-left-radius: 0
     border-top: 0
-.dropdown
-  .dropdown__icon-wrapper
+.#{$dd}
+  .#{$dd}__icon-wrapper
     position: absolute
     top: 0
     right: 0
@@ -23,11 +23,11 @@
     display: flex
     justify-content: center
     align-items: center
-  .dropdown__body
+  .#{$dd}__body
     background: white
     position: relative
-  .dropdown__display,
-  .dropdown__menu
+  .#{$dd}__display,
+  .#{$dd}__menu
     border: 1px solid $d25
     border-radius: 4px
     padding-left: 15px
@@ -47,7 +47,7 @@
     &:focus
       border: 1px solid $d50
       outline: 0
-  .dropdown__menu
+  .#{$dd}__menu
     position: absolute
     top: 100%
     background: #fff
@@ -66,7 +66,7 @@
     &:hover,
     &:focus
       border-top: 0
-  .dropdown__row
+  .#{$dd}__row
     width: 100%
     margin-top: 7px
     margin-right: 7px
@@ -79,8 +79,8 @@
     align-items: center
     &:last-child
       margin-bottom: 7px
-.dropdown_guest
-  .dropdown__row:last-child
+.#{$dd}_guest
+  .#{$dd}__row:last-child
     margin-bottom: 13px
     margin-top: 20px
   
