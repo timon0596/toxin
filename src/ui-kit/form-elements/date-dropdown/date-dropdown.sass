@@ -4,19 +4,19 @@
   grid-template-columns: 1fr 1fr
   grid-gap: 20px
   position: relative
-  .date-dropdown__heading
+  &__heading
     margin-bottom: 5px
-  .date-dropdown__datepicker-container
+  &__datepicker-container
     position: absolute
     left: 0
     top: calc(100% + 5px)
     z-index: 10
-  .date-dropdown__display
-.date-dropdown_filter.date-dropdown
-  display: grid
-  grid-template-columns: 1fr
-  grid-gap: 20px
-  position: relative
+  &__display
+  &_filter
+    display: grid
+    grid-template-columns: 1fr
+    grid-gap: 20px
+    position: relative
 .datepicker--cell.datepicker--cell-day
   width: 40px
   height: 40px
