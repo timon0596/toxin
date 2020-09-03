@@ -1,38 +1,38 @@
 mixin room-preview({room:{number,imgs,cost,lux,rate,reviews},id})
-	.room-preview
-		.room-preview__row
-			.carousel.slide(data-ride='true' id="carouselExampleIndicators"+id)
-				ol.carousel-indicators
-					each v,i in imgs
-						if i==0
-							li(data-target='#carouselExampleIndicators'+id data-slide-to=i class="active")
-						else
-							li(data-target='#carouselExampleIndicators'+id data-slide-to=i)
-				.carousel-inner
-					each v,i in imgs
-						if i==0
-							.carousel-item.active
-								img.d-block.w-100(src='img/preview/'+v alt='First slide')
-						else
-							.carousel-item
-								img.d-block.w-100(src='img/preview/'+v alt='First slide')
-				a.carousel-control-prev(href='#carouselExampleIndicators'+id role='button' data-slide='prev')
-					+icon({color: 'white'})
-				a.carousel-control-next(href='#carouselExampleIndicators'+id role='button' data-slide='next')
-					+icon({color: 'white'})
-		.room-preview__row
-			.room-preview__inner-row
-				.room-preview__number
-					!= "№ "
-					+heading({text:number,level:'1'})
-					if lux
-						+heading({text:'люкс',color:'purple'})
-				.room-preview__payment
-					.room-preview__cost= cost
-					=" в сутки"
-			.room-preview__divider
-			.room-preview__inner-row
-				+rate({num:rate})
-				.room-preview__reviews
-					.room-preview__reviews-amount= reviews
-					=" отзывов"
+  .room-preview
+    .room-preview__row
+      .carousel.slide(data-ride='true' id="carouselExampleIndicators"+id)
+        ol.carousel-indicators
+          each v,i in imgs
+            if i===0
+              li(data-target='#carouselExampleIndicators'+id data-slide-to=i class="active")
+            else
+              li(data-target='#carouselExampleIndicators'+id data-slide-to=i)
+        .carousel-inner
+          each v,i in imgs
+            if i===0
+              .carousel-item.active
+                img.d-block.w-100(src='img/preview/'+v alt=`${i+1} slide`)
+            else
+              .carousel-item
+                img.d-block.w-100(src='img/preview/'+v alt=`${i+1} slide`)
+        a.carousel-control-prev(href='#carouselExampleIndicators'+id role='button' data-slide='prev')
+          +icon({color: 'white'})
+        a.carousel-control-next(href='#carouselExampleIndicators'+id role='button' data-slide='next')
+          +icon({color: 'white'})
+    .room-preview__row
+      .room-preview__inner-row
+        .room-preview__number
+          != "№ "
+          +heading({text:number,level:'1'})
+          if lux
+            +heading({text:'люкс',color:'purple'})
+        .room-preview__payment
+          .room-preview__cost= cost
+          =" в сутки"
+      .room-preview__divider
+      .room-preview__inner-row
+        +rate({num:rate})
+        .room-preview__reviews
+          .room-preview__reviews-amount= reviews
+          =" отзывов"
