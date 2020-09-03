@@ -110,6 +110,9 @@ module.exports = {
                 if (/users/.test(resourcePath)) {
                   return `img/users/${url}`;
                 }
+                if(/favicons/.test(resourcePath)){
+                  return `${url}`
+                }
                 return `img/${url}`;
               },
               useRelativePath: true,
