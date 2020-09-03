@@ -1,100 +1,100 @@
 @import './../../sass/vars.sass'
 .room-details-page
-	&__heading-wrapper
-		margin-bottom: 20px
-	&__images
-		overflow: hidden
-		padding-top: calc(485/1440*100%)
-		position: relative
-		img
-			width: calc(100%/1440*461)
-			position: absolute
-			top: 0	
-			right: 0
-		img:last-child
-			top: 50%
-		img.room-details-page__main-image
-			left: 0
-			width: calc(100%*981/1440)
-	&__content
-		background: white
-		padding: 70px	140px
-		display: grid
-		grid-template-columns: auto auto
-		grid-gap: 70px
-	&__information
-		display: grid
-		grid-template-areas: 'advantages empressions''reviews reviews''rules cancel'
-		grid-gap: 30px 70px
-	&__advantages
-		grid-area: advantages
-	&__empressions
-		grid-area: empressions
-	&__empression-chart
-		display: -webkit-flex
-		display: -moz-flex
-		display: -ms-flex
-		display: -o-flex
-		display: flex
-		align-items: flex-end
-	&__empression-diagramm
-		position: relative
-	&__empression-votes
-		position: absolute
-		top: calc(50% - 5px)
-		left: 50%
-		transform: translate(-50%, -50%)
-		text-align: center
-	&__bullet-list-wrapper
-		margin-left: 30px
-	&__reviews
-		grid-area: reviews
-	&__reviews-header
-		display: -webkit-flex
-		display: -moz-flex
-		display: -ms-flex
-		display: -o-flex
-		display: flex
-		justify-content: space-between
-		align-items: baseline
-		p
-			font-family: montserrat
-			font-style: normal
-			font-weight: normal
-			font-size: 14px
-			line-height: 14px
-			color: $d50
-	&__comments
-		display: grid
-		grid-gap: 20px
-	&__rules
-		grid-area: rules
-	&__heading-wrapper
-		margin-left: 20px
-	&__cancel
-		grid-area: cancel
-	&__cancel-text
-	&__card
+  &__heading-wrapper
+    margin-bottom: 20px
+  &__images
+    overflow: hidden
+    padding-top: calc(485/1440*100%)
+    position: relative
+    img
+      width: calc(100%/1440*461)
+      position: absolute
+      top: 0  
+      right: 0
+    img:last-child
+      top: 50%
+    img.room-details-page__main-image
+      left: 0
+      width: calc(100%*981/1440)
+  &__content
+    background: white
+    padding: 70px 140px
+    display: grid
+    grid-template-columns: auto auto
+    grid-gap: 70px
+  &__information
+    display: grid
+    grid-template-areas: 'advantages empressions''reviews reviews''rules cancel'
+    grid-gap: 30px 70px
+  &__advantages
+    grid-area: advantages
+  &__empressions
+    grid-area: empressions
+  &__empression-chart
+    display: -webkit-flex
+    display: -moz-flex
+    display: -ms-flex
+    display: -o-flex
+    display: flex
+    align-items: flex-end
+  &__empression-diagramm
+    position: relative
+  &__empression-votes
+    position: absolute
+    top: calc(50% - 5px)
+    left: 50%
+    transform: translate(-50%, -50%)
+    text-align: center
+  &__bullet-list-wrapper
+    margin-left: 30px
+  &__reviews
+    grid-area: reviews
+  &__reviews-header
+    display: -webkit-flex
+    display: -moz-flex
+    display: -ms-flex
+    display: -o-flex
+    display: flex
+    justify-content: space-between
+    align-items: baseline
+    p
+      font-family: montserrat
+      font-style: normal
+      font-weight: normal
+      font-size: 14px
+      line-height: 14px
+      color: $d50
+  &__comments
+    display: grid
+    grid-gap: 20px
+  &__rules
+    grid-area: rules
+  &__heading-wrapper
+    margin-left: 20px
+  &__cancel
+    grid-area: cancel
+  &__cancel-text
+  &__card
 @media (max-width: 1280px)
-	.room-details-page
-		&__content
-			grid-template-columns: auto
-			justify-items: center
+  .room-details-page
+    &__content
+      grid-template-columns: auto
+      justify-items: center
 @media (max-width: 992px)
-	.room-details-page
-		&__information
-			grid-template-areas: 'advantages''empressions''reviews''rules''cancel'
-		&__images
-			padding: 0
-			display: grid
-			img,
-			img.room-details-page__main-image
-				position: static
-				width: 100%
-				margin-top: -1px
-			img:last-child
-				margin-top: -2px
+  .room-details-page
+    &__information
+      grid-template-areas: 'advantages''empressions''reviews''rules''cancel'
+    &__images
+      padding: 0
+      display: grid
+      img,
+      img.room-details-page__main-image
+        position: static
+        width: 100%
+        margin-top: -1px
+      img:last-child
+        margin-top: -2px
 @media (max-width: 768px)
-	.room-details-page
-		&__content
-			padding: 5%
+  .room-details-page
+    &__content
+      padding: 5%

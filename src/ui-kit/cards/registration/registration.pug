@@ -1,23 +1,23 @@
 mixin registration()
-	.registration.js-registration
-		.registration__row
-			+heading({level:'1',text:'Регистрация аккаунта'})
-		.registration__row
-			+text-field({placeholder: 'Имя'})
-			+text-field({placeholder: 'Фамилия'})
-			+radio()
-		.registration__row
-			+heading({text:'дата рождения'})
-			+text-field({placeholder:'дд.мм.гггг',modifier: 'masked'})
-		.registration__row
-			+heading({text:'данные для входа в сервис'})
-			+text-field({placeholder: 'Email'})
-			+text-field({placeholder: 'Пароль'})
-			+toggle()
-		.registration__row
-			+button({text: 'перейти к оплате',modifier: 'arrow'})
-		.registration__row
-			.registration__inner-row
-				|Уже есть аккаунт на Toxin
-				.registration__sign-in-button.js-registration__sign-in-button
-					+button({text: 'войти',modifier: 'border',color: 'purple'})
+  .registration.js-registration
+    .registration__row
+      +heading({level:'1',text:'Регистрация аккаунта'})
+    .registration__row
+      +text-field({placeholder: 'Имя'})
+      +text-field({placeholder: 'Фамилия'})
+      +radio()
+    .registration__row
+      +heading({text:'дата рождения'})
+      +text-field({placeholder:'дд.мм.гггг',modifier: 'masked'})
+    .registration__row
+      +heading({text:'данные для входа в сервис'})
+      +text-field({placeholder: 'Email'})
+      +text-field({placeholder: 'Пароль'})
+      +toggle()
+    .registration__row
+      +button({text: 'перейти к оплате',modifier: 'arrow'})
+    .registration__row
+      .registration__inner-row
+        |Уже есть аккаунт на Toxin
+        .registration__sign-in-button.js-registration__sign-in-button
+          +button({text: 'войти',modifier: 'border',color: 'purple'})
