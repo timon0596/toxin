@@ -4,7 +4,7 @@ mixin dropdown({h3,modifier})
     .dropdown__body
       .dropdown__display
       .dropdown__icon-wrapper
-        +icon({})
+        +icon()
       .dropdown__menu(style="display: none")
         .dropdown__row
           +heading({level:'3',text:modifier?'взрослые':'спальни'})
@@ -14,7 +14,7 @@ mixin dropdown({h3,modifier})
           +counter({val:2})
         .dropdown__row
           +heading({level:'3',text:modifier?'младенцы':'ванные комнаты'})
-          +counter({})
+          +counter()
         if modifier
           .dropdown__row
             .dropdown__clear
