@@ -1,14 +1,14 @@
-mixin header({signed})
-  header
+mixin header({signed=false}={})
+  header.header
     img(src="img/Logo.svg").logo
     nav.nav
       .nav__item О нас
       .nav__item Услуги
-        +icon({})
+        +icon()
       .nav__item Вакансии
       .nav__item Новости
       .nav__item Соглашения
-        +icon({})
+        +icon()
       .nav__item(style=signed?'display: none':'').nav__item_unsigned
         .nav__button
           .nav__sign-in-button
