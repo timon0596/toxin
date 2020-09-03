@@ -10,24 +10,25 @@
     justify-content: space-between
     margin-bottom: 20px
   &__scale
-    height: 6px
+    max-height: 6px
     border: 1px solid $d25
     box-sizing: border-box
     border-radius: 3px
-    .ui-slider-handle.ui-corner-all.ui-state-default
-      width: 12px
-      height: 12px
-      border: 2px solid #fff
-      border-radius: 50%
-      background: $lgg
-      box-sizing: content-box
-      &.ui-state-focus,
-      &.ui-state-hover
-        outline: 0
-    .ui-slider-range.ui-corner-all.ui-widget-header
-      height: 6px
-      background: $lgg
-      margin-top: -1px
-.ui-slider-horizontal .ui-slider-handle
+  .ui-slider-handle.ui-corner-all.ui-state-default
+    width: 12px
+    height: 12px
+    border: 2px solid #fff
+    border-radius: 50%
+    background: $lgg
+    box-sizing: content-box
+    &.ui-state-focus,
+    &.ui-state-hover
+      outline: 0
+  .ui-slider-range.ui-corner-all.ui-widget-header
+    top: 50%
+    transform: translateY(-50%)
+    height: 6px
+    background: $lgg
+  .ui-slider-horizontal .ui-slider-handle
     top: 50%
     transform: translate(0, -50%)
