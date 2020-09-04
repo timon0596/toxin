@@ -4,6 +4,10 @@
   grid-template-columns: auto 1fr
   grid-gap: 10px
   z-index: 2
+  @media (max-width: 560px)
+    grid-template-columns: 1fr
+    &__icon
+      justify-self: center
   &__icon
     width: 48px
     height: 48px
@@ -26,8 +30,3 @@
   &__like
     justify-self: center
     margin-top: 2px
-@media (max-width: 560px)
-  .comment
-    grid-template-columns: 1fr
-    &__icon
-      justify-self: center

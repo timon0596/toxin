@@ -1,5 +1,5 @@
-$bl: bullet-list__
 @import './../../../sass/vars.sass'
+$bl: &
 .bullet-list
   display: grid
   grid-gap: 10px
@@ -18,13 +18,13 @@ $bl: bullet-list__
 .bullet-list_colored.bullet-list
   align-self: end
   grid-gap: 0px
-  .#{$bl}item
+  #{$bl}__item
     grid-gap: 5px
     &:before
       background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%)
-  .#{$bl}item:nth-child(2):before
+  #{$bl}__item:nth-child(2):before
     background: $lgg
-  .#{$bl}item:nth-child(3):before
+  #{$bl}__item:nth-child(3):before
     background: $lgp
-  .#{$bl}item:nth-child(4):before
+  #{$bl}__item:nth-child(4):before
     background: linear-gradient(180deg, #919191 0%, #3D4975 100%)
