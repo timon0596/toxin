@@ -1,26 +1,33 @@
 @import './../../../sass/vars.sass'
 .room-search
-  background: white
-  border: 1px solid rgba(0, 0, 0, 0.12)
-  box-sizing: border-box
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2)
-  border-radius: 4px
+  max-width: 380px
+  min-width: 310px
+  width: 100%
   padding: 40px 30px 30px
-  width: 380px
+  border: 1px solid rgba(0, 0, 0, 0.12)
+  border-radius: 4px
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2)
+  box-sizing: border-box
+  background: white
+
   &__row:not(:first-child)
     margin-top: 20px
+
   &__row:last-child
     margin-top: 30px
+
   &__inner-row:last-child
     color: $d100
+
   &__inner-row
+    z-index: 1
     display: grid
     grid-auto-flow: column
     align-items: center
+    justify-content: space-between
     font-size: 14px
     line-height: 18px
-    justify-content: space-between
-    z-index: 1
+
   &__row
     display: grid
     grid-gap: 5px
