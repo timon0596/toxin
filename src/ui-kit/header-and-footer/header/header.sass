@@ -1,5 +1,5 @@
 @import './../../../sass/vars.sass'
-header
+header.header
   padding-left: 140px
   padding-right: 140px
   display: -webkit-flex
@@ -17,6 +17,11 @@ header
   line-height: 17px
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05)
   position: relative
+  @media (max-width: 1280px)
+    flex-direction: column
+  @media (max-width: 560px)
+    padding-left: 40px
+    padding-right: 40px
   .logo
     cursor: pointer
   .nav
@@ -26,6 +31,9 @@ header
     display: -o-flex
     display: flex
     flex-wrap: wrap
+    @media (max-width: 420px)
+      flex-direction: column
+      width: min-content
     &__item_signed
       padding-left: 20px
       border-left: 1px solid $d1
@@ -44,27 +52,10 @@ header
       align-items: center
       margin-left: 20px
       height: 30px
-    &__button>*
-      height: 34px
-@media (max-width: 1280px) 
-  header
-    flex-direction: column
-@media (max-width: 768px)
-  header
-    .nav
-      &__item
+      @media (max-width: 768px)
         margin-top: 20px
-@media (max-width: 560px)
-  header
-    padding-left: 40px
-    padding-right: 40px
-@media (max-width: 420px)
-  header
-    .nav
-      flex-direction: column
-      width: min-content
-      &__item
+      @media (max-width: 420px)
         margin-left: 0
         align-items: flex-start
-        .button
-          margin-left: 0
+    &__button>*
+      height: 34px

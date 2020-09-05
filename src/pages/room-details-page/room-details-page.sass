@@ -16,16 +16,33 @@
     img.room-details-page__main-image
       left: 0
       width: calc(100%*981/1440)
+    @media (max-width: 992px)
+      padding: 0
+      display: grid
+      img,
+      img.room-details-page__main-image
+        position: static
+        width: 100%
+        margin-top: -1px
+      img:last-child
+        margin-top: -2px
   &__content
     background: white
     padding: 70px 140px
     display: grid
     grid-template-columns: auto auto
     grid-gap: 70px
+    @media (max-width: 1280px)
+      grid-template-columns: auto
+      justify-items: center
+    @media (max-width: 768px)
+      padding: 5%
   &__information
     display: grid
     grid-template-areas: 'advantages empressions''reviews reviews''rules cancel'
     grid-gap: 30px 70px
+    @media (max-width: 992px)
+      grid-template-areas: 'advantages''empressions''reviews''rules''cancel'
   &__advantages
     grid-area: advantages
   &__empressions
@@ -75,26 +92,3 @@
     grid-area: cancel
   &__cancel-text
   &__card
-@media (max-width: 1280px)
-  .room-details-page
-    &__content
-      grid-template-columns: auto
-      justify-items: center
-@media (max-width: 992px)
-  .room-details-page
-    &__information
-      grid-template-areas: 'advantages''empressions''reviews''rules''cancel'
-    &__images
-      padding: 0
-      display: grid
-      img,
-      img.room-details-page__main-image
-        position: static
-        width: 100%
-        margin-top: -1px
-      img:last-child
-        margin-top: -2px
-@media (max-width: 768px)
-  .room-details-page
-    &__content
-      padding: 5%
