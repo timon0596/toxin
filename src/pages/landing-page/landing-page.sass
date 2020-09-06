@@ -1,27 +1,24 @@
 @import './../../sass/vars.sass'
 .landing-page
   position: relative
-  padding: 0
   width: 100%
+  padding: 0
   padding-top: 57.6%
   background: url('./../../img/image3.png')
   background-size: cover
   @media (max-width: 960px)
     padding: 10px
+    
   &__content
-    display: -webkit-flex
-    display: -moz-flex
-    display: -ms-flex
-    display: -o-flex
-    display: flex
-    flex-direction: column
-    justify-content: space-between
     position: absolute
     top: 0
     left: 0
     width: 100%
     height: 100%
     padding: 70px 140px 15px
+    display: flex
+    flex-direction: column
+    justify-content: space-between
     @media (max-width: 960px)
       position: static
       padding: 0

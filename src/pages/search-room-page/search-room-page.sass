@@ -1,9 +1,5 @@
 @import './../../sass/vars.sass'
 .search-room-page
-  display: -webkit-flex
-  display: -moz-flex
-  display: -ms-flex
-  display: -o-flex
   display: flex
   justify-content: center
   padding-top: 30px
@@ -13,10 +9,13 @@
   @media (max-width: 768px)
     flex-direction: column
     align-items: center
+
   &__heading-wrapper
     margin-bottom: 20px
+
   &__pagination
     margin-top: 40px
+
   &__room-preview-grid
     display: grid
     grid-template-columns: 1fr 1fr 1fr
@@ -25,22 +24,21 @@
       grid-template-columns: 1fr 1fr
     @media (max-width: 960px)
       grid-template-columns: 1fr
+
   &__filters
-    margin-right: 60px
     width: 266px
     height: min-height
+    margin-right: 60px
     display: grid
     grid-gap: 30px
     align-content: start
+
   &__filter-inner-wrapper
     display: grid
     grid-gap: 20px
+    
   &__results
     @media (max-width: 960px)
-      display: -webkit-flex
-      display: -moz-flex
-      display: -ms-flex
-      display: -o-flex
       display: flex
       flex-direction: column
       align-items: center
