@@ -1,10 +1,12 @@
 @import './../../../sass/vars.sass'
 .icon
+  display: flex
+  align-items: center
+  justify-content: center
   font-family: 'Material Icons'
   font-weight: normal
   font-style: normal
   font-size: 24px
-  display: inline-block
   line-height: 1
   text-transform: none
   letter-spacing: normal
@@ -16,26 +18,30 @@
   -moz-osx-font-smoothing: grayscale
   font-feature-settings: 'liga'
   color: $d50
-  justify-content: center
   background: 0
   cursor: pointer
-  display: flex
-  align-items: center
+
   &_color_purple
     color: $p
+
   &_color_gradient
     background: $lgp
     background-clip: text
     color: transparent
+
   &_color_white
     color: white
+
   &_color_light
     color: $d25
+
   &_color_dark
     color: $d75
+
   &_font_big
     font-size: 48px
     line-height: 41px
+    
   &_font_small
     font-size: 10px
     line-height: 9px

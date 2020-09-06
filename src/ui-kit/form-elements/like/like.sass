@@ -4,7 +4,9 @@
   height: 20px
   display: block
   cursor: pointer
+
   &__icon
+    width: 20px
     display: -webkit-flex
     display: -moz-flex
     display: -ms-flex
@@ -12,56 +14,60 @@
     display: flex
     justify-content: center
     align-items: center
-    width: 20px
+
   input
     display: none
+
   input:checked ~ .like__number
     color: $p
+
   input:checked ~ .like__button > .like__icon
     display: none
+
   input:checked ~ .like__button > .like__icon:nth-child(2)
     display: -webkit-flex
     display: -moz-flex
     display: -ms-flex
     display: -o-flex
     display: flex
+
   input:checked ~ .like__button:before
     background: $lgp
+
   &__button
-    color: $d25
-    display: flex
-    align-items: center
+    position: relative
     width: 40px
     height: 20px
-    position: relative
+    display: flex
+    align-items: center
+    border-radius: 10px
+    border: solid 1px transparent
     box-sizing: border-box
     background: #fff
     background-clip: padding-box
-    border: solid 1px transparent
-    border-radius: 10px
     transition: color .25s ease
+    color: $d25
     &:before
+      z-index: -1
       content: ''
       position: absolute
       top: 0px
       right: 0px
       bottom: 0px
       left: 0px
-      z-index: -1
       margin: -1px
       border-radius: inherit
       background: $d25
+
   &__number
-    font-size: 10px
-    line-height: 9px
-    display: -webkit-flex
-    display: -moz-flex
-    display: -ms-flex
-    display: -o-flex
     display: flex
     align-items: center
+    line-height: 9px
+    font-size: 10px
+
   &__icon:nth-child(2)
     display: none
+    
   &__number
     width: 20px
     height: 20px

@@ -1,6 +1,10 @@
 @import './../../../sass/vars.sass'
 .button
-  background: $lgp
+  max-height: 44px
+  height: 100%
+  width: auto
+  padding: 10px 19px
+  margin: auto
   display: -webkit-flex
   display: -moz-flex
   display: -ms-flex
@@ -9,58 +13,64 @@
   justify-content: center
   align-items: center
   border-radius: 22px
-  padding: 10px 19px
   cursor: pointer
-  padding: 15px 20px
-  width: auto
-  margin: auto
-  height: 100%
-  max-height: 44px
+  background: $lgp
+
   &:active
     opacity: 0.5
+
   &__arrow
+    position: absolute
+    right: 0
+    top: 0
     width: 44px
     height: 44px
     display: flex
     justify-content: center
     align-items: center
-    position: absolute
-    right: 0
-    top: 0
+
   &_with-no-bg
     height: auto
-    background: 0
     padding: 0
     margin: 0
+    background: 0
+
     &:active
       opacity: 0.5
+
   &_with-border
-    &:active
-      opacity: 0.5
-    background: #fff
-    background-clip: padding-box
     position: relative
-    border: solid 2px transparent
     padding-left: 17px
     padding-right: 17px
+    border: solid 2px transparent
+    background-clip: padding-box
+    background: #fff
+
+    &:active
+      opacity: 0.5
+      
     &:before
       content: ''
+      z-index: -1
       position: absolute
       top: 0px
       right: 0px
       bottom: 0px
       left: 0px
-      z-index: -1
       margin: -2px
       border-radius: inherit
       background: $lgp
+
     &:active:before
-      opacity: .5 
+      opacity: .5
+
     &:active
       opacity: 1
+
   &_with-arrow
     position: relative
     margin: 0
+
     &:active
       opacity: 0.5
   

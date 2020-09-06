@@ -1,30 +1,37 @@
 @import './../../../sass/vars.sass'
-$bl: &
 .bullet-list
+  $bl: &
   display: grid
   grid-gap: 10px
+
   &__item
     display: grid
     grid-template-columns: auto 1fr
     grid-gap: 10px
     align-items: baseline
+
   &__item:before
     display: block
     content: ''
     width: 10px
     height: 10px
-    background: $d25
     border-radius: 50%
+    background: $d25
+
 .bullet-list_colored.bullet-list
   align-self: end
   grid-gap: 0px
-  #{$bl}__item
+
+  .bullet-list__item
     grid-gap: 5px
     &:before
       background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%)
-  #{$bl}__item:nth-child(2):before
+
+  .bullet-list__item:nth-child(2):before
     background: $lgg
-  #{$bl}__item:nth-child(3):before
+
+  .bullet-list__item:nth-child(3):before
     background: $lgp
-  #{$bl}__item:nth-child(4):before
+    
+  .bullet-list__item:nth-child(4):before
     background: linear-gradient(180deg, #919191 0%, #3D4975 100%)

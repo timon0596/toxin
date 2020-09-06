@@ -2,37 +2,37 @@
 .toggle
   $t: &
   &__label
-    display: -webkit-flex
-    display: -moz-flex
-    display: -ms-flex
-    display: -o-flex
     display: flex
     align-items: center
     cursor: pointer
+
   &__input
     display: none
+
   &__button
-    margin-right: 10px
+    position: relative
     display: block
     width: 40px
     height: 20px
+    padding: 4px
+    margin-right: 10px
     border: 1px solid $d25
     border-radius: 10px
-    position: relative
-    padding: 4px
     &:before
-      display: block
       content: ''
+      position: absolute
+      top: 50%
+      display: block
       width: 12px
       height: 12px
-      position: absolute
-      background: $d25
       border-radius: 50%
-      top: 50%
+      background: $d25
       transform: translate(0,-50%)
       transition: transform .15s ease
+
   input:checked ~ &__button
     border-color: $p
+    
   input:checked ~ &__button:before
     background: $lgp
     transform: translate(calc(30px - 100%),-50%)

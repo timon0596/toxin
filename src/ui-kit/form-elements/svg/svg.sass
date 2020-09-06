@@ -5,18 +5,22 @@ $c3: 25/100*360deg
   width: 120px
   height: 120px
   transform: rotate(90deg)
+
   .c1,.c2,.c3
     stroke-width: 4px
     fill: none
     stroke-dasharray: calc(2*3.14*58)
     transform-origin: 50% 50%
+
   .c1
     stroke: url('#c1')
     stroke-dashoffset: calc(2*3.14*58 - (2*3.14*58)*50/100 + 2)
+
   .c2
     stroke: url('#c2')
     stroke-dashoffset: calc(2*3.14*58 - (2*3.14*58)*25/100 + 2)
     transform: rotate($c1)
+    
   .c3
     stroke: url('#c3')
     stroke-dashoffset: calc(2*3.14*58 - (2*3.14*58)*25/100 + 2)

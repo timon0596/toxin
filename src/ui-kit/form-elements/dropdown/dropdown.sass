@@ -1,45 +1,41 @@
 @import './../../../sass/vars.sass'
-$dd: dropdown
-.#{$dd}__body.#{$dd}__body_active
-  .#{$dd}__display
-    border-bottom-right-radius: 0
-    border-bottom-left-radius: 0
-    border-color: $d50
-  .#{$dd}__menu
-    border-top-right-radius: 0
-    border-top-left-radius: 0
+.dropdown
+  &__body.dropdown__body_active
     border-top: 0
-.#{$dd}
-  .#{$dd}__icon-wrapper
+
+    &__display
+      border-bottom-right-radius: 0
+      border-bottom-left-radius: 0
+      border-color: $d50
+
+    &__menu
+      border-top-right-radius: 0
+      border-top-left-radius: 0
+
+  &__icon-wrapper
     position: absolute
     top: 0
     right: 0
     width: 44px
     height: 44px
-    display: -webkit-flex
-    display: -moz-flex
-    display: -ms-flex
-    display: -o-flex
     display: flex
     justify-content: center
     align-items: center
-  .#{$dd}__body
+
+  &__body
     background: white
     position: relative
-  .#{$dd}__display,
-  .#{$dd}__menu
+
+  &__display,
+  &__menu
+    height: 44px
+    width: 100%
+    display: flex
+    align-items: center
     border: 1px solid $d25
     border-radius: 4px
     padding-left: 15px
-    height: 44px
-    width: 100%
     color: $d75
-    display: -webkit-flex
-    display: -moz-flex
-    display: -ms-flex
-    display: -o-flex
-    display: flex
-    align-items: center
     transition: border-radius .250s
     &::placeholder
       color: $d25
@@ -47,40 +43,35 @@ $dd: dropdown
     &:focus
       border: 1px solid $d50
       outline: 0
-  .#{$dd}__menu
+
+  &__menu
+    z-index: 3
     position: absolute
     top: 100%
-    background: #fff
-    z-index: 3
     left: 0
-    border-color: $d50
-    border-top: 0
     height: min-content
-    flex-wrap: wrap
-    display: -webkit-flex
-    display: -moz-flex
-    display: -ms-flex
-    display: -o-flex
+    border-top: 0
     display: flex
+    flex-wrap: wrap
     align-items: center
+    border-color: $d50
+    background: #fff
     &:hover,
     &:focus
       border-top: 0
-  .#{$dd}__row
+
+  &__row
     width: 100%
     margin-top: 7px
     margin-right: 7px
     justify-content: space-between
-    display: -webkit-flex
-    display: -moz-flex
-    display: -ms-flex
-    display: -o-flex
     display: flex
     align-items: center
     &:last-child
       margin-bottom: 7px
-.#{$dd}_guest
-  .#{$dd}__row:last-child
+      
+.dropdown_guest
+  .dropdown__row:last-child
     margin-bottom: 13px
     margin-top: 20px
   

@@ -1,39 +1,33 @@
 @import './../../../sass/vars.sass'
 .pagination
-  display: -webkit-flex
-  display: -moz-flex
-  display: -ms-flex
-  display: -o-flex
   display: flex
   flex-direction: column
   align-items: center
+
   &__list
-    display: -webkit-flex
-    display: -moz-flex
-    display: -ms-flex
-    display: -o-flex
     display: flex
+
   &__item
     width: 40px
     height: 40px
-    font-size: 12px
-    line-height: 15px
-    display: -webkit-flex
-    display: -moz-flex
-    display: -ms-flex
-    display: -o-flex
     display: flex
     align-items: center
     justify-content: center
     color: $d50
     cursor: pointer
+    line-height: 15px
+    font-size: 12px
+
     &_current
       background: $lgp
+
     &_next
       background: $lgg
+
     &_next,
     &_current
       border-radius: 50%
       color: #fff
+      
   &__info
     margin-top: 10px

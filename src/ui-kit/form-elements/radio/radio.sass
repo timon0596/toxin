@@ -1,49 +1,48 @@
 @import './../../../sass/vars.sass'
 .radio
-  display: -webkit-flex
-  display: -moz-flex
-  display: -ms-flex
-  display: -o-flex
   display: flex
+
   &__btn
-    border: 1px solid $d25
-    border-radius: 50%
+    position: relative
     width: 20px
     height: 20px
-    position: relative
-    transition: border-color .250s ease
     margin-right: 10px
+    border: 1px solid $d25
+    border-radius: 50%
+    transition: border-color .250s ease
+
   &__btn:before
     content: ''
+    position: absolute
+    top: 50%
+    left: 50%
     display: block
     width: 12px
     height: 12px
-    background: $lgp
     border-radius: 50%
-    left: 50%
-    top: 50%
     transform: translate(-50%,-50%) scale(0)
     transition: transform .15s ease
-    position: absolute
+    background: $lgp
+
   &__text
     color: $d50
   label
-    display: -webkit-flex
-    display: -moz-flex
-    display: -ms-flex
-    display: -o-flex
     display: flex
     align-items: center
     margin-right: 20px
+
     input
       display: none
+
     input:checked + .radio__btn
-      border: 1px solid $p
-      border-radius: 50%
+      position: relative
       width: 20px
       height: 20px
-      position: relative
+      border: 1px solid $p
+      border-radius: 50%
+
     input:checked ~ .radio__text
       color: $d75
+      
     input:checked + .radio__btn:before
       transform: translate(-50%,-50%) scale(1)
