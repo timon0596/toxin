@@ -7,31 +7,32 @@
     position: relative
     padding-top: calc(485/1440*100%)
     overflow: hidden
-
-    img
-      position: absolute
-      top: 0  
-      right: 0
-      width: calc(100%/1440*461)
-
-    img:last-child
-      top: 50%
-
-    img.room-details-page__main-image
-      left: 0
-      width: calc(100%*981/1440)
     @media (max-width: 992px)
       padding: 0
       display: grid
+  &__img
+    position: absolute
+    top: 0  
+    right: 0
+    width: calc(100%/1440*461)
 
-      img,
-      img.room-details-page__main-image
-        position: static
-        width: 100%
-        margin-top: -1px
+  &__img:last-child
+    top: 50%
+    @media (max-width: 992px)
+      margin-top: -2px
 
-      img:last-child
-        margin-top: -2px
+  &__img_main
+    left: 0
+    width: calc(100%*981/1440)
+
+  &__img,
+  &__img_main
+    @media (max-width: 992px)
+      position: static
+      width: 100%
+      margin-top: -1px
+
+
 
   &__content
     padding: 70px 140px
@@ -39,9 +40,11 @@
     grid-template-columns: auto auto
     grid-gap: 70px
     background: white
+
     @media (max-width: 1280px)
       grid-template-columns: auto
       justify-items: center
+
     @media (max-width: 768px)
       padding: 5%
 
@@ -49,6 +52,7 @@
     display: grid
     grid-template-areas: 'advantages empressions''reviews reviews''rules cancel'
     grid-gap: 30px 70px
+
     @media (max-width: 992px)
       grid-template-areas: 'advantages''empressions''reviews''rules''cancel'
 
