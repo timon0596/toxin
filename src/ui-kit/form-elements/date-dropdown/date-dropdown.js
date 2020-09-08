@@ -1,7 +1,12 @@
 import "air-datepicker";
 import "jquery-mask-plugin";
 export class DateDropdown {
-  constructor(el) {
+  constructor({
+    el,
+    buttons: {$clearButton,$applyButton},
+    navigation: {prevHtml,nextHtml},
+    navTitles
+  }) {
     this.datepickerInstance;
     this.$el = el;
     this.selectedDates = { fromTo: "", from: "", to: "", days: 0 };
@@ -23,31 +28,11 @@ export class DateDropdown {
     this.$datepickerContainer = this.$el.find(
       ".date-dropdown__datepicker-container"
     );
-    this.$expandButton = this.$el.find(".text-field__icon-wrapper .icon");
-    this.$clearButton = $("<div>", {
-      class: "button button_with-no-bg",
-      html: '<div class="heading heading_color_grey"><h3>очистить</h3></div>',
-      on: {
-        click: () => {
-          this.$datepickerClearButton.click();
-          localStorage?.removeItem("datepicker");
-        },
-      },
-    });
-    this.$applyButton = $("<div>", {
-      class: "button button_with-no-bg",
-      html:
-        '<div class="heading heading_color_purple"><h3>применить</h3></div>',
-      on: {
-        click: () => {
-          localStorage.setItem(
-            "datepicker",
-            JSON.stringify(this.selectedDates)
-          );
-          this.$datepickerInline.slideUp(250);
-        },
-      },
-    });
+    this.$expandButton = this.$el.find(".text-field__icon-wrapper");
+    this.$clearButton = $clearButton
+    this.$clearButton.click(this.clearButtonOnClick.bind(this))
+    this.$applyButton = $applyButton
+    this.$applyButton.click(this.applyButtonOnClick.bind(this))
     this.datepickerConfig = {
       minDate: new Date(),
       multipleDates: 2,
@@ -57,12 +42,10 @@ export class DateDropdown {
       language: {
         daysMin: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
       },
-      navTitles: {
-        days: '<div class="heading"><h2>MM yyyy</h2></div>',
-      },
+      navTitles,
       clearButton: true,
-      prevHtml: '<i class="icon icon_color_purple">arrow_back</i>',
-      nextHtml: '<i class="icon icon_color_purple">arrow_forward</i>',
+      prevHtml,
+      nextHtml,
       onSelect: this.datepickerOnSelectHandler.bind(this),
     };
   }
@@ -73,6 +56,17 @@ export class DateDropdown {
     this.$expandButton.click(() => {
       this.$datepickerInline.slideToggle(250);
     });
+  }
+  clearButtonOnClick(){
+    this.$datepickerClearButton.click();
+    localStorage?.removeItem("datepicker");
+  }
+  applyButtonOnClick(){
+    localStorage.setItem(
+      "datepicker",
+      JSON.stringify(this.selectedDates)
+    );
+    this.$datepickerInline.slideUp(250);
   }
   dateFromLocaleDateString(str) {
     return new Date(str.split(".").reverse().join("."));
