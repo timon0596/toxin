@@ -6,7 +6,7 @@ export class CheckBoxList {
     this.init();
   }
   findElements() {
-    this.$expand = this.$el.find("i");
+    this.$expand = this.$el.find(".checkbox-list__expand");
     this.$wrapper = this.$el.find(".checkbox-list__wrapper");
   }
   onClickHandler() {
