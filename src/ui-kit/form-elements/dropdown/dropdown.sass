@@ -1,6 +1,7 @@
 @import './../../../sass/vars.sass'
 .dropdown
-  &__body.dropdown__body_active
+  $dd: &
+  &__body#{$dd}__body_active
     border-top: 0
 
     &__display
@@ -70,8 +71,7 @@
     &:last-child
       margin-bottom: 7px
       
-.dropdown_guest
-  .dropdown__row:last-child
+  &_guest &__row:last-child
     margin-bottom: 13px
     margin-top: 20px
   
