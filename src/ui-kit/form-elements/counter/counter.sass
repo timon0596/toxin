@@ -1,19 +1,7 @@
 @import './../../../sass/vars.sass'
 .counter
-  display: -webkit-flex
-  display: -moz-flex
-  display: -ms-flex
-  display: -o-flex
   display: flex
   align-items: center
-  h3
-    font-style: normal
-    font-weight: bold
-    font-size: 12px
-    line-height: 15px
-    text-transform: uppercase
-    font-family: montserrat
-    color: $d100
 
   &__button
     cursor: pointer
@@ -21,16 +9,19 @@
     height: 30px
     border: 1px solid $d25
     border-radius: 50%
-    display: -webkit-flex
-    display: -moz-flex
-    display: -ms-flex
-    display: -o-flex
     display: flex
     align-items: center
     justify-content: center
 
     &_no-border
       border: 0
+      font-style: normal
+      font-weight: bold
+      font-size: 12px
+      line-height: 15px
+      text-transform: uppercase
+      font-family: montserrat
+      color: $d100
       
     &_disabled
       opacity: 50%
