@@ -1,11 +1,11 @@
 import { DateDropdown } from "./date-dropdown";
 $(".js-date-dropdown").each((i, el) => {
   const buttons = {
-    $clearButton = $("<div>", {
+    $clearButton: $("<div>", {
         class: "button button_with-no-bg",
         html: '<div class="heading heading_color_grey"><h3>очистить</h3></div>'
       }),
-    $applyButton = $("<div>", {
+    $applyButton: $("<div>", {
         class: "button button_with-no-bg",
         html: '<div class="heading heading_color_purple"><h3>применить</h3></div>'
       })

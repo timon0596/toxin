@@ -3,13 +3,18 @@ import "jquery-mask-plugin";
 export class DateDropdown {
   constructor({
     el,
-    buttons: {$clearButton,$applyButton},
-    navigation: {prevHtml,nextHtml},
-    navTitles
+    buttons: { $clearButton, $applyButton },
+    navigation: { prevHtml, nextHtml },
+    navTitles,
   }) {
     this.datepickerInstance;
     this.$el = el;
     this.selectedDates = { fromTo: "", from: "", to: "", days: 0 };
+    this.$clearButton = $clearButton;
+    this.$applyButton = $applyButton;
+    this.navTitles = navTitles;
+    this.prevHtml = prevHtml;
+    this.nextHtml = nextHtml;
     this.isFilter;
     this.$inputs;
     this.$datepickerContainer;
@@ -17,8 +22,6 @@ export class DateDropdown {
     this.$datepickerClearButton;
     this.$datepickerInline;
     this.$datepickerButtons;
-    this.$clearButton;
-    this.$applyButton;
     this.datepickerConfig;
     this.init();
   }
@@ -29,10 +32,8 @@ export class DateDropdown {
       ".date-dropdown__datepicker-container"
     );
     this.$expandButton = this.$el.find(".text-field__icon-wrapper");
-    this.$clearButton = $clearButton
-    this.$clearButton.click(this.clearButtonOnClick.bind(this))
-    this.$applyButton = $applyButton
-    this.$applyButton.click(this.applyButtonOnClick.bind(this))
+    this.$clearButton.click(this.clearButtonOnClick.bind(this));
+    this.$applyButton.click(this.applyButtonOnClick.bind(this));
     this.datepickerConfig = {
       minDate: new Date(),
       multipleDates: 2,
@@ -42,10 +43,10 @@ export class DateDropdown {
       language: {
         daysMin: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
       },
-      navTitles,
+      navTitles: this.navTitles,
       clearButton: true,
-      prevHtml,
-      nextHtml,
+      prevHtml: this.prevHtml,
+      nextHtml: this.nextHtml,
       onSelect: this.datepickerOnSelectHandler.bind(this),
     };
   }
@@ -57,15 +58,12 @@ export class DateDropdown {
       this.$datepickerInline.slideToggle(250);
     });
   }
-  clearButtonOnClick(){
+  clearButtonOnClick() {
     this.$datepickerClearButton.click();
     localStorage?.removeItem("datepicker");
   }
-  applyButtonOnClick(){
-    localStorage.setItem(
-      "datepicker",
-      JSON.stringify(this.selectedDates)
-    );
+  applyButtonOnClick() {
+    localStorage.setItem("datepicker", JSON.stringify(this.selectedDates));
     this.$datepickerInline.slideUp(250);
   }
   dateFromLocaleDateString(str) {
