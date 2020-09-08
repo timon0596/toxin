@@ -10,9 +10,17 @@ export class Dropdown {
       ["младенец", "младенца", "младенцев"],
     ],
   };
-  constructor(mainDiv, index) {
+  constructor({
+    mainDiv,
+    index,
+    counters: { $counters, $minusButtons, $plusButtons, $values },
+  }) {
     this.index = index;
     this.$mainDiv = mainDiv;
+    this.$counters = $counters;
+    this.$minusButtons = $minusButtons;
+    this.$plusButtons = $plusButtons;
+    this.$values = $values;
     this.$display;
     this.$expand;
     this.$expandIcon;
@@ -20,10 +28,6 @@ export class Dropdown {
     this.$menu;
     this.$clear;
     this.$apply;
-    this.$counters;
-    this.$minusButtons;
-    this.$plusButtons;
-    this.$values;
     this.isGuest;
     this.dec;
     this.localStorageName;
@@ -35,15 +39,10 @@ export class Dropdown {
     this.$expand = this.$mainDiv.find(
       ".dropdown__body .dropdown__icon-wrapper"
     );
-    this.$expandIcon = this.$expand.find(".icon");
     this.$body = this.$mainDiv.find(".dropdown__body");
     this.$menu = this.$mainDiv.find(".dropdown__menu");
     this.$clear = this.$mainDiv.find(".dropdown__clear");
     this.$apply = this.$mainDiv.find(".dropdown__apply");
-    this.$counters = this.$mainDiv.find(".counter");
-    this.$minusButtons = this.$counters.find(".counter__button:first-child");
-    this.$plusButtons = this.$counters.find(".counter__button:last-child");
-    this.$values = this.$counters.find(".counter__button:nth-child(2)");
     this.isGuest = this.$mainDiv.hasClass("dropdown_guest");
     this.dec = Dropdown.declensions[this.isGuest ? "guest" : "bed"];
     this.localStorageName = this.$mainDiv.attr("class").replace(/\s/g, "");
@@ -93,7 +92,6 @@ export class Dropdown {
   expand() {
     this.$menu.slideToggle(250);
     this.$body.toggleClass("dropdown__body_active");
-    this.$expandIcon.toggleClass("icon_color_dark");
   }
   minus(e) {
     const i = [...this.$minusButtons].indexOf(e.target);
