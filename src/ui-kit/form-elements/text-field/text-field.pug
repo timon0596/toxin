@@ -1,5 +1,8 @@
 mixin text-field({placeholder,material_icons,modifier,iconColor})
-  .text-field(class={'text-field_with-arrow':modifier==='with-arrow','text-field_masked': modifier==='masked'})
+  .text-field(class={
+    'text-field_with-arrow':modifier==='with-arrow',
+    'text-field_masked': modifier==='masked'
+    })
     input(placeholder= placeholder)
     if material_icons
       .text-field__icon-wrapper

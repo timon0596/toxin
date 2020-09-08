@@ -1,5 +1,9 @@
 mixin button({text,modifier,color='white'})
-  .button(class={'button_with-arrow': modifier==='arrow','button_with-border': modifier==='border','button_with-no-bg': modifier==='no-bg'})
+  .button(class={
+    'button_with-arrow': modifier==='arrow',
+    'button_with-border': modifier==='border',
+    'button_with-no-bg': modifier==='no-bg'
+    })
     +heading({text,color: modifier==='border'?'purple':color})
     if modifier==='arrow'
       .button__arrow

@@ -1,2 +1,10 @@
 mixin icon({icon='expand_more',color,font}={})
-  i.icon(class={'icon_color_purple':color==='purple','icon_color_gradient':color==='gradient','icon_color_white':color==='white','icon_color_light':color==='light','icon_color_dark':color==='dark','icon_font_big': font==='big','icon_font_small': font==='small'})= icon
+  i.icon(class={
+    'icon_color_purple':color==='purple',
+    'icon_color_gradient':color==='gradient',
+    'icon_color_white':color==='white',
+    'icon_color_light':color==='light',
+    'icon_color_dark':color==='dark',
+    'icon_font_big': font==='big',
+    'icon_font_small': font==='small'
+  })= icon
