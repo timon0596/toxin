@@ -59,7 +59,7 @@ export class Dropdown {
   }
   displayValuePart(i) {
     if (this.isGuest) {
-      if (i == 0) {
+      if (i === 0) {
         return this.values[0] + this.values[1]
           ? `${this.values[0] + this.values[1]} ${
               this.dec[0][this.modulo((this.values[0] + this.values[1]) % 10)]
@@ -105,7 +105,7 @@ export class Dropdown {
     this.render();
   }
   disableOrEnableMinusButton(i) {
-    this.values[i] == 0
+    this.values[i] === 0
       ? $(this.$minusButtons[i]).addClass("counter__button_disabled")
       : $(this.$minusButtons[i]).removeClass("counter__button_disabled");
   }
@@ -118,7 +118,7 @@ export class Dropdown {
     localStorage.setItem(this.localStorageName, JSON.stringify(this.values));
   }
   modulo(number) {
-    if (number == 1) return 0;
+    if (number === 1) return 0;
     if (number > 1 && number < 5) return 1;
     else return 2;
   }
@@ -129,7 +129,7 @@ export class Dropdown {
     });
     this.$display.text(this.displayValue().trim().slice(0, -1));
     if (this.isGuest) {
-      if (this.values.reduce((acc, val) => acc + val) == 0) {
+      if (this.values.reduce((acc, val) => acc + val) === 0) {
         this.$display.text("Сколько гостей");
       }
     }

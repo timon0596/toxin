@@ -1,6 +1,6 @@
 mixin like({likes=0,checked=false}={})
   label.like
-    input(type="checkbox" checked= checked)
+    input(type="checkbox" checked= checked).like__input
     .like__button
       .like__icon
         +icon({icon:'favorite_border',font: 'small',color: 'light'})

@@ -7,31 +7,23 @@
 
   &__icon
     min-width: 20px
-    display: -webkit-flex
-    display: -moz-flex
-    display: -ms-flex
-    display: -o-flex
     display: flex
     justify-content: center
     align-items: center
 
-  input
+  &__input
     display: none
 
-  input:checked ~ .like__number
+  &__input:checked ~ &__number
     color: $p
 
-  input:checked ~ .like__button > .like__icon
+  &__input:checked ~ &__button > &__icon
     display: none
 
-  input:checked ~ .like__button > .like__icon:nth-child(2)
-    display: -webkit-flex
-    display: -moz-flex
-    display: -ms-flex
-    display: -o-flex
+  &__input:checked ~ &__button > &__icon:nth-child(2)
     display: flex
 
-  input:checked ~ .like__button:before
+  &__input:checked ~ &__button:before
     background: $lgp
 
   &__button
