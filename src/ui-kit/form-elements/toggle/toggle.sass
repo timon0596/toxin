@@ -30,9 +30,9 @@
       transform: translate(0,-50%)
       transition: transform .15s ease
 
-  input:checked ~ &__button
+  &__input:checked ~ &__button
     border-color: $p
     
-  input:checked ~ &__button:before
+  &__input:checked ~ &__button:before
     background: $lgp
     transform: translate(calc(30px - 100%),-50%)

@@ -1,10 +1,10 @@
 mixin radio()
   .radio
-    label.radio__male
-      input(type="radio" name="gender" checked)
+    label.radio__label
+      input(type="radio" name="gender" checked).radio__input
       .radio__btn
       .radio__text Мужчина
-    label.radio__female
-      input(type="radio" name="gender")
+    label.radio__label
+      input(type="radio" name="gender").radio__input
       .radio__btn
       .radio__text  Женщина

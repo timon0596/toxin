@@ -1,12 +1,11 @@
 @import './../../../sass/vars.sass'
-$cb: checkbox-list
 .checkbox-list
   width: 100%
   color: $d50
 
   &__expand
-    width: 44px
-    height: 44px
+    min-width: 44px
+    min-height: 44px
     display: flex
     justify-content: center
     align-items: center
@@ -25,7 +24,5 @@ $cb: checkbox-list
     display: flex
     align-items: center
     
-.#{$cb}.#{$cb}_expanded
-  .#{$cb}__header
-    i
+  &_expanded &__expand
       transform: rotate(180deg)

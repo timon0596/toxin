@@ -4,8 +4,8 @@
 
   &__btn
     position: relative
-    width: 20px
-    height: 20px
+    min-width: 20px
+    min-height: 20px
     margin-right: 10px
     border: 1px solid $d25
     border-radius: 50%
@@ -26,23 +26,24 @@
 
   &__text
     color: $d50
-  label
+
+  &__label
     display: flex
     align-items: center
     margin-right: 20px
 
-    input
-      display: none
+  &__input
+    display: none
 
-    input:checked + .radio__btn
-      position: relative
-      width: 20px
-      height: 20px
-      border: 1px solid $p
-      border-radius: 50%
+  &__input:checked + &__btn
+    position: relative
+    min-width: 20px
+    min-height: 20px
+    border: 1px solid $p
+    border-radius: 50%
 
-    input:checked ~ .radio__text
-      color: $d75
-      
-    input:checked + .radio__btn:before
-      transform: translate(-50%,-50%) scale(1)
+  &__input:checked ~ &__text
+    color: $d75
+    
+  &__input:checked + &__btn:before
+    transform: translate(-50%,-50%) scale(1)

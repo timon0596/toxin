@@ -1,10 +1,13 @@
-mixin button({text,modifier,color='white'})
+mixin button({text,modifier,color})
   .button(class={
     'button_with-arrow': modifier==='arrow',
     'button_with-border': modifier==='border',
     'button_with-no-bg': modifier==='no-bg'
     })
-    +heading({text,color: modifier==='border'?'purple':color})
+    .button__text(class={
+      'button__text_purple': color==='purple',
+      'button__text_grey': color==='grey',
+    })= text
     if modifier==='arrow'
       .button__arrow
         +icon({icon:'arrow_forward',color: 'white'})
