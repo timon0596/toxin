@@ -1,6 +1,10 @@
 mixin advantage({icon,name,description})
   .advantage
-    +icon({icon,color: 'gradient',font: 'big'})
+    +icon({
+      icon,
+      color: 'gradient',
+      font: 'big'
+      })
     .advantage__info
       .advantage__name= name
       .advantage__descr= description

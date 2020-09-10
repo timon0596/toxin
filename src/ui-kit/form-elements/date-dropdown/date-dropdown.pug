@@ -5,4 +5,7 @@ mixin date-dropdown({names,modifier})
       .date-dropdown__display
         .date-dropdown__heading
           +heading({text:name})
-        +text-field({placeholder:'дд.мм.гггг', material_icons:'expand_more', modifier: modifier!=='filter'?'masked':undefined})
+        +text-field({
+          placeholder:'дд.мм.гггг', 
+          material_icons:'expand_more',
+           modifier: modifier!=='filter'?'masked':null})

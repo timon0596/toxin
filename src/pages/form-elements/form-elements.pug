@@ -3,9 +3,32 @@ include ./../../ui-kit/ui-kit
 block title
   title form-elements
 block content
-  - const user = {icon: 'img/users/user1.jpeg',name: 'Мурад Сарафанов',date: '5 дней назад',likes: 11,text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',likeCheck: true};
-  - const richContent = [{name: 'Широкий коридор',description: 'Ширина коридоров в номере не менее 91 см.'},{name: 'Помощник для инвалидов',description: 'На 1 этаже вас встретит специалист  и проводит до номера.'}];
-  - const content = [{name: 'Можно курить'},{name: 'Можно с питомцами'},{name: 'Можно пригласить гостей (до 10 человек)'}];
+  - 
+    const user = {
+      icon: 'img/users/user1.jpeg',
+      name: 'Мурад Сарафанов',
+      date: '5 дней назад',
+      likes: 11,
+      text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
+      likeCheck: true
+    };
+  - 
+    const richContent = [
+      {
+        name: 'Широкий коридор',
+        description: 'Ширина коридоров в номере не менее 91 см.'
+      },
+      {
+        name: 'Помощник для инвалидов',
+        description: 'На 1 этаже вас встретит специалист  и проводит до номера.'
+      }
+    ];
+  - 
+    const content = [
+      {name: 'Можно курить'},
+      {name: 'Можно с питомцами'},
+      {name: 'Можно пригласить гостей (до 10 человек)'}
+    ];
   .form-elements
     .form-elements__list
       .form-elements__item
@@ -20,7 +43,12 @@ block content
         +text-field({placeholder:'дд.мм.гггг',modifier: 'masked'})
       .form-elements__item
         +heading({text:'subscription text field'})
-        +text-field({placeholder:'Email', material_icons:'arrow_forward', modifier:'with-arrow',iconColor: 'purple'})
+        +text-field({
+          placeholder:'Email',
+          material_icons:'arrow_forward',
+          modifier:'with-arrow',
+          iconColor: 'purple'
+          })
       .form-elements__item
         +dropdown({h3:'dropdown'})
       .form-elements__item
@@ -28,12 +56,22 @@ block content
       .form-elements__item
         +checkbox-list({name:'expandable checkboxlist'})
       .form-elements__item
-        +checkbox-buttons({h3:'Rich Checkbox Buttons',content: richContent,modifier: 'rich'})
+        +checkbox-buttons({
+          h3:'Rich Checkbox Buttons',
+          content: richContent,
+          modifier: 'rich'
+          })
       .form-elements__item
         +checkbox-buttons({h3: 'Checkbox Buttons',content})
       .form-elements__item
         +heading({text:'bullet list'})
-        +bullet-list({list:['Нельзя с питомцами','Без вечеринок и мероприятий','Время прибытия — после 13:00, а выезд до 12:00']})
+        +bullet-list({
+          list: [
+            'Нельзя с питомцами',
+            'Без вечеринок и мероприятий',
+            'Время прибытия — после 13:00, а выезд до 12:00'
+            ]
+          })
       .form-elements__item
         +heading({text:'radio buttons'})
         +radio()
