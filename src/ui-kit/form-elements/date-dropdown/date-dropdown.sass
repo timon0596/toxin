@@ -21,8 +21,8 @@
     grid-gap: 20px
 
   .datepicker--cell.datepicker--cell-day
-    width: 40px
-    height: 40px
+    min-width: 40px
+    min-height: 40px
     color: $d50
     font-size: 12px
     line-height: 15px
@@ -67,10 +67,6 @@
     border-bottom-right-radius: 50%
 
   .datepicker--days-names
-    display: -webkit-flex
-    display: -moz-flex
-    display: -ms-flex
-    display: -o-flex
     display: flex
     justify-content: center
 
@@ -89,7 +85,8 @@
     text-transform: none
 
   .datepicker
-    width: 320px
+    max-width: 320px
+    width: 100%
     padding: 19px
     border: 1px solid rgba(31, 32, 65, 0.25)
     border-radius: 4px

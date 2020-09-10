@@ -13,18 +13,16 @@ mixin room-details()
     .room-details__row
       +dropdown({h3:'гости',modifier: 'guest'})
     .room-details__row
-      .room-details__tax-list
-        .room-details__tax-habitation
-          .room-details__tax-text 9 990₽ х 4 суток
-          .room-details__tax-sum 39 960₽
-        .room-details__tax-services
-          .room-details__tax-text Сбор за услуги: скидка 2 179₽
-            .room-details__tax-info i
-          | 0₽    
-        .room-details__tax-extra-services
-          .room-details__tax-text Сбор за дополнительные услуги
-            .room-details__tax-info i
-          | 300₽
+      .room-details__tax-table
+        .room-details__tax-name 9 990₽ х 4 суток
+        .room-details__tax-info_empty
+        .room-details__tax-sum 39 960₽
+        .room-details__tax-name Сбор за услуги: скидка 2 179₽
+        .room-details__tax-info i
+        .room-details__tax-sum 0₽
+        .room-details__tax-name Сбор за дополнительные услуги
+        .room-details__tax-info i
+        .room-details__tax-sum 300₽
     .room-details__row
       .room-details__total
         +heading({text:'Итого',level:'2'})

@@ -7,6 +7,7 @@
   border-radius: 4px
   box-sizing: border-box
   background: white
+  display: grid
 
   &__row
     display: grid
@@ -50,33 +51,22 @@
   &__reviews-amount
     font-weight: bold
 
-  &__tax-list
+  &__tax-table
     display: grid
-    grid-gap: 10px
+    grid-template-columns: repeat(3,auto)
+    grid-gap: 10px 0
+    justify-self: start
 
-  &__tax-habitation,
-  &__tax-services,
-  &__tax-extra-services
-    display: grid
-    grid-auto-flow: column
-    justify-content: space-between
-    align-items: start
+  &__tax-name
 
-  &__tax-text
-    width: 240px
-    display: grid
-    grid-auto-flow: column
-    justify-content: space-between
-    align-items: baseline
+  &__tax-sum
+    text-align: right
+    margin-left: 25px
 
   &__tax-info
     width: 20px
     height: 20px
     border: 1px solid $d25
-    display: -webkit-flex
-    display: -moz-flex
-    display: -ms-flex
-    display: -o-flex
     display: flex
     justify-content: center
     align-items: center
