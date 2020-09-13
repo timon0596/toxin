@@ -1,6 +1,7 @@
 mixin fa-icon({icon})
-  i.fa-icon__item.fa(aria-hidden='true' class={
-    'fa-facebook-official': icon ==='facebook-official',
-    'fa-twitter': icon==='twitter',
-    'fa-instagram': icon==='instagram'
-  })
+  a.fa-icon  
+    i.fa-icon__item.fa(aria-hidden='true' class={
+      'fa-facebook-official': icon ==='facebook-official',
+      'fa-twitter': icon==='twitter',
+      'fa-instagram': icon==='instagram'
+    })
