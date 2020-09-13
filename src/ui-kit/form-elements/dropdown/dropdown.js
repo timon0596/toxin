@@ -10,14 +10,15 @@ export class Dropdown {
       ["младенец", "младенца", "младенцев"],
     ],
   };
+
   constructor({
     mainDiv,
     index,
-    counters: { $counters, $minusButtons, $plusButtons, $values },
+    counters: { Counter, $minusButtons, $plusButtons, $values },
   }) {
     this.index = index;
     this.$mainDiv = mainDiv;
-    this.$counters = $counters;
+    this.Counter = Counter;
     this.$minusButtons = $minusButtons;
     this.$plusButtons = $plusButtons;
     this.$values = $values;
@@ -34,6 +35,7 @@ export class Dropdown {
     this.values;
     this.init();
   }
+
   findElements() {
     this.$display = this.$mainDiv.find(".dropdown__display");
     this.$expand = this.$mainDiv.find(
@@ -48,6 +50,7 @@ export class Dropdown {
     this.localStorageName = this.$mainDiv.attr("class").replace(/\s/g, "");
     this.values = this.localStorageValues();
   }
+
   localStorageValues() {
     const vals = localStorage.getItem(this.localStorageName);
     return vals
@@ -57,6 +60,7 @@ export class Dropdown {
           .split("")
           .map((n) => +n);
   }
+
   displayValuePart(i) {
     if (this.isGuest) {
       if (i === 0) {
@@ -78,6 +82,7 @@ export class Dropdown {
         : "";
     }
   }
+
   displayValue() {
     if (this.isGuest) {
       return `${this.displayValuePart(0)}` + `${this.displayValuePart(2)}`;
@@ -89,39 +94,47 @@ export class Dropdown {
       );
     }
   }
+
   expand() {
     this.$menu.slideToggle(250);
     this.$body.toggleClass("dropdown__body_active");
   }
+
   minus(e) {
     const i = [...this.$minusButtons].indexOf(e.target);
     this.values[i]--;
     this.values[i] = this.values[i] < 0 ? 0 : this.values[i];
     this.render();
   }
+
   plus(e) {
     const i = [...this.$plusButtons].indexOf(e.target);
     this.values[i]++;
     this.render();
   }
+
   disableOrEnableMinusButton(i) {
     this.values[i] === 0
-      ? $(this.$minusButtons[i]).addClass("counter__button_disabled")
-      : $(this.$minusButtons[i]).removeClass("counter__button_disabled");
+      ? this.Counter.disable($(this.$minusButtons[i]))
+      : this.Counter.enable($(this.$minusButtons[i]));
   }
+
   clear() {
     this.values.fill(0);
     localStorage.removeItem(this.localStorageName);
     this.render();
   }
+
   apply() {
     localStorage.setItem(this.localStorageName, JSON.stringify(this.values));
   }
+
   modulo(number) {
     if (number === 1) return 0;
     if (number > 1 && number < 5) return 1;
     else return 2;
   }
+
   render() {
     this.$values.each((i, el) => {
       $(el).text(this.values[i]);
@@ -134,6 +147,7 @@ export class Dropdown {
       }
     }
   }
+
   init() {
     this.findElements();
     this.$expand.on("click.dropdownExpand", this.expand.bind(this));
