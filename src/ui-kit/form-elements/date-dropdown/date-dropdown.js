@@ -3,6 +3,7 @@ import "jquery-mask-plugin";
 export class DateDropdown {
   constructor({
     el,
+    $expandButton,
     buttons: { $clearButton, $applyButton },
     navigation: { prevHtml, nextHtml },
     navTitles,
@@ -12,26 +13,26 @@ export class DateDropdown {
     this.selectedDates = { fromTo: "", from: "", to: "", days: 0 };
     this.$clearButton = $clearButton;
     this.$applyButton = $applyButton;
+    this.$expandButton = $expandButton;
     this.navTitles = navTitles;
     this.prevHtml = prevHtml;
     this.nextHtml = nextHtml;
     this.isFilter;
     this.$inputs;
     this.$datepickerContainer;
-    this.$expandButton;
     this.$datepickerClearButton;
     this.$datepickerInline;
     this.$datepickerButtons;
     this.datepickerConfig;
     this.init();
   }
+
   defineElements() {
     this.isFilter = this.$el.hasClass("date-dropdown_filter");
     this.$inputs = this.$el.find("input");
     this.$datepickerContainer = this.$el.find(
       ".date-dropdown__datepicker-container"
     );
-    this.$expandButton = this.$el.find(".text-field__icon-wrapper");
     this.$clearButton.click(this.clearButtonOnClick.bind(this));
     this.$applyButton.click(this.applyButtonOnClick.bind(this));
     this.datepickerConfig = {
@@ -50,6 +51,7 @@ export class DateDropdown {
       onSelect: this.datepickerOnSelectHandler.bind(this),
     };
   }
+
   init() {
     this.defineElements();
     this.selectedDatesFromLocalStorage();
@@ -58,21 +60,26 @@ export class DateDropdown {
       this.$datepickerInline.slideToggle(250);
     });
   }
+
   clearButtonOnClick() {
     this.$datepickerClearButton.click();
     localStorage?.removeItem("datepicker");
   }
+
   applyButtonOnClick() {
     localStorage.setItem("datepicker", JSON.stringify(this.selectedDates));
     this.$datepickerInline.slideUp(250);
   }
+
   dateFromLocaleDateString(str) {
     return new Date(str.split(".").reverse().join("."));
   }
+
   selectedDatesFromLocalStorage() {
     this.selectedDates =
       JSON.parse(localStorage?.getItem("datepicker")) || this.selectedDates;
   }
+
   fillInputsWithValues(fd) {
     const inputCondition = this.selectedDates.from && this.selectedDates.to;
     if (!this.isFilter) {
@@ -82,11 +89,13 @@ export class DateDropdown {
       this.$inputs.val(fd);
     }
   }
+
   emitEvent() {
     const dateSelectEvent = $.Event("new-date-selected");
     dateSelectEvent.selectedDates = { ...this.selectedDates };
     this.$el.trigger(dateSelectEvent);
   }
+
   datepickerOnSelectHandler(fd, d, picker) {
     const options = { year: "numeric", month: "numeric", day: "numeric" };
     this.selectedDates.fromTo = fd;
@@ -102,6 +111,7 @@ export class DateDropdown {
     this.fillInputsWithValues(fd);
     this.emitEvent();
   }
+
   datepickerInit() {
     this.datepickerInstance = this.$datepickerContainer
       .datepicker(this.datepickerConfig)
