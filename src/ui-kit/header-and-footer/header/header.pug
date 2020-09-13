@@ -12,7 +12,7 @@ mixin header({signed=false}={})
       .nav__item(style=signed?'display: none':'').nav__item_unsigned
         .nav__button
           .nav__sign-in-button
-            +button({text:'войти',modifier: 'border'})
+            +button({text:'войти',modifier: 'border',color: 'purple'})
       .nav__item(style=signed?'display: none':'').nav__item_unsigned
         .nav__button
           .nav__sign-up-button
