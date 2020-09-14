@@ -23,8 +23,8 @@ export class SignInPage {
     );
     this.$navButtons = $(".nav__item_unsigned");
     this.$userName = $(".nav__item_signed");
-    this.$navSignUpButton = $(".nav__sign-up-button .button");
-    this.$navSignInButton = $(".nav__sign-in-button .button");
+    this.$navSignUpButton = $(".nav__sign-up-button");
+    this.$navSignInButton = $(".nav__sign-in-button");
   }
   signInHandler() {
     this.$signUpBlock.hide();
