@@ -1,2 +1,8 @@
 import { RoomDetails } from "./room-details";
-new RoomDetails($(".room-details"));
+const $element = $(".room-details");
+const $dd = $element.find(".js-date-dropdown");
+const roomDetailsParams = {
+  $element,
+  $dd,
+};
+new RoomDetails(roomDetailsParams);

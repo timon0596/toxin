@@ -1,7 +1,7 @@
 export class RoomDetails {
-  constructor(element) {
-    this.$block = element;
-    this.$dropdown;
+  constructor({ $element, $dd }) {
+    this.$block = $element;
+    this.$dropdown = $dd;
     this.$taxHabitation;
     this.$blockSum;
     this.$taxHabitationTextBlock;
@@ -9,7 +9,6 @@ export class RoomDetails {
     this.init();
   }
   findElements() {
-    this.$dropdown = this.$block.find(".js-date-dropdown");
     this.$taxHabitation = this.$block.find(".room-details__tax-habitation");
     this.$blockSum = this.$block.find(".room-details__sum h2");
     this.$taxHabitationTextBlock = this.$taxHabitation.find(
