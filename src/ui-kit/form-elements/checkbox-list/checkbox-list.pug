@@ -1,10 +1,10 @@
 mixin checkbox-list({name})
-  .checkbox-list
+  .js-checkbox-list
     .checkbox-list__header
       +heading({text:name,level:'3'})
-      .checkbox-list__expand
+      .checkbox-list__expand.js-checkbox-list__expand
         +icon()
-    .checkbox-list__wrapper
+    .checkbox-list__wrapper.js-checkbox-list__wrapper
       .checkbox-list__item
         +checkbox()
         .checkbox-list__article Завтрак
