@@ -1,14 +1,21 @@
 export class SignInPage {
-  constructor({ signIn, signUp }) {
+  constructor({
+    signIn,
+    signUp,
+    $navButtons,
+    $userName,
+    $navSignUpButton,
+    $navSignInButton,
+  }) {
     this.$signUpBlock = signUp;
     this.$signInBlock = signIn;
+    this.$navButtons = $navButtons;
+    this.$userName = $userName;
+    this.$navSignUpButton = $navSignUpButton;
+    this.$navSignInButton = $navSignInButton;
     this.$signUpBlockButton;
     this.$signInButtonCreate;
     this.$signInEnterButton;
-    this.$navButtons;
-    this.$userName;
-    this.$navSignUpButton;
-    this.$navSignInButton;
     this.init();
   }
   findElements() {
@@ -21,10 +28,6 @@ export class SignInPage {
     this.$signInEnterButton = this.$signInBlock.find(
       ".js-sign-in__sign-in-button"
     );
-    this.$navButtons = $(".nav__item_unsigned");
-    this.$userName = $(".nav__item_signed");
-    this.$navSignUpButton = $(".nav__sign-up-button");
-    this.$navSignInButton = $(".nav__sign-in-button");
   }
   signInHandler() {
     this.$signUpBlock.hide();
