@@ -37,14 +37,14 @@ export class Dropdown {
   }
 
   findElements() {
-    this.$display = this.$mainDiv.find(".dropdown__display");
+    this.$display = this.$mainDiv.find(".js-dropdown__display");
     this.$expand = this.$mainDiv.find(
-      ".dropdown__body .dropdown__icon-wrapper"
+      ".js-dropdown__body .js-dropdown__icon-wrapper"
     );
-    this.$body = this.$mainDiv.find(".dropdown__body");
-    this.$menu = this.$mainDiv.find(".dropdown__menu");
-    this.$clear = this.$mainDiv.find(".dropdown__clear");
-    this.$apply = this.$mainDiv.find(".dropdown__apply");
+    this.$body = this.$mainDiv.find(".js-dropdown__body");
+    this.$menu = this.$mainDiv.find(".js-dropdown__menu").hide();
+    this.$clear = this.$mainDiv.find(".js-dropdown__clear");
+    this.$apply = this.$mainDiv.find(".js-dropdown__apply");
     this.isGuest = this.$mainDiv.hasClass("dropdown_guest");
     this.dec = Dropdown.declensions[this.isGuest ? "guest" : "bed"];
     this.localStorageName = this.$mainDiv.attr("class").replace(/\s/g, "");

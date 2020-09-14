@@ -14,7 +14,7 @@ export class RangeSlider {
   }
   search() {
     this.$parent = this.$el.parent();
-    this.$amount = this.$parent.find(".range-slider__amount");
+    this.$amount = this.$parent.find(".js-range-slider__amount");
   }
   onSlide(event, ui) {
     this.$amount.text(ui.values[0] + "₽" + " - " + ui.values[1] + "₽");

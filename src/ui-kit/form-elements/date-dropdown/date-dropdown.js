@@ -7,6 +7,7 @@ export class DateDropdown {
     buttons: { $clearButton, $applyButton },
     navigation: { prevHtml, nextHtml },
     navTitles,
+    $inputs,
   }) {
     this.datepickerInstance;
     this.$el = el;
@@ -17,8 +18,8 @@ export class DateDropdown {
     this.navTitles = navTitles;
     this.prevHtml = prevHtml;
     this.nextHtml = nextHtml;
+    this.$inputs = $inputs;
     this.isFilter;
-    this.$inputs;
     this.$datepickerContainer;
     this.$datepickerClearButton;
     this.$datepickerInline;
@@ -29,9 +30,8 @@ export class DateDropdown {
 
   defineElements() {
     this.isFilter = this.$el.hasClass("date-dropdown_filter");
-    this.$inputs = this.$el.find("input");
     this.$datepickerContainer = this.$el.find(
-      ".date-dropdown__datepicker-container"
+      ".js-date-dropdown__datepicker-container"
     );
     this.$clearButton.click(this.clearButtonOnClick.bind(this));
     this.$applyButton.click(this.applyButtonOnClick.bind(this));
@@ -122,9 +122,7 @@ export class DateDropdown {
         this.dateFromLocaleDateString(this.selectedDates.to),
       ]);
     }
-    this.$datepickerClearButton = this.$el
-      .find('.datepicker--button[data-action="clear"]')
-      .hide();
+    this.$datepickerClearButton = this.$el.find('[data-action="clear"]').hide();
     this.$datepickerInline = this.$el.find(".datepicker-inline").hide();
     this.$datepickerButtons = this.$el.find(".datepicker--buttons");
     this.$datepickerButtons.append(this.$clearButton).append(this.$applyButton);

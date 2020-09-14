@@ -1,11 +1,11 @@
 mixin dropdown({h3,modifier})
   .dropdown.js-dropdown(class={'dropdown_guest':modifier==='guest'})
     +heading({text:h3,level:'3'})
-    .dropdown__body
-      .dropdown__display
-      .dropdown__icon-wrapper
+    .dropdown__body.js-dropdown__body
+      .dropdown__display.js-dropdown__display
+      .dropdown__icon-wrapper.js-dropdown__icon-wrapper
         +icon({color: 'dark'})
-      .dropdown__menu(style="display: none")
+      .dropdown__menu.js-dropdown__menu
         .dropdown__row
           +heading({text:modifier?'взрослые':'спальни'})
           +counter({val:2})
@@ -17,7 +17,7 @@ mixin dropdown({h3,modifier})
           +counter()
         if modifier
           .dropdown__row
-            .dropdown__clear
+            .dropdown__clear.js-dropdown__clear
               +button({text: 'очистить',modifier: 'no-bg',color: 'grey'})
-            .dropdown__apply
+            .dropdown__apply.js-dropdown__apply
               +button({text: 'применить',modifier: 'no-bg',color: 'purple'})

@@ -1,6 +1,6 @@
 import { DateDropdown } from "./date-dropdown";
 $(".js-date-dropdown").each((i, el) => {
-  const $expandButton = $(el).find(".text-field__icon-wrapper");
+  const $expandButton = $(el).find(".js-text-field__icon-wrapper");
   const buttons = {
     $clearButton: $("<div>", {
       class: "button button_with-no-bg",
@@ -19,11 +19,13 @@ $(".js-date-dropdown").each((i, el) => {
   const navTitles = {
     days: '<div class="heading"><h2>MM yyyy</h2></div>',
   };
+  const $inputs = $(el).find("input");
   new DateDropdown({
     el: $(el),
     buttons,
     navigation,
     navTitles,
     $expandButton,
+    $inputs,
   });
 });
