@@ -1,5 +1,5 @@
 mixin room-details()
-  .room-details
+  .room-details.js-room-details
     .room-details__row
       .room-details__inner-row
         .room-details__number №
@@ -14,9 +14,9 @@ mixin room-details()
       +dropdown({h3:'гости',modifier: 'guest'})
     .room-details__row
       .room-details__tax-table
-        .room-details__tax-name 9 990₽ х 4 суток
+        .room-details__tax-name.js-room-details__tax-name 9 990₽ х 4 суток
         .room-details__tax-info_empty
-        .room-details__tax-sum 39 960₽
+        .room-details__tax-sum.js-room-details__tax-sum 39 960₽
         .room-details__tax-name Сбор за услуги: скидка 2 179₽
         .room-details__tax-info i
         .room-details__tax-sum 0₽
@@ -27,6 +27,6 @@ mixin room-details()
       .room-details__total
         +heading({text:'Итого',level:'2'})
         .room-details__underline
-        .room-details__sum
+        .room-details__sum.js-room-details__sum
           +heading({text:'38 081₽',level:'2'}) 
       +button({text: 'забронировать',modifier: 'arrow'})

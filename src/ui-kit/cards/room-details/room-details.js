@@ -1,22 +1,17 @@
 export class RoomDetails {
-  constructor({ $element, $dd }) {
+  constructor({ $element, $dd, $blockSum }) {
     this.$block = $element;
     this.$dropdown = $dd;
+    this.$blockSum = $blockSum;
     this.$taxHabitation;
-    this.$blockSum;
     this.$taxHabitationTextBlock;
     this.$taxHabitationSumBlock;
     this.init();
   }
   findElements() {
-    this.$taxHabitation = this.$block.find(".room-details__tax-habitation");
-    this.$blockSum = this.$block.find(".room-details__sum h2");
-    this.$taxHabitationTextBlock = this.$taxHabitation.find(
-      ".room-details__tax-text"
-    );
-    this.$taxHabitationSumBlock = this.$taxHabitation.find(
-      ".room-details__tax-sum"
-    );
+    this.$taxHabitation = this.$block.find(".js-room-details__tax-name");
+
+    this.$taxHabitationSumBlock = this.$block.find(".js-room-details__tax-sum");
   }
   onNewDateSelectedHandler(e) {
     if (e.selectedDates.days) {
@@ -30,7 +25,7 @@ export class RoomDetails {
       const totalInt = Math.floor(total / 1000);
       const totalModulo = ((total % 1000) + "").padStart(3, "0");
       const blockSumText = `${totalInt} ${totalModulo}₽`;
-      this.$taxHabitationTextBlock.text(taxHabitationText);
+      this.$taxHabitation.text(taxHabitationText);
       this.$taxHabitationSumBlock.text(taxHabitationTaxSum);
       this.$blockSum.text(blockSumText);
     }
