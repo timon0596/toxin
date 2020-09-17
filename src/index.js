@@ -12,11 +12,5 @@ require.context("./ui-kit", true, /\.sass/);
 require.context("./pages", true, /\.sass/);
 importAll(require.context("./ui-kit", true, /\.js$/));
 importAll(require.context("./pages", true, /\.js$/));
-const userImg = require.context("./img/users", true, /\.(jpe?g|png)$/);
-const favicons = require.context("./img/favicons", true, /\.(png|svg)$/);
-const preview_img = require.context(
-  "./img/preview",
-  true,
-  /\.(jpe?g|png|svg)$/
-);
-const imgs = require.context("./img", false, /\.(jpe?g|png|svg)$/);
+
+const imgs = require.context("./img", true, /\.(jpe?g|png|svg)$/);
