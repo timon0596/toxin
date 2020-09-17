@@ -8,11 +8,13 @@ export class RoomDetails {
     this.$taxHabitationSumBlock;
     this.init();
   }
+
   findElements() {
     this.$taxHabitation = this.$block.find(".js-room-details__tax-name");
 
     this.$taxHabitationSumBlock = this.$block.find(".js-room-details__tax-sum");
   }
+
   onNewDateSelectedHandler(e) {
     if (e.selectedDates.days) {
       const sum = 9990 * e.selectedDates.days;
@@ -30,6 +32,7 @@ export class RoomDetails {
       this.$blockSum.text(blockSumText);
     }
   }
+
   init() {
     this.findElements();
     this.$block.on(

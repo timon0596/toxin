@@ -19,6 +19,7 @@ export class SignInPage {
     this.$signInEnterButton;
     this.init();
   }
+
   findElements() {
     this.$signInButtonCreate = this.$signInBlock.find(
       ".js-sign-in__button-create"
@@ -27,20 +28,24 @@ export class SignInPage {
       ".js-sign-in__sign-in-button"
     );
   }
+
   signInHandler() {
     this.$signUpBlock.hide();
     this.$signInBlock.show();
   }
+
   signUpHandler() {
     this.$navButtons.show();
     this.$userName.hide();
     this.$signInBlock.hide();
     this.$signUpBlock.show();
   }
+
   enterHandler() {
     this.$navButtons.hide();
     this.$userName.show();
   }
+
   init() {
     this.findElements();
     if ("/sign-in-page.html" == location.pathname) {
