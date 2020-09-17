@@ -6,6 +6,7 @@ export class SignInPage {
     $userName,
     $navSignUpButton,
     $navSignInButton,
+    $signUpBlockButton,
   }) {
     this.$signUpBlock = signUp;
     this.$signInBlock = signIn;
@@ -13,15 +14,12 @@ export class SignInPage {
     this.$userName = $userName;
     this.$navSignUpButton = $navSignUpButton;
     this.$navSignInButton = $navSignInButton;
-    this.$signUpBlockButton;
+    this.$signUpBlockButton = $signUpBlockButton;
     this.$signInButtonCreate;
     this.$signInEnterButton;
     this.init();
   }
   findElements() {
-    this.$signUpBlockButton = this.$signUpBlock.find(
-      ".js-registration__sign-in-button"
-    );
     this.$signInButtonCreate = this.$signInBlock.find(
       ".js-sign-in__button-create"
     );
