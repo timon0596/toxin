@@ -2,8 +2,6 @@
 .button
   $root: &
   max-height: 44px
-  height: 100%
-  width: auto
   padding: 15px 20px
   margin: auto
   display: flex
@@ -51,21 +49,24 @@
       opacity: 0.5
 
   &_with-border
+    $bd: 2px
     position: relative
-    background: $lgp
-    box-sizing: border-box
+    background: #fff
+    background-clip: padding-box
+    border: solid $bd transparent
+    padding: 14px 18px
 
-    &:before
+    &:before 
       content: ''
-      z-index: 1
       position: absolute
-      top: 0px
-      right: 0px
-      bottom: 0px
-      left: 0px
-      margin: 2px
-      border-radius: 24px
-      background: #fff  
+      top: 0
+      bottom: 0
+      left: 0
+      right: 0
+      z-index: -1
+      margin: -$bd
+      border-radius: inherit
+      background: $lgp
 
     #{$root}__text
       z-index: 2

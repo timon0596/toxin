@@ -146,6 +146,13 @@ export class Dropdown {
         this.$display.text("Сколько гостей");
       }
     }
+    this.sum();
+  }
+
+  sum() {
+    this.values.reduce((acc, i) => acc + i) === 0
+      ? this.$clear.css("opacity", 0)
+      : this.$clear.css("opacity", 1);
   }
 
   init() {
