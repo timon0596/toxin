@@ -10,7 +10,9 @@ if (window.location.pathname === "/form-elements.html") {
     $dropdownClearButton: $(
       ".js-form-elements__row_dropdowns .js-dropdown .js-dropdown__clear"
     ),
-    $checkboxList: $(".js-checkbox-list js-checkbox-list__expand"),
+    $checkboxList: $(
+      ".js-checkbox-list:nth-child(2) .js-checkbox-list__expand"
+    ),
   };
   new FormElements(formElements);
 }

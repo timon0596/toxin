@@ -15,6 +15,13 @@ export class FormElements {
     this.$dropdownClearButton = $dropdownClearButton;
     this.dropdowns();
     this.textField();
+    this.buttons();
+    this.checkbox();
+  }
+
+  buttons() {
+    this.$button.mouseover();
+    this.$buttonWithBorder.mouseover();
   }
 
   textField() {
@@ -26,5 +33,9 @@ export class FormElements {
     this.$dropdowns.click();
     $(this.$dropdownClearButton[0]).click();
     $(this.$dropdowns[0]).click();
+  }
+
+  checkbox() {
+    this.$checkboxList.click();
   }
 }
