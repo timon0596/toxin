@@ -3,6 +3,24 @@ include ./../../ui-kit/ui-kit
 block title
   title room-details-page
 block main
+  -
+    const advantages = [
+      {
+        name:'Комфорт',
+        description:'Шумопоглощающие стены',
+        icon:'insert_emoticon'
+      },
+      {
+        name:'Удобство',
+        description:'Окно в каждой из спален',
+        icon:'location_city'
+      },
+      {
+        name:'Уют',
+        description:'Номер оснащён камином',
+        icon:'whatshot'
+      }
+    ];
   - 
     const user = {
       icon: 'img/users/user1.jpeg',
@@ -38,7 +56,7 @@ block main
         .room-details-page__advantages
           .room-details-page__heading-wrapper
             +heading({text:'Сведения о номере',level:'2'})
-          +advantages()
+          +advantages({advantages})
         .room-details-page__empressions
           .room-details-page__heading-wrapper
             +heading({text:'Впечатления от номера',level:'2'})

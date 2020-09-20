@@ -1,13 +1,65 @@
 @import './../../sass/vars.sass'
 .form-elements
-  &__list
+  $root: &
+  padding: 140px
+
+  &__column-wrapper
     display: grid
-    grid-gap: 40px
+    grid-auto-flow: column
+    grid-gap: 70px
+
+  &__wrapper
+    max-width: 266px
+    display: grid
+    grid-gap: 10px
+
+    &_vertical
+      grid-auto-flow: column
+      justify-content: start
 
   &__item
     display: grid
     grid-gap: 15px
-    
+
   &__group
     display: grid
+    grid-gap: 20px
+
+  &__row
+    display: grid
+    grid-auto-flow: column
+    grid-gap: 125px
+    justify-content: start
+    width: min-content
+
+    &:last-child
+      width: 100%  
+
+    &_dropdowns
+      margin-bottom: 160px
+      margin-top: 100px
+
+    &_checkboxes
+      margin-bottom: 100px
+      align-items: baseline
+
+  &__column
+    min-width: 320px
+    display: grid
+    grid-gap: 40px
+    align-content: start
+
+  &__buttons
+    display: grid
     grid-gap: 30px
+
+    &-wrapper
+      display: grid
+      grid-auto-flow: column
+      grid-gap: 20px
+      justify-content: start
+
+
+
+
+

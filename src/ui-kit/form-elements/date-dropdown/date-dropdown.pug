@@ -3,9 +3,8 @@ mixin date-dropdown({names,modifier})
     .date-dropdown__datepicker-container.js-date-dropdown__datepicker-container
     each name in names
       .date-dropdown__display
-        .date-dropdown__heading
-          +heading({text:name})
         +text-field({
+          text:name,
           placeholder:'дд.мм.гггг', 
           material_icons:'expand_more',
            modifier: modifier!=='filter'?'masked':null})

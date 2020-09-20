@@ -7,11 +7,9 @@ mixin registration()
       +text-field({placeholder: 'Фамилия'})
       +radio()
     .registration__row
-      +heading({text:'дата рождения'})
-      +text-field({placeholder:'дд.мм.гггг',modifier: 'masked'})
+      +text-field({placeholder:'дд.мм.гггг',modifier: 'masked',text:'дата рождения'})
     .registration__row
-      +heading({text:'данные для входа в сервис'})
-      +text-field({placeholder: 'Email'})
+      +text-field({placeholder: 'Email',text:'данные для входа в сервис'})
       +text-field({placeholder: 'Пароль'})
       +toggle()
     .registration__row

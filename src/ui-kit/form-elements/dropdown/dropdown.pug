@@ -1,4 +1,4 @@
-mixin dropdown({h3,modifier})
+mixin dropdown({h3,modifier}={})
   .dropdown.js-dropdown(class={'dropdown_guest':modifier==='guest'})
     +heading({text:h3,level:'3'})
     .dropdown__body.js-dropdown__body
