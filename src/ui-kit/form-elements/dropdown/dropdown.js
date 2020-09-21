@@ -127,6 +127,7 @@ export class Dropdown {
 
   apply() {
     localStorage.setItem(this.localStorageName, JSON.stringify(this.values));
+    this.$menu.slideToggle(250);
   }
 
   modulo(number) {

@@ -51,69 +51,72 @@ block content
     ];
   
   .form-elements
-    .form-elements__row
-      .form-elements__column
-        .form-elements__group
-          +text-field({text:'text field',placeholder:'Email'})
-          +text-field({text:'text field',placeholder:'Email'})
-          +dropdown({h3:'dropdown',modifier:'guest'})
-          +text-field({text:'masked text field',placeholder:'ДД.ММ.ГГГГ',modifier:'masked'})
-        +date-dropdown({names:['dropdown','dropdown']})
-        .form-elements__wrapper
-          +date-dropdown({names:['filter date dropdown'],modifier:'filter'})
-        .form-elements__wrapper
-          +text-field({
-          text:'subscription text field',
-          modifier:'with-arrow',
-          placeholder:'Email',
-          material_icons:'arrow_forward',
-          iconColor: 'purple'})
-      .form-elements__column-wrapper
+    .form-elements__z-wrapper_for-row
+      .form-elements__row
         .form-elements__column
+          .form-elements__group
+            +text-field({text:'text field',placeholder:'Email'})
+            +text-field({text:'text field',placeholder:'Email'})
+            +dropdown({h3:'dropdown',modifier:'guest'})
+            +text-field({text:'masked text field',placeholder:'ДД.ММ.ГГГГ',modifier:'masked'})
+          +date-dropdown({names:['dropdown','dropdown']})
           .form-elements__wrapper
-            +checkbox-buttons({h3:'checkbox buttons',content})
-          .form-elements__item
-            +heading({text:'radio buttons'})
-            +radio()
-          .form-elements__item
-            +heading({text:'toggle'})
+            .form-elements__z-wrapper
+              +date-dropdown({names:['filter date dropdown'],modifier:'filter'})
+          .form-elements__wrapper
+            +text-field({
+            text:'subscription text field',
+            modifier:'with-arrow',
+            placeholder:'Email',
+            material_icons:'arrow_forward',
+            iconColor: 'purple'})
+        .form-elements__column-wrapper
+          .form-elements__column
             .form-elements__wrapper
-              +toggle({checked:true})
-              +toggle()
-          .form-elements__item
-            +heading({text:'like button'})
-            .form-elements__wrapper.form-elements__wrapper_vertical
-              +like({likes:2})
-              +like({likes:12,checked:true})
-          .form-elements__item
-            +heading({text:'rate buttons'})
-            .form-elements__wrapper.form-elements__wrapper_vertical
-              +rate({num:4})
-              +rate({num:5})
-        .form-elements__column
-          +range-slider({heading:'range slider'})
-          .form-elements__item
-            +heading({text:'buttons'})
-            .form-elements__buttons
-              .form-elements__buttons-wrapper
-                +button({text:'click me'})
-                +button({text:'click me'})
-              .form-elements__buttons-wrapper
-                +button({text:'click me',modifier:'border',color:'purple'})
-                +button({text:'click me',modifier:'border',color:'purple'})
-              .form-elements__buttons-wrapper
-                +button({text:'click me',modifier:'no-bg',color:'purple'})
-                +button({text:'click me',modifier:'no-bg',color:'grey'})
-              +button({text:'перейти к оплате',modifier: 'arrow'})
-          .form-elements__item
-            +heading({text:'pagination'})
-            +pagination()
+              +checkbox-buttons({h3:'checkbox buttons',content})
+            .form-elements__item
+              +heading({text:'radio buttons'})
+              +radio()
+            .form-elements__item
+              +heading({text:'toggle'})
+              .form-elements__wrapper
+                +toggle({checked:true})
+                +toggle()
+            .form-elements__item
+              +heading({text:'like button'})
+              .form-elements__wrapper.form-elements__wrapper_vertical
+                +like({likes:2})
+                +like({likes:12,checked:true})
+            .form-elements__item
+              +heading({text:'rate buttons'})
+              .form-elements__wrapper.form-elements__wrapper_vertical
+                +rate({num:4})
+                +rate({num:5})
+          .form-elements__column
+            +range-slider({heading:'range slider'})
+            .form-elements__item
+              +heading({text:'buttons'})
+              .form-elements__buttons
+                .form-elements__buttons-wrapper
+                  +button({text:'click me'})
+                  +button({text:'click me'})
+                .form-elements__buttons-wrapper
+                  +button({text:'click me',modifier:'border',color:'purple'})
+                  +button({text:'click me',modifier:'border',color:'purple'})
+                .form-elements__buttons-wrapper
+                  +button({text:'click me',modifier:'no-bg',color:'purple'})
+                  +button({text:'click me',modifier:'no-bg',color:'grey'})
+                +button({text:'перейти к оплате',modifier: 'arrow'})
+            .form-elements__item
+              +heading({text:'pagination'})
+              +pagination()
     .form-elements__row.form-elements__row_dropdowns.js-form-elements__row_dropdowns
       .form-elements__column
         .form-elements__wrapper
           .form-elements__group
             +dropdown({h3:'dropdown'})
-            +dropdown({h3:'dropdown'})
+            .form-elements__z-wrapper
+              +dropdown({h3:'dropdown'})
       .form-elements__column-wrapper
         .form-elements__column
           +dropdown({modifier:'guest',h3:'dropdown'})
