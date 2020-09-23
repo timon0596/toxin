@@ -11,13 +11,13 @@ export class CheckBoxList {
     this.$wrapper = this.$el.find(".js-checkbox-list__wrapper").hide();
   }
 
-  onClickHandler() {
+  handle$expandClick() {
     this.$el.toggleClass("checkbox-list_expanded");
     this.$wrapper.slideToggle(250);
   }
 
   init() {
     this.findElements();
-    this.$expand.click(this.onClickHandler.bind(this));
+    this.$expand.click(this.handle$expandClick.bind(this));
   }
 }

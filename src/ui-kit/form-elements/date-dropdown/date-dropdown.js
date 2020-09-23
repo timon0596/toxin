@@ -33,8 +33,8 @@ export class DateDropdown {
     this.$datepickerContainer = this.$el.find(
       ".js-date-dropdown__datepicker-container"
     );
-    this.$clearButton.click(this.clearButtonOnClick.bind(this));
-    this.$applyButton.click(this.applyButtonOnClick.bind(this));
+    this.$clearButton.click(this.handleClearButtonClick.bind(this));
+    this.$applyButton.click(this.handleApplyButtonClick.bind(this));
     this.datepickerConfig = {
       minDate: new Date(),
       multipleDates: 2,
@@ -48,7 +48,7 @@ export class DateDropdown {
       clearButton: true,
       prevHtml: this.prevHtml,
       nextHtml: this.nextHtml,
-      onSelect: this.datepickerOnSelectHandler.bind(this),
+      onSelect: this.handleDatepickerSelect.bind(this),
     };
   }
 
@@ -56,17 +56,17 @@ export class DateDropdown {
     this.defineElements();
     this.selectedDatesFromLocalStorage();
     this.datepickerInit();
-    this.$expandButton.click(() => {
-      this.$datepickerInline.slideToggle(250);
-    });
+    this.$expandButton.click(this.handleExpandButtonClick.bind(this));
   }
-
-  clearButtonOnClick() {
+  handleExpandButtonClick() {
+    this.$datepickerInline.slideToggle(250);
+  }
+  handleClearButtonClick() {
     this.$datepickerClearButton.click();
     localStorage?.removeItem("datepicker");
   }
 
-  applyButtonOnClick() {
+  handleApplyButtonClick() {
     localStorage.setItem("datepicker", JSON.stringify(this.selectedDates));
     this.$datepickerInline.slideUp(250);
   }
@@ -96,7 +96,7 @@ export class DateDropdown {
     this.$el.trigger(dateSelectEvent);
   }
 
-  datepickerOnSelectHandler(fd, d, picker) {
+  handleDatepickerSelect(fd, d, picker) {
     const options = { year: "numeric", month: "numeric", day: "numeric" };
     this.selectedDates.fromTo = fd;
     this.selectedDates.from = d[0]

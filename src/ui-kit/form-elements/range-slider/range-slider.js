@@ -8,7 +8,7 @@ export class RangeSlider {
       min: 0,
       max: 15000,
       values: [5000, 10000],
-      slide: this.onSlide.bind(this),
+      slide: this.handleSlide.bind(this),
     };
     this.init();
   }
@@ -18,7 +18,7 @@ export class RangeSlider {
     this.$amount = this.$parent.find(".js-range-slider__amount");
   }
 
-  onSlide(event, ui) {
+  handleSlide(event, ui) {
     this.$amount.text(ui.values[0] + "₽" + " - " + ui.values[1] + "₽");
   }
 
