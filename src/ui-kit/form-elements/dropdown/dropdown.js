@@ -95,7 +95,7 @@ export class Dropdown {
     }
   }
 
-  handleExpandClick() {
+  handle$expandClick() {
     this.$menu.slideToggle(250);
     this.$body.toggleClass("dropdown__body_active");
   }
@@ -158,7 +158,7 @@ export class Dropdown {
 
   init() {
     this.findElements();
-    this.$expand.on("click.dropdownExpand", this.handleExpandClick.bind(this));
+    this.$expand.on("click.dropdownExpand", this.handle$expandClick.bind(this));
     this.$plusButtons.on(
       "click.plusButton",
       this.handle$plusButtonsClick.bind(this)
