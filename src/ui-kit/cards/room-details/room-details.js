@@ -15,7 +15,7 @@ export class RoomDetails {
     this.$taxHabitationSumBlock = this.$block.find(".js-room-details__tax-sum");
   }
 
-  handle$blockNewDateSelected(e) {
+  handleBlockNewDateSelected(e) {
     if (e.selectedDates.days) {
       const sum = 9990 * e.selectedDates.days;
       const total = sum - 2179 + 300;
@@ -35,9 +35,9 @@ export class RoomDetails {
 
   init() {
     this.findElements();
-    this.$block.on(
-      "new-date-selected",
-      this.handle$blockNewDateSelected.bind(this)
+    this.handleBlockNewDateSelected = this.handleBlockNewDateSelected.bind(
+      this
     );
+    this.$block.on("new-date-selected", this.handleBlockNewDateSelected);
   }
 }
