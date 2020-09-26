@@ -95,19 +95,19 @@ export class Dropdown {
     }
   }
 
-  handle$expandClick() {
+  handleExpandClick() {
     this.$menu.slideToggle(250);
     this.$body.toggleClass("dropdown__body_active");
   }
 
-  handle$minusButtonsClick(e) {
+  handleMinusButtonsClick(e) {
     const i = [...this.$minusButtons].indexOf(e.target);
     this.values[i]--;
     this.values[i] = this.values[i] < 0 ? 0 : this.values[i];
     this.render();
   }
 
-  handle$plusButtonsClick(e) {
+  handlePlusButtonsClick(e) {
     const i = [...this.$plusButtons].indexOf(e.target);
     this.values[i]++;
     this.render();
@@ -119,13 +119,13 @@ export class Dropdown {
       : this.Counter.enable($(this.$minusButtons[i]));
   }
 
-  handle$clearClick() {
+  handleClearClick() {
     this.values.fill(0);
     localStorage.removeItem(this.localStorageName);
     this.render();
   }
 
-  handle$applyClick() {
+  handleApplyClick() {
     localStorage.setItem(this.localStorageName, JSON.stringify(this.values));
     this.$menu.slideToggle(250);
   }
@@ -156,19 +156,22 @@ export class Dropdown {
       : this.$clear.css("opacity", 1);
   }
 
+  binding() {
+    this.handleExpandClick = this.handleExpandClick.bind(this);
+    this.handlePlusButtonsClick = this.handlePlusButtonsClick.bind(this);
+    this.handleMinusButtonsClick = this.handleMinusButtonsClick.bind(this);
+    this.handleClearClick = this.handleClearClick.bind(this);
+    this.handleApplyClick = this.handleApplyClick.bind(this);
+  }
+
   init() {
+    this.binding();
     this.findElements();
-    this.$expand.on("click.dropdownExpand", this.handle$expandClick.bind(this));
-    this.$plusButtons.on(
-      "click.plusButton",
-      this.handle$plusButtonsClick.bind(this)
-    );
-    this.$minusButtons.on(
-      "click.minusButton",
-      this.handle$minusButtonsClick.bind(this)
-    );
-    this.$clear.on("click.dropdownClear", this.handle$clearClick.bind(this));
-    this.$apply.on("click.dropdownApply", this.handle$applyClick.bind(this));
+    this.$expand.on("click.dropdownExpand", this.handleExpandClick);
+    this.$plusButtons.on("click.plusButton", this.handlePlusButtonsClick);
+    this.$minusButtons.on("click.minusButton", this.handleMinusButtonsClick);
+    this.$clear.on("click.dropdownClear", this.handleClearClick);
+    this.$apply.on("click.dropdownApply", this.handleApplyClick);
     this.render();
   }
 }
