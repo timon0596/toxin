@@ -29,32 +29,45 @@ export class SignInPage {
     );
   }
 
-  signInHandler() {
+  handleSignUpBlockButtonClick() {
     this.$signUpBlock.hide();
     this.$signInBlock.show();
   }
 
-  signUpHandler() {
+  handleNavSignUpButtonClick() {
     this.$navButtons.show();
     this.$userName.hide();
     this.$signInBlock.hide();
     this.$signUpBlock.show();
   }
 
-  enterHandler() {
+  handleSignInEnterButtonClick() {
     this.$navButtons.hide();
     this.$userName.show();
+  }
+
+  binding() {
+    this.handleSignUpBlockButtonClick = this.handleSignUpBlockButtonClick.bind(
+      this
+    );
+    this.handleNavSignUpButtonClick = this.handleNavSignUpButtonClick.bind(
+      this
+    );
+    this.handleSignInEnterButtonClick = this.handleSignInEnterButtonClick.bind(
+      this
+    );
   }
 
   init() {
     this.findElements();
     if ("/sign-in-page.html" == location.pathname) {
       this.$signInBlock.hide();
-      this.$signUpBlockButton.click(this.signInHandler.bind(this));
-      this.$navSignInButton.click(this.signInHandler.bind(this));
-      this.$navSignUpButton.click(this.signUpHandler.bind(this));
-      this.$signInButtonCreate.click(this.signUpHandler.bind(this));
-      this.$signInEnterButton.click(this.enterHandler.bind(this));
+      this.binding();
+      this.$signUpBlockButton.click(this.handleSignUpBlockButtonClick);
+      this.$navSignInButton.click(this.handleSignUpBlockButtonClick);
+      this.$navSignUpButton.click(this.handleNavSignUpButtonClick);
+      this.$signInButtonCreate.click(this.handleNavSignUpButtonClick);
+      this.$signInEnterButton.click(this.handleSignInEnterButtonClick);
     }
   }
 }
