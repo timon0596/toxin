@@ -13,7 +13,8 @@
     position: absolute
     left: 0
     top: calc(100% + 5px)
-    min-width: 320px
+    max-width: 100%
+    width: 100%
 
   &_filter
     position: relative
@@ -21,12 +22,22 @@
     grid-template-columns: 1fr
     grid-gap: 20px
 
+  .datepicker--cells.datepicker--cells-days
+    display: grid
+    grid-template-columns: repeat(7,1fr )
+    justify-content: stretch
+
   .datepicker--cell.datepicker--cell-day
-    min-width: 40px
-    min-height: 40px
+    position: relative
+    max-width: 40px
+    max-height: 40px
+    width: 100%
     color: $d50
     font-size: 12px
     line-height: 15px
+    text-align: center
+    vertical-align: top
+
 
   .datepicker--cell.datepicker--cell-day.-other-month-
     color: $d25
