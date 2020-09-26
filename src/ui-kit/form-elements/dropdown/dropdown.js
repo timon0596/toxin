@@ -152,8 +152,8 @@ export class Dropdown {
 
   sum() {
     this.values.reduce((acc, i) => acc + i) === 0
-      ? this.$clear.css("opacity", 0)
-      : this.$clear.css("opacity", 1);
+      ? this.$clear.addClass("dropdown__clear_invis")
+      : this.$clear.removeClass("dropdown__clear_invis");
   }
 
   binding() {
