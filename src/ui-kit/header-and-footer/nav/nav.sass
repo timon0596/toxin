@@ -1,0 +1,28 @@
+@import './../../../sass/vars.sass'
+.nav
+  display: grid
+  grid-gap: 20px
+  grid-auto-flow: column
+
+  @media (max-width: 1280px)
+    grid-auto-flow: row
+    margin-top: 20px
+
+  &__item_signed
+    padding-left: 20px
+    border-left: 1px solid $d1
+
+  &__item_active,
+  &__item:active
+    font-weight: bold
+    color: $d75
+
+  &__item
+    z-index: 1
+    height: 30px
+    display: flex
+    align-items: center
+    cursor: pointer
+
+  &__button>*
+    height: 34px

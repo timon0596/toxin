@@ -1,5 +1,6 @@
-import "air-datepicker";
-import "jquery-mask-plugin";
+import 'air-datepicker';
+import 'jquery-mask-plugin';
+
 export class DateDropdown {
   constructor({
     el,
@@ -11,7 +12,9 @@ export class DateDropdown {
   }) {
     this.datepickerInstance;
     this.$el = el;
-    this.selectedDates = { fromTo: "", from: "", to: "", days: 0 };
+    this.selectedDates = {
+      fromTo: '', from: '', to: '', days: 0,
+    };
     this.$clearButton = $clearButton;
     this.$applyButton = $applyButton;
     this.$expandButton = $expandButton;
@@ -29,9 +32,9 @@ export class DateDropdown {
   }
 
   defineElements() {
-    this.isFilter = this.$el.hasClass("date-dropdown_filter");
+    this.isFilter = this.$el.hasClass('date-dropdown_filter');
     this.$datepickerContainer = this.$el.find(
-      ".js-date-dropdown__datepicker-container"
+      '.js-date-dropdown__datepicker-container',
     );
     this.$clearButton.click(this.handleClearButtonClick);
     this.$applyButton.click(this.handleApplyButtonClick);
@@ -39,10 +42,10 @@ export class DateDropdown {
       minDate: new Date(),
       multipleDates: 2,
       range: true,
-      multipleDatesSeparator: " - ",
-      dateFormat: this.isFilter ? "dd M" : "dd.mm.yyyy",
+      multipleDatesSeparator: ' - ',
+      dateFormat: this.isFilter ? 'dd M' : 'dd.mm.yyyy',
       language: {
-        daysMin: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+        daysMin: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
       },
       navTitles: this.navTitles,
       clearButton: true,
@@ -65,26 +68,27 @@ export class DateDropdown {
     this.datepickerInit();
     this.$expandButton.click(this.handleExpandButtonClick);
   }
+
   handleExpandButtonClick() {
     this.$datepickerInline.slideToggle(250);
   }
+
   handleClearButtonClick() {
     this.$datepickerClearButton.click();
-    localStorage?.removeItem("datepicker");
+    localStorage?.removeItem('datepicker');
   }
 
   handleApplyButtonClick() {
-    localStorage.setItem("datepicker", JSON.stringify(this.selectedDates));
+    localStorage.setItem('datepicker', JSON.stringify(this.selectedDates));
     this.$datepickerInline.slideUp(250);
   }
 
   dateFromLocaleDateString(str) {
-    return new Date(str.split(".").reverse().join("."));
+    return new Date(str.split('.').reverse().join('.'));
   }
 
   selectedDatesFromLocalStorage() {
-    this.selectedDates =
-      JSON.parse(localStorage?.getItem("datepicker")) || this.selectedDates;
+    this.selectedDates = JSON.parse(localStorage?.getItem('datepicker')) || this.selectedDates;
   }
 
   fillInputsWithValues(fd) {
@@ -98,20 +102,20 @@ export class DateDropdown {
   }
 
   emitEvent() {
-    const dateSelectEvent = $.Event("new-date-selected");
+    const dateSelectEvent = $.Event('new-date-selected');
     dateSelectEvent.selectedDates = { ...this.selectedDates };
     this.$el.trigger(dateSelectEvent);
   }
 
   handleDatepickerSelect(fd, d, picker) {
-    const options = { year: "numeric", month: "numeric", day: "numeric" };
+    const options = { year: 'numeric', month: 'numeric', day: 'numeric' };
     this.selectedDates.fromTo = fd;
     this.selectedDates.from = d[0]
-      ? d[0].toLocaleDateString("ru-RU", options)
-      : "";
+      ? d[0].toLocaleDateString('ru-RU', options)
+      : '';
     this.selectedDates.to = d[1]
-      ? d[1].toLocaleDateString("ru-RU", options)
-      : "";
+      ? d[1].toLocaleDateString('ru-RU', options)
+      : '';
     this.selectedDates.days = d[1]
       ? Math.round((d[1] - d[0]) / 1000 / 60 / 60 / 24)
       : 0;
@@ -122,7 +126,7 @@ export class DateDropdown {
   datepickerInit() {
     this.datepickerInstance = this.$datepickerContainer
       .datepicker(this.datepickerConfig)
-      .data("datepicker");
+      .data('datepicker');
     if (this.selectedDates.days) {
       this.datepickerInstance.selectDate([
         this.dateFromLocaleDateString(this.selectedDates.from),
@@ -130,8 +134,8 @@ export class DateDropdown {
       ]);
     }
     this.$datepickerClearButton = this.$el.find('[data-action="clear"]').hide();
-    this.$datepickerInline = this.$el.find(".datepicker-inline").hide();
-    this.$datepickerButtons = this.$el.find(".datepicker--buttons");
+    this.$datepickerInline = this.$el.find('.datepicker-inline').hide();
+    this.$datepickerButtons = this.$el.find('.datepicker--buttons');
     this.$datepickerButtons.append(this.$clearButton).append(this.$applyButton);
   }
 }
