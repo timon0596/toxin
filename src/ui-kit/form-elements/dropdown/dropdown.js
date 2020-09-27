@@ -96,7 +96,7 @@ export class Dropdown {
   }
 
   handleExpandClick() {
-    this.$menu.slideToggle(250);
+    this.$menu.slideToggle(0);
     this.$body.toggleClass("dropdown__body_active");
   }
 
