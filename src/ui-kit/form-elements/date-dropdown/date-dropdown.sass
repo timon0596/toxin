@@ -25,13 +25,13 @@
   .datepicker--cells.datepicker--cells-days
     display: grid
     grid-template-columns: repeat(7,1fr )
-    justify-content: stretch
+    width: min-content
+    margin: auto    
 
   .datepicker--cell.datepicker--cell-day
     position: relative
-    max-width: 40px
-    max-height: 40px
-    width: 100%
+    min-width: 32px
+    min-height: 32px
     color: $d50
     font-size: 12px
     line-height: 15px
@@ -79,12 +79,13 @@
     border-bottom-right-radius: 50%
 
   .datepicker--days-names
-    display: flex
+    display: grid
+    grid-auto-flow: column
     justify-content: center
 
   .datepicker--day-name
-    max-width: 40px
-    max-height: 40px
+    min-width: 32px
+    min-height: 32px
     font-family: montserrat
     font-style: normal
     font-weight: bold
