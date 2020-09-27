@@ -14,8 +14,22 @@ export class Header {
     this.$slideUp = $('.header__slide-up');
     this.handleSlideUpClick = this.handleSlideUpClick.bind(this);
     this.handleBurgerClick = this.handleBurgerClick.bind(this);
+    this.handleWindowResize = this.handleWindowResize.bind(this);
     this.$slideUp.click(this.handleSlideUpClick);
     this.$burger.click(this.handleBurgerClick);
+    $(window).resize(this.handleWindowResize);
+  }
+
+  handleWindowResize() {
+    if (window.innerWidth >= 1280) {
+      this.$slideUp.hide();
+      this.$burger.hide();
+      this.$nav.show();
+    } else {
+      this.$nav.hide();
+      this.$slideUp.hide();
+      this.$burger.show();
+    }
   }
 
   handleSlideUpClick() {
