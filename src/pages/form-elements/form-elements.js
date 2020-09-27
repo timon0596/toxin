@@ -25,7 +25,7 @@ export class FormElements {
   }
 
   textField() {
-    this.$textfield.val("This is pretty awesome");
+    this.$textfield.val('This is pretty awesome');
     this.$textfield[0].focus();
   }
 

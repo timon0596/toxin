@@ -7,12 +7,12 @@ export class CheckBoxList {
   }
 
   findElements() {
-    this.$expand = this.$el.find(".js-checkbox-list__expand");
-    this.$wrapper = this.$el.find(".js-checkbox-list__wrapper").hide();
+    this.$expand = this.$el.find('.js-checkbox-list__expand');
+    this.$wrapper = this.$el.find('.js-checkbox-list__wrapper').hide();
   }
 
   handle$expandClick() {
-    this.$el.toggleClass("checkbox-list_expanded");
+    this.$el.toggleClass('checkbox-list_expanded');
     this.$wrapper.slideToggle(250);
   }
 

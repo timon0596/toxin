@@ -10,22 +10,22 @@ export class RoomDetails {
   }
 
   findElements() {
-    this.$taxHabitation = this.$block.find(".js-room-details__tax-name");
+    this.$taxHabitation = this.$block.find('.js-room-details__tax-name');
 
-    this.$taxHabitationSumBlock = this.$block.find(".js-room-details__tax-sum");
+    this.$taxHabitationSumBlock = this.$block.find('.js-room-details__tax-sum');
   }
 
   handleBlockNewDateSelected(e) {
     if (e.selectedDates.days) {
       const sum = 9990 * e.selectedDates.days;
       const total = sum - 2179 + 300;
-      const declension = e.selectedDates.days % 10 == 1 ? "сутки" : "суток";
+      const declension = e.selectedDates.days % 10 == 1 ? 'сутки' : 'суток';
       const taxHabitationInt = Math.floor(sum / 1000);
-      const taxHabitationModulo = ((sum % 1000) + "").padStart(3, "0");
+      const taxHabitationModulo = (`${sum % 1000}`).padStart(3, '0');
       const taxHabitationTaxSum = `${taxHabitationInt} ${taxHabitationModulo}₽`;
       const taxHabitationText = `9 990₽ х ${e.selectedDates.days} ${declension}`;
       const totalInt = Math.floor(total / 1000);
-      const totalModulo = ((total % 1000) + "").padStart(3, "0");
+      const totalModulo = (`${total % 1000}`).padStart(3, '0');
       const blockSumText = `${totalInt} ${totalModulo}₽`;
       this.$taxHabitation.text(taxHabitationText);
       this.$taxHabitationSumBlock.text(taxHabitationTaxSum);
@@ -36,8 +36,8 @@ export class RoomDetails {
   init() {
     this.findElements();
     this.handleBlockNewDateSelected = this.handleBlockNewDateSelected.bind(
-      this
+      this,
     );
-    this.$block.on("new-date-selected", this.handleBlockNewDateSelected);
+    this.$block.on('new-date-selected', this.handleBlockNewDateSelected);
   }
 }

@@ -1,4 +1,5 @@
-import { Header } from "./header";
+import { Header } from './header';
+
 $(document).ready(() => {
   new Header();
 });

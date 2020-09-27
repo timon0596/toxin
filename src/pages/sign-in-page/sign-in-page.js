@@ -22,10 +22,10 @@ export class SignInPage {
 
   findElements() {
     this.$signInButtonCreate = this.$signInBlock.find(
-      ".js-sign-in__button-create"
+      '.js-sign-in__button-create',
     );
     this.$signInEnterButton = this.$signInBlock.find(
-      ".js-sign-in__sign-in-button"
+      '.js-sign-in__sign-in-button',
     );
   }
 
@@ -48,19 +48,19 @@ export class SignInPage {
 
   binding() {
     this.handleSignUpBlockButtonClick = this.handleSignUpBlockButtonClick.bind(
-      this
+      this,
     );
     this.handleNavSignUpButtonClick = this.handleNavSignUpButtonClick.bind(
-      this
+      this,
     );
     this.handleSignInEnterButtonClick = this.handleSignInEnterButtonClick.bind(
-      this
+      this,
     );
   }
 
   init() {
     this.findElements();
-    if ("/sign-in-page.html" == location.pathname) {
+    if (location.pathname == '/sign-in-page.html') {
       this.$signInBlock.hide();
       this.binding();
       this.$signUpBlockButton.click(this.handleSignUpBlockButtonClick);
