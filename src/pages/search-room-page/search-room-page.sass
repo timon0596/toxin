@@ -1,6 +1,9 @@
 @import './../../sass/vars.sass'
 .search-room-page
-  display: flex
+  display: grid
+  grid-auto-flow: column
+  grid-gap: 60px
+  align-items: start
   justify-content: center
   padding-top: 30px
   background: white
@@ -9,8 +12,7 @@
     padding: 30px
     
   @media (max-width: 768px)
-    flex-direction: column
-    align-items: center
+    grid-auto-flow: row
 
   &__heading-wrapper
     margin-bottom: 20px
@@ -39,11 +41,11 @@
 
   &__filters
     max-width: 266px
-    height: min-height
-    margin-right: 60px
     display: grid
     grid-gap: 30px
-    align-content: start
+
+    @media (max-width: 768px)
+      justify-self: center  
 
   &__filter-inner-wrapper
     display: grid
