@@ -24,7 +24,7 @@ mixin room-preview({room:{number,imgs,cost,lux,rate,reviews},id})
       .room-preview__inner-row
         .room-preview__number
           != "№ "
-          +heading({text:number,level:'1'})
+          +heading({text:number,level:'2'})
           if lux
             +heading({text:'люкс',color:'purple'})
         .room-preview__payment
@@ -35,4 +35,4 @@ mixin room-preview({room:{number,imgs,cost,lux,rate,reviews},id})
         +rate({num:rate})
         .room-preview__reviews
           .room-preview__reviews-amount= reviews
-          =" отзывов"
+          =" Отзывов"

@@ -6,6 +6,7 @@
   align-items: start
   justify-content: center
   padding-top: 30px
+  padding-bottom: 70px
   background: white
 
   @media (max-width: 1280px)
@@ -18,16 +19,17 @@
     margin-bottom: 20px
 
   &__pagination
-    margin-top: 40px
+    margin-top: 44px
+    margin-right: 15px
     display: flex
     justify-content: center
 
   &__room-preview-grid
     display: grid
     grid-template-columns: 1fr 1fr 1fr
-    grid-gap: 20px 12px
+    grid-gap: 24px 12px
 
-    @media (max-width: 1440px)
+    @media (max-width: 1400px)
       grid-template-columns: 1fr 1fr
 
     @media (max-width: 960px)
@@ -42,10 +44,15 @@
   &__filters
     max-width: 266px
     display: grid
-    grid-gap: 30px
 
     @media (max-width: 768px)
       justify-self: center  
+
+  &__filter:not(:first-child)
+    margin-top: 30px
+    
+  &__filter:last-child
+    margin-top: 16px
 
   &__filter-inner-wrapper
     display: grid
