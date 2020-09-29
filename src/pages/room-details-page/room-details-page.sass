@@ -40,7 +40,7 @@
     padding: 70px 140px
     display: grid
     grid-template-columns: auto auto
-    grid-gap: 70px
+    grid-gap: 50px
     background: white
 
     @media (max-width: 1280px)
@@ -56,7 +56,7 @@
   &__information
     display: grid
     grid-template-areas: 'advantages empressions''reviews reviews''rules cancel'
-    grid-gap: 30px 70px
+    grid-gap: 34px 81px
 
     @media (max-width: 992px)
       grid-template-areas: 'advantages''empressions''reviews''rules''cancel'
@@ -68,19 +68,21 @@
     grid-area: empressions
 
   &__empression-chart
-    display: grid
+    display: flex
     align-items: flex-end
-    grid-auto-flow: column
-    width: min-content
-    grid-gap: 30px
 
     @media(max-width: 360px)
-      grid-auto-flow: row
-      margin: auto
+      flex-wrap: wrap
+
+  &__bullet-list-wrapper
+    margin-left: 30px
 
   &__empression-diagramm
     position: relative
     width: min-content
+    
+    @media(max-width: 360px)
+      margin-left: 30px
 
   &__empression-votes
     position: absolute
