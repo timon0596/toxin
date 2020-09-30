@@ -17,7 +17,8 @@ export class CheckBoxList {
   }
 
   init() {
+    this.handle$expandClick = this.handle$expandClick.bind(this);
     this.findElements();
-    this.$expand.click(this.handle$expandClick.bind(this));
+    this.$expand.click(this.handle$expandClick);
   }
 }

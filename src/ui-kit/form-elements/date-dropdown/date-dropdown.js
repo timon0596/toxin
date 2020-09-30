@@ -51,11 +51,12 @@ export class DateDropdown {
       clearButton: true,
       prevHtml: this.prevHtml,
       nextHtml: this.nextHtml,
-      onSelect: this.handleDatepickerSelect.bind(this),
+      onSelect: this.handleDatepickerSelect,
     };
   }
 
   binding() {
+    this.handleDatepickerSelect = this.handleDatepickerSelect.bind(this);
     this.handleClearButtonClick = this.handleClearButtonClick.bind(this);
     this.handleApplyButtonClick = this.handleApplyButtonClick.bind(this);
     this.handleExpandButtonClick = this.handleExpandButtonClick.bind(this);

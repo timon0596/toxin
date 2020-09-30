@@ -3,12 +3,13 @@ export class RangeSlider {
     this.$el = el;
     this.$parent;
     this.$amount;
+    this.handleSlide = this.handleSlide.bind(this);
     this.sliderOptions = {
       range: true,
       min: 0,
       max: 15000,
       values: [5000, 10000],
-      slide: this.handleSlide.bind(this),
+      slide: this.handleSlide,
     };
     this.init();
   }
