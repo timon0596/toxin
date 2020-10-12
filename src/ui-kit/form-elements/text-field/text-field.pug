@@ -5,7 +5,8 @@ mixin text-field({placeholder,material_icons,modifier,iconColor,text})
     })
     .text-field__header
       +heading({text})
-    input(placeholder= placeholder)
-    if material_icons
-      .text-field__icon-wrapper.js-text-field__icon-wrapper
-        +icon({icon: material_icons,color: iconColor})
+    .text-field__input-wrapper
+      input(placeholder= placeholder)
+      if material_icons
+        .text-field__icon-wrapper.js-text-field__icon-wrapper
+          +icon({icon: material_icons,color: iconColor})
