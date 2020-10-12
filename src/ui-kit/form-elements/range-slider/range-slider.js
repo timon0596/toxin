@@ -3,13 +3,13 @@ export class RangeSlider {
     this.$el = el;
     this.$parent;
     this.$amount;
-    this.handleSlide = this.handleSlide.bind(this);
+    this.handleRangeSliderSlide = this.handleRangeSliderSlide.bind(this);
     this.sliderOptions = {
       range: true,
       min: 0,
       max: 15000,
       values: [5000, 10000],
-      slide: this.handleSlide,
+      slide: this.handleRangeSliderSlide,
     };
     this.init();
   }
@@ -19,7 +19,7 @@ export class RangeSlider {
     this.$amount = this.$parent.find('.js-range-slider__amount');
   }
 
-  handleSlide(event, ui) {
+  handleRangeSliderSlide(event, ui) {
     this.$amount.text(`${this.getValue(ui.values[0])}₽` + ` - ${this.getValue(ui.values[1])}₽`);
   }
 
