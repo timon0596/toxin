@@ -57,6 +57,7 @@ export class DateDropdown {
 
   binding() {
     this.handleDatepickerSelect = this.handleDatepickerSelect.bind(this);
+    this.handleInputsChange = this.handleInputsChange.bind(this);
     this.handleClearButtonClick = this.handleClearButtonClick.bind(this);
     this.handleApplyButtonClick = this.handleApplyButtonClick.bind(this);
     this.handleExpandButtonClick = this.handleExpandButtonClick.bind(this);
@@ -68,6 +69,14 @@ export class DateDropdown {
     this.selectedDatesFromLocalStorage();
     this.datepickerInit();
     this.$expandButton.click(this.handleExpandButtonClick);
+    this.$inputs.change(this.handleInputsChange);
+  }
+
+  handleInputsChange() {
+    this.datepickerInstance.selectDate([
+      this.dateFromLocaleDateString(this.$inputs[0].value),
+      this.dateFromLocaleDateString(this.$inputs[1].value),
+    ]);
   }
 
   handleExpandButtonClick() {
