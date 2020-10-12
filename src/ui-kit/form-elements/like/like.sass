@@ -1,6 +1,6 @@
 @import './../../../sass/vars.sass'
 .like
-  max-width: 40px
+  min-width: 40px
   max-height: 20px
   display: block
   cursor: pointer
@@ -11,6 +11,9 @@
     display: flex
     justify-content: center
     align-items: center
+
+  &__icon:nth-child(2)
+    display: none
 
   &__input
     display: none
@@ -33,6 +36,7 @@
     max-height: 20px
     display: flex
     align-items: center
+    padding-right: 4px
     border-radius: 10px
     border: solid 1px transparent
     box-sizing: border-box
@@ -53,17 +57,12 @@
       background: $d25
 
   &__number
+    width: 100%
+    min-height: 20px
     display: flex
     align-items: center
-    line-height: 9px
-    font-size: 10px
-
-  &__icon:nth-child(2)
-    display: none
-    
-  &__number
-    min-width: 20px
-    min-height: 20px
     margin-right: -1px
     font-size: 10px
     line-height: 12px
+    line-height: 9px
+    font-size: 10px
