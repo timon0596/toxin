@@ -1,5 +1,6 @@
 import { CheckBoxList } from './checkbox-list';
 
 $('.js-checkbox-list').each((i, el) => {
-  new CheckBoxList($(el));
+  const checkboxes = $(el).find('.checkbox__input');
+  new CheckBoxList({ el: $(el), checkboxes });
 });

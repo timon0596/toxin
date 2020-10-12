@@ -1,7 +1,7 @@
 mixin checkbox-button({name,description,nameWeight})
-  .checkbox-button
+  .checkbox-button.js-checkbox-button
     +checkbox()
-    .checkbox-button__name(class=nameWeight==='bold'?
+    .checkbox-button__name.js-checkbox-button__name(class=nameWeight==='bold'?
       'checkbox-button__name_bold':'')!= name
     if description
       .checkbox-button__description= description
