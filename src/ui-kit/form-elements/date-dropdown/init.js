@@ -1,6 +1,6 @@
 import { DateDropdown } from './date-dropdown';
 
-$('.js-date-dropdown').each((i, el) => {
+$([...$('.js-date-dropdown'), ...$('.cards__datepicker')]).each((i, el) => {
   const $expandButton = $(el).find('.js-text-field__icon-wrapper');
   const buttons = {
     $clearButton: $('<div>', {

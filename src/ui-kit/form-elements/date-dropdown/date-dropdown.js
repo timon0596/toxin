@@ -36,6 +36,8 @@ export class DateDropdown {
     this.$datepickerContainer = this.$el.find(
       '.js-date-dropdown__datepicker-container',
     );
+    this.$datepickerContainer = (this.$datepickerContainer[0]
+      ? this.$datepickerContainer : this.$el);
     this.$clearButton.click(this.handleClearButtonClick);
     this.$applyButton.click(this.handleApplyButtonClick);
     this.datepickerConfig = {
@@ -143,9 +145,10 @@ export class DateDropdown {
         this.dateFromLocaleDateString(this.selectedDates.to),
       ]);
     }
-    this.$datepickerClearButton = this.$el.find('[data-action="clear"]').hide();
-    this.$datepickerInline = this.$el.find('.datepicker-inline').hide();
-    this.$datepickerButtons = this.$el.find('.datepicker--buttons');
+    this.$datepickerClearButton = this.$datepickerContainer.find('[data-action="clear"]').hide();
+    this.$datepickerInline = this.$datepickerContainer.find('.datepicker-inline');
+    this.$datepickerContainer !== this.$el ? this.$datepickerInline.hide() : 0;
+    this.$datepickerButtons = this.$datepickerContainer.find('.datepicker--buttons');
     this.$datepickerButtons.append(this.$clearButton).append(this.$applyButton);
   }
 }
