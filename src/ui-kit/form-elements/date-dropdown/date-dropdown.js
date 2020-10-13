@@ -114,7 +114,7 @@ export class DateDropdown {
   }
 
   emitEvent() {
-    const dateSelectEvent = $.Event('new-date-selected');
+    const dateSelectEvent = $.Event('new-date-select');
     dateSelectEvent.selectedDates = { ...this.selectedDates };
     this.$el.trigger(dateSelectEvent);
   }
