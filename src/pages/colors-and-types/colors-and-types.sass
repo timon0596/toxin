@@ -1,0 +1,81 @@
+@import './../../sass/vars.sass'
+$colorList: $d100 $d75 $d50 $d25 $d5 $p $g
+.colors-and-types
+  $root: &
+  min-height: 100vh
+  padding: 145px 191px 145px 150px
+  display: grid
+  grid-auto-flow: column
+  align-items: start
+  justify-content: space-between
+
+  &__headings
+    display: grid
+    grid-gap: 50px
+
+  &__item
+    color: $d25
+    display: grid
+    grid-auto-flow: column
+    justify-content: start
+    grid-gap: 30px
+    &>div:first-child:not(#{$root}__body)
+      text-transform: uppercase
+    &>div:nth-child(2)
+      justify-self: start
+    &:nth-child(3)
+      margin-left: 12px
+    &:nth-child(4)
+      margin-left: -9px
+      margin-top: -3px
+
+  &__heading
+    max-width: 336px
+    justify-self: start
+
+  &__h3
+    font-size: 12px
+    line-height: 15px
+
+  &__h2
+    font-size: 19px
+    line-height: 23px
+
+  &__h1
+    font-size: 24px
+    line-height: 29px
+
+  &__column
+    display: grid
+    grid-gap: 20px
+
+  &__row
+    display: grid
+    grid-gap: 40px
+    grid-auto-flow: column
+    justify-content: start
+    align-items: center
+
+
+  &__name
+    font-family: quicksand
+    font-style: normal
+    font-weight: bold
+    font-size: 19px
+    line-height: 29px
+    color: $d100
+
+  &__hex
+    font-weight: normal
+
+  &__square
+    display: block
+    width: 70px
+    height: 70px
+    border-radius: 6px
+
+  @for $i from 1 through length($colorList)
+    &__row:nth-child(#{$i}) &__square
+      background: nth($colorList, $i)
+
+  &__column

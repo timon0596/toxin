@@ -1,0 +1,56 @@
+extends ./../templates/ui-kit-template/ui-kit-template
+include ./../../ui-kit/ui-kit
+block title
+  title colors-and-types
+block content
+  -
+    const colors = [
+      'Dark Shade 100%',
+      'Dark Shade 75%',
+      'Dark Shade 50%',
+      'Dark Shade 25%',
+      'Dark Shade 5%',
+      'Purple',
+      'Green',
+    ];
+  -
+    const hexes = [
+      '#1F2041',
+      '#1F2041',
+      '#1F2041',
+      '#1F2041',
+      '#1F2041',
+      '#BC9CFF',
+      '#6FCF97',
+    ];
+  .colors-and-types
+    .colors-and-types__column
+      each text,index in colors
+        .colors-and-types__row
+          .colors-and-types__square
+          .colors-and-types__name= text
+            .colors-and-types__hex= `${hexes[index]}`
+    .colors-and-types__headings
+      .colors-and-types__item
+        .colors-and-types__h1 h1
+        .colors-and-types__heading
+          +heading({text:'This one is the sub-section or widget title',
+          level:'1'})
+      .colors-and-types__item
+        .colors-and-types__h2 h2
+        .colors-and-types__heading
+          +heading({text:'Next one is the item title inside widgets',
+          level:'2'})
+      .colors-and-types__item
+        .colors-and-types__h3 h3
+        .colors-and-types__heading
+          +heading({text:'This is a label or CTA text'})
+      .colors-and-types__item
+        .colors-and-types__body Body
+        .colors-and-types__common-text
+          pre
+            |This is the body text which is used for most
+            |of the design, like paragraphs, lists, etc.
+
+
+
