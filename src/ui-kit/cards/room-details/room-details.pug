@@ -1,4 +1,4 @@
-mixin room-details({days=4,cost=['9 990',9990],value='₽',service=['2 179',2179],service2=0,service3=300}={})
+mixin room-details({days=4,cost=['9 990',9990],currnecy='₽',discount=['2 179',2179],service=0,additionalService=300}={})
   .room-details.js-room-details
     .room-details__row
       .room-details__inner-row
@@ -14,15 +14,15 @@ mixin room-details({days=4,cost=['9 990',9990],value='₽',service=['2 179',2179
       +dropdown({h3:'гости',modifier: 'guest'})
     .room-details__row
       .room-details__tax-table
-        .room-details__tax-name.js-room-details__tax-name #{cost[0]}#{value} х #{days} суток
+        .room-details__tax-name.js-room-details__tax-name #{cost[0]}#{currnecy} х #{days} суток
         .room-details__tax-info_empty
-        .room-details__tax-sum.js-room-details__tax-sum #{cost[1]*days}#{value}
-        .room-details__tax-name Сбор за услуги: скидка #{service[0]}#{value}
+        .room-details__tax-sum.js-room-details__tax-sum #{cost[1]*days}#{currnecy}
+        .room-details__tax-name Сбор за услуги: скидка #{discount[0]}#{currnecy}
         .room-details__tax-info i
-        .room-details__tax-sum #{service2}#{value}
+        .room-details__tax-sum #{service}#{currnecy}
         .room-details__tax-name Сбор за дополнительные услуги
         .room-details__tax-info i
-        .room-details__tax-sum #{service3}#{value}
+        .room-details__tax-sum #{additionalService}#{currnecy}
     .room-details__row
       .room-details__total
         +heading({text:'Итого',level:'2'})
@@ -32,8 +32,8 @@ mixin room-details({days=4,cost=['9 990',9990],value='₽',service=['2 179',2179
             text:
               cost[1]*
               days-
-              service[1]+
-              service3+
-              value,
+              discount[1]+
+              additionalService+
+              currnecy,
               level:'2'}) 
       +button({text: 'забронировать',modifier: 'arrow'})

@@ -3,7 +3,7 @@
   display: flex
   user-select: none
 
-  &__btn
+  &__button
     position: relative
     min-width: 20px
     min-height: 20px
@@ -12,7 +12,7 @@
     border-radius: 50%
     transition: border-color .250s ease
 
-  &__btn:before
+  &__button:before
     content: ''
     position: absolute
     top: 50%
@@ -36,7 +36,7 @@
   &__input
     display: none
 
-  &__input:checked + &__btn
+  &__input:checked + &__button
     position: relative
     min-width: 20px
     min-height: 20px
@@ -46,5 +46,5 @@
   &__input:checked ~ &__text
     color: $d75
     
-  &__input:checked + &__btn:before
+  &__input:checked + &__button:before
     transform: translate(-50%,-50%) scale(1)

@@ -1,9 +1,9 @@
-mixin comment({icon,name,date,likes,likeCheck,text})
+mixin comment({icon,name,date,likes,isChecked,text})
   .comment
     img(src= icon alt="user icon").comment__icon
     .comment__info
       .comment__username= name
       .comment__date= date
     .comment__like
-      +like({likes,checked: likeCheck})
+      +like({likes,checked: isChecked})
     .comment__text= text

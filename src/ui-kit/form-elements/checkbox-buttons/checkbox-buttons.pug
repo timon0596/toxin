@@ -3,9 +3,9 @@ mixin checkbox-buttons({h3,content,modifier})
     .checkbox-buttons__heading-wrapper
       +heading({level:'3',text:h3})
     .checkbox-buttons__wrapper
-      each ckbbtn in content
+      each checkboxButton in content
         +checkbox-button({
-          name: ckbbtn.name, 
-          description: ckbbtn.description,
+          name: checkboxButton.name, 
+          description: checkboxButton.description,
           nameWeight: modifier==='rich'?'bold':''
         })
