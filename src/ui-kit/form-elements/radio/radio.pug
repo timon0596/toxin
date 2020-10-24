@@ -1,10 +1,10 @@
-mixin radio()
+mixin radio({options=['Мужчина','Женщина']}={})
   .radio
     label.radio__label
       input(type="radio" name="gender" checked).radio__input
       .radio__button
-      .radio__text Мужчина
+      .radio__text #{options[0]}
     label.radio__label
       input(type="radio" name="gender").radio__input
       .radio__button
-      .radio__text  Женщина
+      .radio__text  #{options[1]}
