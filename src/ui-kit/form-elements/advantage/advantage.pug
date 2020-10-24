@@ -1,5 +1,5 @@
-mixin advantage({icon,name,description})
-  .advantage
+mixin advantage({icon,name,description,border=false}={})
+  .advantage(class={'advantage_with-border': border})
     +icon({
       icon,
       color: 'gradient',
