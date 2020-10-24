@@ -38,8 +38,8 @@ export class DateDropdown {
     );
     this.$datepickerContainer = (this.$datepickerContainer[0]
       ? this.$datepickerContainer : this.$el);
-    this.$clearButton.click(this.handleClearButtonClick);
-    this.$applyButton.click(this.handleApplyButtonClick);
+    this.$clearButton.on('click', this.handleClearButtonClick);
+    this.$applyButton.on('click', this.handleApplyButtonClick);
     this.datepickerConfig = {
       minDate: new Date(),
       multipleDates: 2,
@@ -70,8 +70,8 @@ export class DateDropdown {
     this.defineElements();
     this.selectedDatesFromLocalStorage();
     this.datepickerInit();
-    this.$expandButton.click(this.handleExpandButtonClick);
-    this.$inputs.change(this.handleInputsChange);
+    this.$expandButton.on('click', this.handleExpandButtonClick);
+    this.$inputs.on('change', this.handleInputsChange);
   }
 
   handleInputsChange() {

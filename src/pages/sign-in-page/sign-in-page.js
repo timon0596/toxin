@@ -63,11 +63,11 @@ export class SignInPage {
     if (location.pathname.match(/\/sign-in-page.html/)) {
       this.$signInBlock.hide();
       this.binding();
-      this.$signUpBlockButton.click(this.handleSignUpBlockButtonClick);
-      this.$navSignInButton.click(this.handleSignUpBlockButtonClick);
-      this.$navSignUpButton.click(this.handleNavSignUpButtonClick);
-      this.$signInButtonCreate.click(this.handleNavSignUpButtonClick);
-      this.$signInEnterButton.click(this.handleSignInEnterButtonClick);
+      this.$signUpBlockButton.on('click', this.handleSignUpBlockButtonClick);
+      this.$navSignInButton.on('click', this.handleSignUpBlockButtonClick);
+      this.$navSignUpButton.on('click', this.handleNavSignUpButtonClick);
+      this.$signInButtonCreate.on('click', this.handleNavSignUpButtonClick);
+      this.$signInEnterButton.on('click', this.handleSignInEnterButtonClick);
     }
   }
 }

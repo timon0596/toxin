@@ -17,6 +17,6 @@ export class CheckBoxButton {
   init() {
     this.handleNameClick = this.handleNameClick.bind(this);
     this.findElements();
-    this.$name.click(this.handleNameClick);
+    this.$name.on('click', this.handleNameClick);
   }
 }

@@ -28,8 +28,8 @@ export class CheckBoxList {
     this.handleArticleClick = this.handleArticleClick.bind(this);
     this.findElements();
     this.$article.each((i, el) => {
-      $(el).click({ i }, this.handleArticleClick);
+      $(el).on('click', { i }, this.handleArticleClick);
     });
-    this.$expand.click(this.handleExpandClick);
+    this.$expand.on('click', this.handleExpandClick);
   }
 }
