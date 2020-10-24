@@ -87,7 +87,9 @@ export class DateDropdown {
 
   handleClearButtonClick() {
     this.$datepickerClearButton.click();
+    this.datepickerInstance.selectDate([new Date(), new Date()]);
     localStorage?.removeItem('datepicker');
+    this.$datepickerClearButton.click();
   }
 
   handleApplyButtonClick() {
