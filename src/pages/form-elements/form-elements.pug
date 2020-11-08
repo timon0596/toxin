@@ -72,7 +72,7 @@ block content
           +date-dropdown({names:['dropdown','dropdown']})
           .form-elements__wrapper
             .form-elements__z-wrapper
-              +date-dropdown({names:['filter date dropdown'],modifier:'filter'})
+              +date-dropdown({names:['filter date dropdown'],isFilterDropDown:true})
           .form-elements__wrapper
             +text-field({
             text:'subscription text field',
@@ -142,7 +142,7 @@ block content
       .form-elements__column-wrapper
         .form-elements__column
           .form-elements__wrapper
-            +checkbox-buttons({h3:'rich checkbox buttons',content: richContent,modifier: 'rich'})
+            +checkbox-buttons({h3:'rich checkbox buttons',content: richContent,isRichButtons:true})
         .form-elements__column
           .form-elements__wrapper
             .form-elements__item

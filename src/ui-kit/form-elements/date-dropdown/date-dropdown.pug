@@ -1,5 +1,5 @@
-mixin date-dropdown({names,modifier})
-  .date-dropdown.js-date-dropdown(class={'date-dropdown_filter': modifier==='filter'})
+mixin date-dropdown({names,isFilterDropDown})
+  .date-dropdown.js-date-dropdown(class={'date-dropdown_filter': isFilterDropDown})
     .date-dropdown__datepicker-container.js-date-dropdown__datepicker-container
     each name in names
       .date-dropdown__display
@@ -7,6 +7,6 @@ mixin date-dropdown({names,modifier})
           text:name,
           placeholder:'дд.мм.гггг', 
           material_icons:'expand_more',
-          modifier: modifier!=='filter'?'masked':null,
-          disabled: modifier==='filter'
+          modifier: !isFilterDropDown?'masked':null,
+          disabled: isFilterDropDown
         })

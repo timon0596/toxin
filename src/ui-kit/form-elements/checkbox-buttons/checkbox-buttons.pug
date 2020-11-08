@@ -1,5 +1,5 @@
-mixin checkbox-buttons({h3,content,modifier})
-  .checkbox-buttons(class={'checkbox-buttons_rich': modifier==='rich'})
+mixin checkbox-buttons({h3,content,isRichButtons})
+  .checkbox-buttons(class={'checkbox-buttons_rich': isRichButtons})
     .checkbox-buttons__heading-wrapper
       +heading({level:'3',text:h3})
     .checkbox-buttons__wrapper
@@ -7,5 +7,5 @@ mixin checkbox-buttons({h3,content,modifier})
         +checkbox-button({
           name: checkboxButton.name, 
           description: checkboxButton.description,
-          nameWeight: modifier==='rich'?'bold':''
+          nameWeight: isRichButtons?'bold':''
         })
