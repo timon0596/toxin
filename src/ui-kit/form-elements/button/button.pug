@@ -1,9 +1,9 @@
-mixin button({text,modifier,color,ofHeader=false})
+mixin button({text,modifier,color,isLow=false})
   .button.js-button(class={
     'button_with-arrow': modifier==='arrow',
     'button_with-border': modifier==='border',
     'button_with-no-bg': modifier==='no-bg',
-    'button_of-header': ofHeader
+    'button_low': isLow
     })
     .button__text(class={
       'button__text_purple': color==='purple',
