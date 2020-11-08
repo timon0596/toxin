@@ -1,5 +1,5 @@
 mixin advantages({advantages=[]}={})
   .advantages
-    each val in advantages
-      +advantage({icon,name,description,border}=val)
+    each object in advantages
+      +advantage({icon,name,description,border}=object)
     
