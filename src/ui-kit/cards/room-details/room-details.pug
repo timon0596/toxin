@@ -6,8 +6,8 @@ mixin room-details({days=4,cost=['9 990',9990],currency='₽',discount=['2 179',
           +heading({level: '1',text: '888'})
           +heading({text: 'люкс',color: 'purple'})
         .room-details__payment
-          .room-details__cost 9 990₽
-          =" в сутки"
+          .room-details__cost #{cost[0]}#{currency}
+          =' в сутки'
     .room-details__row
       +date-dropdown({names: ['прибытие','выезд']})
     .room-details__row

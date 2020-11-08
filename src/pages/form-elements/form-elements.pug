@@ -50,6 +50,15 @@ block content
       'Без вечеринок и мероприятий',
       'Время прибытия — после 13:00, а выезд до 12:00'
     ];
+  -
+    const items = [
+      'Завтрак',
+      'Письменный стол',
+      'Стул для кормления',
+      'Кроватка',
+      'Телевизор',
+      'Шампунь',
+    ];
   
   .form-elements
     .form-elements__z-wrapper_for-row
@@ -128,8 +137,8 @@ block content
       .form-elements__column
         .form-elements__wrapper
           .form-elements__group
-            +checkbox-list({name:'expandable checkbox list'})
-            +checkbox-list({name:'expandable checkbox list'})
+            +checkbox-list({name:'expandable checkbox list',items})
+            +checkbox-list({name:'expandable checkbox list',items})
       .form-elements__column-wrapper
         .form-elements__column
           .form-elements__wrapper

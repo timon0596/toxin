@@ -35,6 +35,15 @@ block main
       {name: 'Можно с питомцами'},
       {name: 'Можно пригласить гостей (до 10 человек)'}
     ];
+  -
+    const items = [
+      'Завтрак',
+      'Письменный стол',
+      'Стул для кормления',
+      'Кроватка',
+      'Телевизор',
+      'Шампунь',
+    ];
   section.search-room-page
     .search-room-page__filters
       .search-room-page__filter
@@ -51,7 +60,7 @@ block main
       .search-room-page__filter
         +dropdown({h3:'удобства номера'})
       .search-room-page__filter
-        +checkbox-list({name:'дополнительные удобства'})
+        +checkbox-list({name:'дополнительные удобства',items})
     .search-room-page__results
       .search-room-page__heading-wrapper
         +heading({text:'Номера которые мы для вас подобрали',level:'1'})

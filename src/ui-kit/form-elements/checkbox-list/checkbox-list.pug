@@ -1,25 +1,12 @@
-mixin checkbox-list({name})
+mixin checkbox-list({name,items=[]}={})
   .js-checkbox-list.checkbox-list
     .checkbox-list__header
       +heading({text:name,level:'3'})
       .checkbox-list__expand.js-checkbox-list__expand
         +icon()
     .checkbox-list__wrapper.js-checkbox-list__wrapper
-      .checkbox-list__item
-        +checkbox()
-        .checkbox-list__article.js-checkbox-list__article Завтрак
-      .checkbox-list__item
-        +checkbox()
-        .checkbox-list__article.js-checkbox-list__article Письменный стол
-      .checkbox-list__item
-        +checkbox()
-        .checkbox-list__article.js-checkbox-list__article Стул для кормления
-      .checkbox-list__item
-        +checkbox()
-        .checkbox-list__article.js-checkbox-list__article Кроватка
-      .checkbox-list__item
-        +checkbox()
-        .checkbox-list__article.js-checkbox-list__article Телевизор
-      .checkbox-list__item
-        +checkbox()
-        .checkbox-list__article.js-checkbox-list__article Шампунь
+      each item in items
+        .checkbox-list__item
+          +checkbox()
+          .checkbox-list__article.js-checkbox-list__article= item
+      
