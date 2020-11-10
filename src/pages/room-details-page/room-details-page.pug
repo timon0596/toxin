@@ -23,7 +23,7 @@ block main
     ];
   - 
     const user = {
-      icon: 'img/users/user1.jpeg',
+      icon: '/img/users/user1.jpeg',
       name: 'Мурад Сарафанов',
       date: '5 дней назад',
       likes: 12,
@@ -32,7 +32,7 @@ block main
     };
   -  
     const user2 = {
-      icon: 'img/users/user2.png',
+      icon: '/img/users/user2.png',
       name: 'Патрисия Стёклышкова',
       date: 'Неделю назад',
       likes: 2,
@@ -48,9 +48,9 @@ block main
   - const text = 'Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.';
   main.room-details-page
     .room-details-page__images
-      img(src="img/rd1.png" alt="room photo").room-details-page__img_main.room-details-page__img
-      img(src="img/rd2.png" alt="room photo").room-details-page__img
-      img(src="img/rd3.png" alt="room photo").room-details-page__img
+      img(src="/img/rd1.png" alt="room photo").room-details-page__img_main.room-details-page__img
+      img(src="/img/rd2.png" alt="room photo").room-details-page__img
+      img(src="/img/rd3.png" alt="room photo").room-details-page__img
     .room-details-page__content
       .room-details-page__information
         .room-details-page__advantages

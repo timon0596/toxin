@@ -20,7 +20,7 @@ function generateHtmlPlugins(templateDir) {
         const name = parts[0];
         const extension = parts[1];
         return new HWP({
-          filename: `${name}.html`,
+          filename: name == 'index' ? `${name}.html` : `pages/${name}.html`,
           template: path.resolve(
             __dirname,
             `${path.resolve(tpldirpath, item)}/${name}.${extension}`,
@@ -57,7 +57,14 @@ module.exports = {
       {
         test: /\.(scss|sass)$/,
         use: [
-          MiniCssExtractPlugin.loader,
+
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              outputPath: (url, resourcePath, context) => `css/${url}`,
+              useRelativePath: true,
+            },
+          },
           {
             loader: 'css-loader',
             options: {
@@ -81,14 +88,18 @@ module.exports = {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
+      // {
+      //   test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      //   loader: 'url-loader?limit=10000&mimetype=application/font-woff',
+      // },
       {
-        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'url-loader?limit=10000&mimetype=application/font-woff',
-      },
-      {
-        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        test: /\.(ttf|eot|svg|woff(2)?$)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         loader: 'file-loader',
         exclude: [path.resolve(__dirname, 'src/img')],
+        options: {
+          outputPath: (url, resourcePath, context) => `fonts/${url}`,
+          useRelativePath: true,
+        },
       },
       {
         test: /\.(jpe?g|png|svg)$/,
@@ -126,7 +137,8 @@ module.exports = {
       'window.jQuery': 'jquery',
     }),
     new MiniCssExtractPlugin({
-      filename: '[name].[hash].css',
+      filename: '[name].css',
+
     }),
     new HtmlWebpackPugPlugin(),
   ],
