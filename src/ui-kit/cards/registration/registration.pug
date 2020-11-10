@@ -13,13 +13,13 @@ mixin registration()
       +text-field({placeholder: 'Пароль'})
       +toggle()
     .registration__row
-      +button({text: 'перейти к оплате',modifier: 'arrow'})
+      +button({text: 'перейти к оплате',type: 'with-arrow'})
     .registration__row
       .registration__inner-row
         |Уже есть аккаунт на Toxin
         .registration__sign-in-button.js-registration__sign-in-button
           +button({
             text: 'войти',
-            modifier: 'border',
+            type: 'with-border',
             color: 'purple'
           })

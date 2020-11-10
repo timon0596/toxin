@@ -4,11 +4,11 @@ $([...$('.js-date-dropdown'), ...$('.cards__datepicker')]).each((i, el) => {
   const $expandButton = $(el).find('.js-text-field__icon-wrapper');
   const buttons = {
     $clearButton: $('<div>', {
-      class: 'button button_with-no-bg',
+      class: 'button button_without-background',
       html: '<div class="heading heading_color_grey"><h3>очистить</h3></div>',
     }),
     $applyButton: $('<div>', {
-      class: 'button button_with-no-bg',
+      class: 'button button_without-background',
       html:
         '<div class="heading heading_color_purple"><h3>применить</h3></div>',
     }),

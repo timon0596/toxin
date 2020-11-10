@@ -18,6 +18,6 @@ mixin dropdown({h3,modifier}={})
         if modifier
           .dropdown__row
             .dropdown__clear.js-dropdown__clear
-              +button({text: 'очистить',modifier: 'no-bg',color: 'grey'})
+              +button({text: 'очистить',type: 'without-background',color: 'grey'})
             .dropdown__apply.js-dropdown__apply
-              +button({text: 'применить',modifier: 'no-bg',color: 'purple'})
+              +button({text: 'применить',type: 'without-background',color: 'purple'})

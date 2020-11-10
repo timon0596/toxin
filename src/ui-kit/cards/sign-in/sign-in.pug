@@ -7,9 +7,9 @@ mixin sign-in()
       +text-field({placeholder:'Пароль'})
     .sign-in__row
       .sign-in__sign-in-button.js-sign-in__sign-in-button
-        +button({text: 'войти',modifier: 'arrow'})
+        +button({text: 'войти',type: 'with-arrow'})
     .sign-in__row
       .sign-in__inner-row
         | Нет аккаунта на Toxin
         .sign-in__button-create.js-sign-in__button-create
-          +button({text: 'создать',modifier: 'border', color: 'purple'})
+          +button({text: 'создать',type: 'with-border', color: 'purple'})

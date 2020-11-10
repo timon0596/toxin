@@ -112,12 +112,12 @@ block content
                   +button({text:'click me'})
                   +button({text:'click me'})
                 .form-elements__buttons-wrapper
-                  +button({text:'click me',modifier:'border',color:'purple'})
-                  +button({text:'click me',modifier:'border',color:'purple'})
+                  +button({text:'click me',type:'with-border',color:'purple'})
+                  +button({text:'click me',type:'with-border',color:'purple'})
                 .form-elements__buttons-wrapper
-                  +button({text:'click me',modifier:'no-bg',color:'purple'})
-                  +button({text:'click me',modifier:'no-bg',color:'grey'})
-                +button({text:'перейти к оплате',modifier: 'arrow'})
+                  +button({text:'click me',type:'without-background',color:'purple'})
+                  +button({text:'click me',type:'without-background',color:'grey'})
+                +button({text:'перейти к оплате',type: 'with-arrow'})
             .form-elements__item
               +heading({text:'pagination'})
               +pagination()
