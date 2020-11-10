@@ -14,13 +14,13 @@ mixin nav({signed})
             text:'войти',
             modifier: 'border',
             color: 'purple',
-            ofHeader:true
+            isLow:true
             })
     .nav__item(data-signed=!signed+'').nav__item_unsigned.js-nav__item_unsigned
       .nav__button
         .js-nav__sign-up-button
           +button({
             text:'зарегистрироваться',
-            ofHeader:true
+            isLow:true
             })
     .nav__item(data-signed=signed+'').js-nav__item_signed.nav__item_signed Юлий Цезарь
