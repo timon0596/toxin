@@ -11,7 +11,13 @@ mixin room-details({days=4,cost=['9 990',9990],currency='₽',discount=['2 179',
     .room-details__row
       +date-dropdown({names: ['прибытие','выезд']})
     .room-details__row
-      +dropdown({h3:'гости',modifier: 'guest'})
+      +dropdown({h3:'гости',type: 'guest',
+        text:[
+                'взрослые',
+                'дети',
+                'младенцы'
+              ]
+    })
     .room-details__row
       .room-details__tax-table
         .room-details__tax-name.js-room-details__tax-name #{cost[0]}#{currency} х #{days} суток

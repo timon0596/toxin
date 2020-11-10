@@ -67,7 +67,14 @@ block content
           .form-elements__group
             +text-field({text:'text field',placeholder:'Email'})
             +text-field({text:'text field',placeholder:'Email'})
-            +dropdown({h3:'dropdown',modifier:'guest'})
+            +dropdown({
+              h3:'dropdown',
+              type:'guest',
+              text:[
+                'спальни',
+                'кровати',
+                'ванные комнаты'
+              ]})
             +text-field({text:'masked text field',placeholder:'ДД.ММ.ГГГГ',modifier:'masked'})
           +date-dropdown({names:['dropdown','dropdown']})
           .form-elements__wrapper
@@ -125,14 +132,42 @@ block content
       .form-elements__column
         .form-elements__wrapper
           .form-elements__group
-            +dropdown({h3:'dropdown'})
+            +dropdown({
+              h3:'dropdown',
+              text:[
+                'взрослые',
+                'дети',
+                'младенцы'
+              ]
+            })
             .form-elements__z-wrapper
-              +dropdown({h3:'dropdown'})
+              +dropdown({
+                h3:'dropdown',
+                text:[
+                'взрослые',
+                'дети',
+                'младенцы'
+              ]
+              })
       .form-elements__column-wrapper
         .form-elements__column
-          +dropdown({modifier:'guest',h3:'dropdown'})
+          +dropdown({
+              h3:'dropdown',
+              type:'guest',
+              text:[
+                'спальни',
+                'кровати',
+                'ванные комнаты'
+              ]})
         .form-elements__column
-          +dropdown({modifier:'guest',h3:'dropdown'})
+          +dropdown({
+              h3:'dropdown',
+              type:'guest',
+              text:[
+                'спальни',
+                'кровати',
+                'ванные комнаты'
+              ]})
     .form-elements__row.form-elements__row_checkboxes
       .form-elements__column
         .form-elements__wrapper
