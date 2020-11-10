@@ -61,8 +61,7 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              outputPath: (url, resourcePath, context) => `css/${url}`,
-              useRelativePath: true,
+              publicPath: (resourcePath, context) => `${path.relative(path.dirname(resourcePath), context)}/`,
             },
           },
           {
@@ -137,7 +136,7 @@ module.exports = {
       'window.jQuery': 'jquery',
     }),
     new MiniCssExtractPlugin({
-      filename: '[name].css',
+      filename: 'css/[name].css',
 
     }),
     new HtmlWebpackPugPlugin(),
