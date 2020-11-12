@@ -12,10 +12,10 @@ mixin room-preview({room:{number,imgs,cost,lux,rate,reviews},id})
           each v,i in imgs
             if i===0
               .carousel-item.active
-                img.d-block.w-100(src='/img/preview/'+v alt=`${i+1} slide`)
+                img.d-block.w-100(src='img/preview/'+v alt=`${i+1} slide`)
             else
               .carousel-item
-                img.d-block.w-100(src='/img/preview/'+v alt=`${i+1} slide`)
+                img.d-block.w-100(src='img/preview/'+v alt=`${i+1} slide`)
         a.carousel-control-prev(href='#carouselExampleIndicators'+id role='button' data-slide='prev')
           +icon({color: 'white'})
         a.carousel-control-next(href='#carouselExampleIndicators'+id role='button' data-slide='next')

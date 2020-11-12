@@ -1,7 +1,12 @@
 mixin button({text,type,color,isLow=false})
   .button.js-button(class={
     'button_low': isLow,
-    ['button_'+type]: type
+    ['button_'+type]: type&&
+    [
+      'with-border',
+      'with-arrow',
+      'without-background'
+    ].indexOf(type)!==-1
     })
     .button__text(class={
       'button__text_purple': color==='purple',
