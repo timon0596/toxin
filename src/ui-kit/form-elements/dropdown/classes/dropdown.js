@@ -3,16 +3,17 @@ export class Dropdown {
     mainDiv,
     index,
     counters: {
-      Counter, $minusButtons, $plusButtons, $values, declension,
+      counter, $minusButtons, $plusButtons, $values,
     },
+    declensions,
   }) {
     this.index = index;
     this.$mainDiv = mainDiv;
-    this.Counter = Counter;
+    this.counter = counter;
     this.$minusButtons = $minusButtons;
     this.$plusButtons = $plusButtons;
     this.$values = $values;
-    this.dec = declension;
+    this.dec = declensions;
     this.$display;
     this.$expand;
     this.$expandIcon;
@@ -21,7 +22,7 @@ export class Dropdown {
     this.$clear;
     this.$apply;
     this.localStorageName;
-    this.values = [0, 0, 0];
+    this.values;
     this.type;
     this.init();
   }
@@ -35,27 +36,9 @@ export class Dropdown {
     this.$menu = this.$mainDiv.find('.js-dropdown__menu').hide();
     this.$clear = this.$mainDiv.find('.js-dropdown__clear');
     this.$apply = this.$mainDiv.find('.js-dropdown__apply');
-    console.log(this.type = this.$mainDiv.attr('data-type'));
-  }
-
-  displayValuePart(i) {
-    if (this.isGuest) {
-      if (i === 0) {
-        return this.values[0] + this.values[1]
-          ? `${this.values[0] + this.values[1]} ${
-            this.dec[0][this.modulo((this.values[0] + this.values[1]) % 10)]
-          }, `
-          : '';
-      }
-      return this.values[2]
-        ? `${this.values[2]} ${
-          this.dec[1][this.modulo(this.values[2]) % 10]
-        }, `
-        : '';
-    }
-    return this.values[i]
-      ? `${this.values[i]} ${this.dec[i][this.modulo(this.values[i]) % 10]}, `
-      : '';
+    this.type = this.$mainDiv.attr('data-type');
+    this.dec = this.dec[this.type];
+    this.values = [...this.$values].map((el) => +$(el).text());
   }
 
   handleExpandClick() {
@@ -78,13 +61,12 @@ export class Dropdown {
 
   disableOrEnableMinusButton(i) {
     this.values[i] === 0
-      ? this.Counter.disable($(this.$minusButtons[i]))
-      : this.Counter.enable($(this.$minusButtons[i]));
+      ? this.counter.disable($(this.$minusButtons[i]))
+      : this.counter.enable($(this.$minusButtons[i]));
   }
 
   handleClearClick() {
     this.values.fill(0);
-    localStorage.removeItem(this.localStorageName);
     this.render();
   }
 
@@ -98,6 +80,26 @@ export class Dropdown {
     if (number === 1) return 0;
     if (number > 1 && number < 5) return 1;
     return 2;
+  }
+
+  displayText() {
+    let result = '';
+    this.values.forEach((el, i) => {
+      if (this.dec[i] && el) {
+        result += `${el} ${this.dec[i][this.modulo(el)]}, `;
+      }
+    });
+    return result.slice(0, -2);
+  }
+
+  render() {
+    this.$values.each((i, el) => {
+      $(el).text(this.values[i]);
+      this.disableOrEnableMinusButton(i);
+    });
+
+    this.sum();
+    console.log(this.displayText());
   }
 
   sum() {
@@ -122,5 +124,6 @@ export class Dropdown {
     this.$minusButtons.on('click.minusButton', this.handleMinusButtonsClick);
     this.$clear.on('click.dropdownClear', this.handleClearClick);
     this.$apply.on('click.dropdownApply', this.handleApplyClick);
+    this.render();
   }
 }
