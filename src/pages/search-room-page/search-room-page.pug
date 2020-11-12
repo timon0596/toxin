@@ -49,12 +49,16 @@ block main
       .search-room-page__filter
         .search-room-page__filter-inner-wrapper
           +date-dropdown({names: ['даты пребывания в отеле'],isFilterDropDown:true})
-          +dropdown({h3:'гости',type: 'guest',
-          text:[
-                'взрослые',
-                'дети',
-                'младенцы'
-              ]})
+          +dropdown({h3:'гости',
+          counterNames:[
+            'взрослые',
+            'дети',
+            'младенцы'
+          ],
+          type:'guests',
+          hasButtons:true,
+            
+              })
       .search-room-page__filter
         +range-slider({heading:'диапазон цены'})
         .search-room-page__cost Стоимость за сутки пребывания в номере
@@ -63,12 +67,15 @@ block main
       .search-room-page__filter
         +checkbox-buttons({h3:'доступность',content: richContent,isRichButtons:true})
       .search-room-page__filter
-        +dropdown({h3:'удобства номера',
-        text:[
-                'спальни',
-                'кровати',
-                'ванные комнаты'
-              ]})
+        +dropdown({
+          h3:'удобства номера',
+          counterNames:[
+            'спальни',
+            'кровати',
+            'ванные комнаты'
+          ],
+          type:'rooms'
+        })
       .search-room-page__filter
         +checkbox-list({name:'дополнительные удобства',items})
     .search-room-page__results

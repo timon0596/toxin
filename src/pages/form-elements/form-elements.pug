@@ -69,8 +69,9 @@ block content
             +text-field({text:'text field',placeholder:'Email'})
             +dropdown({
               h3:'dropdown',
-              type:'guest',
-              text:[
+              type:'rooms',
+              initValues:[2,2,0],
+              counterNames:[
                 'спальни',
                 'кровати',
                 'ванные комнаты'
@@ -82,11 +83,11 @@ block content
               +date-dropdown({names:['filter date dropdown'],isFilterDropDown:true})
           .form-elements__wrapper
             +text-field({
-            text:'subscription text field',
-            modifier:'with-arrow',
-            placeholder:'Email',
-            material_icons:'arrow_forward',
-            iconColor: 'purple'})
+              text:'subscription text field',
+              modifier:'with-arrow',
+              placeholder:'Email',
+              material_icons:'arrow_forward',
+              iconColor: 'purple'})
         .form-elements__column-wrapper
           .form-elements__column
             .form-elements__wrapper
@@ -134,40 +135,49 @@ block content
           .form-elements__group
             +dropdown({
               h3:'dropdown',
-              text:[
-                'взрослые',
-                'дети',
-                'младенцы'
-              ]
+              counterNames:[
+                'спальни',
+                'кровати',
+                'ванные комнаты'
+              ],
+              type:'rooms',
+              initValues:[2,2,0]
             })
             .form-elements__z-wrapper
               +dropdown({
                 h3:'dropdown',
-                text:[
-                'взрослые',
-                'дети',
-                'младенцы'
-              ]
+                counterNames:[
+                'спальни',
+                'кровати',
+                'ванные комнаты'
+                ],
+                type:'rooms',
+                initValues:[2,2,0]
               })
       .form-elements__column-wrapper
         .form-elements__column
           +dropdown({
               h3:'dropdown',
-              type:'guest',
-              text:[
-                'спальни',
-                'кровати',
-                'ванные комнаты'
-              ]})
+              counterNames:[
+                'взрослые',
+                'дети',
+                'младенцы'
+              ],
+              type:'guests',
+              hasButtons:true,
+          })
         .form-elements__column
           +dropdown({
               h3:'dropdown',
-              type:'guest',
-              text:[
-                'спальни',
-                'кровати',
-                'ванные комнаты'
-              ]})
+              counterNames:[
+                'взрослые',
+                'дети',
+                'младенцы'
+              ],
+              type:'guests',
+              hasButtons:true,
+              initValues:[2,1,0]
+          })
     .form-elements__row.form-elements__row_checkboxes
       .form-elements__column
         .form-elements__wrapper

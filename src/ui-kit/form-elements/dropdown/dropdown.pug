@@ -1,22 +1,23 @@
-mixin dropdown({h3,type,text}={})
-  .dropdown.js-dropdown(class={['dropdown_'+type]:type})
+mixin dropdown({h3,counterNames=[],hasButtons=false,initValues=[],type}={})
+  .dropdown.js-dropdown(data-type=type&&
+    [
+      'guests',
+      'rooms'
+    ].indexOf(type)!==-1?
+    type:''
+  )
     +heading({text:h3,level:'3'})
     .dropdown__body.js-dropdown__body
       .dropdown__display.js-dropdown__display
       .dropdown__icon-wrapper.js-dropdown__icon-wrapper
         +icon({color: 'dark'})
       .dropdown__menu.js-dropdown__menu
-        .dropdown__row
-          +heading({text:text[0]})
-          +counter({val:2})
-        .dropdown__row
-          +heading({text:text[1]})
-          +counter({val:2})
-        .dropdown__row
-          +heading({text:text[2]})
-          +counter()
-        if type
+        each text,index in counterNames
           .dropdown__row
+            +heading({text})
+            +counter({val:initValues[index]})
+        if hasButtons
+          .dropdown__buttons
             .dropdown__clear.js-dropdown__clear
               +button({text: 'очистить',type: 'without-background',color: 'grey'})
             .dropdown__apply.js-dropdown__apply
