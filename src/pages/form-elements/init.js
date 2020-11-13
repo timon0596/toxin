@@ -1,6 +1,6 @@
 import { FormElements } from './form-elements';
 
-if (window.location.pathname === '/form-elements.html') {
+if (window.location.pathname.includes('/form-elements.html')) {
   const formElements = {
     $textfield: $('.js-text-field:nth-child(2) input'),
     $button: $('.js-button:nth-child(2)'),

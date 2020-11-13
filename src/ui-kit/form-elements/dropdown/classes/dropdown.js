@@ -99,7 +99,7 @@ export class Dropdown {
     });
 
     this.sum();
-    console.log(this.displayText());
+    this.$display.text(this.displayText());
   }
 
   sum() {
