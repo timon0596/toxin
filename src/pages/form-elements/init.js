@@ -1,3 +1,4 @@
+import * as $ from 'jquery';
 import { FormElements } from './form-elements';
 
 if (window.location.pathname.includes('/form-elements.html')) {

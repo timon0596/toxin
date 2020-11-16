@@ -1,3 +1,4 @@
+import * as $ from 'jquery';
 import 'jquery-mask-plugin';
 
 export class MaskedTextField {

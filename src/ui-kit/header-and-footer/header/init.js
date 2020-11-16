@@ -1,3 +1,4 @@
+import * as $ from 'jquery';
 import { Header } from './header';
 
 $(document).ready(() => {

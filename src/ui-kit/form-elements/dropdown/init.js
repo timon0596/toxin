@@ -1,3 +1,4 @@
+import * as $ from 'jquery';
 import { Dropdown } from './dropdown';
 import { Counter } from '../counter/counter';
 

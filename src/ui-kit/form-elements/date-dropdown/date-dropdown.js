@@ -1,5 +1,6 @@
 import 'air-datepicker';
 import 'jquery-mask-plugin';
+import * as $ from 'jquery';
 
 export class DateDropdown {
   constructor({

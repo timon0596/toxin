@@ -1,3 +1,4 @@
+import * as $ from 'jquery';
 import { RoomDetails } from './room-details';
 
 const $element = $('.js-room-details');

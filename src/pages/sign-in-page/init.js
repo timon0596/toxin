@@ -1,3 +1,4 @@
+import * as $ from 'jquery';
 import { SignInPage } from './sign-in-page';
 
 const cards = {
