@@ -1,5 +1,6 @@
 export class Dropdown {
   constructor({
+    formatOutputText,
     mainDiv,
     index,
     counters: {
@@ -14,6 +15,7 @@ export class Dropdown {
     this.$plusButtons = $plusButtons;
     this.$values = $values;
     this.dec = declensions;
+    this.formatOutputText = formatOutputText;
     this.$display;
     this.$expand;
     this.$expandIcon;
@@ -39,6 +41,7 @@ export class Dropdown {
     this.type = this.$mainDiv.attr('data-type');
     this.dec = this.dec[this.type];
     this.values = [...this.$values].map((el) => +$(el).text());
+    this.formatOutputText = this.formatOutputText[this.type].bind(this);
   }
 
   handleExpandClick() {
@@ -82,16 +85,6 @@ export class Dropdown {
     return 2;
   }
 
-  displayText() {
-    let result = '';
-    this.values.forEach((el, i) => {
-      if (this.dec[i] && el) {
-        result += `${el} ${this.dec[i][this.modulo(el)]}, `;
-      }
-    });
-    return result.slice(0, -2);
-  }
-
   render() {
     this.$values.each((i, el) => {
       $(el).text(this.values[i]);
@@ -99,7 +92,7 @@ export class Dropdown {
     });
 
     this.sum();
-    this.$display.text(this.displayText());
+    this.$display.text(this.formatOutputText());
   }
 
   sum() {
