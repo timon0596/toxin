@@ -20,13 +20,14 @@ function generateHtmlPlugins(templateDir) {
         const name = parts[0];
         const extension = parts[1];
         return new HWP({
-          filename: name == 'index' ? `${name}.html` : `pages/${name}.html`,
+          filename: name === 'index' ? `${name}.html` : `pages/${name}.html`,
           template: path.resolve(
             __dirname,
             `${path.resolve(tpldirpath, item)}/${name}.${extension}`,
           ),
         });
       }
+      return 0;
     })
     .filter((item) => !!item);
 }
@@ -96,7 +97,7 @@ module.exports = {
         loader: 'file-loader',
         exclude: [path.resolve(__dirname, 'src/img')],
         options: {
-          outputPath: (url, resourcePath, context) => `fonts/${url}`,
+          outputPath: (url) => `fonts/${url}`,
           useRelativePath: true,
         },
       },
@@ -108,7 +109,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: (url, resourcePath, context) => {
+              outputPath: (url, resourcePath) => {
                 if (/preview/.test(resourcePath)) {
                   return `img/preview/${url}`;
                 }

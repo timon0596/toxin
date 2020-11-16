@@ -60,7 +60,7 @@ export class SignInPage {
 
   init() {
     this.findElements();
-    if (location.pathname.match(/\/sign-in-page.html/)) {
+    if (Window.location.pathname.match(/\/sign-in-page.html/)) {
       this.$signInBlock.hide();
       this.binding();
       this.$signUpBlockButton.on('click', this.handleSignUpBlockButtonClick);

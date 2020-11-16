@@ -28,7 +28,7 @@ const formatOutputText = {
     result += guestsAmount ? `${`${guestsAmount} ${this.dec[0][this.modulo(guestsAmount)]}`}, ` : '';
     result += this.values[2] ? `${`${this.values[2]} ${this.dec[1][this.modulo(this.values[2])]}`}, ` : '';
     result += result ? '' : 'Сколько гостей';
-    return result.replace(/\,\s$/, '');
+    return result.replace(/,\s$/, '');
   },
 };
 $('.js-dropdown').each((i, el) => {

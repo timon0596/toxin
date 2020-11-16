@@ -20,11 +20,11 @@ export class RangeSlider {
   }
 
   handleRangeSliderSlide(event, ui) {
-    this.$amount.text(`${this.getValue(ui.values[0])}₽` + ` - ${this.getValue(ui.values[1])}₽`);
+    this.$amount.text(`${this.getValue(ui.values[0])}₽ - ${this.getValue(ui.values[1])}₽`);
   }
 
   getValue(i) {
-    const int = parseInt(`${i / 1000}`);
+    const int = parseInt(`${i / 1000}`, 10);
     const rest = `${i % 1000}`;
     return `${int} ${rest.padStart(3, 0)}`;
   }

@@ -19,7 +19,7 @@ export class RoomDetails {
     if (e.selectedDates.days) {
       const sum = 9990 * e.selectedDates.days;
       const total = sum - 2179 + 300;
-      const declension = e.selectedDates.days % 10 == 1 ? 'сутки' : 'суток';
+      const declension = e.selectedDates.days % 10 === 1 ? 'сутки' : 'суток';
       const taxHabitationInt = Math.floor(sum / 1000);
       const taxHabitationModulo = (`${sum % 1000}`).padStart(3, '0');
       const taxHabitationTaxSum = `${taxHabitationInt} ${taxHabitationModulo}₽`;

@@ -121,7 +121,7 @@ export class DateDropdown {
     this.$el.trigger(dateSelectEvent);
   }
 
-  handleDatepickerSelect(fd, d, picker) {
+  handleDatepickerSelect(fd, d) {
     const options = { year: 'numeric', month: 'numeric', day: 'numeric' };
     this.selectedDates.fromTo = fd;
     this.selectedDates.from = d[0]
