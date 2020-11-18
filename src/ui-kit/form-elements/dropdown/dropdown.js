@@ -18,16 +18,6 @@ export class Dropdown {
     this.$values = $values;
     this.dec = declensions;
     this.formatOutputText = formatOutputText;
-    this.$display;
-    this.$expand;
-    this.$expandIcon;
-    this.$body;
-    this.$menu;
-    this.$clear;
-    this.$apply;
-    this.localStorageName;
-    this.values;
-    this.type;
     this.init();
   }
 
@@ -53,21 +43,23 @@ export class Dropdown {
 
   handleMinusButtonsClick(e) {
     const i = [...this.$minusButtons].indexOf(e.target);
-    this.values[i]--;
+    this.values[i] -= 1;
     this.values[i] = this.values[i] < 0 ? 0 : this.values[i];
     this.render();
   }
 
   handlePlusButtonsClick(e) {
     const i = [...this.$plusButtons].indexOf(e.target);
-    this.values[i]++;
+    this.values[i] += 1;
     this.render();
   }
 
   disableOrEnableMinusButton(i) {
-    this.values[i] === 0
-      ? this.counter.disable($(this.$minusButtons[i]))
-      : this.counter.enable($(this.$minusButtons[i]));
+    if (this.values[i] === 0) {
+      this.counter.disable($(this.$minusButtons[i]));
+    } else {
+      this.counter.enable($(this.$minusButtons[i]));
+    }
   }
 
   handleClearClick() {
@@ -98,9 +90,11 @@ export class Dropdown {
   }
 
   sum() {
-    this.values.reduce((acc, i) => acc + i) === 0
-      ? this.$clear.addClass('dropdown__clear_invis')
-      : this.$clear.removeClass('dropdown__clear_invis');
+    if (this.values.reduce((acc, i) => acc + i) === 0) {
+      this.$clear.addClass('dropdown__clear_invis');
+    } else {
+      this.$clear.removeClass('dropdown__clear_invis');
+    }
   }
 
   binding() {
