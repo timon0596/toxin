@@ -1,3 +1,4 @@
+import * as $ from 'jquery';
 import { CheckBoxButton } from './checkbox-button';
 
 $('.js-checkbox-button').each((i, el) => {

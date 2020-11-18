@@ -3,7 +3,6 @@ import 'jquery-mask-plugin';
 
 export class MaskedTextField {
   constructor() {
-    this.$inputs;
     this.init();
   }
 

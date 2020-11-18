@@ -15,8 +15,6 @@ export class SignInPage {
     this.$navSignUpButton = $navSignUpButton;
     this.$navSignInButton = $navSignInButton;
     this.$signUpBlockButton = $signUpBlockButton;
-    this.$signInButtonCreate;
-    this.$signInEnterButton;
     this.init();
   }
 
@@ -60,7 +58,7 @@ export class SignInPage {
 
   init() {
     this.findElements();
-    if (Window.location.pathname.match(/\/sign-in-page.html/)) {
+    if (window.location.pathname.match(/\/sign-in-page.html/)) {
       this.$signInBlock.hide();
       this.binding();
       this.$signUpBlockButton.on('click', this.handleSignUpBlockButtonClick);

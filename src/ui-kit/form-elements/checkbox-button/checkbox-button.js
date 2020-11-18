@@ -2,7 +2,6 @@ export class CheckBoxButton {
   constructor({ el, checkbox }) {
     this.$el = el;
     this.checkbox = checkbox;
-    this.$name;
     this.init();
   }
 

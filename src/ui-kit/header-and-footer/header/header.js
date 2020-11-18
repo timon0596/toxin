@@ -2,10 +2,6 @@ import * as $ from 'jquery';
 
 export class Header {
   constructor() {
-    this.$navItems;
-    this.$nav;
-    this.$burger;
-    this.$slideUp;
     this.init();
   }
 

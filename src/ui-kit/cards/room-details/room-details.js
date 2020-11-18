@@ -3,9 +3,6 @@ export class RoomDetails {
     this.$block = $element;
     this.$dropdown = $dd;
     this.$blockSum = $blockSum;
-    this.$taxHabitation;
-    this.$taxHabitationTextBlock;
-    this.$taxHabitationSumBlock;
     this.init();
   }
 
