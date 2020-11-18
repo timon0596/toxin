@@ -6,14 +6,14 @@ block content
   -
     const advantages = [
       {
-        name:'Комфорт',
-        description:'Шумопоглощающие стены',
-        icon:'insert_emoticon'
+        name: 'Комфорт',
+        description: 'Шумопоглощающие стены',
+        icon: 'insert_emoticon'
       },
       {
-        name:'Удобство',
-        description:'Окно в каждой из спален',
-        icon:'location_city',
+        name: 'Удобство',
+        description: 'Окно в каждой из спален',
+        icon: 'location_city',
         border: true
       }
     ];
@@ -65,133 +65,133 @@ block content
       .form-elements__row
         .form-elements__column
           .form-elements__group
-            +text-field({text:'text field',placeholder:'Email'})
-            +text-field({text:'text field',placeholder:'Email'})
+            +text-field({text: 'text field', placeholder: 'Email'})
+            +text-field({text: 'text field', placeholder: 'Email'})
             +dropdown({
-              h3:'dropdown',
-              type:'rooms',
+              h3: 'dropdown',
+              type: 'rooms',
               initValues:[2,2,0],
-              counterNames:[
+              counterNames: [
                 'спальни',
                 'кровати',
                 'ванные комнаты'
               ]})
-            +text-field({text:'masked text field',placeholder:'ДД.ММ.ГГГГ',modifier:'masked'})
-          +date-dropdown({names:['dropdown','dropdown']})
+            +text-field({text: 'masked text field', placeholder: 'ДД.ММ.ГГГГ', modifier: 'masked'})
+          +date-dropdown({names: ['dropdown','dropdown']})
           .form-elements__wrapper
             .form-elements__z-wrapper
-              +date-dropdown({names:['filter date dropdown'],isFilterDropDown:true})
+              +date-dropdown({names: ['filter date dropdown'], isFilterDropDown: true})
           .form-elements__wrapper
             +text-field({
-              text:'subscription text field',
-              modifier:'with-arrow',
-              placeholder:'Email',
-              material_icons:'arrow_forward',
+              text: 'subscription text field',
+              modifier: 'with-arrow',
+              placeholder: 'Email',
+              material_icons: 'arrow_forward',
               iconColor: 'purple'})
         .form-elements__column-wrapper
           .form-elements__column
             .form-elements__wrapper
-              +checkbox-buttons({h3:'checkbox buttons',content})
+              +checkbox-buttons({h3: 'checkbox buttons', content})
             .form-elements__item
-              +heading({text:'radio buttons'})
+              +heading({text: 'radio buttons'})
               +radio()
             .form-elements__item
-              +heading({text:'toggle'})
+              +heading({text: 'toggle'})
               .form-elements__wrapper
-                +toggle({checked:true})
+                +toggle({checked: true})
                 +toggle()
             .form-elements__item
-              +heading({text:'like button'})
+              +heading({text: 'like button'})
               .form-elements__wrapper.form-elements__wrapper_vertical
-                +like({likes:2})
-                +like({likes:12,checked:true})
+                +like({likes: 2})
+                +like({likes: 12, checked: true})
             .form-elements__item
-              +heading({text:'rate buttons'})
+              +heading({text: 'rate buttons'})
               .form-elements__wrapper.form-elements__wrapper_vertical
-                +rate({num:4})
-                +rate({num:5})
+                +rate({num: 4})
+                +rate({num: 5})
           .form-elements__column
             .form-elements__wrapper
-              +range-slider({heading:'range slider'})
+              +range-slider({heading: 'range slider'})
             .form-elements__item
-              +heading({text:'buttons'})
+              +heading({text: 'buttons'})
               .form-elements__buttons
                 .form-elements__buttons-wrapper
-                  +button({text:'click me'})
-                  +button({text:'click me'})
+                  +button({text: 'click me'})
+                  +button({text: 'click me'})
                 .form-elements__buttons-wrapper
-                  +button({text:'click me',type:'with-border',color:'purple'})
-                  +button({text:'click me',type:'with-border',color:'purple'})
+                  +button({text: 'click me', type: 'with-border', color: 'purple'})
+                  +button({text: 'click me', type: 'with-border', color: 'purple'})
                 .form-elements__buttons-wrapper
-                  +button({text:'click me',type:'without-background',color:'purple'})
-                  +button({text:'click me',type:'without-background',color:'grey'})
-                +button({text:'перейти к оплате',type: 'with-arrow'})
+                  +button({text: 'click me', type: 'without-background', color: 'purple'})
+                  +button({text: 'click me', type: 'without-background', color: 'grey'})
+                +button({text: 'перейти к оплате', type: 'with-arrow'})
             .form-elements__item
-              +heading({text:'pagination'})
+              +heading({text: 'pagination'})
               +pagination()
     .form-elements__row.form-elements__row_dropdowns.js-form-elements__row_dropdowns
       .form-elements__column
         .form-elements__wrapper
           .form-elements__group
             +dropdown({
-              h3:'dropdown',
-              counterNames:[
+              h3: 'dropdown',
+              counterNames: [
                 'спальни',
                 'кровати',
                 'ванные комнаты'
               ],
-              type:'rooms',
-              initValues:[2,2,0]
+              type: 'rooms',
+              initValues: [2,2,0]
             })
             .form-elements__z-wrapper
               +dropdown({
-                h3:'dropdown',
-                counterNames:[
+                h3: 'dropdown',
+                counterNames: [
                 'спальни',
                 'кровати',
                 'ванные комнаты'
                 ],
-                type:'rooms',
-                initValues:[2,2,0]
+                type: 'rooms',
+                initValues: [2,2,0]
               })
       .form-elements__column-wrapper
         .form-elements__column
           +dropdown({
-              h3:'dropdown',
+              h3: 'dropdown',
               counterNames:[
                 'взрослые',
                 'дети',
                 'младенцы'
               ],
-              type:'guests',
-              hasButtons:true,
+              type: 'guests',
+              hasButtons: true,
           })
         .form-elements__column
           +dropdown({
-              h3:'dropdown',
-              counterNames:[
+              h3: 'dropdown',
+              counterNames: [
                 'взрослые',
                 'дети',
                 'младенцы'
               ],
-              type:'guests',
-              hasButtons:true,
-              initValues:[2,1,0]
+              type: 'guests',
+              hasButtons: true,
+              initValues: [2,1,0]
           })
     .form-elements__row.form-elements__row_checkboxes
       .form-elements__column
         .form-elements__wrapper
           .form-elements__group
-            +checkbox-list({name:'expandable checkbox list',items})
-            +checkbox-list({name:'expandable checkbox list',items})
+            +checkbox-list({name: 'expandable checkbox list', items})
+            +checkbox-list({name: 'expandable checkbox list', items})
       .form-elements__column-wrapper
         .form-elements__column
           .form-elements__wrapper
-            +checkbox-buttons({h3:'rich checkbox buttons',content: richContent,isRichButtons:true})
+            +checkbox-buttons({h3: 'rich checkbox buttons', content: richContent, isRichButtons: true})
         .form-elements__column
           .form-elements__wrapper
             .form-elements__item
-              +heading({text:'bullet-list'})
+              +heading({text: 'bullet-list'})
               +bullet-list({list})
     .form-elements__row
       .form-elements__column

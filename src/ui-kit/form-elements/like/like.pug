@@ -1,9 +1,9 @@
-mixin like({likes=0,checked=false}={})
+mixin like({likes=0, checked=false} = {})
   label.like
-    input(type="checkbox" checked= checked).like__input
+    input(type="checkbox" checked=checked).like__input
     .like__button
       .like__icon
-        +icon({icon:'favorite_border',font: 'small',color: 'light'})
+        +icon({icon: 'favorite_border', font: 'small', color: 'light'})
       .like__icon
-        +icon({icon:'favorite',font: 'small',color: 'purple'})
-      .like__number= likes
+        +icon({icon: 'favorite', font: 'small', color: 'purple'})
+      .like__number=likes

@@ -1,4 +1,4 @@
-mixin advantage({icon,name,description,border=false}={})
+mixin advantage({icon, name, description, border=false} = {})
   .advantage(class={'advantage_with-border': border})
     +icon({
       icon,
@@ -6,5 +6,5 @@ mixin advantage({icon,name,description,border=false}={})
       font: 'big'
       })
     .advantage__info
-      .advantage__name= name
-      .advantage__description= description
+      .advantage__name=name
+      .advantage__description=description

@@ -1,12 +1,12 @@
-mixin dropdown({h3,counterNames=[],hasButtons=false,initValues=[],type}={})
+mixin dropdown({h3, counterNames=[], hasButtons=false, initValues=[], type} = {})
   .dropdown.js-dropdown(data-type=type  &&
     [
       'guests',
       'rooms'
     ].indexOf(type)!==-1?
-      type:''
+      type: ''
   )
-    +heading({text:h3,level:'3'})
+    +heading({text: h3, level: '3'})
     .dropdown__body.js-dropdown__body
       .dropdown__display.js-dropdown__display
       .dropdown__icon-wrapper.js-dropdown__icon-wrapper
@@ -15,10 +15,10 @@ mixin dropdown({h3,counterNames=[],hasButtons=false,initValues=[],type}={})
         each text,index in counterNames
           .dropdown__row
             +heading({text})
-            +counter({val:initValues[index]})
+            +counter({val: initValues[index]})
         if hasButtons
           .dropdown__buttons
             .dropdown__clear.js-dropdown__clear
-              +button({text: 'очистить',type: 'without-background',color: 'grey'})
+              +button({text: 'очистить', type: 'without-background', color: 'grey'})
             .dropdown__apply.js-dropdown__apply
-              +button({text: 'применить',type: 'without-background',color: 'purple'})
+              +button({text: 'применить', type: 'without-background', color: 'purple'})

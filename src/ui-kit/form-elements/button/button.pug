@@ -1,4 +1,4 @@
-mixin button({text,type,color,isLow=false})
+mixin button({text, type, color, isLow=false})
   .button.js-button(class={
     'button_low': isLow,
     [`button_${type}`]: type  &&
@@ -9,9 +9,9 @@ mixin button({text,type,color,isLow=false})
       ].indexOf(type)!==-1
     })
     .button__text(class={
-      'button__text_purple': color==='purple',
-      'button__text_grey': color==='grey',
-    })= text
-    if type==='with-arrow'
+      'button__text_purple': color === 'purple',
+      'button__text_grey': color === 'grey',
+    })=text
+    if type === 'with-arrow'
       .button__arrow
-        +icon({icon:'arrow_forward',color: 'white'})
+        +icon({icon: 'arrow_forward', color: 'white'})

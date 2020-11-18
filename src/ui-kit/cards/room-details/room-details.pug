@@ -1,25 +1,26 @@
-mixin room-details({days=4,cost=['9 990',9990],currency='₽',discount=['2 179',2179],service=0,additionalService=300}={})
+mixin room-details({days=4, cost=['9 990', 9990], currency='₽', discount=['2 179',2179], service=0,additionalService=300} = {})
   .room-details.js-room-details
     .room-details__row
       .room-details__inner-row
         .room-details__number №
-          +heading({level: '1',text: '888'})
-          +heading({text: 'люкс',color: 'purple'})
+          +heading({level: '1', text: '888'})
+          +heading({text: 'люкс', color: 'purple'})
         .room-details__payment
           .room-details__cost #{cost[0]}#{currency}
           =' в сутки'
     .room-details__row
       +date-dropdown({names: ['прибытие','выезд']})
     .room-details__row
-      +dropdown({h3:'гости',
-        counterNames:[
-                'взрослые',
-                'дети',
-                'младенцы'
-              ],
-        type:'guests',
-        initValues:[2,2,0],
-        hasButtons:true
+      +dropdown({
+        h3: 'гости',
+        counterNames: [
+          'взрослые',
+          'дети',
+          'младенцы'
+        ],
+        type: 'guests',
+        initValues: [2,2,0],
+        hasButtons: true
     })
     .room-details__row
       .room-details__tax-table
@@ -34,7 +35,7 @@ mixin room-details({days=4,cost=['9 990',9990],currency='₽',discount=['2 179',
         .room-details__tax-sum #{additionalService}#{currency}
     .room-details__row
       .room-details__total
-        +heading({text:'Итого',level:'2'})
+        +heading({text: 'Итого', level: '2'})
         .room-details__underline
         .room-details__sum.js-room-details__sum
           +heading({
@@ -44,5 +45,6 @@ mixin room-details({days=4,cost=['9 990',9990],currency='₽',discount=['2 179',
               discount[1]+
               additionalService+
               currency,
-              level:'2'}) 
-      +button({text: 'забронировать',type: 'with-arrow'})
+            level: '2'
+          }) 
+      +button({text: 'забронировать', type: 'with-arrow'})

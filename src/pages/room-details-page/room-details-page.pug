@@ -55,34 +55,34 @@ block main
       .room-details-page__information
         .room-details-page__advantages
           .room-details-page__heading-wrapper
-            +heading({text:'Сведения о номере',level:'2'})
+            +heading({text: 'Сведения о номере', level: '2'})
           +advantages({advantages})
         .room-details-page__empressions
           .room-details-page__heading-wrapper
-            +heading({text:'Впечатления от номера',level:'2'})
+            +heading({text: 'Впечатления от номера', level: '2'})
           .room-details-page__empression-chart
             .room-details-page__empression-diagramm
               +impression-chart()
               .room-details-page__empression-votes
-                +heading({text:'260',level:'1',color: 'purple'})
-                +heading({text:'голосов',color: 'purple'})
+                +heading({text: '260', level:'1', color: 'purple'})
+                +heading({text: 'голосов', color: 'purple'})
             .room-details-page__bullet-list-wrapper
-              +bullet-list({list:list1,isColored:true})
+              +bullet-list({list: list1, isColored: true})
         .room-details-page__reviews
           .room-details-page__reviews-header
             .room-details-page__heading-wrapper
-              +heading({text:'Отзывы посетителей номера',level:'2'})
+              +heading({text: 'Отзывы посетителей номера', level: '2'})
             .room-details-page__reviews-amount 2 отзыва
           .room-details-page__comments
             +comment(user)
             +comment(user2)
         .room-details-page__rules
           .room-details-page__heading-wrapper
-            +heading({text:'Правила',level:'2'})
-          +bullet-list({list:list2})
+            +heading({text: 'Правила', level: '2'})
+          +bullet-list({list: list2})
         .room-details-page__cancel
           .room-details-page__heading-wrapper
-            +heading({text:'Отмена',level:'2'})
+            +heading({text: 'Отмена', level: '2'})
           .room-details-page__cancel-text #{text}
       .room-details-page__card
         +room-details()

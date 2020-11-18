@@ -1,19 +1,19 @@
 mixin registration()
   .registration.js-registration
     .registration__row
-      +heading({level:'1',text:'Регистрация аккаунта'})
+      +heading({level: '1', text: 'Регистрация аккаунта'})
     .registration__row
       +text-field({placeholder: 'Имя'})
       +text-field({placeholder: 'Фамилия'})
       +radio()
     .registration__row
-      +text-field({placeholder:'дд.мм.гггг',modifier: 'masked',text:'дата рождения'})
+      +text-field({placeholder: 'дд.мм.гггг', modifier: 'masked', text: 'дата рождения'})
     .registration__row
-      +text-field({placeholder: 'Email',text:'данные для входа в сервис'})
+      +text-field({placeholder: 'Email', text: 'данные для входа в сервис'})
       +text-field({placeholder: 'Пароль'})
       +toggle()
     .registration__row
-      +button({text: 'перейти к оплате',type: 'with-arrow'})
+      +button({text: 'перейти к оплате', type: 'with-arrow'})
     .registration__row
       .registration__inner-row
         |Уже есть аккаунт на Toxin

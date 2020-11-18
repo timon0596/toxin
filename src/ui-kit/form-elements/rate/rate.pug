@@ -1,10 +1,10 @@
-mixin rate({num=0}={})
+mixin rate({num=0} = {})
   - let rest = 5
   .rate
-    while num>0
-      +icon({icon:'star',color: 'gradient'})
+    while num > 0
+      +icon({icon: 'star', color: 'gradient'})
       .rate__num= num--
       .rate__num= rest--
-    while rest>0
-      +icon({icon:'star_border',color: 'gradient'})
+    while rest > 0
+      +icon({icon: 'star_border', color: 'gradient'})
       .rate__num= rest--

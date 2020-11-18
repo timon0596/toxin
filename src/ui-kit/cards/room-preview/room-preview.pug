@@ -1,4 +1,4 @@
-mixin room-preview({room:{number,imgs,cost,lux,rate,reviews},id})
+mixin room-preview({room: {number, imgs, cost, lux, rate, reviews}, id})
   .room-preview
     .room-preview__row
       .carousel.slide(data-ride='true' id="carouselExampleIndicators"+id)
@@ -24,15 +24,15 @@ mixin room-preview({room:{number,imgs,cost,lux,rate,reviews},id})
       .room-preview__inner-row
         .room-preview__number
           != "№ "
-          +heading({text:number,level:'2'})
+          +heading({text: number, level: '2'})
           if lux
-            +heading({text:'люкс',color:'purple'})
+            +heading({text: 'люкс', color: 'purple'})
         .room-preview__payment
           .room-preview__cost= cost
           =" в сутки"
       .room-preview__divider
       .room-preview__inner-row
-        +rate({num:rate})
+        +rate({num: rate})
         .room-preview__reviews
           .room-preview__reviews-amount= reviews
           =" Отзывов"

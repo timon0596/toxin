@@ -1,12 +1,12 @@
-mixin header({signed=false}={})
+mixin header({signed=false} = {})
   header.header
     .header__wrapper
       +logo()
       .header__nav
         +nav({signed})
     .header__slide-up
-      +icon({color:'purple',font:'big'})
+      +icon({color: 'purple', font: 'big'})
     .header__burger
-      +icon({icon:'menu',color:'purple',font:'big'})
+      +icon({icon: 'menu', color: 'purple', font: 'big'})
 
     

@@ -1,12 +1,12 @@
-mixin text-field({placeholder,material_icons,modifier,iconColor,text,disabled=false})
+mixin text-field({placeholder, material_icons, modifier, iconColor, text, disabled=false})
   .text-field.js-text-field(class={
-    'text-field_with-arrow':modifier==='with-arrow',
-    'text-field_masked js-text-field_masked': modifier==='masked'
+    'text-field_with-arrow': modifier === 'with-arrow',
+    'text-field_masked js-text-field_masked': modifier === 'masked'
     })
     .text-field__header
       +heading({text})
     .text-field__input-wrapper
-      input(placeholder= placeholder disabled=disabled)
+      input(placeholder=placeholder disabled=disabled)
       if material_icons
         .text-field__icon-wrapper.js-text-field__icon-wrapper
-          +icon({icon: material_icons,color: iconColor})
+          +icon({icon: material_icons, color: iconColor})

@@ -1,33 +1,33 @@
-mixin footer({withBorder=true}={})
-  footer.footer(class=withBorder?'footer_with-border':'')
+mixin footer({withBorder=true} = {})
+  footer.footer(class=withBorder ? 'footer_with-border' : '')
     .footer__inner-wrapper
       .footer__column
         +logo()
         | Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
       .footer__column
-        +heading({text:'навигация'})
+        +heading({text: 'навигация'})
         .footer__column-point О нас
         .footer__column-point Новости
         .footer__column-point Служба поддержки
         .footer__column-point Услуги
       .footer__column
-        +heading({text:'о нас'})
+        +heading({text: 'о нас'})
         .footer__column-point О сервисе
         .footer__column-point Наша команда
         .footer__column-point Вакансии
         .footer__column-point Инвесторы
       .footer__column
-        +heading({text:'служба поддержки'})
+        +heading({text: 'служба поддержки'})
         .footer__column-point Соглашения
         .footer__column-point Сообщества
         .footer__column-point Связь с нами
       .footer__column
-        +heading({text:'подписка'})
+        +heading({text: 'подписка'})
         | Получайте специальные предложения и новости сервиса
         +text-field({
-          placeholder:'Email', 
-          material_icons:'arrow_forward', 
-          modifier:'with-arrow',
+          placeholder: 'Email', 
+          material_icons: 'arrow_forward', 
+          modifier: 'with-arrow',
           iconColor: 'purple'
         })
     .footer__copyright
@@ -35,7 +35,7 @@ mixin footer({withBorder=true}={})
         +logo()
       | Copyright © 2018 Toxin отель. Все права зачищены.
       .footer__socials
-        +fa-icon({icon:'twitter'})
-        +fa-icon({icon:'facebook-official'})
+        +fa-icon({icon: 'twitter'})
+        +fa-icon({icon: 'facebook-official'})
         +fa-icon({icon: 'instagram'})
           

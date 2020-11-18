@@ -1,19 +1,20 @@
 mixin room-search()
   .room-search
     .room-search__row
-      +heading({level:'1',text:'Найдём номера под ваши пожелания'})
+      +heading({level: '1', text: 'Найдём номера под ваши пожелания'})
     .room-search__row
       +date-dropdown({names: ['прибытие','выезд']})
     .room-search__row
-      +dropdown({h3:'гости',
-        counterNames:[
-              'взрослые',
-              'дети',
-              'младенцы'
-              ],
-        type:'guests',
-        initValues:[2,2,0],
-        hasButtons:true
+      +dropdown({
+        h3: 'гости',
+        counterNames: [
+          'взрослые',
+          'дети',
+          'младенцы'
+        ],
+        type: 'guests',
+        initValues: [2,2,0],
+        hasButtons: true
       })
     .room-search__row
-      +button({text: 'подобрать номер',type: 'with-arrow'})
+      +button({text: 'подобрать номер', type: 'with-arrow'})
