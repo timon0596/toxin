@@ -1,27 +1,29 @@
 $c1: 50/100*360deg
 $c2: 25/100*360deg
 $c3: 25/100*360deg
-.svg
+.impression-svg-chart
   width: 120px
   height: 120px
   transform: rotate(90deg)
 
-  .c1,.c2,.c3
+  &__circle-1,
+  &__circle-2,
+  &__circle-3
     stroke-width: 4px
     fill: none
     stroke-dasharray: calc(2*3.14*58)
     transform-origin: 50% 50%
 
-  .c1
-    stroke: url('#c1')
+  &__circle-1
+    stroke: url('#impression-svg-chart__gradient-1')
     stroke-dashoffset: calc(2*3.14*58 - (2*3.14*58)*50/100 + 2)
 
-  .c2
-    stroke: url('#c2')
+  &__circle-2
+    stroke: url('#impression-svg-chart__gradient-2')
     stroke-dashoffset: calc(2*3.14*58 - (2*3.14*58)*25/100 + 2)
     transform: rotate($c1)
     
-  .c3
-    stroke: url('#c3')
+  &__circle-3
+    stroke: url('#impression-svg-chart__gradient-3')
     stroke-dashoffset: calc(2*3.14*58 - (2*3.14*58)*25/100 + 2)
     transform: rotate($c1+$c2)
