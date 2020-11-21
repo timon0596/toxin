@@ -16,12 +16,14 @@ const declensions = {
 const formatOutputText = {
   rooms() {
     let result = '';
+    let counter = 0;
     this.values.forEach((el, i) => {
-      if (this.dec[i] && el) {
-        result += `${el} ${this.dec[i][this.modulo(el)]}, `;
+      if (this.dec[i] !== undefined && el !== 0) {
+        counter += 1;
+        result += counter < 3 ? `${el} ${this.dec[i][this.modulo(el)]}, ` : '';
       }
     });
-    return result.slice(0, -2);
+    return result.slice(0, -2).concat('...');
   },
   guests() {
     let result = '';
