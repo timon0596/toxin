@@ -1,2 +1,2 @@
-mixin logo()
-  img(src="/img/Logo.svg" alt="logo img").logo
+mixin logo({logo='Logo'} = {})
+  img(src=`/img/${logo}.svg` alt="logo img").logo

@@ -2,12 +2,18 @@
 $colorList: $d100 $d75 $d50 $d25 $d5 $p $g
 .colors-and-types
   $root: &
+  position: relative
   min-height: 100vh
   padding: 145px 191px 145px 150px
   display: grid
   grid-auto-flow: column
   align-items: start
   justify-content: space-between
+
+  &__logo-wrapper
+    position: absolute
+    top: 30px
+    left: 30px
 
   &__headings
     display: grid
