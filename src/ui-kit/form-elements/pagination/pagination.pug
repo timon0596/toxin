@@ -1,11 +1,11 @@
 mixin pagination()
   .pagination
     .pagination__list
-      .pagination__item.pagination__item_current 1
-      .pagination__item 2
-      .pagination__item 3
-      .pagination__item ...
-      .pagination__item 15
-      .pagination__item.pagination__item_next
+      a(href="/mock-address/change-me").pagination__item.pagination__item_current 1
+      a(href="/mock-address/change-me").pagination__item 2
+      a(href="/mock-address/change-me").pagination__item 3
+      a(href="/mock-address/change-me").pagination__item ...
+      a(href="/mock-address/change-me").pagination__item 15
+      a(href="/mock-address/change-me").pagination__item.pagination__item_next
         +icon({icon: 'arrow_forward', color: 'white'})
     .pagination__info 1 – 12 из 100+ вариантов аренды
