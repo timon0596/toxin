@@ -65,13 +65,58 @@ block content
             ]
           }
         ];
+  -
+    const links = [
+      {
+        type: 'link',
+        name: 'О нас',
+        href: '/mock-address/change-me'
+      },
+      {
+        type: 'link',
+        name: 'Услуги',
+        hasIcon: true,
+        href: '/mock-address/change-me'
+      },
+      {
+        type: 'link',
+        name: 'Вакансии',
+        href: '/mock-address/change-me'
+      },
+      {
+        type: 'link',
+        name: 'Новости',
+        href: '/mock-address/change-me'
+      },
+      {
+        type: 'link',
+        name: 'Соглашения',
+        hasIcon: true,
+        href: '/mock-address/change-me'
+      },
+      {
+        type: 'button',
+        role: 'sign-in',
+        href: '/mock-address/change-me'
+      },
+      {
+        type: 'button',
+        role: 'sign-up',
+        href: '/mock-address/change-me'
+      },
+      {
+        type: 'user',
+        name: 'Юлий Цезарь',
+        href: '/mock-address/change-me'
+      }
+    ];
   .headers-and-footers
     .headers-and-footers__logo-wrapper
       +logo({logo: 'ui-kit-logo'})
     .headers-and-footers__item
-      +header()
+      +header({links})
     .headers-and-footers__item
-      +header({signed: true})
+      +header({signed: true,links})
     .headers-and-footers__item
       +footer({
         withBorder: false,

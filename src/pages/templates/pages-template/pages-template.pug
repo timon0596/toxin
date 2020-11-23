@@ -14,68 +14,113 @@ html(lang="en")
     meta(name="theme-color" content="#ffffff")
     block title
   body
-    +header()
-    block main
     -
       const columns = [
-            {
-              name: 'навигация',
-              links: [
-                {
-                  name: 'о нас',
-                  href: '/mock-address/change-me'
-                },
-                {
-                  name: 'Новости',
-                  href: '/mock-address/change-me'
-                },
-                {
-                  name: 'Служба поддержки',
-                  href: '/mock-address/change-me'
-                },
-                {
-                  name: 'Услуги',
-                  href: '/mock-address/change-me'
-                }
-              ]
-            },
+        {
+          name: 'навигация',
+          links: [
             {
               name: 'о нас',
-              links: [
-                {
-                  name: 'О сервисе',
-                  href: '/mock-address/change-me'
-                },
-                {
-                  name: 'Наша команда',
-                  href: '/mock-address/change-me'
-                },
-                {
-                  name: 'Вакансии',
-                  href: '/mock-address/change-me'
-                },
-                {
-                  name: 'Инвесторы',
-                  href: '/mock-address/change-me'
-                }
-              ]
+              href: '/mock-address/change-me'
+            },
+            {
+              name: 'Новости',
+              href: '/mock-address/change-me'
             },
             {
               name: 'Служба поддержки',
-              links: [
-                {
-                  name: 'Соглашения',
-                  href: '/mock-address/change-me'
-                },
-                {
-                  name: 'Сообщества',
-                  href: '/mock-address/change-me'
-                },
-                {
-                  name: 'Связь с нами',
-                  href: '/mock-address/change-me'
-                },
-              ]
+              href: '/mock-address/change-me'
+            },
+            {
+              name: 'Услуги',
+              href: '/mock-address/change-me'
             }
-          ];
+          ]
+        },
+        {
+          name: 'о нас',
+          links: [
+            {
+              name: 'О сервисе',
+              href: '/mock-address/change-me'
+            },
+            {
+              name: 'Наша команда',
+              href: '/mock-address/change-me'
+            },
+            {
+              name: 'Вакансии',
+              href: '/mock-address/change-me'
+            },
+            {
+              name: 'Инвесторы',
+              href: '/mock-address/change-me'
+            }
+          ]
+        },
+        {
+          name: 'Служба поддержки',
+          links: [
+            {
+              name: 'Соглашения',
+              href: '/mock-address/change-me'
+            },
+            {
+              name: 'Сообщества',
+              href: '/mock-address/change-me'
+            },
+            {
+              name: 'Связь с нами',
+              href: '/mock-address/change-me'
+            },
+          ]
+        }
+      ];
+    -
+      const links = [
+        {
+          type: 'link',
+          name: 'О нас',
+          href: '/mock-address/change-me'
+        },
+        {
+          type: 'link',
+          name: 'Услуги',
+          hasIcon: true,
+          href: '/mock-address/change-me'
+        },
+        {
+          type: 'link',
+          name: 'Вакансии',
+          href: '/mock-address/change-me'
+        },
+        {
+          type: 'link',
+          name: 'Новости',
+          href: '/mock-address/change-me'
+        },
+        {
+          type: 'link',
+          name: 'Соглашения',
+          hasIcon: true,
+          href: '/mock-address/change-me'
+        },
+        {
+          type: 'button',
+          role: 'sign-in',
+          href: '/mock-address/change-me'
+        },
+        {
+          type: 'button',
+          role: 'sign-up',
+          href: '/mock-address/change-me'
+        },
+        {
+          type: 'user',
+          name: 'Юлий Цезарь',
+          href: '/mock-address/change-me'
+        }
+      ];
+    +header({links})
+    block main
     +footer({columns})

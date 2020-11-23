@@ -1,9 +1,9 @@
-mixin header({signed=false} = {})
+mixin header({signed=false,links=[]} = {})
   header.header
     .header__wrapper
       +logo()
       .header__nav
-        +nav({signed})
+        +nav({signed,links})
     .header__slide-up
       +icon({color: 'purple', font: 'big'})
     .header__burger
