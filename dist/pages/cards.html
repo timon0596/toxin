@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <meta name="description" content="toxin">
+    <meta name="keywords" content="toxin">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <title>cards</title>
+  <link href="../css/main.css" rel="stylesheet"></head>
+  <body>
+    <div class="cards">
+      <div class="cards__logo-wrapper"><img class="logo" src="/img/ui-kit-logo.svg" alt="logo img">
+      </div>
+      <div class="cards__column">
+        <div class="cards__item">
+          <div class="room-search">
+            <div class="room-search__row">
+              <div class="heading"><h1>Найдём номера под ваши пожелания</h1></div>
+            </div>
+            <div class="room-search__row">
+              <div class="date-dropdown js-date-dropdown">
+                <div class="date-dropdown__datepicker-container js-date-dropdown__datepicker-container"></div>
+                <div class="date-dropdown__display">
+                  <div class="text-field js-text-field text-field_masked js-text-field_masked">
+                    <div class="text-field__header">
+                      <div class="heading"><h3>прибытие</h3></div>
+                    </div>
+                    <div class="text-field__input-wrapper">
+                      <input placeholder="дд.мм.гггг">
+                      <div class="text-field__icon-wrapper js-text-field__icon-wrapper"><i class="icon">expand_more</i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="date-dropdown__display">
+                  <div class="text-field js-text-field text-field_masked js-text-field_masked">
+                    <div class="text-field__header">
+                      <div class="heading"><h3>выезд</h3></div>
+                    </div>
+                    <div class="text-field__input-wrapper">
+                      <input placeholder="дд.мм.гггг">
+                      <div class="text-field__icon-wrapper js-text-field__icon-wrapper"><i class="icon">expand_more</i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="room-search__row">
+              <div class="dropdown js-dropdown" data-type="guests">
+                <div class="heading"><h3>гости</h3></div>
+                <div class="dropdown__body js-dropdown__body">
+                  <div class="dropdown__display js-dropdown__display"></div>
+                  <div class="dropdown__icon-wrapper js-dropdown__icon-wrapper"><i class="icon icon_color_dark">expand_more</i>
+                  </div>
+                  <div class="dropdown__menu js-dropdown__menu">
+                    <div class="dropdown__row">
+                      <div class="heading"><h3>взрослые</h3></div>
+                      <div class="counter js-counter">
+                        <div class="js-counter__button counter__button">-</div>
+                        <h3 class="js-counter__button counter__button_no-border counter__button">2</h3>
+                        <div class="js-counter__button counter__button">+</div>
+                      </div>
+                    </div>
+                    <div class="dropdown__row">
+                      <div class="heading"><h3>дети</h3></div>
+                      <div class="counter js-counter">
+                        <div class="js-counter__button counter__button">-</div>
+                        <h3 class="js-counter__button counter__button_no-border counter__button">2</h3>
+                        <div class="js-counter__button counter__button">+</div>
+                      </div>
+                    </div>
+                    <div class="dropdown__row">
+                      <div class="heading"><h3>младенцы</h3></div>
+                      <div class="counter js-counter">
+                        <div class="js-counter__button counter__button">-</div>
+                        <h3 class="js-counter__button counter__button_no-border counter__button">0</h3>
+                        <div class="js-counter__button counter__button">+</div>
+                      </div>
+                    </div>
+                    <div class="dropdown__buttons">
+                      <div class="dropdown__clear js-dropdown__clear">
+                        <div class="button js-button button_without-background">
+                          <div class="button__text button__text_grey">очистить</div>
+                        </div>
+                      </div>
+                      <div class="dropdown__apply js-dropdown__apply">
+                        <div class="button js-button button_without-background">
+                          <div class="button__text button__text_purple">применить</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="room-search__row">
+              <div class="button js-button button_with-arrow">
+                <div class="button__text">подобрать номер</div>
+                <div class="button__arrow"><i class="icon icon_color_white">arrow_forward</i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cards__item">
+          <div class="registration js-registration">
+            <div class="registration__row">
+              <div class="heading"><h1>Регистрация аккаунта</h1></div>
+            </div>
+            <div class="registration__row">
+              <div class="text-field js-text-field">
+                <div class="text-field__header">
+                  <div class="heading"><h3></h3></div>
+                </div>
+                <div class="text-field__input-wrapper">
+                  <input placeholder="Имя">
+                </div>
+              </div>
+              <div class="text-field js-text-field">
+                <div class="text-field__header">
+                  <div class="heading"><h3></h3></div>
+                </div>
+                <div class="text-field__input-wrapper">
+                  <input placeholder="Фамилия">
+                </div>
+              </div>
+              <div class="radio">
+                <label class="radio__label">
+                  <input class="radio__input" type="radio" name="gender" checked>
+                  <div class="radio__button"></div>
+                  <div class="radio__text">Мужчина</div>
+                </label>
+                <label class="radio__label">
+                  <input class="radio__input" type="radio" name="gender">
+                  <div class="radio__button"></div>
+                  <div class="radio__text"> Женщина</div>
+                </label>
+              </div>
+            </div>
+            <div class="registration__row">
+              <div class="text-field js-text-field text-field_masked js-text-field_masked">
+                <div class="text-field__header">
+                  <div class="heading"><h3>дата рождения</h3></div>
+                </div>
+                <div class="text-field__input-wrapper">
+                  <input placeholder="дд.мм.гггг">
+                </div>
+              </div>
+            </div>
+            <div class="registration__row">
+              <div class="text-field js-text-field">
+                <div class="text-field__header">
+                  <div class="heading"><h3>данные для входа в сервис</h3></div>
+                </div>
+                <div class="text-field__input-wrapper">
+                  <input placeholder="Email">
+                </div>
+              </div>
+              <div class="text-field js-text-field">
+                <div class="text-field__header">
+                  <div class="heading"><h3></h3></div>
+                </div>
+                <div class="text-field__input-wrapper">
+                  <input placeholder="Пароль">
+                </div>
+              </div>
+              <div class="toggle">
+                <label class="toggle__label">
+                  <input class="toggle__input" type="checkbox">
+                  <div class="toggle__button"></div>Получать спецпредложения
+                </label>
+              </div>
+            </div>
+            <div class="registration__row">
+              <div class="button js-button button_with-arrow">
+                <div class="button__text">перейти к оплате</div>
+                <div class="button__arrow"><i class="icon icon_color_white">arrow_forward</i>
+                </div>
+              </div>
+            </div>
+            <div class="registration__row">
+              <div class="registration__inner-row">Уже есть аккаунт на Toxin
+                <div class="registration__sign-in-button js-registration__sign-in-button">
+                  <div class="button js-button button_with-border">
+                    <div class="button__text button__text_purple">войти</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cards__column">
+        <div class="cards__item">
+          <div class="room-details js-room-details">
+            <div class="room-details__row">
+              <div class="room-details__inner-row">
+                <div class="room-details__number">№
+                  <div class="heading"><h1>888</h1></div>
+                  <div class="heading heading_color_purple"><h3>люкс</h3></div>
+                </div>
+                <div class="room-details__payment">
+                  <div class="room-details__cost">9 990₽</div> в сутки
+                </div>
+              </div>
+            </div>
+            <div class="room-details__row">
+              <div class="date-dropdown js-date-dropdown">
+                <div class="date-dropdown__datepicker-container js-date-dropdown__datepicker-container"></div>
+                <div class="date-dropdown__display">
+                  <div class="text-field js-text-field text-field_masked js-text-field_masked">
+                    <div class="text-field__header">
+                      <div class="heading"><h3>прибытие</h3></div>
+                    </div>
+                    <div class="text-field__input-wrapper">
+                      <input placeholder="дд.мм.гггг">
+                      <div class="text-field__icon-wrapper js-text-field__icon-wrapper"><i class="icon">expand_more</i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="date-dropdown__display">
+                  <div class="text-field js-text-field text-field_masked js-text-field_masked">
+                    <div class="text-field__header">
+                      <div class="heading"><h3>выезд</h3></div>
+                    </div>
+                    <div class="text-field__input-wrapper">
+                      <input placeholder="дд.мм.гггг">
+                      <div class="text-field__icon-wrapper js-text-field__icon-wrapper"><i class="icon">expand_more</i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="room-details__row">
+              <div class="dropdown js-dropdown" data-type="guests">
+                <div class="heading"><h3>гости</h3></div>
+                <div class="dropdown__body js-dropdown__body">
+                  <div class="dropdown__display js-dropdown__display"></div>
+                  <div class="dropdown__icon-wrapper js-dropdown__icon-wrapper"><i class="icon icon_color_dark">expand_more</i>
+                  </div>
+                  <div class="dropdown__menu js-dropdown__menu">
+                    <div class="dropdown__row">
+                      <div class="heading"><h3>взрослые</h3></div>
+                      <div class="counter js-counter">
+                        <div class="js-counter__button counter__button">-</div>
+                        <h3 class="js-counter__button counter__button_no-border counter__button">2</h3>
+                        <div class="js-counter__button counter__button">+</div>
+                      </div>
+                    </div>
+                    <div class="dropdown__row">
+                      <div class="heading"><h3>дети</h3></div>
+                      <div class="counter js-counter">
+                        <div class="js-counter__button counter__button">-</div>
+                        <h3 class="js-counter__button counter__button_no-border counter__button">2</h3>
+                        <div class="js-counter__button counter__button">+</div>
+                      </div>
+                    </div>
+                    <div class="dropdown__row">
+                      <div class="heading"><h3>младенцы</h3></div>
+                      <div class="counter js-counter">
+                        <div class="js-counter__button counter__button">-</div>
+                        <h3 class="js-counter__button counter__button_no-border counter__button">0</h3>
+                        <div class="js-counter__button counter__button">+</div>
+                      </div>
+                    </div>
+                    <div class="dropdown__buttons">
+                      <div class="dropdown__clear js-dropdown__clear">
+                        <div class="button js-button button_without-background">
+                          <div class="button__text button__text_grey">очистить</div>
+                        </div>
+                      </div>
+                      <div class="dropdown__apply js-dropdown__apply">
+                        <div class="button js-button button_without-background">
+                          <div class="button__text button__text_purple">применить</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="room-details__row">
+              <div class="room-details__tax-table">
+                <div class="room-details__tax-name js-room-details__tax-name">9 990₽ х 4 суток</div>
+                <div class="room-details__tax-info_empty"></div>
+                <div class="room-details__tax-sum js-room-details__tax-sum">39960₽</div>
+                <div class="room-details__tax-name">Сбор за услуги: скидка 2 179₽</div>
+                <div class="room-details__tax-info">i</div>
+                <div class="room-details__tax-sum">0₽</div>
+                <div class="room-details__tax-name">Сбор за дополнительные услуги</div>
+                <div class="room-details__tax-info">i</div>
+                <div class="room-details__tax-sum">300₽</div>
+              </div>
+            </div>
+            <div class="room-details__row">
+              <div class="room-details__total">
+                <div class="heading"><h2>Итого</h2></div>
+                <div class="room-details__underline"></div>
+                <div class="room-details__sum js-room-details__sum">
+                  <div class="heading"><h2>38081₽</h2></div>
+                </div>
+              </div>
+              <div class="button js-button button_with-arrow">
+                <div class="button__text">забронировать</div>
+                <div class="button__arrow"><i class="icon icon_color_white">arrow_forward</i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cards__item">
+          <div class="sign-in js-sign-in">
+            <div class="sign-in__row">
+              <div class="heading"><h1>Войти</h1></div>
+            </div>
+            <div class="sign-in__row">
+              <div class="text-field js-text-field">
+                <div class="text-field__header">
+                  <div class="heading"><h3></h3></div>
+                </div>
+                <div class="text-field__input-wrapper">
+                  <input placeholder="Email">
+                </div>
+              </div>
+              <div class="text-field js-text-field">
+                <div class="text-field__header">
+                  <div class="heading"><h3></h3></div>
+                </div>
+                <div class="text-field__input-wrapper">
+                  <input placeholder="Пароль">
+                </div>
+              </div>
+            </div>
+            <div class="sign-in__row">
+              <div class="sign-in__sign-in-button js-sign-in__sign-in-button">
+                <div class="button js-button button_with-arrow">
+                  <div class="button__text">войти</div>
+                  <div class="button__arrow"><i class="icon icon_color_white">arrow_forward</i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="sign-in__row">
+              <div class="sign-in__inner-row">Нет аккаунта на Toxin
+                <div class="sign-in__button-create js-sign-in__button-create">
+                  <div class="button js-button button_with-border">
+                    <div class="button__text button__text_purple">создать</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cards__column">
+        <div class="cards__item">
+          <div class="cards__datepicker"></div>
+        </div>
+        <div class="cards__item">
+          <div class="room-preview">
+            <div class="room-preview__row">
+              <div class="carousel slide" data-ride="true" id="carouselExampleIndicators0">
+                <ol class="carousel-indicators">
+                  <li class="active" data-target="#carouselExampleIndicators0" data-slide-to="0"></li>
+                  <li data-target="#carouselExampleIndicators0" data-slide-to="1"></li>
+                  <li data-target="#carouselExampleIndicators0" data-slide-to="2"></li>
+                  <li data-target="#carouselExampleIndicators0" data-slide-to="3"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active"><img class="d-block w-100" src="/img/preview/image0.png" alt="1 slide"></div>
+                  <div class="carousel-item"><img class="d-block w-100" src="/img/preview/image0.png" alt="2 slide"></div>
+                  <div class="carousel-item"><img class="d-block w-100" src="/img/preview/image0.png" alt="3 slide"></div>
+                  <div class="carousel-item"><img class="d-block w-100" src="/img/preview/image0.png" alt="4 slide"></div>
+                </div><a class="carousel-control-prev" href="#carouselExampleIndicators0" role="button" data-slide="prev"><i class="icon icon_color_white">expand_more</i></a><a class="carousel-control-next" href="#carouselExampleIndicators0" role="button" data-slide="next"><i class="icon icon_color_white">expand_more</i></a>
+              </div>
+            </div>
+            <div class="room-preview__row">
+              <div class="room-preview__inner-row">
+                <div class="room-preview__number">№ 
+                  <div class="heading"><h2>888</h2></div>
+                  <div class="heading heading_color_purple"><h3>люкс</h3></div>
+                </div>
+                <div class="room-preview__payment">
+                  <div class="room-preview__cost">9 990₽</div> в сутки
+                </div>
+              </div>
+              <div class="room-preview__divider"></div>
+              <div class="room-preview__inner-row">
+                <div class="rate"><i class="icon icon_color_gradient">star</i>
+                  <div class="rate__num">5</div>
+                  <div class="rate__num">5</div><i class="icon icon_color_gradient">star</i>
+                  <div class="rate__num">4</div>
+                  <div class="rate__num">4</div><i class="icon icon_color_gradient">star</i>
+                  <div class="rate__num">3</div>
+                  <div class="rate__num">3</div><i class="icon icon_color_gradient">star</i>
+                  <div class="rate__num">2</div>
+                  <div class="rate__num">2</div><i class="icon icon_color_gradient">star</i>
+                  <div class="rate__num">1</div>
+                  <div class="rate__num">1</div>
+                </div>
+                <div class="room-preview__reviews">
+                  <div class="room-preview__reviews-amount">145</div> Отзывов
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cards__item">
+          <div class="room-preview">
+            <div class="room-preview__row">
+              <div class="carousel slide" data-ride="true" id="carouselExampleIndicators1">
+                <ol class="carousel-indicators">
+                  <li class="active" data-target="#carouselExampleIndicators1" data-slide-to="0"></li>
+                  <li data-target="#carouselExampleIndicators1" data-slide-to="1"></li>
+                  <li data-target="#carouselExampleIndicators1" data-slide-to="2"></li>
+                  <li data-target="#carouselExampleIndicators1" data-slide-to="3"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active"><img class="d-block w-100" src="/img/preview/image1.png" alt="1 slide"></div>
+                  <div class="carousel-item"><img class="d-block w-100" src="/img/preview/image1.png" alt="2 slide"></div>
+                  <div class="carousel-item"><img class="d-block w-100" src="/img/preview/image1.png" alt="3 slide"></div>
+                  <div class="carousel-item"><img class="d-block w-100" src="/img/preview/image1.png" alt="4 slide"></div>
+                </div><a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev"><i class="icon icon_color_white">expand_more</i></a><a class="carousel-control-next" href="#carouselExampleIndicators1" role="button" data-slide="next"><i class="icon icon_color_white">expand_more</i></a>
+              </div>
+            </div>
+            <div class="room-preview__row">
+              <div class="room-preview__inner-row">
+                <div class="room-preview__number">№ 
+                  <div class="heading"><h2>840</h2></div>
+                </div>
+                <div class="room-preview__payment">
+                  <div class="room-preview__cost">9 900₽</div> в сутки
+                </div>
+              </div>
+              <div class="room-preview__divider"></div>
+              <div class="room-preview__inner-row">
+                <div class="rate"><i class="icon icon_color_gradient">star</i>
+                  <div class="rate__num">4</div>
+                  <div class="rate__num">5</div><i class="icon icon_color_gradient">star</i>
+                  <div class="rate__num">3</div>
+                  <div class="rate__num">4</div><i class="icon icon_color_gradient">star</i>
+                  <div class="rate__num">2</div>
+                  <div class="rate__num">3</div><i class="icon icon_color_gradient">star</i>
+                  <div class="rate__num">1</div>
+                  <div class="rate__num">2</div><i class="icon icon_color_gradient">star_border</i>
+                  <div class="rate__num">1</div>
+                </div>
+                <div class="room-preview__reviews">
+                  <div class="room-preview__reviews-amount">65</div> Отзывов
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <script type="text/javascript" src="../vendors~main.main.js"></script><script type="text/javascript" src="../main.js"></script></body>
+</html>
