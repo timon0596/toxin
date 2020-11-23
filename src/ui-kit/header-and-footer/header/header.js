@@ -13,9 +13,9 @@ export class Header {
     this.handleSlideUpClick = this.handleSlideUpClick.bind(this);
     this.handleBurgerClick = this.handleBurgerClick.bind(this);
     this.handleWindowResize = this.handleWindowResize.bind(this);
-    this.$slideUp.click(this.handleSlideUpClick);
-    this.$burger.click(this.handleBurgerClick);
-    $(window).resize(this.handleWindowResize);
+    this.$slideUp.on('click', this.handleSlideUpClick);
+    this.$burger.on('click', this.handleBurgerClick);
+    $(window).on('resize', this.handleWindowResize);
   }
 
   handleWindowResize() {
