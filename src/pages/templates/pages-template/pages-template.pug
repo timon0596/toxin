@@ -16,4 +16,66 @@ html(lang="en")
   body
     +header()
     block main
-    +footer()
+    -
+      const columns = [
+            {
+              name: 'навигация',
+              links: [
+                {
+                  name: 'о нас',
+                  href: '/mock-address/change-me'
+                },
+                {
+                  name: 'Новости',
+                  href: '/mock-address/change-me'
+                },
+                {
+                  name: 'Служба поддержки',
+                  href: '/mock-address/change-me'
+                },
+                {
+                  name: 'Услуги',
+                  href: '/mock-address/change-me'
+                }
+              ]
+            },
+            {
+              name: 'о нас',
+              links: [
+                {
+                  name: 'О сервисе',
+                  href: '/mock-address/change-me'
+                },
+                {
+                  name: 'Наша команда',
+                  href: '/mock-address/change-me'
+                },
+                {
+                  name: 'Вакансии',
+                  href: '/mock-address/change-me'
+                },
+                {
+                  name: 'Инвесторы',
+                  href: '/mock-address/change-me'
+                }
+              ]
+            },
+            {
+              name: 'Служба поддержки',
+              links: [
+                {
+                  name: 'Соглашения',
+                  href: '/mock-address/change-me'
+                },
+                {
+                  name: 'Сообщества',
+                  href: '/mock-address/change-me'
+                },
+                {
+                  name: 'Связь с нами',
+                  href: '/mock-address/change-me'
+                },
+              ]
+            }
+          ];
+    +footer({columns})

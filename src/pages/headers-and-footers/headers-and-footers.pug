@@ -3,6 +3,68 @@ include ./../../ui-kit/ui-kit
 block title
   title headers-and-footers
 block content
+  -
+    const columns = [
+          {
+            name: 'навигация',
+            links: [
+              {
+                name: 'о нас',
+                href: '/mock-address/change-me'
+              },
+              {
+                name: 'Новости',
+                href: '/mock-address/change-me'
+              },
+              {
+                name: 'Служба поддержки',
+                href: '/mock-address/change-me'
+              },
+              {
+                name: 'Услуги',
+                href: '/mock-address/change-me'
+              }
+            ]
+          },
+          {
+            name: 'о нас',
+            links: [
+              {
+                name: 'О сервисе',
+                href: '/mock-address/change-me'
+              },
+              {
+                name: 'Наша команда',
+                href: '/mock-address/change-me'
+              },
+              {
+                name: 'Вакансии',
+                href: '/mock-address/change-me'
+              },
+              {
+                name: 'Инвесторы',
+                href: '/mock-address/change-me'
+              }
+            ]
+          },
+          {
+            name: 'Служба поддержки',
+            links: [
+              {
+                name: 'Соглашения',
+                href: '/mock-address/change-me'
+              },
+              {
+                name: 'Сообщества',
+                href: '/mock-address/change-me'
+              },
+              {
+                name: 'Связь с нами',
+                href: '/mock-address/change-me'
+              },
+            ]
+          }
+        ];
   .headers-and-footers
     .headers-and-footers__logo-wrapper
       +logo({logo: 'ui-kit-logo'})
@@ -11,5 +73,8 @@ block content
     .headers-and-footers__item
       +header({signed: true})
     .headers-and-footers__item
-      +footer({withBorder: false})
+      +footer({
+        withBorder: false,
+        columns
+      })
     

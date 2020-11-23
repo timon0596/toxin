@@ -1,0 +1,4 @@
+mixin social-icons({icons=['twitter','facebook-official','instagram']} = {})
+  .social-icons
+    each icon in icons
+      +fa-icon({icon})

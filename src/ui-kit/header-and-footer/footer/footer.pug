@@ -1,26 +1,14 @@
-mixin footer({withBorder=true} = {})
+mixin footer({withBorder=true, columns=[]} = {})
   footer.footer(class=withBorder ? 'footer_with-border' : '')
     .footer__inner-wrapper
       .footer__column
         +logo()
         | Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
-      .footer__column
-        +heading({text: 'навигация'})
-        a(href="/mock-address/change-me").footer__column-point О нас
-        a(href="/mock-address/change-me").footer__column-point Новости
-        a(href="/mock-address/change-me").footer__column-point Служба поддержки
-        a(href="/mock-address/change-me").footer__column-point Услуги
-      .footer__column
-        +heading({text: 'о нас'})
-        a(href="/mock-address/change-me").footer__column-point О сервисе
-        a(href="/mock-address/change-me").footer__column-point Наша команда
-        a(href="/mock-address/change-me").footer__column-point Вакансии
-        a(href="/mock-address/change-me").footer__column-point Инвесторы
-      .footer__column
-        +heading({text: 'служба поддержки'})
-        a(href="/mock-address/change-me").footer__column-point Соглашения
-        a(href="/mock-address/change-me").footer__column-point Сообщества
-        a(href="/mock-address/change-me").footer__column-point Связь с нами
+      each column in columns
+        .footer__column
+          +heading({text: column.name})
+          each link in column.links
+            a(href=link.href).footer__column-point=link.name
       .footer__column
         +heading({text: 'подписка'})
         | Получайте специальные предложения и новости сервиса
@@ -34,8 +22,5 @@ mixin footer({withBorder=true} = {})
       .footer__logo-wrapper
         +logo()
       | Copyright © 2018 Toxin отель. Все права зачищены.
-      .footer__socials
-        +fa-icon({icon: 'twitter'})
-        +fa-icon({icon: 'facebook-official'})
-        +fa-icon({icon: 'instagram'})
+      +social-icons()
           
