@@ -35,12 +35,13 @@ const formatOutputText = {
   },
 };
 $('.js-dropdown').each((i, el) => {
-  const $counters = $(el).find('.js-counter');
-  const $minusButtons = $counters.find('.js-counter__button:first-child');
-  const $plusButtons = $counters.find('.js-counter__button:last-child');
-  const $values = $counters.find('.js-counter__button:nth-child(2)');
+  const counter = new Counter();
+  const $counters = counter.counters($(el));
+  const $minusButtons = counter.minusButtons($counters);
+  const $plusButtons = counter.plusButtons($counters);
+  const $values = counter.values($counters);
   const counters = {
-    counter: new Counter(),
+    counter,
     $minusButtons,
     $plusButtons,
     $values,
