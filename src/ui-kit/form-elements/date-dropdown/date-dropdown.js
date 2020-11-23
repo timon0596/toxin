@@ -1,11 +1,11 @@
 import 'air-datepicker';
 import 'jquery-mask-plugin';
 import * as $ from 'jquery';
+import { MaskedTextField } from '../text-field/text-field';
 
 export class DateDropdown {
   constructor({
     el,
-    $expandButton,
     buttons: { $clearButton, $applyButton },
     navigation: { prevHtml, nextHtml },
     navTitles,
@@ -17,7 +17,6 @@ export class DateDropdown {
     };
     this.$clearButton = $clearButton;
     this.$applyButton = $applyButton;
-    this.$expandButton = $expandButton;
     this.navTitles = navTitles;
     this.prevHtml = prevHtml;
     this.nextHtml = nextHtml;
@@ -64,7 +63,11 @@ export class DateDropdown {
     this.defineElements();
     this.selectedDatesFromLocalStorage();
     this.datepickerInit();
-    this.$expandButton.on('click', this.handleExpandButtonClick);
+    MaskedTextField.on({
+      eventName: 'click',
+      callback: this.handleExpandButtonClick,
+      root: this.$el,
+    });
     this.$inputs.on('change', this.handleInputsChange);
   }
 

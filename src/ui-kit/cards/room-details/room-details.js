@@ -1,7 +1,6 @@
 export class RoomDetails {
-  constructor({ $element, $dd, $blockSum }) {
+  constructor({ $element, $blockSum }) {
     this.$block = $element;
-    this.$dropdown = $dd;
     this.$blockSum = $blockSum;
     this.init();
   }
