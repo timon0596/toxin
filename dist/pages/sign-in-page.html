@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <meta name="description" content="toxin">
+    <meta name="keywords" content="toxin">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <title>sign-in-page</title>
+  <link href="../css/main.css" rel="stylesheet"></head>
+  <body>
+    <header class="header">
+      <div class="header__wrapper"><img class="logo" src="/img/Logo.svg" alt="logo img">
+        <div class="header__nav">
+          <nav class="nav"><a class="nav__item" href="/mock-address/change-me">О нас</a><a class="nav__item" href="/mock-address/change-me">Услуги<i class="icon">expand_more</i></a><a class="nav__item" href="/mock-address/change-me">Вакансии</a><a class="nav__item" href="/mock-address/change-me">Новости</a><a class="nav__item" href="/mock-address/change-me">Соглашения<i class="icon">expand_more</i></a><a class="nav__item" href="/mock-address/change-me" data-signed="true">
+              <div class="nav__button" data-role="sign-in">
+                <div class="button js-button button_low button_with-border">
+                  <div class="button__text button__text_purple">войти</div>
+                </div>
+              </div></a><a class="nav__item" href="/mock-address/change-me" data-signed="true">
+              <div class="nav__button" data-role="sign-up">
+                <div class="button js-button button_low">
+                  <div class="button__text">зарегистрироваться</div>
+                </div>
+              </div></a><a class="nav__item" href="/mock-address/change-me" data-signed="false" data-link-type="user">Юлий Цезарь</a>
+          </nav>
+        </div>
+      </div>
+      <div class="header__slide-up"><i class="icon icon_color_purple icon_font_big">expand_more</i>
+      </div>
+      <div class="header__burger"><i class="icon icon_color_purple icon_font_big">menu</i>
+      </div>
+    </header>
+    <section class="sign-in-page">
+      <div class="registration js-registration">
+        <div class="registration__row">
+          <div class="heading"><h1>Регистрация аккаунта</h1></div>
+        </div>
+        <div class="registration__row">
+          <div class="text-field js-text-field">
+            <div class="text-field__header">
+              <div class="heading"><h3></h3></div>
+            </div>
+            <div class="text-field__input-wrapper">
+              <input placeholder="Имя">
+            </div>
+          </div>
+          <div class="text-field js-text-field">
+            <div class="text-field__header">
+              <div class="heading"><h3></h3></div>
+            </div>
+            <div class="text-field__input-wrapper">
+              <input placeholder="Фамилия">
+            </div>
+          </div>
+          <div class="radio">
+            <label class="radio__label">
+              <input class="radio__input" type="radio" name="gender" checked>
+              <div class="radio__button"></div>
+              <div class="radio__text">Мужчина</div>
+            </label>
+            <label class="radio__label">
+              <input class="radio__input" type="radio" name="gender">
+              <div class="radio__button"></div>
+              <div class="radio__text"> Женщина</div>
+            </label>
+          </div>
+        </div>
+        <div class="registration__row">
+          <div class="text-field js-text-field text-field_masked js-text-field_masked">
+            <div class="text-field__header">
+              <div class="heading"><h3>дата рождения</h3></div>
+            </div>
+            <div class="text-field__input-wrapper">
+              <input placeholder="дд.мм.гггг">
+            </div>
+          </div>
+        </div>
+        <div class="registration__row">
+          <div class="text-field js-text-field">
+            <div class="text-field__header">
+              <div class="heading"><h3>данные для входа в сервис</h3></div>
+            </div>
+            <div class="text-field__input-wrapper">
+              <input placeholder="Email">
+            </div>
+          </div>
+          <div class="text-field js-text-field">
+            <div class="text-field__header">
+              <div class="heading"><h3></h3></div>
+            </div>
+            <div class="text-field__input-wrapper">
+              <input placeholder="Пароль">
+            </div>
+          </div>
+          <div class="toggle">
+            <label class="toggle__label">
+              <input class="toggle__input" type="checkbox">
+              <div class="toggle__button"></div>Получать спецпредложения
+            </label>
+          </div>
+        </div>
+        <div class="registration__row">
+          <div class="button js-button button_with-arrow">
+            <div class="button__text">перейти к оплате</div>
+            <div class="button__arrow"><i class="icon icon_color_white">arrow_forward</i>
+            </div>
+          </div>
+        </div>
+        <div class="registration__row">
+          <div class="registration__inner-row">Уже есть аккаунт на Toxin
+            <div class="registration__sign-in-button js-registration__sign-in-button">
+              <div class="button js-button button_with-border">
+                <div class="button__text button__text_purple">войти</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sign-in js-sign-in">
+        <div class="sign-in__row">
+          <div class="heading"><h1>Войти</h1></div>
+        </div>
+        <div class="sign-in__row">
+          <div class="text-field js-text-field">
+            <div class="text-field__header">
+              <div class="heading"><h3></h3></div>
+            </div>
+            <div class="text-field__input-wrapper">
+              <input placeholder="Email">
+            </div>
+          </div>
+          <div class="text-field js-text-field">
+            <div class="text-field__header">
+              <div class="heading"><h3></h3></div>
+            </div>
+            <div class="text-field__input-wrapper">
+              <input placeholder="Пароль">
+            </div>
+          </div>
+        </div>
+        <div class="sign-in__row">
+          <div class="sign-in__sign-in-button js-sign-in__sign-in-button">
+            <div class="button js-button button_with-arrow">
+              <div class="button__text">войти</div>
+              <div class="button__arrow"><i class="icon icon_color_white">arrow_forward</i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sign-in__row">
+          <div class="sign-in__inner-row">Нет аккаунта на Toxin
+            <div class="sign-in__button-create js-sign-in__button-create">
+              <div class="button js-button button_with-border">
+                <div class="button__text button__text_purple">создать</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer footer_with-border">
+      <div class="footer__inner-wrapper">
+        <div class="footer__column"><img class="logo" src="/img/Logo.svg" alt="logo img">Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+        </div>
+        <div class="footer__column">
+          <div class="heading"><h3>навигация</h3></div><a class="footer__column-point" href="/mock-address/change-me">о нас</a><a class="footer__column-point" href="/mock-address/change-me">Новости</a><a class="footer__column-point" href="/mock-address/change-me">Служба поддержки</a><a class="footer__column-point" href="/mock-address/change-me">Услуги</a>
+        </div>
+        <div class="footer__column">
+          <div class="heading"><h3>о нас</h3></div><a class="footer__column-point" href="/mock-address/change-me">О сервисе</a><a class="footer__column-point" href="/mock-address/change-me">Наша команда</a><a class="footer__column-point" href="/mock-address/change-me">Вакансии</a><a class="footer__column-point" href="/mock-address/change-me">Инвесторы</a>
+        </div>
+        <div class="footer__column">
+          <div class="heading"><h3>Служба поддержки</h3></div><a class="footer__column-point" href="/mock-address/change-me">Соглашения</a><a class="footer__column-point" href="/mock-address/change-me">Сообщества</a><a class="footer__column-point" href="/mock-address/change-me">Связь с нами</a>
+        </div>
+        <div class="footer__column">
+          <div class="heading"><h3>подписка</h3></div>Получайте специальные предложения и новости сервиса
+          <div class="text-field js-text-field text-field_with-arrow">
+            <div class="text-field__header">
+              <div class="heading"><h3></h3></div>
+            </div>
+            <div class="text-field__input-wrapper">
+              <input placeholder="Email">
+              <div class="text-field__icon-wrapper js-text-field__icon-wrapper"><i class="icon icon_color_purple">arrow_forward</i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__copyright">
+        <div class="footer__logo-wrapper"><img class="logo" src="/img/Logo.svg" alt="logo img">
+        </div>Copyright © 2018 Toxin отель. Все права зачищены.
+        <div class="social-icons"><a class="fa-icon" href="/mock-address/change-me"> <i class="fa-icon__item fa fa-twitter" aria-hidden="true"></i></a><a class="fa-icon" href="/mock-address/change-me"> <i class="fa-icon__item fa fa-facebook-official" aria-hidden="true"></i></a><a class="fa-icon" href="/mock-address/change-me"> <i class="fa-icon__item fa fa-instagram" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </footer>
+  <script type="text/javascript" src="../vendors~main.main.js"></script><script type="text/javascript" src="../main.js"></script></body>
+</html>
