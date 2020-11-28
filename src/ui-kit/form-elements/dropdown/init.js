@@ -35,18 +35,9 @@ const formatOutputText = {
   },
 };
 $('.js-dropdown').each((i, el) => {
-  const counter = new Counter();
-  const $counters = counter.counters($(el));
-  const $minusButtons = counter.minusButtons($counters);
-  const $plusButtons = counter.plusButtons($counters);
-  const $values = counter.values($counters);
-  const counters = {
-    counter,
-    $minusButtons,
-    $plusButtons,
-    $values,
-  };
+  const mainDiv = $(el);
+  const counter = new Counter(mainDiv);
   new Dropdown({
-    mainDiv: $(el), index: i, counters, declensions, formatOutputText,
+    mainDiv, index: i, counter, declensions, formatOutputText,
   });
 });

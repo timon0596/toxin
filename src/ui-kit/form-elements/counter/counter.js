@@ -1,6 +1,9 @@
-import * as $ from 'jquery';
-
 export class Counter {
+  constructor(el) {
+    this.$parent = el;
+    this.init();
+  }
+
   disable($minusButton) {
     $minusButton.addClass('counter__button_disabled');
   }
@@ -9,19 +12,21 @@ export class Counter {
     $minusButton.removeClass('counter__button_disabled');
   }
 
-  counters(el) {
-    return $(el).find('.js-counter');
+  init() {
+    this.minusButtons = this.$parent.find('.js-counter__button:first-child');
+    this.plusButtons = this.$parent.find('.js-counter__button:last-child');
+    this.valueNodes = this.$parent.find('.js-counter__button:nth-child(2)');
   }
 
-  minusButtons($counters) {
-    return $counters.find('.js-counter__button:first-child');
+  getMinusButtons() {
+    return this.minusButtons;
   }
 
-  plusButtons($counters) {
-    return $counters.find('.js-counter__button:last-child');
+  getPlusButtons() {
+    return this.plusButtons;
   }
 
-  values($counters) {
-    return $counters.find('.js-counter__button:nth-child(2)');
+  getValueNodes() {
+    return this.valueNodes;
   }
 }

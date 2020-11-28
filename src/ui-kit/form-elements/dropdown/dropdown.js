@@ -5,17 +5,15 @@ export class Dropdown {
     formatOutputText,
     mainDiv,
     index,
-    counters: {
-      counter, $minusButtons, $plusButtons, $values,
-    },
+    counter,
     declensions,
   }) {
     this.index = index;
     this.$mainDiv = mainDiv;
     this.counter = counter;
-    this.$minusButtons = $minusButtons;
-    this.$plusButtons = $plusButtons;
-    this.$values = $values;
+    this.$minusButtons = this.counter.getMinusButtons();
+    this.$plusButtons = this.counter.getPlusButtons();
+    this.$values = this.counter.getValueNodes();
     this.dec = declensions;
     this.formatOutputText = formatOutputText;
     this.init();
