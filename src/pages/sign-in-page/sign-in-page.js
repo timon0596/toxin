@@ -1,15 +1,13 @@
-import * as $ from 'jquery';
 import { SignIn } from '../../ui-kit/cards/sign-in/sign-in';
 import { Registration } from '../../ui-kit/cards/registration/registration';
 
 export class SignInPage {
-  constructor() {
-    if (location.href.includes('sign-in-page.html')) {
-      this.signInBlock = new SignIn();
-      this.signUpBlock = new Registration();
-      this.signInBlock.hide();
-      this.init();
-    }
+  constructor($el) {
+    this.$el = $el;
+    this.signInBlock = new SignIn(this.$el);
+    this.signUpBlock = new Registration(this.$el);
+    this.signInBlock.hide();
+    this.init();
   }
 
   init() {

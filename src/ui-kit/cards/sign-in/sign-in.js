@@ -1,13 +1,12 @@
-import * as $ from 'jquery';
-
 export class SignIn {
-  constructor() {
+  constructor($parent) {
+    this.$parent = $parent;
     this.init();
   }
 
   init() {
-    this.$el = $('.js-sign-in');
-    this.$signUp = $('.js-sign-in__button-create');
+    this.$el = this.$parent.find('.js-sign-in');
+    this.$signUp = this.$parent.find('.js-sign-in__button-create');
   }
 
   addEventHandler(callback) {
