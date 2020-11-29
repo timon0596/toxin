@@ -9,7 +9,6 @@ export class DateDropdown {
     buttons: { $clearButton, $applyButton },
     navigation: { prevHtml, nextHtml },
     navTitles,
-    $inputs,
   }) {
     this.$el = el;
     this.selectedDates = {
@@ -20,11 +19,11 @@ export class DateDropdown {
     this.navTitles = navTitles;
     this.prevHtml = prevHtml;
     this.nextHtml = nextHtml;
-    this.$inputs = $inputs;
     this.init();
   }
 
   defineElements() {
+    this.$inputs = MaskedTextField.getInputs(this.$el);
     this.isFilter = this.$el.hasClass('date-dropdown_filter');
     this.$datepickerContainer = this.$el.find(
       '.js-date-dropdown__datepicker-container',
@@ -66,7 +65,7 @@ export class DateDropdown {
     MaskedTextField.on({
       eventName: 'click',
       callback: this.handleExpandButtonClick,
-      root: this.$el,
+      $root: this.$el,
     });
     this.$inputs.on('change', this.handleInputsChange);
   }

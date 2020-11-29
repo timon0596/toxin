@@ -1,7 +1,7 @@
 import * as $ from 'jquery';
 import { DateDropdown } from './date-dropdown';
 
-$([...$('.js-date-dropdown'), ...$('.cards__datepicker')]).each((i, el) => {
+$($('.js-date-dropdown')).each((i, el) => {
   const buttons = {
     $clearButton: $('<div>', {
       class: 'button button_without-background',
@@ -20,12 +20,10 @@ $([...$('.js-date-dropdown'), ...$('.cards__datepicker')]).each((i, el) => {
   const navTitles = {
     days: '<div class="heading"><h2>MM yyyy</h2></div>',
   };
-  const $inputs = $(el).find('input');
   new DateDropdown({
     el: $(el),
     buttons,
     navigation,
     navTitles,
-    $inputs,
   });
 });
