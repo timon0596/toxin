@@ -1,15 +1,17 @@
 import * as $ from 'jquery';
 
 export class Header {
-  constructor() {
+  constructor({ $header, nav }) {
+    this.$header = $header;
+    this.nav = nav;
     this.init();
   }
 
   init() {
-    this.$navItems = $('[data-signed="false"]').hide();
-    this.$nav = $('.header__nav');
-    this.$burger = $('.header__burger');
-    this.$slideUp = $('.header__slide-up');
+    this.$navItems = this.nav.getRefs().hide();
+    this.$nav = this.$header.find('.header__nav');
+    this.$burger = this.$header.find('.header__burger');
+    this.$slideUp = this.$header.find('.header__slide-up');
     this.handleSlideUpClick = this.handleSlideUpClick.bind(this);
     this.handleBurgerClick = this.handleBurgerClick.bind(this);
     this.handleWindowResize = this.handleWindowResize.bind(this);
