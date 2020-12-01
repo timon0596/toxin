@@ -19,6 +19,14 @@ export class Dropdown {
     this.init();
   }
 
+  static getExpandButtons($el) {
+    return $el.find('.js-dropdown__body .js-dropdown__icon-wrapper');
+  }
+
+  static getClearButtons($el) {
+    return $el.find('.js-dropdown__clear');
+  }
+
   findElements() {
     this.$display = this.$mainDiv.find('.js-dropdown__display');
     this.$expand = this.$mainDiv.find(

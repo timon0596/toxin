@@ -38,6 +38,12 @@ module.exports = {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
   },
+  resolve: {
+    extensions: ['.js'],
+    alias: {
+      '@': path.resolve(__dirname, 'src/ui-kit/'),
+    },
+  },
   optimization: {
     splitChunks: {
       chunks: 'all',
@@ -88,10 +94,6 @@ module.exports = {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
-      // {
-      //   test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-      //   loader: 'url-loader?limit=10000&mimetype=application/font-woff',
-      // },
       {
         test: /\.(ttf|eot|svg|woff(2)?$)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         loader: 'file-loader',

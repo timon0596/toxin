@@ -1,37 +1,26 @@
 import * as $ from 'jquery';
+import { MaskedTextField } from '@/form-elements/text-field/text-field';
+import { Dropdown } from '@/form-elements/dropdown/dropdown';
 
 export class FormElements {
-  constructor({
-    $textfield,
-    $button,
-    $buttonWithBorder,
-    $dropdowns,
-    $checkboxList,
-    $dropdownClearButton,
-  }) {
-    this.$textfield = $textfield;
-    this.$button = $button;
-    this.$buttonWithBorder = $buttonWithBorder;
-    this.$dropdowns = $dropdowns;
-    this.$checkboxList = $checkboxList;
-    this.$dropdownClearButton = $dropdownClearButton;
-    this.dropdowns();
-    this.textField();
-    this.checkbox();
+  constructor($el) {
+    this.$el = $el;
+    this.textFieldManipulations();
+    this.dropdownManipulations();
   }
 
-  textField() {
-    this.$textfield.val('This is pretty awesome');
-    this.$textfield[0].focus();
+  textFieldManipulations() {
+    this.input = $(MaskedTextField.getInputs(this.$el)[1]);
+    this.input.val('This is pretty awesome');
+    this.input.focus();
   }
 
-  dropdowns() {
-    this.$dropdowns.click();
-    $(this.$dropdownClearButton[0]).click();
-    $(this.$dropdowns[0]).click();
-  }
-
-  checkbox() {
-    this.$checkboxList.click();
+  dropdownManipulations() {
+    this.dropdownExpandButtons = [...Dropdown.getExpandButtons(this.$el)].reverse();
+    for (let i = 0; i < 3; i += 1) {
+      $(this.dropdownExpandButtons[i]).click();
+    }
+    this.dropdownClearButton = $(Dropdown.getClearButtons(this.$el)[3]);
+    this.dropdownClearButton.click();
   }
 }

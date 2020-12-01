@@ -71,12 +71,13 @@ block content
             +text-field({text: 'text field', placeholder: 'Email'})
             +dropdown({
               h3: 'dropdown',
-              type: 'rooms',
-              initValues:[2,2,0],
+              type: 'guests',
+              hasButtons: true,
+              initValues:[],
               counterNames: [
-                'спальни',
-                'кровати',
-                'ванные комнаты'
+                'взрослые',
+                'дети',
+                'младенцы'
               ]})
             +text-field({text: 'masked text field', placeholder: 'ДД.ММ.ГГГГ', modifier: 'masked'})
           +date-dropdown({names: ['dropdown','dropdown']})
