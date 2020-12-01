@@ -1,14 +1,13 @@
-import * as $ from 'jquery';
 import 'jquery-mask-plugin';
 
 export class MaskedTextField {
-  constructor() {
+  constructor($el) {
+    this.$el = $el;
     this.init();
   }
 
   init() {
-    this.$inputs = $('.js-text-field_masked input');
-    this.$inputs.mask('00.00.0000');
+    this.$el.mask('00.00.0000');
   }
 
   static on({ eventName, callback, $root }) {
