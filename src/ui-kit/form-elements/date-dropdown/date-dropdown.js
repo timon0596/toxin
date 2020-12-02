@@ -23,7 +23,6 @@ export class DateDropdown {
   }
 
   defineElements() {
-    this.$inputs = MaskedTextField.getInputs(this.$el);
     this.isFilter = this.$el.hasClass('date-dropdown_filter');
     this.$datepickerContainer = this.$el.find(
       '.js-date-dropdown__datepicker-container',
@@ -67,13 +66,23 @@ export class DateDropdown {
       callback: this.handleExpandButtonClick,
       $root: this.$el,
     });
-    this.$inputs.on('change', this.handleInputsChange);
+    MaskedTextField.on({
+      eventName: 'change',
+      callback: this.handleInputsChange,
+      $root: this.$el,
+      selector: 'input',
+    });
   }
 
   handleInputsChange() {
     this.datepickerInstance.selectDate([
-      this.dateFromLocaleDateString(this.$inputs[0].value),
-      this.dateFromLocaleDateString(this.$inputs[1].value),
+      this.dateFromLocaleDateString(MaskedTextField.getVal({
+        $root: this.$el,
+      })),
+      this.dateFromLocaleDateString(MaskedTextField.getVal({
+        $root: this.$el,
+        order: 1,
+      })),
     ]);
   }
 
@@ -104,12 +113,23 @@ export class DateDropdown {
   fillInputsWithValues(fd) {
     const inputCondition = this.selectedDates.from && this.selectedDates.to;
     if (!this.isFilter) {
-      $(this.$inputs[0]).val(this.selectedDates.from);
+      MaskedTextField.setVal({
+        $root: this.$el,
+        val: this.selectedDates.from,
+        order: 0,
+      });
       if (inputCondition) {
-        $(this.$inputs[1]).val(this.selectedDates.to);
+        MaskedTextField.setVal({
+          $root: this.$el,
+          val: this.selectedDates.to,
+          order: 1,
+        });
       }
     } else {
-      this.$inputs.val(fd);
+      MaskedTextField.setVal({
+        $root: this.$el,
+        val: fd,
+      });
     }
   }
 

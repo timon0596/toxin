@@ -1,10 +1,14 @@
 import * as $ from 'jquery';
+import { Checkbox } from '../checkbox/checkbox';
 
 export class CheckBoxList {
-  constructor({ el, checkboxes }) {
+  constructor({ el }) {
     this.$el = el;
-    this.checkboxes = checkboxes;
     this.init();
+  }
+
+  static expand({ $root, order = 0 }) {
+    $($root.find('.js-checkbox-list__expand')[order]).click();
   }
 
   findElements() {
@@ -19,7 +23,7 @@ export class CheckBoxList {
   }
 
   handleArticleClick(e) {
-    this.checkboxes[e.data.i].click();
+    Checkbox.check({ i: e.data.i, $root: this.$el });
   }
 
   init() {

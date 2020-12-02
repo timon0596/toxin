@@ -19,12 +19,8 @@ export class Dropdown {
     this.init();
   }
 
-  static getExpandButtons($el) {
-    return $el.find('.js-dropdown__body .js-dropdown__icon-wrapper');
-  }
-
-  static getClearButtons($el) {
-    return $el.find('.js-dropdown__clear');
+  static expand({ $root, order = 0 }) {
+    $($root.find('.js-dropdown__body .js-dropdown__icon-wrapper')[order]).click();
   }
 
   findElements() {

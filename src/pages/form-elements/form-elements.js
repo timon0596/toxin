@@ -1,26 +1,26 @@
-import * as $ from 'jquery';
 import { MaskedTextField } from '@/form-elements/text-field/text-field';
 import { Dropdown } from '@/form-elements/dropdown/dropdown';
+import { CheckBoxList } from '@/form-elements/checkbox-list/checkbox-list';
 
 export class FormElements {
   constructor($el) {
     this.$el = $el;
     this.textFieldManipulations();
     this.dropdownManipulations();
+    CheckBoxList.expand({ $root: this.$el, order: 1 });
   }
 
   textFieldManipulations() {
-    this.input = $(MaskedTextField.getInputs(this.$el)[1]);
-    this.input.val('This is pretty awesome');
-    this.input.focus();
+    MaskedTextField.setVal({
+      $root: this.$el,
+      val: 'This is pretty awesome',
+      order: 1,
+    });
   }
 
   dropdownManipulations() {
-    this.dropdownExpandButtons = [...Dropdown.getExpandButtons(this.$el)].reverse();
-    for (let i = 0; i < 3; i += 1) {
-      $(this.dropdownExpandButtons[i]).click();
+    for (let i = 2; i < 5; i += 1) {
+      Dropdown.expand({ $root: this.$el, order: i });
     }
-    this.dropdownClearButton = $(Dropdown.getClearButtons(this.$el)[3]);
-    this.dropdownClearButton.click();
   }
 }
