@@ -1,7 +1,7 @@
 import 'air-datepicker';
 import 'jquery-mask-plugin';
 import * as $ from 'jquery';
-import { MaskedTextField } from '../text-field/text-field';
+import { TextField } from '../text-field/text-field';
 
 export class DateDropdown {
   constructor({
@@ -57,32 +57,24 @@ export class DateDropdown {
   }
 
   init() {
+    this.inputs = [];
+    this.$el.find('.date-dropdown__display').each((i, el) => {
+      this.inputs.push(new TextField({ $root: $(el) }));
+    });
     this.binding();
     this.defineElements();
     this.selectedDatesFromLocalStorage();
     this.datepickerInit();
-    MaskedTextField.on({
-      eventName: 'click',
-      callback: this.handleExpandButtonClick,
-      $root: this.$el,
-    });
-    MaskedTextField.on({
-      eventName: 'change',
-      callback: this.handleInputsChange,
-      $root: this.$el,
-      selector: 'input',
+    this.inputs.forEach((el) => {
+      el.handleIconClick({ callback: this.handleExpandButtonClick });
+      el.handleInputChange({ callback: this.handleInputsChange });
     });
   }
 
   handleInputsChange() {
     this.datepickerInstance.selectDate([
-      this.dateFromLocaleDateString(MaskedTextField.getVal({
-        $root: this.$el,
-      })),
-      this.dateFromLocaleDateString(MaskedTextField.getVal({
-        $root: this.$el,
-        order: 1,
-      })),
+      this.dateFromLocaleDateString(this.inputs[0].getVal()),
+      this.dateFromLocaleDateString(this.inputs[1].getVal()),
     ]);
   }
 
@@ -113,23 +105,18 @@ export class DateDropdown {
   fillInputsWithValues(fd) {
     const inputCondition = this.selectedDates.from && this.selectedDates.to;
     if (!this.isFilter) {
-      MaskedTextField.setVal({
-        $root: this.$el,
-        val: this.selectedDates.from,
-        order: 0,
-      });
+      this.inputs[0].setVal(
+        this.selectedDates.from,
+      );
       if (inputCondition) {
-        MaskedTextField.setVal({
-          $root: this.$el,
-          val: this.selectedDates.to,
-          order: 1,
-        });
+        this.inputs[1].setVal(
+          this.selectedDates.to,
+        );
       }
     } else {
-      MaskedTextField.setVal({
-        $root: this.$el,
-        val: fd,
-      });
+      this.inputs[0].setVal(
+        fd,
+      );
     }
   }
 

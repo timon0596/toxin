@@ -19,8 +19,8 @@ export class Dropdown {
     this.init();
   }
 
-  static expand({ $root, order = 0 }) {
-    $($root.find('.js-dropdown__body .js-dropdown__icon-wrapper')[order]).click();
+  expand() {
+    this.$expand.trigger('click');
   }
 
   findElements() {

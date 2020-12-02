@@ -34,10 +34,12 @@ const formatOutputText = {
     return result.replace(/,\s$/, '');
   },
 };
+const dropdowns = [];
 $('.js-dropdown').each((i, el) => {
   const mainDiv = $(el);
   const counter = new Counter(mainDiv);
-  new Dropdown({
+  dropdowns.push(new Dropdown({
     mainDiv, index: i, counter, declensions, formatOutputText,
-  });
+  }));
 });
+export { dropdowns };

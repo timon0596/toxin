@@ -1,26 +1,12 @@
-import { MaskedTextField } from '@/form-elements/text-field/text-field';
-import { Dropdown } from '@/form-elements/dropdown/dropdown';
-import { CheckBoxList } from '@/form-elements/checkbox-list/checkbox-list';
+import { dropdowns } from '@/form-elements/dropdown/init';
+import { checkboxLists } from '@/form-elements/checkbox-list/init';
 
 export class FormElements {
-  constructor($el) {
-    this.$el = $el;
-    this.textFieldManipulations();
-    this.dropdownManipulations();
-    CheckBoxList.expand({ $root: this.$el, order: 1 });
-  }
-
-  textFieldManipulations() {
-    MaskedTextField.setVal({
-      $root: this.$el,
-      val: 'This is pretty awesome',
-      order: 1,
+  constructor({ $root }) {
+    this.$root = $root;
+    dropdowns.slice(-3).forEach((el) => {
+      el.expand();
     });
-  }
-
-  dropdownManipulations() {
-    for (let i = 2; i < 5; i += 1) {
-      Dropdown.expand({ $root: this.$el, order: i });
-    }
+    checkboxLists[1].expand();
   }
 }

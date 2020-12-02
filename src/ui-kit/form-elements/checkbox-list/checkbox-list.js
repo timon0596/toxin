@@ -4,11 +4,12 @@ import { Checkbox } from '../checkbox/checkbox';
 export class CheckBoxList {
   constructor({ el }) {
     this.$el = el;
+    this.checkbox = new Checkbox({ $root: this.$el });
     this.init();
   }
 
-  static expand({ $root, order = 0 }) {
-    $($root.find('.js-checkbox-list__expand')[order]).click();
+  expand() {
+    this.$expand.trigger('click');
   }
 
   findElements() {
@@ -23,7 +24,7 @@ export class CheckBoxList {
   }
 
   handleArticleClick(e) {
-    Checkbox.check({ i: e.data.i, $root: this.$el });
+    this.checkbox.check({ i: e.data.i });
   }
 
   init() {

@@ -1,35 +1,29 @@
 import 'jquery-mask-plugin';
-import * as $ from 'jquery';
 
-export class MaskedTextField {
-  static selectors = {
-    icon: '.js-text-field__icon-wrapper',
-    input: '.js-text-field input'
-  }
-  constructor($el) {
-    this.$el = $el;
+export class TextField {
+  constructor({ $root }) {
+    this.$el = $root.find('.js-text-field');
     this.init();
   }
 
   init() {
-    this.$el.mask('00.00.0000');
-  }
-  
-  static on({
-    eventName, callback, $root, selector = 'icon',
-  }) {
-    const selectorStr = [
-      'icon',
-      'input',
-    ].indexOf(selector) !== -1 ? MaskedTextField.selectors[selector] : null;
-    $root.find(selectorStr).on(eventName, callback);
+    this.$icon = this.$el.find('.js-text-field__icon-wrapper');
+    this.$input = this.$el.find('.text-field__input-wrapper input');
   }
 
-  static setVal({ $root, order = 0, val }) {
-    $($root.find('.js-text-field input')[order]).val(val);
+  handleIconClick({ callback }) {
+    this.$icon.on('click', callback);
   }
 
-  static getVal({$root, order = 0,}){
-    return $root.find('.js-text-field input')[order].value
+  handleInputChange({ callback }) {
+    this.$input.on('change', callback);
+  }
+
+  getVal() {
+    return this.$input[0].value;
+  }
+
+  setVal(val) {
+    this.$input.val(val);
   }
 }
