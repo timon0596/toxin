@@ -6,7 +6,7 @@ export class SignIn {
 
   init() {
     this.$el = this.$parent.find('.js-sign-in');
-    this.$signUp = this.$parent.find('.js-sign-in__button-create');
+    this.$signUp = this.$parent.find('.sign-in__creation-button');
   }
 
   addEventHandler(callback) {
