@@ -4,9 +4,11 @@ import { checkboxLists } from '@/form-elements/checkbox-list/init';
 export class FormElements {
   constructor({ $root }) {
     this.$root = $root;
-    dropdowns.slice(-3).forEach((el) => {
+    dropdowns.forEach((el) => {
       el.expand();
     });
-    checkboxLists[1].expand();
+    checkboxLists.forEach((el) => {
+      el.expand();
+    });
   }
 }

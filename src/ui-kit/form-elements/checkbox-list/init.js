@@ -3,6 +3,9 @@ import { CheckBoxList } from './checkbox-list';
 
 const checkboxLists = [];
 $('.js-checkbox-list').each((i, el) => {
-  checkboxLists.push(new CheckBoxList({ el: $(el) }));
+  const checkboxList = new CheckBoxList({ el: $(el) });
+  if ($(el).attr('data-opened')) {
+    checkboxLists.push(checkboxList);
+  }
 });
 export { checkboxLists };

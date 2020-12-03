@@ -38,8 +38,11 @@ const dropdowns = [];
 $('.js-dropdown').each((i, el) => {
   const mainDiv = $(el);
   const counter = new Counter(mainDiv);
-  dropdowns.push(new Dropdown({
+  const dropdown = new Dropdown({
     mainDiv, index: i, counter, declensions, formatOutputText,
-  }));
+  });
+  if ($(el).attr('data-opened')) {
+    dropdowns.push(dropdown);
+  }
 });
 export { dropdowns };

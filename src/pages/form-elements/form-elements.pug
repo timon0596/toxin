@@ -155,7 +155,8 @@ block content
                 'ванные комнаты'
                 ],
                 type: 'rooms',
-                initValues: [2,2,0]
+                initValues: [2,2,0],
+                isOpened: true
               })
       .form-elements__column-wrapper
         .form-elements__column
@@ -168,6 +169,7 @@ block content
               ],
               type: 'guests',
               hasButtons: true,
+              isOpened: true
           })
         .form-elements__column
           +dropdown({
@@ -179,14 +181,15 @@ block content
               ],
               type: 'guests',
               hasButtons: true,
-              initValues: [2,1,0]
+              initValues: [2,1,0],
+              isOpened: true
           })
     .form-elements__row.form-elements__row_checkboxes
       .form-elements__column
         .form-elements__wrapper
           .form-elements__group
             +checkbox-list({name: 'expandable checkbox list', items})
-            +checkbox-list({name: 'expandable checkbox list', items})
+            +checkbox-list({name: 'expandable checkbox list', items,isOpened: true})
       .form-elements__column-wrapper
         .form-elements__column
           .form-elements__wrapper

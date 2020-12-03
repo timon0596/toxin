@@ -4,7 +4,7 @@ import { Checkbox } from '../checkbox/checkbox';
 export class CheckBoxList {
   constructor({ el }) {
     this.$el = el;
-    this.checkbox = new Checkbox({ $root: this.$el });
+    this.checkboxes = [];
     this.init();
   }
 
@@ -24,10 +24,13 @@ export class CheckBoxList {
   }
 
   handleArticleClick(e) {
-    this.checkbox.check({ i: e.data.i });
+    this.checkboxes[e.data.i].check();
   }
 
   init() {
+    this.$el.find('.checkbox-list__item').each((index, item) => {
+      this.checkboxes.push(new Checkbox({ $root: $(item) }));
+    });
     this.handleExpandClick = this.handleExpandClick.bind(this);
     this.handleArticleClick = this.handleArticleClick.bind(this);
     this.findElements();

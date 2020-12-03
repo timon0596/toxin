@@ -1,5 +1,5 @@
-mixin checkbox-list({name, items=[]} = {})
-  .js-checkbox-list.checkbox-list
+mixin checkbox-list({name, items=[],isOpened} = {})
+  .js-checkbox-list.checkbox-list(data-opened=isOpened?`${isOpened}`:null)
     .checkbox-list__header
       +heading({text: name, level: '3'})
       .checkbox-list__expand.js-checkbox-list__expand

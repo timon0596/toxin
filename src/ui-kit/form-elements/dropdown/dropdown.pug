@@ -1,10 +1,13 @@
-mixin dropdown({h3, counterNames=[], hasButtons=false, initValues=[], type} = {})
-  .dropdown.js-dropdown(data-type=type  &&
-    [
-      'guests',
-      'rooms'
-    ].indexOf(type)!==-1?
-      type: ''
+mixin dropdown({h3, counterNames=[], hasButtons=false, initValues=[], type, isOpened} = {})
+  .dropdown.js-dropdown(
+    data-type=type  &&
+      [
+        'guests',
+        'rooms'
+      ].indexOf(type)!==-1?
+        type: ''
+    data-opened=isOpened?`${isOpened}`:null
+
   )
     +heading({text: h3, level: '3'})
     .dropdown__body.js-dropdown__body
