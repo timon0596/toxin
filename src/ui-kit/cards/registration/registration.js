@@ -5,12 +5,12 @@ export class Registration {
   }
 
   init() {
-    this.$signIn = this.$parent.find('.js-registration__sign-in-button');
+    this.$signInButton = this.$parent.find('.js-registration__sign-in-button');
     this.$el = this.$parent.find('.js-registration');
   }
 
   addClickHandler(callback) {
-    this.$signIn.on('click', callback);
+    this.$signInButton.on('click', callback);
   }
 
   show() {
