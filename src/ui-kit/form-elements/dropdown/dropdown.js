@@ -24,12 +24,14 @@ export class Dropdown {
   }
 
   findElements() {
+    this.isOpened = this.$mainDiv.attr('data-opened') === 'true';
     this.$display = this.$mainDiv.find('.js-dropdown__display');
     this.$expand = this.$mainDiv.find(
       '.js-dropdown__body .js-dropdown__icon-wrapper',
     );
     this.$body = this.$mainDiv.find('.js-dropdown__body');
     this.$menu = this.$mainDiv.find('.js-dropdown__menu').hide();
+
     this.$clear = this.$mainDiv.find('.js-dropdown__clear');
     this.$apply = this.$mainDiv.find('.js-dropdown__apply');
     this.type = this.$mainDiv.attr('data-type');
@@ -116,5 +118,6 @@ export class Dropdown {
     this.$clear.on('click.dropdownClear', this.handleClearClick);
     this.$apply.on('click.dropdownApply', this.handleApplyClick);
     this.render();
+    if (this.isOpened) { this.expand(); }
   }
 }

@@ -28,6 +28,7 @@ export class CheckBoxList {
   }
 
   init() {
+    this.isOpened = this.$el.attr('data-opened') === 'true';
     this.$el.find('.checkbox-list__item').each((index, item) => {
       this.checkboxes.push(new Checkbox({ $root: $(item) }));
     });
@@ -38,5 +39,6 @@ export class CheckBoxList {
       $(el).on('click', { i }, this.handleArticleClick);
     });
     this.$expand.on('click', this.handleExpandClick);
+    if (this.isOpened) { this.expand(); }
   }
 }
