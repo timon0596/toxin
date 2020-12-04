@@ -19,11 +19,11 @@ export class TextField {
     this.$input.on('change', callback);
   }
 
-  getVal() {
+  getValue() {
     return this.$input[0].value;
   }
 
-  setVal(val) {
-    this.$input.val(val);
+  setValue(value) {
+    this.$input.val(value);
   }
 }

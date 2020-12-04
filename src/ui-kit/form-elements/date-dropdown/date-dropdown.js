@@ -73,8 +73,8 @@ export class DateDropdown {
 
   handleInputsChange() {
     this.datepickerInstance.selectDate([
-      this.dateFromLocaleDateString(this.inputs[0].getVal()),
-      this.dateFromLocaleDateString(this.inputs[1].getVal()),
+      this.dateFromLocaleDateString(this.inputs[0].getValue()),
+      this.dateFromLocaleDateString(this.inputs[1].getValue()),
     ]);
   }
 
@@ -105,11 +105,11 @@ export class DateDropdown {
   fillInputsWithValues(fd) {
     const inputCondition = this.selectedDates.from && this.selectedDates.to;
     if (!this.isFilter) {
-      this.inputs[0].setVal(
+      this.inputs[0].setValue(
         this.selectedDates.from,
       );
       if (inputCondition) {
-        this.inputs[1].setVal(
+        this.inputs[1].setValue(
           this.selectedDates.to,
         );
       }
