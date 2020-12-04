@@ -3,13 +3,13 @@ import * as $ from 'jquery';
 export class Dropdown {
   constructor({
     formatOutputText,
-    mainDiv,
+    $mainDiv,
     index,
     counter,
     declensions,
   }) {
     this.index = index;
-    this.$mainDiv = mainDiv;
+    this.$mainDiv = $mainDiv;
     this.counter = counter;
     this.$minusButtons = this.counter.getMinusButtons();
     this.$plusButtons = this.counter.getPlusButtons();

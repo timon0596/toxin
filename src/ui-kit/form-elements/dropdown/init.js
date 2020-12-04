@@ -35,9 +35,9 @@ const formatOutputText = {
   },
 };
 $('.js-dropdown').each((i, el) => {
-  const mainDiv = $(el);
-  const counter = new Counter(mainDiv);
+  const $mainDiv = $(el);
+  const counter = new Counter($mainDiv);
   new Dropdown({
-    mainDiv, index: i, counter, declensions, formatOutputText,
+    $mainDiv, index: i, counter, declensions, formatOutputText,
   });
 });

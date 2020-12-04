@@ -5,12 +5,12 @@ import { TextField } from '../text-field/text-field';
 
 export class DateDropdown {
   constructor({
-    el,
+    $el,
     buttons: { $clearButton, $applyButton },
     navigation: { prevHtml, nextHtml },
     navTitles,
   }) {
-    this.$el = el;
+    this.$el = $el;
     this.selectedDates = {
       fromTo: '', from: '', to: '', days: 0,
     };
@@ -66,8 +66,8 @@ export class DateDropdown {
     this.selectedDatesFromLocalStorage();
     this.datepickerInit();
     this.inputs.forEach((el) => {
-      el.handleIconClick({ callback: this.handleExpandButtonClick });
-      el.handleInputChange({ callback: this.handleInputsChange });
+      el.addClickHandler({ callback: this.handleExpandButtonClick });
+      el.addChangeHandler({ callback: this.handleInputsChange });
     });
   }
 

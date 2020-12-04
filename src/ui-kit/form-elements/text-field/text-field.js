@@ -8,14 +8,14 @@ export class TextField {
 
   init() {
     this.$icon = this.$el.find('.js-text-field__icon-wrapper');
-    this.$input = this.$el.find('.text-field__input-wrapper input');
+    this.$input = this.$el.find('.text-field__input');
   }
 
-  handleIconClick({ callback }) {
+  addClickHandler({ callback }) {
     this.$icon.on('click', callback);
   }
 
-  handleInputChange({ callback }) {
+  addChangeHandler({ callback }) {
     this.$input.on('change', callback);
   }
 

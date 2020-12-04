@@ -2,8 +2,8 @@ import * as $ from 'jquery';
 import { Checkbox } from '../checkbox/checkbox';
 
 export class CheckBoxList {
-  constructor({ el }) {
-    this.$el = el;
+  constructor({ $el }) {
+    this.$el = $el;
     this.checkboxes = [];
     this.init();
   }

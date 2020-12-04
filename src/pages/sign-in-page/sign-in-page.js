@@ -13,8 +13,8 @@ export class SignInPage {
   init() {
     this.handleSignInClick = this.handleSignInClick.bind(this);
     this.handleSignUpClick = this.handleSignUpClick.bind(this);
-    this.signInBlock.addEventHandler(this.handleSignInClick);
-    this.signUpBlock.addEventHandler(this.handleSignUpClick);
+    this.signInBlock.addClickHandler(this.handleSignInClick);
+    this.signUpBlock.addClickHandler(this.handleSignUpClick);
   }
 
   handleSignUpClick() {

@@ -1,6 +1,6 @@
 export class RangeSlider {
-  constructor(el) {
-    this.$el = el;
+  constructor($el) {
+    this.$el = $el;
     this.handleRangeSliderSlide = this.handleRangeSliderSlide.bind(this);
     this.sliderOptions = {
       range: true,

@@ -21,7 +21,7 @@ $($('.js-date-dropdown')).each((i, el) => {
     days: '<div class="heading"><h2>MM yyyy</h2></div>',
   };
   new DateDropdown({
-    el: $(el),
+    $el: $(el),
     buttons,
     navigation,
     navTitles,

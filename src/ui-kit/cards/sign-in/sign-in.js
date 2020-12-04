@@ -9,7 +9,7 @@ export class SignIn {
     this.$signUp = this.$parent.find('.sign-in__creation-button');
   }
 
-  addEventHandler(callback) {
+  addClickHandler(callback) {
     this.callback = callback.bind(this);
     this.$signUp.on('click', this.callback);
   }

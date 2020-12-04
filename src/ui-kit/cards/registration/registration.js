@@ -9,7 +9,7 @@ export class Registration {
     this.$el = this.$parent.find('.js-registration');
   }
 
-  addEventHandler(callback) {
+  addClickHandler(callback) {
     this.$signIn.on('click', callback);
   }
 
