@@ -1,6 +1,6 @@
 import 'jquery-mask-plugin';
 
-export class MaskedTextField {
+export class TextFieldMasked {
   constructor($el) {
     this.$el = $el;
     this.init();
